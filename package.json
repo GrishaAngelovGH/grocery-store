@@ -18,7 +18,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode=development --config webpack.config --open",
     "prod": "webpack --mode=production --config webpack.config",
-    "test": "mocha 'src/**/*.spec.js' --require @babel/register --require ignore-styles --require mocha-helpers.js",
+    "test": "mocha 'src/**/*.spec.js' --watch --require @babel/register --require ignore-styles --require mocha-helpers.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
