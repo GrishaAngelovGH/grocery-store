@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            // Support for the new JSX transform in React 17
+            "@babel/preset-react",
+            {
+                "runtime": "automatic"
+            }
+        ],
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        [
+            "babel-plugin-webpack-alias",
+            {
+                "config": "./webpack.config.js"
+            }
+        ],
+        [
+            "@babel/plugin-proposal-class-properties"
+        ]
+    ]
+}
