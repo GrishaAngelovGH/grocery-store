@@ -1,3 +1,5 @@
+import Layout from 'components/Layout'
+
 import App from './App'
 
 describe('(Component) App', () => {
@@ -5,7 +7,7 @@ describe('(Component) App', () => {
     const wrapper = shallow(<App />)
 
     expect(wrapper.equals(
-      <div>test</div>
+      <Layout header={<span>header</span>} body={<span>body</span>} />
     )).to.equal(true)
   })
 })

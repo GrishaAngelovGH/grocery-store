@@ -1,6 +1,8 @@
+import Layout from 'components/Layout'
+
 function App() {
   return (
-    <div>test</div>
+    <Layout header={<span>header</span>} body={<span>body</span>} />
   )
 }
 
