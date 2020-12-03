@@ -1,8 +1,9 @@
+import HeaderBar from 'components/HeaderBar'
 import Layout from 'components/Layout'
 
 function App() {
   return (
-    <Layout header={<span>header</span>} body={<span>body</span>} />
+    <Layout header={<HeaderBar />} body={<span>body</span>} />
   )
 }
 

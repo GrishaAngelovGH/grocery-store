@@ -1,4 +1,5 @@
 import Layout from 'components/Layout'
+import HeaderBar from 'components/HeaderBar'
 
 import App from './App'
 
@@ -7,7 +8,7 @@ describe('(Component) App', () => {
     const wrapper = shallow(<App />)
 
     expect(wrapper.equals(
-      <Layout header={<span>header</span>} body={<span>body</span>} />
+      <Layout header={<HeaderBar />} body={<span>body</span>} />
     )).to.equal(true)
   })
 })
