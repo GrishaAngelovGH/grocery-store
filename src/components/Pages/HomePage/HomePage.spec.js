@@ -1,3 +1,4 @@
+import Logo from './Logo'
 import HomePage from './HomePage'
 
 describe('(Component) HomePage', () => {
@@ -5,7 +6,9 @@ describe('(Component) HomePage', () => {
         const wrapper = shallow(<HomePage />)
 
         expect(wrapper.equals(
-            <div>Home Page</div>
+            <div>
+                <Logo />
+            </div>
         )).to.equal(true)
     })
 })

@@ -1,5 +1,9 @@
+import Logo from './Logo'
+
 const HomePage = () => (
-    <div>Home Page</div>
+    <div>
+        <Logo />
+    </div>
 )
 
 export default HomePage
