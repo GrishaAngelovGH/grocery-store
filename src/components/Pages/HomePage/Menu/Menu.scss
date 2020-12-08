@@ -1,0 +1,13 @@
+.menu-container {
+    .subcategories {
+        display: none;
+    }
+
+    &:hover .subcategories {
+        display: flex;
+    }
+
+    .navbar-nav .nav-item:hover {
+        background-color: #5699e2;
+    }
+}
