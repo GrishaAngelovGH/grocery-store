@@ -1,6 +1,12 @@
 .menu-container {
     .subcategories {
         display: none;
+
+        height: 150px;
+        background: #dfece2;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
     }
 
     &:hover .subcategories {

@@ -44,8 +44,8 @@ class Menu extends Component {
 
                     {
                         !mobile && (
-                            <div className='row justify-content-center subcategories'>
-                                <div className='col-md-6 d-flex justify-content-between border'>
+                            <div className='row no-gutters justify-content-center subcategories'>
+                                <div className='col-md-6 d-flex justify-content-between border bg-white'>
                                     {
                                         subCategories.map(v => <div key={v}>{v}</div>)
                                     }

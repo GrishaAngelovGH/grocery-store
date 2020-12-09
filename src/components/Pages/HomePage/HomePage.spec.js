@@ -135,7 +135,7 @@ describe('(Component) HomePage', () => {
                     </div>
 
                     <Sidebar
-                        rootClassName='position-fixed'
+                        rootClassName='position-fixed sidebar-container'
                         sidebar={<div>content</div>}
                         open={true}
                         onSetOpen={wrapper.instance().handleSidebarOpen}

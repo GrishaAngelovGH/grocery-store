@@ -34,8 +34,8 @@ describe('(Component) Menu', () => {
                         </div>
                     </nav>
 
-                    <div className='row justify-content-center subcategories'>
-                        <div className='col-md-6 d-flex justify-content-between border'></div>
+                    <div className='row no-gutters justify-content-center subcategories'>
+                        <div className='col-md-6 d-flex justify-content-between border bg-white'></div>
                     </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@ describe('(Component) Menu', () => {
                         </div>
                     </nav>
 
-                    <div className='row justify-content-center subcategories'>
-                        <div className='col-md-6 d-flex justify-content-between border'>
+                    <div className='row no-gutters justify-content-center subcategories'>
+                        <div className='col-md-6 d-flex justify-content-between border bg-white'>
                             <div>Category2</div>
                         </div>
                     </div>

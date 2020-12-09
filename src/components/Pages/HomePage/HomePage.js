@@ -7,6 +7,8 @@ import Search from './Search'
 import Menu from './Menu'
 import HelpLinks from './HelpLinks'
 
+import './HomePage.scss'
+
 const menuCategories = [
     { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
     { title: 'Title2', subCategories: ['Category4', 'Category5', 'Category6'] }
@@ -75,7 +77,7 @@ class HomePage extends Component {
                     {
                         this.state.sidebarOpen && (
                             <Sidebar
-                                rootClassName='position-fixed'
+                                rootClassName='position-fixed sidebar-container'
                                 sidebar={<div>content</div>}
                                 open={this.state.sidebarOpen}
                                 onSetOpen={this.handleSidebarOpen}
