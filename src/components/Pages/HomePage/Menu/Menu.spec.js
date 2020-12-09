@@ -14,7 +14,7 @@ describe('(Component) Menu', () => {
         )
 
         expect(wrapper.equals(
-            <div className='row menu-container'>
+            <div className='row no-gutters menu-container'>
                 <div className='col-md-12'>
                     <nav className='navbar navbar-expand-lg navbar-light'>
 
@@ -43,9 +43,12 @@ describe('(Component) Menu', () => {
     })
 
     it('should render mobile Menu', () => {
+        const onSidebarOpen = sinon.spy()
+
         const wrapper = shallow(
             <Menu
                 mobile
+                onSidebarOpen={onSidebarOpen}
                 categories={
                     [
                         { title: 'Title1', subCategories: ['Category1'] },
@@ -56,11 +59,11 @@ describe('(Component) Menu', () => {
         )
 
         expect(wrapper.equals(
-            <div className='row menu-container'>
+            <div className='row no-gutters menu-container'>
                 <div className='col-md-12'>
                     <nav className='navbar navbar-expand-lg navbar-light'>
 
-                        <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <button className='navbar-toggler' type='button' onClick={onSidebarOpen} data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                             <span className='navbar-toggler-icon'></span>
                         </button>
                     </nav>
@@ -87,7 +90,7 @@ describe('(Component) Menu', () => {
         secondItem.simulate('mouseEnter', event)
 
         expect(wrapper.equals(
-            <div className='row menu-container'>
+            <div className='row no-gutters menu-container'>
                 <div className='col-md-12'>
                     <nav className='navbar navbar-expand-lg navbar-light'>
 

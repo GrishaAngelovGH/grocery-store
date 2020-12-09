@@ -13,15 +13,15 @@ class Menu extends Component {
     }
 
     render() {
-        const { mobile, categories } = this.props
+        const { mobile, categories, onSidebarOpen } = this.props
         const { subCategories } = this.state
 
         return (
-            <div className='row menu-container'>
+            <div className='row no-gutters menu-container'>
                 <div className='col-md-12'>
                     <nav className='navbar navbar-expand-lg navbar-light'>
 
-                        <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
+                        <button className='navbar-toggler' type='button' onClick={onSidebarOpen} data-toggle='collapse' data-target='#navbarNav' aria-controls='navbarNav' aria-expanded='false' aria-label='Toggle navigation'>
                             <span className='navbar-toggler-icon'></span>
                         </button>
 
@@ -61,6 +61,7 @@ class Menu extends Component {
 
 Menu.propTypes = {
     mobile: PropTypes.bool,
+    onSidebarOpen: PropTypes.func,
     categories: PropTypes.array.isRequired
 }
 
