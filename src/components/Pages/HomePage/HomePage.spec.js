@@ -1,5 +1,7 @@
 import Sidebar from 'react-sidebar'
 import { User, ShoppingBag } from 'components/Icons'
+import { groceryStoreBanner } from 'images'
+
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
@@ -67,6 +69,8 @@ describe('(Component) HomePage', () => {
                     </div>
 
                     <HelpLinks />
+
+                    <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
                 </div>
             </div>
         )).to.equal(true)
@@ -150,6 +154,8 @@ describe('(Component) HomePage', () => {
                     </Sidebar>
 
                     <HelpLinks />
+
+                    <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
                 </div>
             </div>
         )).to.equal(true)

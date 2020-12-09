@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Sidebar from 'react-sidebar'
 import { User, ShoppingBag } from 'components/Icons'
+import { groceryStoreBanner } from 'images'
 
 import Logo from './Logo'
 import Search from './Search'
@@ -94,6 +95,8 @@ class HomePage extends Component {
                     }
 
                     <HelpLinks />
+
+                    <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
                 </div>
             </div>
         )
