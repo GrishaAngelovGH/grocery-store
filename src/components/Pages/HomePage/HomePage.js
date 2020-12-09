@@ -1,10 +1,11 @@
 import { Component } from 'react'
 import Sidebar from 'react-sidebar'
+import { User, ShoppingBag } from 'components/Icons'
 
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
-import { User, ShoppingBag } from 'components/Icons'
+import HelpLinks from './HelpLinks'
 
 const menuCategories = [
     { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
@@ -89,6 +90,8 @@ class HomePage extends Component {
                             </Sidebar>
                         )
                     }
+
+                    <HelpLinks />
                 </div>
             </div>
         )

@@ -3,10 +3,11 @@ import { User, ShoppingBag } from 'components/Icons'
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
+import HelpLinks from './HelpLinks'
 
 import HomePage from './HomePage'
 
-describe.only('(Component) HomePage', () => {
+describe('(Component) HomePage', () => {
     it('should render component', () => {
         const wrapper = shallow(<HomePage />)
 
@@ -64,6 +65,8 @@ describe.only('(Component) HomePage', () => {
                     <div className='d-none d-lg-block'>
                         <Menu categories={menuCategories} />
                     </div>
+
+                    <HelpLinks />
                 </div>
             </div>
         )).to.equal(true)
@@ -145,6 +148,8 @@ describe.only('(Component) HomePage', () => {
                     >
                         <div></div>
                     </Sidebar>
+
+                    <HelpLinks />
                 </div>
             </div>
         )).to.equal(true)
