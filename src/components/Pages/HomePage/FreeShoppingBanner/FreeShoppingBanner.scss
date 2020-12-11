@@ -1,0 +1,19 @@
+.free-shopping-banner-label {
+    position: absolute;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+}
+
+@media screen and (max-width: 768px) {
+    .free-shopping-banner-label {
+        h2,
+        h3 {
+            font-size: 20px;
+        }
+    }
+    .shopping-banner {
+        height: 200px;
+    }
+}

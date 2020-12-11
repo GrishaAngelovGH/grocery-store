@@ -5,6 +5,7 @@ import { groceryStoreBanner } from 'images'
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
+import FreeShoppingBanner from './FreeShoppingBanner'
 import HelpLinks from './HelpLinks'
 
 import {
@@ -89,6 +90,8 @@ describe('(Component) HomePage', () => {
                             <ReturnDeliveryButton />
                         </div>
                     </div>
+
+                    <FreeShoppingBanner />
                 </div>
             </div>
         )).to.equal(true)
@@ -186,6 +189,8 @@ describe('(Component) HomePage', () => {
                             <ReturnDeliveryButton />
                         </div>
                     </div>
+
+                    <FreeShoppingBanner />
                 </div>
             </div>
         )).to.equal(true)

@@ -6,6 +6,7 @@ import { groceryStoreBanner } from 'images'
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
+import FreeShoppingBanner from './FreeShoppingBanner'
 import HelpLinks from './HelpLinks'
 import {
     DeliveryButton,
@@ -114,6 +115,8 @@ class HomePage extends Component {
                             <ReturnDeliveryButton />
                         </div>
                     </div>
+
+                    <FreeShoppingBanner />
                 </div>
             </div>
         )
