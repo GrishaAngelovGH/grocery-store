@@ -7,6 +7,11 @@ import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
 import HelpLinks from './HelpLinks'
+import {
+    DeliveryButton,
+    NextDayDeliveryButton,
+    ReturnDeliveryButton
+} from './HelpButtons'
 
 import './HomePage.scss'
 
@@ -97,6 +102,18 @@ class HomePage extends Component {
                     <HelpLinks />
 
                     <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
+
+                    <div className='row no-gutters justify-content-around m-2'>
+                        <div className='col-md-3'>
+                            <DeliveryButton />
+                        </div>
+                        <div className='col-md-3'>
+                            <NextDayDeliveryButton />
+                        </div>
+                        <div className='col-md-3'>
+                            <ReturnDeliveryButton />
+                        </div>
+                    </div>
                 </div>
             </div>
         )
