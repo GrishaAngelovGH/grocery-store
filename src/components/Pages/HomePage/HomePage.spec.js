@@ -1,11 +1,17 @@
 import Sidebar from 'react-sidebar'
 import { User, ShoppingBag } from 'components/Icons'
-import { groceryStoreBanner } from 'images'
+import {
+    groceryStoreBanner,
+    winesBanner,
+    specialWineBanner,
+    flowersBanner
+} from 'images'
 
 import Logo from './Logo'
 import Search from './Search'
 import Menu from './Menu'
 import FreeShoppingBanner from './FreeShoppingBanner'
+import PromoProducts from './PromoProducts'
 import HelpLinks from './HelpLinks'
 
 import {
@@ -16,14 +22,36 @@ import {
 
 import HomePage from './HomePage'
 
+const menuCategories = [
+    { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
+    { title: 'Title2', subCategories: ['Category4', 'Category5', 'Category6'] }
+]
+
+
+const promoProducts = [
+    {
+        image: winesBanner,
+        imageLabel: 'Special offers',
+        description: 'Save up to 1/3 on selected wines',
+        linkTitle: 'Shop wine by the case'
+    },
+    {
+        image: specialWineBanner,
+        imageLabel: 'Limited offers',
+        description: 'Save up to 20% on selected wines',
+        linkTitle: 'Shop wine by the case'
+    },
+    {
+        image: flowersBanner,
+        imageLabel: 'Free delivery',
+        description: 'Save £5 on selected bouquets',
+        linkTitle: 'Shop now'
+    }
+]
+
 describe('(Component) HomePage', () => {
     it('should render component', () => {
         const wrapper = shallow(<HomePage />)
-
-        const menuCategories = [
-            { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
-            { title: 'Title2', subCategories: ['Category4', 'Category5', 'Category6'] }
-        ]
 
         expect(wrapper.equals(
             <div className='row no-gutters'>
@@ -92,6 +120,8 @@ describe('(Component) HomePage', () => {
                     </div>
 
                     <FreeShoppingBanner />
+
+                    <PromoProducts products={promoProducts} />
                 </div>
             </div>
         )).to.equal(true)
@@ -99,11 +129,6 @@ describe('(Component) HomePage', () => {
 
     it('should open Sidebar', () => {
         const wrapper = shallow(<HomePage />)
-
-        const menuCategories = [
-            { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
-            { title: 'Title2', subCategories: ['Category4', 'Category5', 'Category6'] }
-        ]
 
         const menu = wrapper.find(Menu).first()
 
@@ -191,6 +216,8 @@ describe('(Component) HomePage', () => {
                     </div>
 
                     <FreeShoppingBanner />
+
+                    <PromoProducts products={promoProducts} />
                 </div>
             </div>
         )).to.equal(true)
