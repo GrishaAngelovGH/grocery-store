@@ -6,11 +6,18 @@ import delivery from './delivery.png'
 import nextDayDeliver from './next-day-deliver.png'
 import returnsDelivery from './returns-delivery.png'
 
+import winesBanner from './wines-banner.png'
+import specialWineBanner from './special-wine-banner.png'
+import flowersBanner from './flowers-banner.png'
+
 export {
     ukFlag,
     groceryStoreBanner,
     shoppingBanner,
     delivery,
     nextDayDeliver,
-    returnsDelivery
+    returnsDelivery,
+    winesBanner,
+    specialWineBanner,
+    flowersBanner
 }
