@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
 
-const Layout = ({ header, body }) => (
+const Layout = ({ header, body, footer }) => (
     <div className='row no-gutters'>
         <div className='col-md-12'>
             <Layout.Header content={header} />
             <Layout.Body content={body} />
+            <Layout.Footer content={footer} />
         </div>
     </div>
 )
@@ -16,7 +17,16 @@ Layout.Header = ({ content }) => (
         </div>
     </div>
 )
+
 Layout.Body = ({ content }) => (
+    <div className='row no-gutters'>
+        <div className='col-md-12'>
+            {content}
+        </div>
+    </div>
+)
+
+Layout.Footer = ({ content }) => (
     <div className='row no-gutters'>
         <div className='col-md-12'>
             {content}
@@ -34,6 +44,10 @@ Layout.Header.propTypes = {
 }
 
 Layout.Body.propTypes = {
+    content: PropTypes.element.isRequired
+}
+
+Layout.Footer.propTypes = {
     content: PropTypes.element.isRequired
 }
 
