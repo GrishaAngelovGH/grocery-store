@@ -10,6 +10,8 @@ import winesBanner from './wines-banner.png'
 import specialWineBanner from './special-wine-banner.png'
 import flowersBanner from './flowers-banner.png'
 
+import promoBanner from './promo-banner.png'
+
 export {
     ukFlag,
     groceryStoreBanner,
@@ -19,5 +21,6 @@ export {
     returnsDelivery,
     winesBanner,
     specialWineBanner,
-    flowersBanner
+    flowersBanner,
+    promoBanner
 }
