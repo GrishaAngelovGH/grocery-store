@@ -1,0 +1,12 @@
+.footer-panel {
+    background: #454545;
+
+    img {
+        height: 40px;
+        cursor: pointer;
+
+        &:hover {
+            border: 1px solid #ffffff;
+        }
+    }
+}

@@ -12,6 +12,24 @@ import flowersBanner from './flowers-banner.png'
 
 import promoBanner from './promo-banner.png'
 
+import facebookIcon from './facebook-icon.svg'
+import instagramIcon from './instagram-icon.svg'
+import pinterestIcon from './pinterest-icon.svg'
+import twitterIcon from './twitter-icon.svg'
+import youtubeIcon from './youtube-icon.svg'
+import appStoreLogo from './app-store.svg'
+import googlePlayStoreLogo from './google-play-store.svg'
+
+const socialNetworkIcons = {
+    facebookIcon,
+    instagramIcon,
+    pinterestIcon,
+    twitterIcon,
+    youtubeIcon,
+    appStoreLogo,
+    googlePlayStoreLogo
+}
+
 export {
     ukFlag,
     groceryStoreBanner,
@@ -22,5 +40,6 @@ export {
     winesBanner,
     specialWineBanner,
     flowersBanner,
-    promoBanner
+    promoBanner,
+    socialNetworkIcons
 }

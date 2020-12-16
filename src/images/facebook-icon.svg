@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <circle id="facebook-a" cx="20" cy="20" r="20"/>
+    <path id="facebook-c" d="M11.4916236,20 L11.4916236,10.8771028 L14.5539342,10.8771028 L15.0122421,7.32157581 L11.4916236,7.32157581 L11.4916236,5.05166672 C11.4916236,4.0224014 11.7775306,3.32080482 13.2537532,3.32080482 L15.1364564,3.31994817 L15.1364564,0.140062321 C14.8107151,0.096801482 13.6930006,0 12.3928197,0 C9.67852324,0 7.82023462,1.65676165 7.82023462,4.69958345 L7.82023462,7.32157581 L4.75,7.32157581 L4.75,10.8771028 L7.82023462,10.8771028 L7.82023462,20 L11.4916236,20"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="facebook-b" fill="#fff">
+      <use xlink:href="#facebook-a"/>
+    </mask>
+    <use fill="#454545" xlink:href="#facebook-a"/>
+    <g mask="url(#facebook-b)">
+      <g transform="translate(10 10)">
+        <mask id="facebook-d" fill="#fff">
+          <use xlink:href="#facebook-c"/>
+        </mask>
+        <use fill="#092A5E" xlink:href="#facebook-c"/>
+        <g mask="url(#facebook-d)">
+          <rect width="20" height="20" fill="#FFF"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
