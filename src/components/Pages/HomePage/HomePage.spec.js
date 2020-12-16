@@ -12,6 +12,7 @@ import Search from './Search'
 import Menu from './Menu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts from './PromoProducts'
+import PromoDeals from './PromoDeals'
 import HelpLinks from './HelpLinks'
 
 import {
@@ -46,6 +47,34 @@ const promoProducts = [
         imageLabel: 'Free delivery',
         description: 'Save £5 on selected bouquets',
         linkTitle: 'Shop now'
+    }
+]
+
+const promoDeals = [
+    {
+        category: 'offers',
+        description: 'see all offers',
+        linkTitle: 'Shop now'
+    },
+    {
+        category: 'women',
+        description: '30% off selected womenswear',
+        linkTitle: 'Shop the offer'
+    },
+    {
+        category: 'lingerie',
+        description: '30% off selected nightwear',
+        linkTitle: 'Shop the offer'
+    },
+    {
+        category: 'men',
+        description: '2 for £60 on lambswool jumpers',
+        linkTitle: 'Shop the offer'
+    },
+    {
+        category: 'women',
+        description: '30% of boots',
+        linkTitle: 'Shop the offer'
     }
 ]
 
@@ -122,6 +151,8 @@ describe('(Component) HomePage', () => {
                     <FreeShoppingBanner />
 
                     <PromoProducts products={promoProducts} />
+
+                    <PromoDeals promoDeals={promoDeals} />
                 </div>
             </div>
         )).to.equal(true)
@@ -218,6 +249,8 @@ describe('(Component) HomePage', () => {
                     <FreeShoppingBanner />
 
                     <PromoProducts products={promoProducts} />
+
+                    <PromoDeals promoDeals={promoDeals} />
                 </div>
             </div>
         )).to.equal(true)
