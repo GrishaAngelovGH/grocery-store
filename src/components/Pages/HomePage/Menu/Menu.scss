@@ -9,6 +9,10 @@
         z-index: 1;
     }
 
+    .subcategory {
+        width: 30%;
+    }
+
     &:hover .subcategories {
         display: flex;
     }
@@ -16,4 +20,8 @@
     .navbar-nav .nav-item:hover {
         background-color: #5699e2;
     }
+}
+
+.feature-link {
+    text-decoration: underline;
 }

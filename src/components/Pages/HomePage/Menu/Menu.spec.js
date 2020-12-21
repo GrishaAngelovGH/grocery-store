@@ -1,18 +1,55 @@
+import FeatureMenu from './FeatureMenu'
 import Menu from './Menu'
 
 describe('(Component) Menu', () => {
-    it('should render Menu', () => {
-        const wrapper = shallow(
-            <Menu
-                categories={
-                    [
-                        { title: 'Title1', subCategories: ['Category1'] },
-                        { title: 'Title2', subCategories: ['Category2'] }
+    let wrapper
+
+    const featureMenu = {
+        items: [
+            {
+                image: 'image 1',
+                title: 'Item 1',
+                description: 'Description 1',
+                link: 'Link 1'
+            }
+        ],
+        buttonLabel: 'ButtonLabel1'
+    }
+
+    const categories = [
+        {
+            title: 'Title1',
+            featureMenu: featureMenu,
+            subCategories: [
+                {
+                    title: 'SubCategory1',
+                    categories: [
+                        'category11', 'category22'
                     ]
                 }
-            />
-        )
+            ]
+        },
+        {
+            title: 'Title2',
+            featureMenu: featureMenu,
+            subCategories: [
+                {
+                    title: 'SubCategory11',
+                    categories: [
+                        'category33', 'category44'
+                    ]
+                }
+            ]
+        }
+    ]
 
+    beforeEach(() => {
+        wrapper = shallow(
+            <Menu categories={categories} />
+        )
+    })
+
+    it('should render Menu', () => {
         expect(wrapper.equals(
             <div className='row no-gutters menu-container'>
                 <div className='col-md-12'>
@@ -33,10 +70,6 @@ describe('(Component) Menu', () => {
                             </ul>
                         </div>
                     </nav>
-
-                    <div className='row no-gutters justify-content-center subcategories'>
-                        <div className='col-md-6 d-flex justify-content-between border bg-white'></div>
-                    </div>
                 </div>
             </div>
         )).to.equal(true)
@@ -49,12 +82,7 @@ describe('(Component) Menu', () => {
             <Menu
                 mobile
                 onSidebarOpen={onSidebarOpen}
-                categories={
-                    [
-                        { title: 'Title1', subCategories: ['Category1'] },
-                        { title: 'Title2', subCategories: ['Category2'] }
-                    ]
-                }
+                categories={categories}
             />
         )
 
@@ -73,17 +101,6 @@ describe('(Component) Menu', () => {
     })
 
     it('should render subCategories on title hover', () => {
-        const wrapper = shallow(
-            <Menu
-                categories={
-                    [
-                        { title: 'Title1', subCategories: ['Category1'] },
-                        { title: 'Title2', subCategories: ['Category2'] }
-                    ]
-                }
-            />
-        )
-
         const secondItem = wrapper.find('li').at(1)
         const event = { target: { id: secondItem.props().children.props.id } }
 
@@ -111,8 +128,15 @@ describe('(Component) Menu', () => {
                     </nav>
 
                     <div className='row no-gutters justify-content-center subcategories'>
-                        <div className='col-md-6 d-flex justify-content-between border bg-white'>
-                            <div>Category2</div>
+                        <div className='col-md-11 d-flex justify-content-between border bg-white'>
+                            <div className='subcategory m-2'>
+                                <div className='small font-weight-bold'>
+                                    SubCategory11
+                                </div>
+                                <div className='small'>category33</div>
+                                <div className='small'>category44</div>
+                            </div>
+                            <FeatureMenu items={featureMenu.items} buttonLabel={featureMenu.buttonLabel} />
                         </div>
                     </div>
                 </div>

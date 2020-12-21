@@ -1,20 +1,24 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import FeatureMenu from './FeatureMenu'
+
 import './Menu.scss'
 
 class Menu extends Component {
-    state = { subCategories: [] }
+    state = { subCategories: [], featureMenu: { items: [] } }
 
     handleMouseEnter = ({ target }) => {
         const title = target.id
-        const subCategories = this.props.categories.find(v => v.title === title).subCategories
-        this.setState({ subCategories })
+        const categories = this.props.categories.find(v => v.title === title)
+        const subCategories = categories.subCategories
+        const featureMenu = categories.featureMenu
+        this.setState({ subCategories, featureMenu })
     }
 
     render() {
         const { mobile, categories, onSidebarOpen } = this.props
-        const { subCategories } = this.state
+        const { subCategories, featureMenu } = this.state
 
         return (
             <div className='row no-gutters menu-container'>
@@ -43,12 +47,24 @@ class Menu extends Component {
                     </nav>
 
                     {
-                        !mobile && (
+                        !mobile && subCategories.length > 0 && (
                             <div className='row no-gutters justify-content-center subcategories'>
-                                <div className='col-md-6 d-flex justify-content-between border bg-white'>
+                                <div className='col-md-11 d-flex justify-content-between border bg-white'>
                                     {
-                                        subCategories.map(v => <div key={v}>{v}</div>)
+                                        subCategories.map(v => (
+                                            <div key={v.title} className='subcategory m-2'>
+                                                <div className='small font-weight-bold'>
+                                                    {v.title}
+                                                </div>
+                                                {
+                                                    v.categories.map(value => (
+                                                        <div key={value} className='small'>{value}</div>
+                                                    ))
+                                                }
+                                            </div>
+                                        ))
                                     }
+                                    <FeatureMenu items={featureMenu.items} buttonLabel={featureMenu.buttonLabel} />
                                 </div>
                             </div>
                         )
