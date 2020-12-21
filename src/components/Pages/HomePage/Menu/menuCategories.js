@@ -1,6 +1,28 @@
+import {
+    winesBanner,
+    specialWineBanner
+} from 'images'
+
 const menuCategories = [
     {
         title: 'Food',
+        featureMenu: {
+            items: [
+                {
+                    image: winesBanner,
+                    title: 'Get delicious wines',
+                    description: 'Place your order now to get delicious wines delivered to your door',
+                    link: 'Shop rosé prosecco'
+                },
+                {
+                    image: specialWineBanner,
+                    title: 'Wines delivered to your door',
+                    description: 'Place your order now to get delicious wines delivered to your door',
+                    link: 'Shop more wine'
+                }
+            ],
+            buttonLabel: 'More In Food'
+        },
         subCategories: [
             {
                 title: 'Celebration Cakes',
