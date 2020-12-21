@@ -9,7 +9,7 @@ import {
 
 import Logo from './Logo'
 import Search from './Search'
-import Menu from './Menu'
+import Menu, { menuCategories } from './Menu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts from './PromoProducts'
 import PromoDeals from './PromoDeals'
@@ -22,12 +22,6 @@ import {
 } from './HelpButtons'
 
 import HomePage from './HomePage'
-
-const menuCategories = [
-    { title: 'Title1', subCategories: ['Category1', 'Category2', 'Category3'] },
-    { title: 'Title2', subCategories: ['Category4', 'Category5', 'Category6'] }
-]
-
 
 const promoProducts = [
     {
