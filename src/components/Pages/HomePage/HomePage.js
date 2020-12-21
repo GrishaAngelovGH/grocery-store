@@ -10,7 +10,7 @@ import Search from './Search'
 import Menu, { menuCategories } from './Menu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts, { promoProductItems } from './PromoProducts'
-import PromoDeals from './PromoDeals'
+import PromoDeals, { promoDealItems } from './PromoDeals'
 import HelpLinks from './HelpLinks'
 import {
     DeliveryButton,
@@ -19,34 +19,6 @@ import {
 } from './HelpButtons'
 
 import './HomePage.scss'
-
-const promoDeals = [
-    {
-        category: 'offers',
-        description: 'see all offers',
-        linkTitle: 'Shop now'
-    },
-    {
-        category: 'women',
-        description: '30% off selected womenswear',
-        linkTitle: 'Shop the offer'
-    },
-    {
-        category: 'lingerie',
-        description: '30% off selected nightwear',
-        linkTitle: 'Shop the offer'
-    },
-    {
-        category: 'men',
-        description: '2 for £60 on lambswool jumpers',
-        linkTitle: 'Shop the offer'
-    },
-    {
-        category: 'women',
-        description: '30% of boots',
-        linkTitle: 'Shop the offer'
-    }
-]
 
 class HomePage extends Component {
     state = {
@@ -147,7 +119,7 @@ class HomePage extends Component {
 
                     <PromoProducts products={promoProductItems} />
 
-                    <PromoDeals promoDeals={promoDeals} />
+                    <PromoDeals promoDeals={promoDealItems} />
                 </div>
             </div>
         )
