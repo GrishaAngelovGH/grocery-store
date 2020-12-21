@@ -2,17 +2,14 @@ import { Component } from 'react'
 import Sidebar from 'react-sidebar'
 import { User, ShoppingBag } from 'components/Icons'
 import {
-    groceryStoreBanner,
-    winesBanner,
-    specialWineBanner,
-    flowersBanner
+    groceryStoreBanner
 } from 'images'
 
 import Logo from './Logo'
 import Search from './Search'
 import Menu, { menuCategories } from './Menu'
 import FreeShoppingBanner from './FreeShoppingBanner'
-import PromoProducts from './PromoProducts'
+import PromoProducts, { promoProductItems } from './PromoProducts'
 import PromoDeals from './PromoDeals'
 import HelpLinks from './HelpLinks'
 import {
@@ -22,27 +19,6 @@ import {
 } from './HelpButtons'
 
 import './HomePage.scss'
-
-const promoProducts = [
-    {
-        image: winesBanner,
-        imageLabel: 'Special offers',
-        description: 'Save up to 1/3 on selected wines',
-        linkTitle: 'Shop wine by the case'
-    },
-    {
-        image: specialWineBanner,
-        imageLabel: 'Limited offers',
-        description: 'Save up to 20% on selected wines',
-        linkTitle: 'Shop wine by the case'
-    },
-    {
-        image: flowersBanner,
-        imageLabel: 'Free delivery',
-        description: 'Save £5 on selected bouquets',
-        linkTitle: 'Shop now'
-    }
-]
 
 const promoDeals = [
     {
@@ -169,7 +145,7 @@ class HomePage extends Component {
 
                     <FreeShoppingBanner />
 
-                    <PromoProducts products={promoProducts} />
+                    <PromoProducts products={promoProductItems} />
 
                     <PromoDeals promoDeals={promoDeals} />
                 </div>
