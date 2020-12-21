@@ -128,7 +128,7 @@ describe('(Component) Menu', () => {
                     </nav>
 
                     <div className='row no-gutters justify-content-center subcategories'>
-                        <div className='col-md-11 d-flex justify-content-between border bg-white'>
+                        <div className='col-md-11 d-flex border bg-white'>
                             <div className='subcategory m-2'>
                                 <div className='small font-weight-bold'>
                                     SubCategory11
