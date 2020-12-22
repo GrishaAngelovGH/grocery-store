@@ -20,6 +20,15 @@ import youtubeIcon from './youtube-icon.svg'
 import appStoreLogo from './app-store.svg'
 import googlePlayStoreLogo from './google-play-store.svg'
 
+import cookiesAndCreamCake from './cookies-and-cream-cake.png'
+import dribbleCake from './dribble-cake.png'
+import flowerFestivalTulipCake from './flower-festival-tulip-cake.png'
+import milkChocolateLayersCake from './milk-chocolate-layers-cake.png'
+import rainbowLayersCake from './rainbow-layers-cake.png'
+import tripleLayerCake from './triple-layer-cake.png'
+import trueLoveCake from './true-love-cake.png'
+import vanillaCake from './vanilla-cake.png'
+
 const socialNetworkIcons = {
     facebookIcon,
     instagramIcon,
@@ -28,6 +37,17 @@ const socialNetworkIcons = {
     youtubeIcon,
     appStoreLogo,
     googlePlayStoreLogo
+}
+
+const cakeProductCategory = {
+    cookiesAndCreamCake,
+    dribbleCake,
+    flowerFestivalTulipCake,
+    milkChocolateLayersCake,
+    rainbowLayersCake,
+    tripleLayerCake,
+    trueLoveCake,
+    vanillaCake
 }
 
 export {
@@ -41,5 +61,6 @@ export {
     specialWineBanner,
     flowersBanner,
     promoBanner,
-    socialNetworkIcons
+    socialNetworkIcons,
+    cakeProductCategory
 }
