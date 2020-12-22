@@ -8,7 +8,7 @@ const HelpButton = ({ icon, label }) => (
 )
 
 HelpButton.propTypes = {
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.object.isRequired,
     label: PropTypes.string.isRequired
 }
 
