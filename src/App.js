@@ -21,7 +21,7 @@ function App() {
           }
         />
 
-        <Route path='/category/:id' children={<ProductCategory />} />
+        <Route path='/category/:id' children={props => <ProductCategory {...props} />} />
       </Switch>
     </Router>
   )
