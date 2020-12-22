@@ -1,3 +1,3 @@
-import ProductCategory from './ProductCategory'
+import ProductCategoryContainer from './ProductCategoryContainer'
 
-export default ProductCategory
+export default ProductCategoryContainer
