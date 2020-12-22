@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import FeatureMenu from './FeatureMenu'
@@ -57,9 +58,15 @@ class Menu extends Component {
                                                     {v.title}
                                                 </div>
                                                 {
-                                                    v.categories.map(value => (
-                                                        <div key={value} className='small'>{value}</div>
-                                                    ))
+                                                    v.categories.map(value => {
+                                                        const categoryLink = value.toLowerCase().split(' ').join('-')
+
+                                                        return (
+                                                            <Link key={value} className='small d-block' to={'category/' + categoryLink}>
+                                                                {value}
+                                                            </Link>
+                                                        )
+                                                    })
                                                 }
                                             </div>
                                         ))

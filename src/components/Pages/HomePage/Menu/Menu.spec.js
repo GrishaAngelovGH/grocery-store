@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import FeatureMenu from './FeatureMenu'
 import Menu from './Menu'
 
@@ -36,7 +38,7 @@ describe('(Component) Menu', () => {
                 {
                     title: 'SubCategory11',
                     categories: [
-                        'category33', 'category44'
+                        'some category', 'category44'
                     ]
                 }
             ]
@@ -133,8 +135,8 @@ describe('(Component) Menu', () => {
                                 <div className='small font-weight-bold'>
                                     SubCategory11
                                 </div>
-                                <div className='small'>category33</div>
-                                <div className='small'>category44</div>
+                                <Link className='small d-block' to='category/some-category'>some category</Link>
+                                <Link className='small d-block' to='category/category44'>category44</Link>
                             </div>
                             <FeatureMenu items={featureMenu.items} buttonLabel={featureMenu.buttonLabel} />
                         </div>
