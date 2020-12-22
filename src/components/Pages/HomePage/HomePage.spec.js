@@ -10,6 +10,7 @@ import {
 import Logo from './Logo'
 import Search from './Search'
 import Menu, { menuCategories } from './Menu'
+import SidebarMenu from './SidebarMenu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts from './PromoProducts'
 import PromoDeals from './PromoDeals'
@@ -211,13 +212,18 @@ describe('(Component) HomePage', () => {
 
                     <Sidebar
                         rootClassName='position-fixed sidebar-container'
-                        sidebar={<div>content</div>}
+                        sidebar={
+                            <SidebarMenu
+                                categories={menuCategories}
+                                onSidebarOpen={wrapper.instance().handleSidebarOpen}
+                            />
+                        }
                         open={true}
                         onSetOpen={wrapper.instance().handleSidebarOpen}
                         styles={{
                             sidebar: {
                                 background: 'white',
-                                width: 150
+                                width: 250
                             }
                         }}
                     >

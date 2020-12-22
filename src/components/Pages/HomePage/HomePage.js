@@ -8,6 +8,7 @@ import {
 import Logo from './Logo'
 import Search from './Search'
 import Menu, { menuCategories } from './Menu'
+import SidebarMenu from './SidebarMenu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts, { promoProductItems } from './PromoProducts'
 import PromoDeals, { promoDealItems } from './PromoDeals'
@@ -84,13 +85,18 @@ class HomePage extends Component {
                         this.state.sidebarOpen && (
                             <Sidebar
                                 rootClassName='position-fixed sidebar-container'
-                                sidebar={<div>content</div>}
+                                sidebar={
+                                    <SidebarMenu
+                                        categories={menuCategories}
+                                        onSidebarOpen={this.handleSidebarOpen}
+                                    />
+                                }
                                 open={this.state.sidebarOpen}
                                 onSetOpen={this.handleSidebarOpen}
                                 styles={{
                                     sidebar: {
                                         background: 'white',
-                                        width: 150
+                                        width: 250
                                     }
                                 }}
                             >

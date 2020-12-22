@@ -22,7 +22,7 @@ class SidebarMenu extends Component {
 
         return (
             <div>
-                <div className='d-flex border-bottom'>
+                <div className='d-flex border-bottom justify-content-between'>
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>

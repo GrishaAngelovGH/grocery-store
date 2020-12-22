@@ -59,7 +59,7 @@ describe('(Component) SidebarMenu', () => {
     it('should render component', () => {
         expect(wrapper.equals(
             <div>
-                <div className='d-flex border-bottom'>
+                <div className='d-flex border-bottom justify-content-between'>
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
@@ -96,7 +96,7 @@ describe('(Component) SidebarMenu', () => {
 
         expect(wrapper.equals(
             <div>
-                <div className='d-flex border-bottom'>
+                <div className='d-flex border-bottom justify-content-between'>
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
@@ -133,7 +133,7 @@ describe('(Component) SidebarMenu', () => {
 
         expect(wrapper.equals(
             <div>
-                <div className='d-flex border-bottom'>
+                <div className='d-flex border-bottom justify-content-between'>
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
@@ -168,7 +168,7 @@ describe('(Component) SidebarMenu', () => {
 
         expect(wrapper.equals(
             <div>
-                <div className='d-flex border-bottom'>
+                <div className='d-flex border-bottom justify-content-between'>
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
