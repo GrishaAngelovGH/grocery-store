@@ -1,3 +1,5 @@
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+
 import Layout from 'components/Layout'
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
@@ -10,11 +12,21 @@ describe('(Component) App', () => {
     const wrapper = shallow(<App />)
 
     expect(wrapper.equals(
-      <Layout
-        header={<HeaderBar />}
-        body={<HomePage />}
-        footer={<Footer />}
-      />
+      <Router>
+        <Switch>
+          <Route
+            exact
+            path='/'
+            children={
+              <Layout
+                header={<HeaderBar />}
+                body={<HomePage />}
+                footer={<Footer />}
+              />
+            }
+          />
+        </Switch>
+      </Router>
     )).to.equal(true)
   })
 })
