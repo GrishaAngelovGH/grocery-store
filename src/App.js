@@ -2,7 +2,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
-import HomePage from 'components/Pages/HomePage'
+import { HomePage, ProductCategory } from 'components/Pages'
 import Layout from 'components/Layout'
 
 function App() {
@@ -20,6 +20,8 @@ function App() {
             />
           }
         />
+
+        <Route path='/category/:id' children={<ProductCategory />} />
       </Switch>
     </Router>
   )

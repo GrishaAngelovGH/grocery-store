@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import Layout from 'components/Layout'
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
-import HomePage from 'components/Pages/HomePage'
+import { HomePage, ProductCategory } from 'components/Pages'
 
 import App from './App'
 
@@ -25,6 +25,8 @@ describe('(Component) App', () => {
               />
             }
           />
+
+          <Route path='/category/:id' children={<ProductCategory />} />
         </Switch>
       </Router>
     )).to.equal(true)
