@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import Logo from 'components/Pages/HomePage/Logo'
 import { Delete, ChevronLeft } from 'components/Icons'
 
@@ -38,7 +40,7 @@ describe('(Component) SidebarMenu', () => {
                 {
                     title: 'Title2',
                     categories: [
-                        'Category2-1'
+                        'Some Category'
                     ]
                 }
             ]
@@ -118,9 +120,9 @@ describe('(Component) SidebarMenu', () => {
                     <div className='bg-secondary text-white p-2 text-center'>
                         Title2
                     </div>
-                    <div className='border-bottom text-secondary m-2'>
-                        Category2-1
-                    </div>
+                    <Link to='category/some-category' className='border-bottom text-secondary m-2 d-block'>
+                        Some Category
+                    </Link>
                 </div>
             </div>
         )).to.equal(true)
@@ -148,16 +150,16 @@ describe('(Component) SidebarMenu', () => {
                     </div>
                     <div className='bg-dark text-center text-white p-2'>
                         Category1
-                        </div>
+                    </div>
                 </div>
 
                 <div>
                     <div className='bg-secondary text-white p-2 text-center'>
                         Title1
-                        </div>
-                    <div className='border-bottom text-secondary m-2'>
+                    </div>
+                    <Link to='category/category1-1' className='border-bottom text-secondary m-2 d-block'>
                         Category1-1
-                        </div>
+                    </Link>
                 </div>
             </div>
         )).to.equal(true)

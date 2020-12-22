@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Logo from 'components/Pages/HomePage/Logo'
@@ -61,11 +62,19 @@ class SidebarMenu extends Component {
                                 {v.title}
                             </div>
                             {
-                                v.categories.map(v => (
-                                    <div key={v} className='border-bottom text-secondary m-2'>
-                                        {v}
-                                    </div>
-                                ))
+                                v.categories.map(v => {
+                                    const categoryLink = v.toLowerCase().split(' ').join('-')
+
+                                    return (
+                                        <Link
+                                            key={v}
+                                            to={'category/' + categoryLink}
+                                            className='border-bottom text-secondary m-2 d-block'
+                                        >
+                                            {v}
+                                        </Link>
+                                    )
+                                })
                             }
                         </div>
                     ))
