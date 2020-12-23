@@ -7,7 +7,7 @@ import {
     flowersBanner
 } from 'images'
 
-import Logo from './Logo'
+import { Logo } from '../PageComponents'
 import Search from './Search'
 import Menu, { menuCategories } from './Menu'
 import SidebarMenu from './SidebarMenu'

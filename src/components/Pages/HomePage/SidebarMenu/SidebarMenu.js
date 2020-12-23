@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import Logo from 'components/Pages/HomePage/Logo'
+import { Logo } from 'components/Pages/PageComponents'
 import { Delete, ChevronLeft } from 'components/Icons'
 
 class SidebarMenu extends Component {

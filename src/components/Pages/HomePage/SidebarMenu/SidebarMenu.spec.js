@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import Logo from 'components/Pages/HomePage/Logo'
+import { Logo } from 'components/Pages/PageComponents'
 import { Delete, ChevronLeft } from 'components/Icons'
 
 import SidebarMenu from './SidebarMenu'
