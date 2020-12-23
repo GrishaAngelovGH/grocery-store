@@ -5,9 +5,8 @@ import {
     groceryStoreBanner
 } from 'images'
 
-import { Logo, Search } from '../PageComponents'
+import { Logo, Search, SidebarMenu } from '../PageComponents'
 import Menu, { menuCategories } from '../PageComponents/Menu'
-import SidebarMenu from './SidebarMenu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts, { promoProductItems } from './PromoProducts'
 import PromoDeals, { promoDealItems } from './PromoDeals'

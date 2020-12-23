@@ -7,9 +7,8 @@ import {
     flowersBanner
 } from 'images'
 
-import { Logo, Search } from '../PageComponents'
+import { Logo, Search, SidebarMenu } from '../PageComponents'
 import Menu, { menuCategories } from '../PageComponents/Menu'
-import SidebarMenu from './SidebarMenu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts from './PromoProducts'
 import PromoDeals from './PromoDeals'
