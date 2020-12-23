@@ -1,4 +1,7 @@
 import { Component } from 'react'
+import ProductItem from './ProductItem'
+
+import HeaderSection from '../PageComponents/HeaderSection'
 class ProductCategory extends Component {
     componentDidMount() {
         const { match, fetchAllItemsByCategory } = this.props
@@ -9,8 +12,31 @@ class ProductCategory extends Component {
     }
 
     render() {
+        const { items } = this.props
+
         return (
-            <div>product category</div>
+            <div className='row no-gutters'>
+                <div className='col-md-12'>
+                    <HeaderSection />
+
+                    <div className='row no-gutters'>
+                        {
+                            items.map(v => (
+                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
+                                    <ProductItem
+                                        image={v.image}
+                                        imageLabel={v.label}
+                                        description={v.name}
+                                        price={v.price}
+                                        rating={v.rating}
+                                    />
+                                </div>
+                            ))
+                        }
+
+                    </div>
+                </div>
+            </div>
         )
     }
 }
