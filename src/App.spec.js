@@ -26,7 +26,15 @@ describe('(Component) App', () => {
             }
           />
 
-          <Route path='/category/:id' children={props => <ProductCategory {...props} />} />
+          <Route path='/category/:id' children={
+            props => (
+              <Layout
+                header={<HeaderBar />}
+                body={<ProductCategory {...props} />}
+                footer={<Footer />}
+              />
+            )}
+          />
         </Switch>
       </Router>
     )).to.equal(true)
