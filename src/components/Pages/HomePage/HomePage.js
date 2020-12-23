@@ -6,7 +6,7 @@ import {
 } from 'images'
 
 import { Logo, Search } from '../PageComponents'
-import Menu, { menuCategories } from './Menu'
+import Menu, { menuCategories } from '../PageComponents/Menu'
 import SidebarMenu from './SidebarMenu'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts, { promoProductItems } from './PromoProducts'
