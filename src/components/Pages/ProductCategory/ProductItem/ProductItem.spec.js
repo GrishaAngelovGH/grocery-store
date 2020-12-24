@@ -4,9 +4,14 @@ import ReactStars from 'react-stars'
 import ProductItem from './ProductItem'
 
 describe('(Component) ProductItem', () => {
-    it('should render component', () => {
-        const wrapper = shallow(
+    let wrapper, addItemToShoppingCart
+
+    beforeEach(() => {
+        addItemToShoppingCart = sinon.spy()
+
+        wrapper = shallow(
             <ProductItem
+                addItemToShoppingCart={addItemToShoppingCart}
                 image={'triple-layer-cake'}
                 imageLabel={'label'}
                 description={'description'}
@@ -14,7 +19,9 @@ describe('(Component) ProductItem', () => {
                 rating={4}
             />
         )
+    })
 
+    it('should render component', () => {
         expect(wrapper.equals(
             <div className='m-3'>
                 <div className='d-flex align-items-end'>
@@ -34,10 +41,27 @@ describe('(Component) ProductItem', () => {
                     color2={'#ffd700'}
                 />
 
-                <button type='button' className='btn btn-success btn-block'>
+                <button
+                    type='button'
+                    onClick={wrapper.instance().handleAddToCartClick}
+                    className='btn btn-success btn-block'
+                >
                     Add To Bag
-        </button>
+                </button>
             </div>
         )).to.equal(true)
+    })
+
+    it('should handle add to cart click', () => {
+        const button = wrapper.find('button')
+
+        button.simulate('click')
+
+        addItemToShoppingCart.should.have.been.calledOnce
+        addItemToShoppingCart.should.have.been.calledWith({
+            description: "description",
+            image: "triple-layer-cake",
+            price: "£30.00"
+        })
     })
 })

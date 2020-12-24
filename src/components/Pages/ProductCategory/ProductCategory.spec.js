@@ -4,7 +4,7 @@ import HeaderSection from '../PageComponents/HeaderSection'
 import ProductCategory from './ProductCategory'
 
 describe('(Component) ProductCategory', () => {
-    let wrapper, fetchAllItemsByCategory
+    let wrapper, fetchAllItemsByCategory, addItemToShoppingCart
 
     const items = [
         {
@@ -19,12 +19,14 @@ describe('(Component) ProductCategory', () => {
 
     beforeEach(() => {
         fetchAllItemsByCategory = sinon.spy()
+        addItemToShoppingCart = sinon.spy()
 
         wrapper = shallow(
             <ProductCategory
                 items={items}
                 match={{ params: { id: 'category-1' } }}
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
+                addItemToShoppingCart={addItemToShoppingCart}
             />
         )
     })
@@ -42,6 +44,7 @@ describe('(Component) ProductCategory', () => {
                                 description={items[0].name}
                                 price={items[0].price}
                                 rating={items[0].rating}
+                                addItemToShoppingCart={addItemToShoppingCart}
                             />
                         </div>
                     </div>

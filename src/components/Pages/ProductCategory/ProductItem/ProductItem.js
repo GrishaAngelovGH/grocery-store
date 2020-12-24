@@ -1,29 +1,52 @@
-import { cakeProductCategory } from 'images'
+import { Component } from 'react'
 import ReactStars from 'react-stars'
 
-const ProductItem = ({ image, imageLabel, description, price, rating }) => (
-    <div className='m-3'>
-        <div className='d-flex align-items-end'>
-            <span className='promo-img-label'>{imageLabel}</span>
-            <img src={cakeProductCategory[image]} width={250} height={300} />
-        </div>
+import { cakeProductCategory } from 'images'
+class ProductItem extends Component {
+    handleAddToCartClick = () => {
+        const { addItemToShoppingCart } = this.props
 
-        <div>{description}</div>
+        const { image, description, price } = this.props
 
-        <div>{price}</div>
+        addItemToShoppingCart({
+            image,
+            description,
+            price
+        })
+    }
 
-        <ReactStars
-            count={5}
-            edit={false}
-            value={rating}
-            size={24}
-            color2={'#ffd700'}
-        />
+    render() {
+        const { image, imageLabel, description, price, rating } = this.props
 
-        <button type='button' className='btn btn-success btn-block'>
-            Add To Bag
-        </button>
-    </div>
-)
+        return (
+            <div className='m-3'>
+                <div className='d-flex align-items-end'>
+                    <span className='promo-img-label'>{imageLabel}</span>
+                    <img src={cakeProductCategory[image]} width={250} height={300} />
+                </div>
+
+                <div>{description}</div>
+
+                <div>{price}</div>
+
+                <ReactStars
+                    count={5}
+                    edit={false}
+                    value={rating}
+                    size={24}
+                    color2={'#ffd700'}
+                />
+
+                <button
+                    type='button'
+                    onClick={this.handleAddToCartClick}
+                    className='btn btn-success btn-block'
+                >
+                    Add To Bag
+                </button>
+            </div>
+        )
+    }
+}
 
 export default ProductItem

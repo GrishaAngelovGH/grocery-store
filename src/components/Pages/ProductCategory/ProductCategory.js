@@ -12,7 +12,7 @@ class ProductCategory extends Component {
     }
 
     render() {
-        const { items } = this.props
+        const { items, addItemToShoppingCart } = this.props
 
         return (
             <div className='row no-gutters'>
@@ -29,6 +29,7 @@ class ProductCategory extends Component {
                                         description={v.name}
                                         price={v.price}
                                         rating={v.rating}
+                                        addItemToShoppingCart={addItemToShoppingCart}
                                     />
                                 </div>
                             ))
