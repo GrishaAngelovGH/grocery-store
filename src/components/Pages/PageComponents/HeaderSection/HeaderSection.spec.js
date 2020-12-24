@@ -1,11 +1,13 @@
 import Sidebar from 'react-sidebar'
 import { NotificationContainer } from 'react-notifications'
-import { User, ShoppingBag } from 'components/Icons'
 
 import Logo from './Logo'
 import Search from './Search'
 import SidebarMenu from './SidebarMenu'
+import ShoppingBag from './ShoppingBag'
 import Menu, { menuCategories } from './Menu'
+
+import { User } from 'components/Icons'
 
 import HeaderSection from './HeaderSection'
 
@@ -31,7 +33,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -51,7 +53,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
 
@@ -92,7 +94,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -112,7 +114,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
 

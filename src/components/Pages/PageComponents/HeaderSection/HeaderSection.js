@@ -7,8 +7,9 @@ import Logo from './Logo'
 import Search from './Search'
 import SidebarMenu from './SidebarMenu'
 import Menu, { menuCategories } from './Menu'
+import ShoppingBag from './ShoppingBag'
 
-import { User, ShoppingBag } from 'components/Icons'
+import { User } from 'components/Icons'
 
 import './HeaderSection.scss'
 
@@ -41,7 +42,7 @@ class HeaderSection extends Component {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -61,7 +62,7 @@ class HeaderSection extends Component {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag count={0} />
+                            <ShoppingBag />
                         </div>
                     </div>
 
