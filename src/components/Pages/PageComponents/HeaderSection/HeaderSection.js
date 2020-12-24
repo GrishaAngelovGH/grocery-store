@@ -1,11 +1,13 @@
 import { Component } from 'react'
 
+import Sidebar from 'react-sidebar'
+import { NotificationContainer } from 'react-notifications'
+
 import Logo from './Logo'
 import Search from './Search'
 import SidebarMenu from './SidebarMenu'
 import Menu, { menuCategories } from './Menu'
 
-import Sidebar from 'react-sidebar'
 import { User, ShoppingBag } from 'components/Icons'
 
 import './HeaderSection.scss'
@@ -23,6 +25,8 @@ class HeaderSection extends Component {
 
         return (
             <div>
+                <NotificationContainer />
+
                 {/* Desktop */}
                 <div className='d-none d-lg-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-md-1'>

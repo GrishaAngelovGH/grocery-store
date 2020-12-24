@@ -1,4 +1,5 @@
 import Sidebar from 'react-sidebar'
+import { NotificationContainer } from 'react-notifications'
 import { User, ShoppingBag } from 'components/Icons'
 
 import Logo from './Logo'
@@ -8,12 +9,14 @@ import Menu, { menuCategories } from './Menu'
 
 import HeaderSection from './HeaderSection'
 
-describe('(Component) HomePage', () => {
+describe('(Component) HeaderSection', () => {
     it('should render component', () => {
         const wrapper = shallow(<HeaderSection />)
 
         expect(wrapper.equals(
             <div>
+                <NotificationContainer />
+
                 {/* Desktop */}
                 <div className='d-none d-lg-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-md-1'>
@@ -73,6 +76,8 @@ describe('(Component) HomePage', () => {
 
         expect(wrapper.equals(
             <div>
+                <NotificationContainer />
+
                 {/* Desktop */}
                 <div className='d-none d-lg-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-md-1'>

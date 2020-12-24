@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import ReactStars from 'react-stars'
+import { NotificationManager } from 'react-notifications'
 
 import { cakeProductCategory } from 'images'
 class ProductItem extends Component {
@@ -13,6 +14,8 @@ class ProductItem extends Component {
             description,
             price
         })
+
+        NotificationManager.success('Item Added To Shopping Cart')
     }
 
     render() {
