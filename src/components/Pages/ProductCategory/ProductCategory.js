@@ -1,6 +1,7 @@
 import { Component } from 'react'
-import ProductItem from './ProductItem'
+import PropTypes from 'prop-types'
 
+import ProductItem from './ProductItem'
 import HeaderSection from '../PageComponents/HeaderSection'
 class ProductCategory extends Component {
     componentDidMount() {
@@ -40,6 +41,11 @@ class ProductCategory extends Component {
             </div>
         )
     }
+}
+
+ProductCategory.propTypes = {
+    items: PropTypes.array.isRequired,
+    fetchAllItemsByCategory: PropTypes.func.isRequired
 }
 
 export default ProductCategory

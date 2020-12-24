@@ -1,4 +1,6 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import ReactStars from 'react-stars'
 import { NotificationManager } from 'react-notifications'
 
@@ -50,6 +52,14 @@ class ProductItem extends Component {
             </div>
         )
     }
+}
+
+ProductItem.propTypes = {
+    image: PropTypes.string.isRequired,
+    imageLabel: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired
 }
 
 export default ProductItem
