@@ -19,7 +19,7 @@ class ProductItem extends Component {
             qty: 1
         })
 
-        NotificationManager.success('Item Added To Shopping Cart')
+        NotificationManager.success('Item Added To Shopping Cart', '', 1000)
     }
 
     render() {
