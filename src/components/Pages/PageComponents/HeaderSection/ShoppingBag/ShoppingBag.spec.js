@@ -7,13 +7,25 @@ import ShoppingBagItems from './ShoppingBagItems'
 describe('(Component) ShoppingBag', () => {
     it('should render component', () => {
         const items = [{ qty: 1 }, { qty: 2 }]
-        const wrapper = shallow(<ShoppingBag items={items} />)
+        const removeItemFromShoppingCart = sinon.spy()
+
+        const wrapper = shallow(
+            <ShoppingBag
+                items={items}
+                removeItemFromShoppingCart={removeItemFromShoppingCart}
+            />
+        )
 
         expect(wrapper.equals(
             <Tooltip
                 placement='bottom'
                 trigger={['hover']}
-                overlay={<ShoppingBagItems items={items} />}
+                overlay={
+                    <ShoppingBagItems
+                        items={items}
+                        removeItemFromShoppingCart={removeItemFromShoppingCart}
+                    />
+                }
             >
                 <div>
                     <ShoppingBagIcon count={3} />

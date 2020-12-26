@@ -8,7 +8,7 @@ import ShoppingBagItems from './ShoppingBagItems'
 
 import './ShoppingBag.scss'
 
-const ShoppingBag = ({ items }) => {
+const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
     let itemsCount = 0
 
     items.forEach(v => {
@@ -19,7 +19,12 @@ const ShoppingBag = ({ items }) => {
         <Tooltip
             placement='bottom'
             trigger={['hover']}
-            overlay={<ShoppingBagItems items={items} />}
+            overlay={
+                <ShoppingBagItems
+                    items={items}
+                    removeItemFromShoppingCart={removeItemFromShoppingCart}
+                />
+            }
         >
             <div>
                 <ShoppingBagIcon count={itemsCount} />

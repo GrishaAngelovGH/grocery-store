@@ -1,5 +1,6 @@
-import { addItemToShoppingCart } from './shoppingCart'
+import { addItemToShoppingCart, removeItemFromShoppingCart } from './shoppingCart'
 
 export {
-    addItemToShoppingCart
+    addItemToShoppingCart,
+    removeItemFromShoppingCart
 }

@@ -1,24 +1,19 @@
-import { cakeProductCategory } from 'images'
-
+import ShoppingBagItem from './ShoppingBagItem'
 import './ShoppingBagItems.scss'
 
-const ShoppingBagItems = ({ items }) => (
+const ShoppingBagItems = ({ items, removeItemFromShoppingCart }) => (
     <div className='shopping-bag-items'>
         {
             items.map(v => (
-                <div key={v.description} className='d-flex p-3'>
-                    <img src={cakeProductCategory[v.image]} width={100} height={100} />
-
-                    <div className='d-flex flex-column ml-3 font-weight-bold'>
-                        <div>{v.description}</div>
-                        <div>{v.price}</div>
-
-                        <div className='d-flex flex-column font-weight-bold mt-4'>
-                            <div>Qty: {v.qty}</div>
-                            <div>Remove</div>
-                        </div>
-                    </div>
-                </div>
+                <ShoppingBagItem
+                    key={v.id}
+                    id={v.id}
+                    image={v.image}
+                    description={v.description}
+                    price={v.price}
+                    qty={v.qty}
+                    removeItemFromShoppingCart={removeItemFromShoppingCart}
+                />
             ))
         }
     </div>

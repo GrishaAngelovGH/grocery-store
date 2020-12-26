@@ -27,6 +27,25 @@ describe('(Reducer) shoppingCart', () => {
         expect(newState).to.eql({ cartItems: [{ id: 1, qty: 2 }] })
     })
 
+    it('should remove item from shoppingCart', () => {
+        const state = {
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 1 }
+            ]
+        }
+
+        const action = {
+            type: 'REMOVE_ITEM_FROM_SHOPPING_CART',
+            id: 2
+        }
+
+        const newState = shoppingCart(state, action)
+
+        expect(newState).to.eql({ cartItems: [{ id: 1, qty: 1 }, { id: 3, qty: 1 }] })
+    })
+
     it('should return old state when action type is mismatched', () => {
         const state = { cartItems: ['item1'] }
 

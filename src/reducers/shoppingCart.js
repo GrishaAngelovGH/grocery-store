@@ -30,9 +30,17 @@ const addItemToShoppingCartHandler = (state, { item }) => {
     }
 }
 
+const removeItemFromShoppingCartHandler = (state, { id }) => {
+    return {
+        ...state,
+        cartItems: [...state.cartItems].filter(v => v.id !== id)
+    }
+}
+
 export default (state = initialState, action) => {
     const handlers = {
-        'ADD_ITEM_TO_SHOPPING_CART': addItemToShoppingCartHandler
+        'ADD_ITEM_TO_SHOPPING_CART': addItemToShoppingCartHandler,
+        'REMOVE_ITEM_FROM_SHOPPING_CART': removeItemFromShoppingCartHandler
     }
 
     const handler = handlers[action.type]
