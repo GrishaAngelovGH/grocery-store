@@ -8,17 +8,25 @@ import ShoppingBagItems from './ShoppingBagItems'
 
 import './ShoppingBag.scss'
 
-const ShoppingBag = ({ items }) => (
-    <Tooltip
-        placement='bottom'
-        trigger={['hover']}
-        overlay={<ShoppingBagItems items={items} />}
-    >
-        <div>
-            <ShoppingBagIcon count={items.length} />
-        </div>
-    </Tooltip>
-)
+const ShoppingBag = ({ items }) => {
+    let itemsCount = 0
+
+    items.forEach(v => {
+        itemsCount += v.qty
+    })
+
+    return (
+        <Tooltip
+            placement='bottom'
+            trigger={['hover']}
+            overlay={<ShoppingBagItems items={items} />}
+        >
+            <div>
+                <ShoppingBagIcon count={itemsCount} />
+            </div>
+        </Tooltip>
+    )
+}
 
 ShoppingBag.propTypes = {
     items: PropTypes.array.isRequired

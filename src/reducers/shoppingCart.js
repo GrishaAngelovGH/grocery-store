@@ -3,12 +3,30 @@ const initialState = {
 }
 
 const addItemToShoppingCartHandler = (state, { item }) => {
+    let addedItem = [...state.cartItems].find(v => v.id === item.id)
+
+    if (!addedItem) {
+        return {
+            ...state,
+            cartItems: [
+                ...state.cartItems,
+                item
+            ]
+        }
+    }
+
     return {
         ...state,
-        cartItems: [
-            ...state.cartItems,
-            item
-        ]
+        cartItems: [...state.cartItems].map(v => {
+            if (v.id === item.id) {
+                return {
+                    ...addedItem,
+                    qty: addedItem.qty + 1
+                }
+            }
+
+            return v
+        })
     }
 }
 

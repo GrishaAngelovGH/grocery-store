@@ -25,6 +25,7 @@ class ProductCategory extends Component {
                             items.map(v => (
                                 <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
                                     <ProductItem
+                                        id={v.id}
                                         image={v.image}
                                         imageLabel={v.label}
                                         description={v.name}

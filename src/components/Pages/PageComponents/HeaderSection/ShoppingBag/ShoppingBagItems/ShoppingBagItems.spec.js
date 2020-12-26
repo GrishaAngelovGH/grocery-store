@@ -5,8 +5,8 @@ import ShoppingBagItems from './ShoppingBagItems'
 describe('(Component) ShoppingBagItems', () => {
     it('should render component', () => {
         const items = [
-            { image: 'cookiesAndCreamCake', description: 'description-1', price: 'price-1' },
-            { image: 'dribbleCake', description: 'description-2', price: 'price-2' }
+            { image: 'cookiesAndCreamCake', description: 'description-1', price: 'price-1', qty: 1 },
+            { image: 'dribbleCake', description: 'description-2', price: 'price-2', qty: 2 }
         ]
 
         const wrapper = shallow(<ShoppingBagItems items={items} />)
@@ -34,7 +34,7 @@ describe('(Component) ShoppingBagItems', () => {
                         <div>{items[1].price}</div>
 
                         <div className='d-flex flex-column font-weight-bold mt-4'>
-                            <div>Qty: 1</div>
+                            <div>Qty: 2</div>
                             <div>Remove</div>
                         </div>
                     </div>

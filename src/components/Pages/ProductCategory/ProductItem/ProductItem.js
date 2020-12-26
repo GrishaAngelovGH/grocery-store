@@ -9,12 +9,14 @@ class ProductItem extends Component {
     handleAddToCartClick = () => {
         const { addItemToShoppingCart } = this.props
 
-        const { image, description, price } = this.props
+        const { id, image, description, price } = this.props
 
         addItemToShoppingCart({
+            id,
             image,
             description,
-            price
+            price,
+            qty: 1
         })
 
         NotificationManager.success('Item Added To Shopping Cart')

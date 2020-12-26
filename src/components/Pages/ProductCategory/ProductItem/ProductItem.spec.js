@@ -11,6 +11,7 @@ describe('(Component) ProductItem', () => {
 
         wrapper = shallow(
             <ProductItem
+                id={1}
                 addItemToShoppingCart={addItemToShoppingCart}
                 image={'triple-layer-cake'}
                 imageLabel={'label'}
@@ -59,9 +60,11 @@ describe('(Component) ProductItem', () => {
 
         addItemToShoppingCart.should.have.been.calledOnce
         addItemToShoppingCart.should.have.been.calledWith({
-            description: "description",
-            image: "triple-layer-cake",
-            price: "£30.00"
+            id: 1,
+            description: 'description',
+            image: 'triple-layer-cake',
+            price: '£30.00',
+            qty: 1
         })
     })
 })

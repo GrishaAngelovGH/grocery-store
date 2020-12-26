@@ -14,7 +14,7 @@ const ShoppingBagItems = ({ items }) => (
                         <div>{v.price}</div>
 
                         <div className='d-flex flex-column font-weight-bold mt-4'>
-                            <div>Qty: 1</div>
+                            <div>Qty: {v.qty}</div>
                             <div>Remove</div>
                         </div>
                     </div>
