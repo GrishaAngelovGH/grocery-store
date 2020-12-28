@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Tooltip from 'rc-tooltip'
@@ -20,10 +21,22 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
             placement='bottom'
             trigger={['hover']}
             overlay={
-                <ShoppingBagItems
-                    items={items}
-                    removeItemFromShoppingCart={removeItemFromShoppingCart}
-                />
+                <div>
+                    <ShoppingBagItems
+                        items={items}
+                        removeItemFromShoppingCart={removeItemFromShoppingCart}
+                    />
+
+                    <div className='d-flex justify-content-around border-top p-2'>
+                        <Link to='/shopping-bag'>
+                            <button type='button' className='btn btn-outline-primary'>View Bag</button>
+                        </Link>
+
+                        <Link to='/checkout'>
+                            <button type='button' className='btn btn-outline-success'>Checkout</button>
+                        </Link>
+                    </div>
+                </div>
             }
         >
             <div>

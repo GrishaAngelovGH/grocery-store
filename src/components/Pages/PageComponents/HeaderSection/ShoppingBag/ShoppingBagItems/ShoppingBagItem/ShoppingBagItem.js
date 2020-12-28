@@ -13,9 +13,9 @@ class ShoppingBagItem extends Component {
 
         return (
             <div className='d-flex p-3'>
-                <img src={cakeProductCategory[image]} width={100} height={100} />
+                <img src={cakeProductCategory[image]} width={120} height={120} />
 
-                <div className='d-flex flex-column ml-3 font-weight-bold'>
+                <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>{description}</div>
                     <div>{price}</div>
 

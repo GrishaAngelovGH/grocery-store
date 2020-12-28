@@ -22,9 +22,9 @@ describe('(Component) ShoppingBagItem', () => {
     it('should render component', () => {
         expect(wrapper.equals(
             <div className='d-flex p-3'>
-                <img src={cakeProductCategory['vanillaCake']} width={100} height={100} />
+                <img src={cakeProductCategory['vanillaCake']} width={120} height={120} />
 
-                <div className='d-flex flex-column ml-3 font-weight-bold'>
+                <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>description-1</div>
                     <div>price-1</div>
 
