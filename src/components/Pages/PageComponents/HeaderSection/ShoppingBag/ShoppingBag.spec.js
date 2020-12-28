@@ -7,7 +7,7 @@ import ShoppingBag from './ShoppingBag'
 import ShoppingBagItems from './ShoppingBagItems'
 
 describe('(Component) ShoppingBag', () => {
-    it('should render component', () => {
+    it('should render component with provided items', () => {
         const items = [{ qty: 1 }, { qty: 2 }]
         const removeItemFromShoppingCart = sinon.spy()
 
@@ -44,6 +44,21 @@ describe('(Component) ShoppingBag', () => {
                     <ShoppingBagIcon count={3} />
                 </div>
             </Tooltip>
+        )).to.equal(true)
+    })
+
+    it('should render component without items', () => {
+        const removeItemFromShoppingCart = sinon.spy()
+
+        const wrapper = shallow(
+            <ShoppingBag
+                items={[]}
+                removeItemFromShoppingCart={removeItemFromShoppingCart}
+            />
+        )
+
+        expect(wrapper.equals(
+            <ShoppingBagIcon count={0} />
         )).to.equal(true)
     })
 })

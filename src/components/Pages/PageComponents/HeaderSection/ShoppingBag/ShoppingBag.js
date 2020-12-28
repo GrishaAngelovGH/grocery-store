@@ -16,6 +16,10 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
         itemsCount += v.qty
     })
 
+    if (!items.length) {
+        return <ShoppingBagIcon count={itemsCount} />
+    }
+
     return (
         <Tooltip
             placement='bottom'
