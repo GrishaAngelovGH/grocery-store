@@ -29,6 +29,7 @@ class ProductCategory extends Component {
                                         image={v.image}
                                         imageLabel={v.label}
                                         description={v.name}
+                                        currency={v.currency}
                                         price={v.price}
                                         rating={v.rating}
                                         addItemToShoppingCart={addItemToShoppingCart}

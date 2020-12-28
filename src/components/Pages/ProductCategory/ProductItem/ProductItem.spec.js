@@ -16,7 +16,8 @@ describe('(Component) ProductItem', () => {
                 image={'triple-layer-cake'}
                 imageLabel={'label'}
                 description={'description'}
-                price={'£30.00'}
+                currency={'£'}
+                price={30.00}
                 rating={4}
             />
         )
@@ -32,7 +33,7 @@ describe('(Component) ProductItem', () => {
 
                 <div>description</div>
 
-                <div>£30.00</div>
+                <div>{`£${30.00}`}</div>
 
                 <ReactStars
                     count={5}
@@ -63,7 +64,8 @@ describe('(Component) ProductItem', () => {
             id: 1,
             description: 'description',
             image: 'triple-layer-cake',
-            price: '£30.00',
+            currency: '£',
+            price: 30.00,
             qty: 1
         })
     })

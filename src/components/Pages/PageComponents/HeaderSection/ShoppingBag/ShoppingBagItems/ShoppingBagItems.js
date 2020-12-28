@@ -10,6 +10,7 @@ const ShoppingBagItems = ({ items, removeItemFromShoppingCart }) => (
                     id={v.id}
                     image={v.image}
                     description={v.description}
+                    currency={v.currency}
                     price={v.price}
                     qty={v.qty}
                     removeItemFromShoppingCart={removeItemFromShoppingCart}

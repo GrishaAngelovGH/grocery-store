@@ -4,8 +4,8 @@ import ShoppingBagItems from './ShoppingBagItems'
 describe('(Component) ShoppingBagItems', () => {
     it('should render component', () => {
         const items = [
-            { id: 1, image: 'cookiesAndCreamCake', description: 'description-1', price: 'price-1', qty: 1 },
-            { id: 2, image: 'dribbleCake', description: 'description-2', price: 'price-2', qty: 2 }
+            { id: 1, image: 'cookiesAndCreamCake', description: 'description-1', price: '£5', qty: 1 },
+            { id: 2, image: 'dribbleCake', description: 'description-2', price: '£10', qty: 2 }
         ]
 
         const removeItemFromShoppingCart = sinon.spy()

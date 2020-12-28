@@ -12,7 +12,8 @@ describe('(Component) ShoppingBagItem', () => {
                 id={'id-1'}
                 image={'vanillaCake'}
                 description={'description-1'}
-                price={'price-1'}
+                currency={'£'}
+                price={10}
                 qty={1}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
@@ -26,7 +27,7 @@ describe('(Component) ShoppingBagItem', () => {
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>description-1</div>
-                    <div>price-1</div>
+                    <div>£10</div>
 
                     <div className='d-flex flex-column font-weight-bold mt-3'>
                         <div>Qty: 1</div>

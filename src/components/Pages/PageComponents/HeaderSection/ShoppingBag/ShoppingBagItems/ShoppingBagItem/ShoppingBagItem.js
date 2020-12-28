@@ -9,7 +9,7 @@ class ShoppingBagItem extends Component {
     }
 
     render() {
-        const { image, description, price, qty } = this.props
+        const { image, description, currency, price, qty } = this.props
 
         return (
             <div className='d-flex p-3'>
@@ -17,7 +17,7 @@ class ShoppingBagItem extends Component {
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>{description}</div>
-                    <div>{price}</div>
+                    <div>{`${currency}${price}`}</div>
 
                     <div className='d-flex flex-column font-weight-bold mt-3'>
                         <div>Qty: {qty}</div>

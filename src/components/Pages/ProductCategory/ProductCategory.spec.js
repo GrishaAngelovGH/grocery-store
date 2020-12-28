@@ -12,7 +12,8 @@ describe('(Component) ProductCategory', () => {
             name: 'Cookies And Cream Cake',
             image: 'cookiesAndCreamCake',
             label: 'Collect in 5 days',
-            price: '£30.00',
+            currency: '£',
+            price: 30.00,
             rating: 4
         }
     ]
@@ -43,6 +44,7 @@ describe('(Component) ProductCategory', () => {
                                 image={items[0].image}
                                 imageLabel={items[0].label}
                                 description={items[0].name}
+                                currency={items[0].currency}
                                 price={items[0].price}
                                 rating={items[0].rating}
                                 addItemToShoppingCart={addItemToShoppingCart}

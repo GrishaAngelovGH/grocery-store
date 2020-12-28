@@ -9,12 +9,13 @@ class ProductItem extends Component {
     handleAddToCartClick = () => {
         const { addItemToShoppingCart } = this.props
 
-        const { id, image, description, price } = this.props
+        const { id, image, description, currency, price } = this.props
 
         addItemToShoppingCart({
             id,
             image,
             description,
+            currency,
             price,
             qty: 1
         })
@@ -23,7 +24,7 @@ class ProductItem extends Component {
     }
 
     render() {
-        const { image, imageLabel, description, price, rating } = this.props
+        const { image, imageLabel, description, currency, price, rating } = this.props
 
         return (
             <div className='m-3'>
@@ -34,7 +35,7 @@ class ProductItem extends Component {
 
                 <div>{description}</div>
 
-                <div>{price}</div>
+                <div>{`${currency}${price}`}</div>
 
                 <ReactStars
                     count={5}
@@ -60,7 +61,8 @@ ProductItem.propTypes = {
     image: PropTypes.string.isRequired,
     imageLabel: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired
 }
 
