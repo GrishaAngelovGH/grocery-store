@@ -135,8 +135,8 @@ describe('(Component) Menu', () => {
                                 <div className='small font-weight-bold'>
                                     SubCategory11
                                 </div>
-                                <Link className='small d-block' to='category/some-category'>some category</Link>
-                                <Link className='small d-block' to='category/category44'>category44</Link>
+                                <Link className='small d-block' to='/category/some-category'>some category</Link>
+                                <Link className='small d-block' to='/category/category44'>category44</Link>
                             </div>
                             <FeatureMenu items={featureMenu.items} buttonLabel={featureMenu.buttonLabel} />
                         </div>

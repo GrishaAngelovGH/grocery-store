@@ -59,10 +59,10 @@ class Menu extends Component {
                                                 </div>
                                                 {
                                                     v.categories.map(value => {
-                                                        const categoryLink = value.toLowerCase().split(' ').join('-')
+                                                        const categoryLink = `/category/${value.toLowerCase().split(' ').join('-')}`
 
                                                         return (
-                                                            <Link key={value} className='small d-block' to={'category/' + categoryLink}>
+                                                            <Link key={value} className='small d-block' to={categoryLink}>
                                                                 {value}
                                                             </Link>
                                                         )

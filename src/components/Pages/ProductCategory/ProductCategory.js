@@ -22,8 +22,8 @@ class ProductCategory extends Component {
 
                     <div className='row no-gutters'>
                         {
-                            items.map(v => (
-                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
+                            items.map((v, i) => (
+                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={i}>
                                     <ProductItem
                                         id={v.id}
                                         image={v.image}
