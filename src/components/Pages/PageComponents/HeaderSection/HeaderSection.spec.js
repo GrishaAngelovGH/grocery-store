@@ -4,7 +4,7 @@ import { NotificationContainer } from 'react-notifications'
 import Logo from './Logo'
 import Search from './Search'
 import SidebarMenu from './SidebarMenu'
-import ShoppingBag from './ShoppingBag'
+import MiniShoppingBag from './MiniShoppingBag'
 import Menu, { menuCategories } from './Menu'
 
 import { User } from 'components/Icons'
@@ -33,7 +33,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@ describe('(Component) HeaderSection', () => {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
 

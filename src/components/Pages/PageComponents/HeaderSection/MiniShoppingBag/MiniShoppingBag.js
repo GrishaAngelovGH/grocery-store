@@ -7,7 +7,7 @@ import 'rc-tooltip/assets/bootstrap.css'
 import { ShoppingBag as ShoppingBagIcon } from 'components/Icons'
 import ShoppingBagItems from './ShoppingBagItems'
 
-import './ShoppingBag.scss'
+import './MiniShoppingBag.scss'
 
 const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
     let itemsCount = 0

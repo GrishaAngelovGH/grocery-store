@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import ShoppingBagItem from './ShoppingBagItem'
 import ShoppingBag from './ShoppingBag'
 
-describe('(Component) Pages > ShoppingBag', () => {
+describe('(Component) ShoppingBag', () => {
     it('should render component', () => {
         const items = [
             {

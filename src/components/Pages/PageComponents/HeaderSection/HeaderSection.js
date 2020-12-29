@@ -7,7 +7,7 @@ import Logo from './Logo'
 import Search from './Search'
 import SidebarMenu from './SidebarMenu'
 import Menu, { menuCategories } from './Menu'
-import ShoppingBag from './ShoppingBag'
+import MiniShoppingBag from './MiniShoppingBag'
 
 import { User } from 'components/Icons'
 
@@ -42,7 +42,7 @@ class HeaderSection extends Component {
                             <User />
                         </div>
                         <div className='col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ class HeaderSection extends Component {
                             <User />
                         </div>
                         <div className='col-1 col-md-1'>
-                            <ShoppingBag />
+                            <MiniShoppingBag />
                         </div>
                     </div>
 

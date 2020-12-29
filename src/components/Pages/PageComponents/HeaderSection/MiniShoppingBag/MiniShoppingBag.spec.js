@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 import Tooltip from 'rc-tooltip'
 import { ShoppingBag as ShoppingBagIcon } from 'components/Icons'
 
-import ShoppingBag from './ShoppingBag'
 import ShoppingBagItems from './ShoppingBagItems'
+import MiniShoppingBag from './MiniShoppingBag'
 
-describe('(Component) ShoppingBag', () => {
+describe('(Component) MiniShoppingBag', () => {
     it('should render component with provided items', () => {
         const items = [{ qty: 1 }, { qty: 2 }]
         const removeItemFromShoppingCart = sinon.spy()
 
         const wrapper = shallow(
-            <ShoppingBag
+            <MiniShoppingBag
                 items={items}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
@@ -51,7 +51,7 @@ describe('(Component) ShoppingBag', () => {
         const removeItemFromShoppingCart = sinon.spy()
 
         const wrapper = shallow(
-            <ShoppingBag
+            <MiniShoppingBag
                 items={[]}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
