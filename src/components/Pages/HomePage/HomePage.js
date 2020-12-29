@@ -16,7 +16,7 @@ import {
 const HomePage = () => (
     <div className='row no-gutters'>
         <div className='col-md-12'>
-            <HeaderSection />
+            <HeaderSection disabledSearch />
 
             <HelpLinks />
 

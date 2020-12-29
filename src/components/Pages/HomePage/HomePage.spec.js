@@ -24,7 +24,7 @@ describe('(Component) HomePage', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection />
+                    <HeaderSection disabledSearch />
 
                     <HelpLinks />
 

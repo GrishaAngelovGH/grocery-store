@@ -13,7 +13,12 @@ import HeaderSection from './HeaderSection'
 
 describe('(Component) HeaderSection', () => {
     it('should render component', () => {
-        const wrapper = shallow(<HeaderSection />)
+        const wrapper = shallow(
+            <HeaderSection
+                disabledSearch={false}
+                selectedCategory={'selectedCategory'}
+            />
+        )
 
         expect(wrapper.equals(
             <div>
@@ -25,7 +30,7 @@ describe('(Component) HeaderSection', () => {
                         <Logo />
                     </div>
                     <div className='col-md-3'>
-                        <Search />
+                        <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
                     <div className='row justify-content-around align-items-center'>
@@ -58,7 +63,7 @@ describe('(Component) HeaderSection', () => {
                     </div>
 
                     <div className='col-8 col-md-10'>
-                        <Search />
+                        <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
                 </div>
 
@@ -70,8 +75,12 @@ describe('(Component) HeaderSection', () => {
     })
 
     it('should open Sidebar', () => {
-        const wrapper = shallow(<HeaderSection />)
-
+        const wrapper = shallow(
+            <HeaderSection
+                disabledSearch={false}
+                selectedCategory={'selectedCategory'}
+            />
+        )
         const menu = wrapper.find(Menu).first()
 
         menu.simulate('sidebarOpen')
@@ -86,7 +95,7 @@ describe('(Component) HeaderSection', () => {
                         <Logo />
                     </div>
                     <div className='col-md-3'>
-                        <Search />
+                        <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
                     <div className='row justify-content-around align-items-center'>
@@ -119,7 +128,7 @@ describe('(Component) HeaderSection', () => {
                     </div>
 
                     <div className='col-8 col-md-10'>
-                        <Search />
+                        <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
                 </div>
 

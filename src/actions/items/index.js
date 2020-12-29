@@ -1,3 +1,6 @@
-import { fetchAllItemsByCategory } from './items'
+import { fetchAllItemsByCategory, searchItemByCriteria } from './items'
 
-export { fetchAllItemsByCategory }
+export {
+    fetchAllItemsByCategory,
+    searchItemByCriteria
+}

@@ -6,3 +6,8 @@ export const fetchAllItemsByCategory = (category) => ({
         }
     }
 })
+
+export const searchItemByCriteria = (criteria) => ({
+    type: 'SEARCH_ITEM',
+    criteria: criteria
+})

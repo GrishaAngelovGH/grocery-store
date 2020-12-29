@@ -36,7 +36,8 @@ describe('(Component) ProductCategory', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection />
+                    <HeaderSection selectedCategory={'category-1'} />
+
                     <div className='row no-gutters'>
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
                             <ProductItem

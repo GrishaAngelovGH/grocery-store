@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import Sidebar from 'react-sidebar'
 import { NotificationContainer } from 'react-notifications'
@@ -23,6 +24,7 @@ class HeaderSection extends Component {
     }
 
     render() {
+        const { disabledSearch, selectedCategory } = this.props
 
         return (
             <div>
@@ -34,7 +36,7 @@ class HeaderSection extends Component {
                         <Logo />
                     </div>
                     <div className='col-md-3'>
-                        <Search />
+                        <Search disabled={disabledSearch} selectedCategory={selectedCategory} />
                     </div>
 
                     <div className='row justify-content-around align-items-center'>
@@ -67,7 +69,7 @@ class HeaderSection extends Component {
                     </div>
 
                     <div className='col-8 col-md-10'>
-                        <Search />
+                        <Search disabled={disabledSearch} selectedCategory={selectedCategory} />
                     </div>
                 </div>
 
@@ -101,6 +103,11 @@ class HeaderSection extends Component {
             </div>
         )
     }
+}
+
+HeaderSection.propTypes = {
+    disabledSearch: PropTypes.bool,
+    selectedCategory: PropTypes.string
 }
 
 export default HeaderSection

@@ -13,12 +13,12 @@ class ProductCategory extends Component {
     }
 
     render() {
-        const { items, addItemToShoppingCart } = this.props
+        const { match, items, addItemToShoppingCart } = this.props
 
         return (
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection />
+                    <HeaderSection selectedCategory={match.params.id} />
 
                     <div className='row no-gutters'>
                         {
