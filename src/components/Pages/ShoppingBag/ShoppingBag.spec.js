@@ -78,4 +78,39 @@ describe('(Component) ShoppingBag', () => {
 
         )).to.equal(true)
     })
+
+    it('should render empty bag', () => {
+        const removeItemFromShoppingCart = sinon.spy()
+
+        const wrapper = shallow(
+            <ShoppingBag
+                items={[]}
+                removeItemFromShoppingCart={removeItemFromShoppingCart}
+            />
+        )
+
+        expect(wrapper.equals(
+            <div className='row no-gutters justify-content-center bg-light'>
+                <div className='col-md-12'>
+                    <div className='row no-gutters'>
+                        <div className='col-md-12 text-center bg-secondary text-white mb-3 display-4'>
+                            Shopping bag
+                        </div>
+                    </div>
+
+                    <div className='row no-gutters justify-content-center'>
+                        <div className='col-8 col-lg-5 text-center'>
+                            <h3>Empty Bag</h3>
+                            <h4>Your bag needs filling</h4>
+                            <Link to='/' className='text-decoration-none'>
+                                <button type='button' className='btn btn-primary btn-block'>
+                                    Continue Shopping
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )).to.equal(true)
+    })
 })
