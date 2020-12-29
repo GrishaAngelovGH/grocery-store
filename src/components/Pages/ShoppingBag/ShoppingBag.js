@@ -40,7 +40,7 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
                     <div className='col-lg-3 m-4 text-center'>
                         <h4>Summary</h4>
                         <h4>Total: {currency}{totalSum}</h4>
-                        <Link to='/checkout'>
+                        <Link to='/checkout' className='text-decoration-none'>
                             <button type='button' className='btn btn-outline-success btn-block'>
                                 Checkout
                             </button>
