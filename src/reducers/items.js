@@ -1,6 +1,6 @@
 const initialState = []
 
-const itemsHandler = (state, { payload: { data: { items } } }) => ([...state, ...items])
+const itemsHandler = (state, { payload: { data: { items } } }) => items
 
 export default (state = initialState, action) => {
     const handlers = {

@@ -11,7 +11,7 @@ describe('(Reducer) Items', () => {
 
         const newState = items(state, action)
 
-        expect(newState).to.eql(['item1', 'item2', 'item3'])
+        expect(newState).to.eql(['item2', 'item3'])
     })
 
     it('should return old state when action type is mismatched', () => {
