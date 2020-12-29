@@ -1,7 +1,7 @@
 import { cakeProductCategory } from 'images'
 import ShoppingBagItem from './ShoppingBagItem'
 
-describe('(Component) ShoppingBagItem', () => {
+describe('(Component) Pages > ShoppingBag > ShoppingBagItem', () => {
     let wrapper, removeItemFromShoppingCart
 
     beforeEach(() => {

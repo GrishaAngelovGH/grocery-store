@@ -1,7 +1,7 @@
 import ShoppingBag from './ShoppingBag'
 
-describe('(Component) ShoppingBag', () => {
-    it('should render ShoppingBag', () => {
+describe('(Component) ShoppingBag icon', () => {
+    it('should render ShoppingBag icon', () => {
         const wrapper = shallow(<ShoppingBag count={2} />)
 
         expect(wrapper.equals(
@@ -14,7 +14,7 @@ describe('(Component) ShoppingBag', () => {
         )).to.equal(true)
     })
 
-    it('should render ShoppingBag with zero count', () => {
+    it('should render ShoppingBag icon with zero count', () => {
         const wrapper = shallow(<ShoppingBag count={0} />)
 
         expect(wrapper.equals(
