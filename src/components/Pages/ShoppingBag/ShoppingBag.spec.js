@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import ShoppingBagItem from './ShoppingBagItem'
 import ShoppingBag from './ShoppingBag'
 
@@ -37,11 +39,11 @@ describe('(Component) Pages > ShoppingBag', () => {
                     <div className='row no-gutters'>
                         <div className='col-md-12 text-center bg-secondary text-white mb-3 display-4'>
                             Shopping bag
-                </div>
+                        </div>
                     </div>
 
-                    <div className='row no-gutters'>
-                        <div className='col-md-12 col-lg-5 m-2'>
+                    <div className='row no-gutters justify-content-around'>
+                        <div className='col-lg-5 m-2'>
                             <ShoppingBagItem
                                 id={items[0].id}
                                 image={items[0].image}
@@ -60,6 +62,15 @@ describe('(Component) Pages > ShoppingBag', () => {
                                 qty={items[1].qty}
                                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                             />
+                        </div>
+                        <div className='col-lg-3 m-4 text-center'>
+                            <h4>Summary</h4>
+                            <h4>Total: {'£'}{100}</h4>
+                            <Link to='/checkout'>
+                                <button type='button' className='btn btn-outline-success btn-block'>
+                                    Checkout
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
