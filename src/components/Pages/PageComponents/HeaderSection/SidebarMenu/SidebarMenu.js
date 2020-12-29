@@ -27,6 +27,12 @@ class SidebarMenu extends Component {
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
+
+                <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
+                    <div>Only the following items are available</div>
+                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                </div>
+
                 {
                     subCategories.length === 0 && categories.map(v => (
                         <div
@@ -62,16 +68,16 @@ class SidebarMenu extends Component {
                                 {v.title}
                             </div>
                             {
-                                v.categories.map(v => {
-                                    const categoryLink = v.toLowerCase().split(' ').join('-')
+                                v.categories.map(value => {
+                                    const categoryLink = `/category/${value.toLowerCase().split(' ').join('-')}`
 
                                     return (
                                         <Link
-                                            key={v}
-                                            to={'category/' + categoryLink}
+                                            key={value}
+                                            to={categoryLink}
                                             className='border-bottom text-secondary m-2 d-block'
                                         >
-                                            {v}
+                                            {value}
                                         </Link>
                                     )
                                 })

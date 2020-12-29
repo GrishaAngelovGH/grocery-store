@@ -65,6 +65,12 @@ describe('(Component) SidebarMenu', () => {
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
+
+                <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
+                    <div>Only the following items are available</div>
+                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                </div>
+
                 <div
                     id={'Category1'}
                     onClick={wrapper.instance().handleMenuClick}
@@ -103,6 +109,11 @@ describe('(Component) SidebarMenu', () => {
                     <Delete onClick={onSidebarOpen} />
                 </div>
 
+                <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
+                    <div>Only the following items are available</div>
+                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                </div>
+
                 <div>
                     <div
                         onClick={wrapper.instance().handleBackClick}
@@ -120,7 +131,7 @@ describe('(Component) SidebarMenu', () => {
                     <div className='bg-secondary text-white p-2 text-center'>
                         Title2
                     </div>
-                    <Link to='category/some-category' className='border-bottom text-secondary m-2 d-block'>
+                    <Link to='/category/some-category' className='border-bottom text-secondary m-2 d-block'>
                         Some Category
                     </Link>
                 </div>
@@ -140,6 +151,11 @@ describe('(Component) SidebarMenu', () => {
                     <Delete onClick={onSidebarOpen} />
                 </div>
 
+                <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
+                    <div>Only the following items are available</div>
+                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                </div>
+
                 <div>
                     <div
                         onClick={wrapper.instance().handleBackClick}
@@ -157,7 +173,7 @@ describe('(Component) SidebarMenu', () => {
                     <div className='bg-secondary text-white p-2 text-center'>
                         Title1
                     </div>
-                    <Link to='category/category1-1' className='border-bottom text-secondary m-2 d-block'>
+                    <Link to='/category/category1-1' className='border-bottom text-secondary m-2 d-block'>
                         Category1-1
                     </Link>
                 </div>
@@ -174,6 +190,12 @@ describe('(Component) SidebarMenu', () => {
                     <Logo />
                     <Delete onClick={onSidebarOpen} />
                 </div>
+
+                <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
+                    <div>Only the following items are available</div>
+                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                </div>
+
                 <div
                     id={'Category1'}
                     onClick={wrapper.instance().handleMenuClick}

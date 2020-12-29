@@ -51,6 +51,11 @@ class Menu extends Component {
                         !mobile && subCategories.length > 0 && (
                             <div className='row no-gutters justify-content-center subcategories'>
                                 <div className='col-md-11 d-flex border bg-white'>
+                                    <div className='d-flex flex-column justify-content-around small text-uppercase font-weight-bold text-center alert alert-primary m-2' role='alert'>
+                                        <div>Only the following items are available</div>
+                                        <div>{`Food > Celebration Cakes > All cakes`}</div>
+                                    </div>
+
                                     {
                                         subCategories.map(v => (
                                             <div key={v.title} className='subcategory m-2'>
