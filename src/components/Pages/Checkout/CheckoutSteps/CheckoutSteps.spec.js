@@ -1,6 +1,7 @@
 import Steps from 'rc-steps'
-import Step from './Step'
+import { Form } from 'react-final-form'
 
+import Step from './Step'
 import CheckoutSteps from './CheckoutSteps'
 
 describe('(Component) CheckoutSteps', () => {
@@ -23,29 +24,43 @@ describe('(Component) CheckoutSteps', () => {
                     <Steps.Step title={'Title-2'} />
                 </Steps>
 
-                <Step position={0} onChange={wrapper.instance().handleStepChange}>
-                    <div>content-1</div>
-                </Step>
+                <Form
+                    onSubmit={wrapper.instance().handleFormSubmit}
+                    render={wrapper.instance().formContent}
+                />
             </div>
         )).to.equal(true)
     })
 
+    it('should render form content', () => {
+        const handleSubmit = sinon.spy()
+
+        expect(
+            wrapper.instance().formContent({ handleSubmit })
+        ).to.eql(
+            <form onSubmit={handleSubmit}>
+                <Step position={0} onChange={wrapper.instance().handleStepChange}>
+                    <div>content-1</div>
+                </Step>
+            </form >
+        )
+    })
+
     it('should handle step change', () => {
-        const step = wrapper.find(Step)
+        const handleSubmit = sinon.spy()
 
-        step.simulate('change', 1)
+        const formContent = wrapper.instance().formContent({ handleSubmit })
 
-        expect(wrapper.equals(
-            <div className='m-5'>
-                <Steps current={1}>
-                    <Steps.Step title={'Title-1'} />
-                    <Steps.Step title={'Title-2'} />
-                </Steps>
+        formContent.props.children.props.onChange(1)
 
+        expect(
+            wrapper.instance().formContent({ handleSubmit })
+        ).to.eql(
+            <form onSubmit={handleSubmit}>
                 <Step position={1} onChange={wrapper.instance().handleStepChange}>
                     <div>content-2</div>
                 </Step>
-            </div>
-        )).to.equal(true)
+            </form>
+        )
     })
 })

@@ -1,6 +1,8 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import { Form } from 'react-final-form'
+
 import Steps from 'rc-steps'
 import 'rc-steps/assets/index.css'
 
@@ -13,6 +15,25 @@ class CheckoutSteps extends Component {
 
     handleStepChange = (step) => {
         this.setState({ currentStep: step })
+    }
+
+    handleFormSubmit = values => {
+        alert(`Your order is successfullly placed: ${JSON.stringify(values)}`)
+    }
+
+    formContent = ({ handleSubmit }) => {
+        const { currentStep } = this.state
+        const { steps } = this.props
+
+        return (
+            <form onSubmit={handleSubmit}>
+                <Step position={currentStep} onChange={this.handleStepChange}>
+                    {
+                        steps[currentStep].component
+                    }
+                </Step>
+            </form>
+        )
     }
 
     render() {
@@ -29,11 +50,10 @@ class CheckoutSteps extends Component {
                     }
                 </Steps>
 
-                <Step position={currentStep} onChange={this.handleStepChange}>
-                    {
-                        steps[currentStep].component
-                    }
-                </Step>
+                <Form
+                    onSubmit={this.handleFormSubmit}
+                    render={this.formContent}
+                />
             </div>
         )
     }
