@@ -19,6 +19,7 @@ class Step extends Component {
                         type='button'
                         className='btn btn-primary'
                         onClick={this.handleChange}
+                        disabled={this.props.disabled}
                     >
                         Next
                     </button>
@@ -30,6 +31,7 @@ class Step extends Component {
 
 Step.propTypes = {
     onChange: PropTypes.func,
+    disabled: PropTypes.bool,
     position: PropTypes.number.isRequired,
     children: PropTypes.element.isRequired
 }

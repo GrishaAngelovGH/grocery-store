@@ -5,7 +5,11 @@ describe('(Component) Step', () => {
         const onChange = sinon.spy()
 
         const wrapper = shallow(
-            <Step position={0} onChange={onChange}>
+            <Step
+                position={0}
+                onChange={onChange}
+                disabled={false}
+            >
                 <div>content</div>
             </Step>
         )
@@ -18,6 +22,7 @@ describe('(Component) Step', () => {
                         type='button'
                         className='btn btn-primary'
                         onClick={wrapper.instance().handleChange}
+                        disabled={false}
                     >
                         Next
                     </button>
@@ -30,7 +35,7 @@ describe('(Component) Step', () => {
         const onChange = sinon.spy()
 
         const wrapper = shallow(
-            <Step position={0} onChange={onChange}>
+            <Step position={0} onChange={onChange} disabled={false}>
                 <div>content</div>
             </Step>
         )

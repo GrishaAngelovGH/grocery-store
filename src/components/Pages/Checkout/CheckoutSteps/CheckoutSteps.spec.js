@@ -39,7 +39,11 @@ describe('(Component) CheckoutSteps', () => {
             wrapper.instance().formContent({ handleSubmit })
         ).to.eql(
             <form onSubmit={handleSubmit}>
-                <Step position={0} onChange={wrapper.instance().handleStepChange}>
+                <Step
+                    position={0}
+                    onChange={wrapper.instance().handleStepChange}
+                    disabled={true}
+                >
                     <div>content-1</div>
                 </Step>
             </form >
@@ -57,7 +61,11 @@ describe('(Component) CheckoutSteps', () => {
             wrapper.instance().formContent({ handleSubmit })
         ).to.eql(
             <form onSubmit={handleSubmit}>
-                <Step position={1} onChange={wrapper.instance().handleStepChange}>
+                <Step
+                    position={1}
+                    onChange={wrapper.instance().handleStepChange}
+                    disabled={true}
+                >
                     <div>content-2</div>
                 </Step>
             </form>

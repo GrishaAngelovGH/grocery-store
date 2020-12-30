@@ -21,13 +21,17 @@ class CheckoutSteps extends Component {
         alert(`Your order is successfullly placed: ${JSON.stringify(values)}`)
     }
 
-    formContent = ({ handleSubmit }) => {
+    formContent = ({ handleSubmit, valid }) => {
         const { currentStep } = this.state
         const { steps } = this.props
 
         return (
             <form onSubmit={handleSubmit}>
-                <Step position={currentStep} onChange={this.handleStepChange}>
+                <Step
+                    position={currentStep}
+                    onChange={this.handleStepChange}
+                    disabled={!valid}
+                >
                     {
                         steps[currentStep].component
                     }
