@@ -2,6 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import ProductItem from './ProductItem'
+import EmptyProductCategory from './EmptyProductCategory'
 import HeaderSection from '../PageComponents/HeaderSection'
 class ProductCategory extends Component {
     componentDidMount() {
@@ -14,6 +15,12 @@ class ProductCategory extends Component {
 
     render() {
         const { match, items, addItemToShoppingCart } = this.props
+
+        if (!items.length) {
+            return (
+                <EmptyProductCategory />
+            )
+        }
 
         return (
             <div className='row no-gutters'>

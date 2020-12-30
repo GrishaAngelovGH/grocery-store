@@ -1,4 +1,5 @@
 import ProductItem from './ProductItem'
+import EmptyProductCategory from './EmptyProductCategory'
 import HeaderSection from '../PageComponents/HeaderSection'
 
 import ProductCategory from './ProductCategory'
@@ -54,6 +55,21 @@ describe('(Component) ProductCategory', () => {
                     </div>
                 </div>
             </div>
+        )).to.equal(true)
+    })
+
+    it('should render EmptyProductCategory when items are not available', () => {
+        const wrapper = shallow(
+            <ProductCategory
+                items={[]}
+                match={{ params: { id: 'category-1' } }}
+                fetchAllItemsByCategory={fetchAllItemsByCategory}
+                addItemToShoppingCart={addItemToShoppingCart}
+            />
+        )
+
+        expect(wrapper.equals(
+            <EmptyProductCategory />
         )).to.equal(true)
     })
 
