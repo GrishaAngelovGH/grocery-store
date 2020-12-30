@@ -2,8 +2,13 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
-import { HomePage, ProductCategory, ShoppingBag } from 'components/Pages'
 import Layout from 'components/Layout'
+import {
+  HomePage,
+  ProductCategory,
+  ShoppingBag,
+  Checkout
+} from 'components/Pages'
 
 function App() {
   return (
@@ -32,6 +37,7 @@ function App() {
         />
 
         <Route path='/shopping-bag' children={<ShoppingBag />} />
+        <Route path='/checkout' children={<Checkout />} />
       </Switch>
     </Router>
   )
