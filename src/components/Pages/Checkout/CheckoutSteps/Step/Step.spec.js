@@ -20,7 +20,7 @@ describe('(Component) Step', () => {
                     <div>content</div>
                     <button
                         type='button'
-                        className='btn btn-primary'
+                        className='btn btn-primary w-25'
                         onClick={wrapper.instance().handleChange}
                         disabled={false}
                     >

@@ -17,7 +17,7 @@ class Step extends Component {
                     }
                     <button
                         type='button'
-                        className='btn btn-primary'
+                        className='btn btn-primary w-25'
                         onClick={this.handleChange}
                         disabled={this.props.disabled}
                     >
