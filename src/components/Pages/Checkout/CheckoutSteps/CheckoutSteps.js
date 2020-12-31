@@ -56,6 +56,7 @@ class CheckoutSteps extends Component {
 
                 <Form
                     onSubmit={this.handleFormSubmit}
+                    initialValues={{ shipping_method: 'usps_fcpi' }}
                     render={this.formContent}
                 />
             </div>

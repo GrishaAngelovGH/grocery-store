@@ -26,6 +26,7 @@ describe('(Component) CheckoutSteps', () => {
 
                 <Form
                     onSubmit={wrapper.instance().handleFormSubmit}
+                    initialValues={{ shipping_method: 'usps_fcpi' }}
                     render={wrapper.instance().formContent}
                 />
             </div>

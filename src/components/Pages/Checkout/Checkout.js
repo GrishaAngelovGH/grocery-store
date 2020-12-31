@@ -1,9 +1,9 @@
-import CheckoutSteps, { Billing } from './CheckoutSteps'
+import CheckoutSteps, { Billing, Shipping } from './CheckoutSteps'
 
 const Checkout = () => {
     const steps = [
         { title: 'Billing', component: (<Billing />) },
-        { title: 'Shipping', component: (<h1>Shipping</h1>) },
+        { title: 'Shipping', component: (<Shipping />) },
         { title: 'Payment', component: (<h1>Payment</h1>) },
         { title: 'Preview', component: (<h1>Preview</h1>) }
     ]
