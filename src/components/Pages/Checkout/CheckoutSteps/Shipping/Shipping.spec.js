@@ -64,7 +64,7 @@ describe('(Component) Shipping', () => {
                         </div>
                     </div>
                 </div>
-            </div >
+            </div>
         )).to.equal(true)
     })
 })

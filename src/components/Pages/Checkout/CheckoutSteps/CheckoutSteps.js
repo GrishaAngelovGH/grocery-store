@@ -56,7 +56,10 @@ class CheckoutSteps extends Component {
 
                 <Form
                     onSubmit={this.handleFormSubmit}
-                    initialValues={{ shipping_method: 'usps_fcpi' }}
+                    initialValues={{
+                        shipping_method: 'usps_fcpi',
+                        payment_method: 'credit_card',
+                    }}
                     render={this.formContent}
                 />
             </div>
