@@ -30,6 +30,7 @@ class CheckoutSteps extends Component {
                 <Step
                     position={currentStep}
                     onChange={this.handleStepChange}
+                    showNextButton={steps[currentStep].showNextButton}
                     disabled={!valid}
                 >
                     {

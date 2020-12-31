@@ -8,8 +8,8 @@ describe('(Component) CheckoutSteps', () => {
     let wrapper
 
     const steps = [
-        { title: 'Title-1', component: (<div>content-1</div>) },
-        { title: 'Title-2', component: (<div>content-2</div>) }
+        { title: 'Title-1', component: (<div>content-1</div>), showNextButton: true },
+        { title: 'Title-2', component: (<div>content-2</div>), showNextButton: false }
     ]
 
     beforeEach(() => {
@@ -46,6 +46,7 @@ describe('(Component) CheckoutSteps', () => {
                 <Step
                     position={0}
                     onChange={wrapper.instance().handleStepChange}
+                    showNextButton={true}
                     disabled={true}
                 >
                     <div>content-1</div>
@@ -68,6 +69,7 @@ describe('(Component) CheckoutSteps', () => {
                 <Step
                     position={1}
                     onChange={wrapper.instance().handleStepChange}
+                    showNextButton={false}
                     disabled={true}
                 >
                     <div>content-2</div>

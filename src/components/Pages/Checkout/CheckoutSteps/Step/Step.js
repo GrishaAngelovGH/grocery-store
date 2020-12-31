@@ -9,20 +9,26 @@ class Step extends Component {
     }
 
     render() {
+        const { children, disabled, showNextButton } = this.props
+
         return (
             <div className='row no-gutters justify-content-center m-3'>
                 <div className='col-md-10 border'>
                     {
-                        this.props.children
+                        children
                     }
-                    <button
-                        type='button'
-                        className='btn btn-primary w-25'
-                        onClick={this.handleChange}
-                        disabled={this.props.disabled}
-                    >
-                        Next
-                    </button>
+                    {
+                        showNextButton && (
+                            <button
+                                type='button'
+                                className='btn btn-primary w-25'
+                                onClick={this.handleChange}
+                                disabled={disabled}
+                            >
+                                Next
+                            </button>
+                        )
+                    }
                 </div>
             </div>
         )
@@ -32,6 +38,7 @@ class Step extends Component {
 Step.propTypes = {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
+    showNextButton: PropTypes.bool.isRequired,
     position: PropTypes.number.isRequired,
     children: PropTypes.element.isRequired
 }

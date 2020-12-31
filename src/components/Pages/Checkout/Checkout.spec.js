@@ -6,10 +6,10 @@ describe('(Component) Checkout', () => {
         const wrapper = shallow(<Checkout />)
 
         const steps = [
-            { title: 'Billing', component: (<Billing />) },
-            { title: 'Shipping', component: (<Shipping />) },
-            { title: 'Payment', component: (<Payment />) },
-            { title: 'Preview', component: (<h1>Preview</h1>) }
+            { title: 'Billing', component: (<Billing />), showNextButton: true },
+            { title: 'Shipping', component: (<Shipping />), showNextButton: true },
+            { title: 'Payment', component: (<Payment />), showNextButton: true },
+            { title: 'Preview', component: (<h1>Preview</h1>), showNextButton: false }
         ]
 
         expect(wrapper.equals(

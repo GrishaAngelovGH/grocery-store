@@ -8,6 +8,7 @@ describe('(Component) Step', () => {
             <Step
                 position={0}
                 onChange={onChange}
+                showNextButton={true}
                 disabled={false}
             >
                 <div>content</div>
@@ -31,11 +32,39 @@ describe('(Component) Step', () => {
         )).to.equal(true)
     })
 
+    it('should render component without next button', () => {
+        const onChange = sinon.spy()
+
+        const wrapper = shallow(
+            <Step
+                position={0}
+                onChange={onChange}
+                showNextButton={false}
+                disabled={false}
+            >
+                <div>content</div>
+            </Step>
+        )
+
+        expect(wrapper.equals(
+            <div className='row no-gutters justify-content-center m-3'>
+                <div className='col-md-10 border'>
+                    <div>content</div>
+                </div>
+            </div>
+        )).to.equal(true)
+    })
+
     it('should handle step change', () => {
         const onChange = sinon.spy()
 
         const wrapper = shallow(
-            <Step position={0} onChange={onChange} disabled={false}>
+            <Step
+                position={0}
+                onChange={onChange}
+                showNextButton={true}
+                disabled={false}
+            >
                 <div>content</div>
             </Step>
         )
