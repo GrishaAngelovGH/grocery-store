@@ -1,4 +1,4 @@
-import CheckoutSteps, { Billing, Shipping, Payment } from './CheckoutSteps'
+import CheckoutSteps, { Billing, Shipping, Payment, Preview } from './CheckoutSteps'
 import Checkout from './Checkout'
 
 describe('(Component) Checkout', () => {
@@ -9,7 +9,7 @@ describe('(Component) Checkout', () => {
             { title: 'Billing', component: (<Billing />), showNextButton: true },
             { title: 'Shipping', component: (<Shipping />), showNextButton: true },
             { title: 'Payment', component: (<Payment />), showNextButton: true },
-            { title: 'Preview', component: (<h1>Preview</h1>), showNextButton: false }
+            { title: 'Preview', component: (<Preview />), showNextButton: false }
         ]
 
         expect(wrapper.equals(
