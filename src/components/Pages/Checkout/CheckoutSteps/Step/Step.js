@@ -2,14 +2,20 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Step extends Component {
-    handleChange = () => {
+    handlePrevStepChange = () => {
+        const { position, onChange } = this.props
+
+        onChange && onChange(position - 1)
+    }
+
+    handleNextStepChange = () => {
         const { position, onChange } = this.props
 
         onChange && onChange(position + 1)
     }
 
     render() {
-        const { children, disabled, showNextButton } = this.props
+        const { children, disabled, showPrevButton, showNextButton } = this.props
 
         return (
             <div className='row no-gutters justify-content-center m-3'>
@@ -17,18 +23,32 @@ class Step extends Component {
                     {
                         children
                     }
-                    {
-                        showNextButton && (
-                            <button
-                                type='button'
-                                className='btn btn-primary w-25'
-                                onClick={this.handleChange}
-                                disabled={disabled}
-                            >
-                                Next
-                            </button>
-                        )
-                    }
+                    <div className='d-flex justify-content-end'>
+                        {
+                            showPrevButton && (
+                                <button
+                                    type='button'
+                                    className='btn btn-primary w-25 mr-2'
+                                    onClick={this.handlePrevStepChange}
+                                    disabled={disabled}
+                                >
+                                    Prev
+                                </button>
+                            )
+                        }
+                        {
+                            showNextButton && (
+                                <button
+                                    type='button'
+                                    className='btn btn-primary w-25 mr-2'
+                                    onClick={this.handleNextStepChange}
+                                    disabled={disabled}
+                                >
+                                    Next
+                                </button>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         )
@@ -38,6 +58,7 @@ class Step extends Component {
 Step.propTypes = {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
+    showPrevButton: PropTypes.bool.isRequired,
     showNextButton: PropTypes.bool.isRequired,
     position: PropTypes.number.isRequired,
     children: PropTypes.element.isRequired
