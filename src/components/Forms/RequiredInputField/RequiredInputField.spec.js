@@ -1,6 +1,6 @@
 import { Field } from 'react-final-form'
 
-import RequiredInputField, { required } from './RequiredInputField'
+import RequiredInputField from './RequiredInputField'
 
 describe('(Component) RequiredInputField', () => {
     let wrapper
@@ -18,7 +18,7 @@ describe('(Component) RequiredInputField', () => {
         expect(wrapper.equals(
             <Field
                 name={'name-1'}
-                validate={required}
+                validate={wrapper.props().validate}
             >
                 {
                     wrapper.instance().fieldContent

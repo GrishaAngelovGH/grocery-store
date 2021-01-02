@@ -3,9 +3,10 @@ import { Component } from 'react'
 import { Field } from 'react-final-form'
 import PropTypes from 'prop-types'
 
-export const required = value => (value ? undefined : 'Required')
+import { composeValidators, required } from '../validators'
 
 class RequiredInputField extends Component {
+    validate = () => composeValidators(required, ...this.props.validators || [])
 
     fieldContent = ({ input, meta }) => {
         const { label } = this.props
@@ -31,7 +32,7 @@ class RequiredInputField extends Component {
         return (
             <Field
                 name={name}
-                validate={required}
+                validate={this.validate()}
             >
                 {this.fieldContent}
             </Field>
@@ -41,6 +42,7 @@ class RequiredInputField extends Component {
 }
 
 RequiredInputField.propTypes = {
+    validators: PropTypes.array,
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired
 }

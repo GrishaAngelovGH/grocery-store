@@ -1,5 +1,7 @@
 import { Field } from 'react-final-form'
+
 import RequiredInputField from 'components/Forms/RequiredInputField'
+import { validateNumber, validateEmail } from 'components/Forms/validators'
 
 import Billing from './Billing'
 
@@ -14,7 +16,7 @@ describe('(Component) Billing', () => {
                         <div className='col-md-12'>
                             <h1>
                                 Billing
-                    </h1>
+                            </h1>
                         </div>
                     </div>
 
@@ -32,7 +34,11 @@ describe('(Component) Billing', () => {
 
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
-                            <RequiredInputField name={'email'} label={'Email'} />
+                            <RequiredInputField
+                                name={'email'}
+                                label={'Email'}
+                                validators={[validateEmail]}
+                            />
                         </div>
                     </div>
 
@@ -50,7 +56,11 @@ describe('(Component) Billing', () => {
 
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
-                            <RequiredInputField name={'postCode'} label={'Post Code'} />
+                            <RequiredInputField
+                                name={'postCode'}
+                                label={'Post Code'}
+                                validators={[validateNumber]}
+                            />
                         </div>
                     </div>
 
