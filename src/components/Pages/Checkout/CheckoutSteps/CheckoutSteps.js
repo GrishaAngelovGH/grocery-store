@@ -61,6 +61,7 @@ class CheckoutSteps extends Component {
                     initialValues={{
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
+                        credit_card_type: 'visa'
                     }}
                     render={this.formContent}
                 />

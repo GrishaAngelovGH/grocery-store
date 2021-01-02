@@ -29,6 +29,7 @@ describe('(Component) CheckoutSteps', () => {
                     initialValues={{
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
+                        credit_card_type: 'visa'
                     }}
                     render={wrapper.instance().formContent}
                 />

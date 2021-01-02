@@ -2,6 +2,7 @@ import { Component } from 'react'
 import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
+import { validateCreditCardNumber } from 'components/Forms/validators'
 
 class Payment extends Component {
     fieldContent = ({ input }) => (
@@ -13,7 +14,33 @@ class Payment extends Component {
                     <div>
                         <div className='row mb-2'>
                             <div className='col-md-6 col-lg-7'>
-                                <RequiredInputField name={'creditCardNumber'} label={'Credit Card Number'} />
+                                <label>
+                                    <Field
+                                        name='credit_card_type'
+                                        component='input'
+                                        type='radio'
+                                        value='visa'
+                                    />{' '}
+                                    <span className='m-1 font-weight-bold'>Visa</span>
+                                </label>
+                                <label>
+                                    <Field
+                                        name='credit_card_type'
+                                        component='input'
+                                        type='radio'
+                                        value='mastercard'
+                                    />{' '}
+                                    <span className='font-weight-bold'>Mastercard</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className='row mb-2'>
+                            <div className='col-md-6 col-lg-7'>
+                                <RequiredInputField
+                                    name={'creditCardNumber'}
+                                    label={'Credit Card Number'}
+                                    validators={[validateCreditCardNumber]}
+                                />
                             </div>
                         </div>
                         <div className='row mb-2'>
