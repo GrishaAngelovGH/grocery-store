@@ -1,7 +1,7 @@
 import { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
 
-import ReactSwipe from 'react-swipe';
+import ReactSwipe from 'react-swipe'
 
 class MessageCarousel extends Component {
     reactSwipeEl
@@ -20,7 +20,7 @@ class MessageCarousel extends Component {
                 </div>
 
                 <ReactSwipe
-                    className="carousel"
+                    className='carousel'
                     swipeOptions={{ continuous: true, auto: 5000 }}
                     ref={el => (this.reactSwipeEl = el)}
                 >

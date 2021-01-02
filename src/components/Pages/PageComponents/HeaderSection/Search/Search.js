@@ -25,8 +25,8 @@ class Search extends Component {
                     placeholder='Search'
                     onChange={this.handleInputChange}
                 />
-                <div className="input-group-append">
-                    <span className="input-group-text bg-white">
+                <div className='input-group-append'>
+                    <span className='input-group-text bg-white'>
                         <SearchIcon />
                     </span>
                 </div>

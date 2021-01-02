@@ -24,7 +24,7 @@ describe('(Component) MessageCarousel', () => {
                 </div>
 
                 <ReactSwipe
-                    className="carousel"
+                    className='carousel'
                     swipeOptions={{ continuous: true, auto: 5000 }}
                 >
                     <span role='button' className='font-weight-bold'>

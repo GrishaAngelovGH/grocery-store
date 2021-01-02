@@ -1,7 +1,7 @@
 const path = require('path')
 
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const InterpolateHtmlPlugin = require('interpolate-html-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
 module.exports = {
     entry: './src/index.js',
@@ -22,7 +22,7 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader"
+                    loader: 'babel-loader'
                 }
             },
             {

@@ -68,7 +68,7 @@ describe('(Component) SidebarMenu', () => {
 
                 <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
                     <div>Only the following items are available</div>
-                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                    <div>{'Food > Celebration Cakes > All cakes'}</div>
                 </div>
 
                 <div
@@ -111,7 +111,7 @@ describe('(Component) SidebarMenu', () => {
 
                 <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
                     <div>Only the following items are available</div>
-                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                    <div>{'Food > Celebration Cakes > All cakes'}</div>
                 </div>
 
                 <div>
@@ -153,7 +153,7 @@ describe('(Component) SidebarMenu', () => {
 
                 <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
                     <div>Only the following items are available</div>
-                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                    <div>{'Food > Celebration Cakes > All cakes'}</div>
                 </div>
 
                 <div>
@@ -193,7 +193,7 @@ describe('(Component) SidebarMenu', () => {
 
                 <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
                     <div>Only the following items are available</div>
-                    <div>{`Food > Celebration Cakes > All cakes`}</div>
+                    <div>{'Food > Celebration Cakes > All cakes'}</div>
                 </div>
 
                 <div

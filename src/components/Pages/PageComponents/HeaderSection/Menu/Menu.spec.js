@@ -133,7 +133,7 @@ describe('(Component) Menu', () => {
                         <div className='col-md-11 d-flex border bg-white'>
                             <div className='d-flex flex-column justify-content-around small text-uppercase font-weight-bold text-center alert alert-primary m-2' role='alert'>
                                 <div>Only the following items are available</div>
-                                <div>{`Food > Celebration Cakes > All cakes`}</div>
+                                <div>{'Food > Celebration Cakes > All cakes'}</div>
                             </div>
                             <div className='subcategory m-2'>
                                 <div className='small font-weight-bold'>

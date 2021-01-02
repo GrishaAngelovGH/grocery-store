@@ -24,8 +24,8 @@ describe('(Component) Search', () => {
                     placeholder='Search'
                     onChange={wrapper.instance().handleInputChange}
                 />
-                <div className="input-group-append">
-                    <span className="input-group-text bg-white">
+                <div className='input-group-append'>
+                    <span className='input-group-text bg-white'>
                         <SearchIcon />
                     </span>
                 </div>

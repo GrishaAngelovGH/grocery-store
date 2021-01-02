@@ -1,7 +1,7 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 
-const mock = new MockAdapter(axios);
+const mock = new MockAdapter(axios)
 
 mock.onGet('/category/all-cakes').reply(200, {
     items: [
@@ -78,4 +78,4 @@ mock.onGet('/category/all-cakes').reply(200, {
             rating: 5
         }
     ]
-});
+})

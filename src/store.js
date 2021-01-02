@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import axios from 'axios';
-import axiosMiddleware from 'redux-axios-middleware';
+import axios from 'axios'
+import axiosMiddleware from 'redux-axios-middleware'
 
 import items from './reducers/items'
 import shoppingCart from './reducers/shoppingCart'

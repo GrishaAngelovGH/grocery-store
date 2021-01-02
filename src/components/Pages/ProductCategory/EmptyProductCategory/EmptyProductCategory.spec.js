@@ -15,7 +15,7 @@ describe('(Component) EmptyProductCategory', () => {
                         </h2>
 
                         <p className='lead'>
-                            {` Only available items are in Food > Celebration Cakes > All Cakes`}
+                            {'Only available items are in Food > Celebration Cakes > All Cakes'}
                         </p>
 
                         <Link to='/' className='text-decoration-none'>
