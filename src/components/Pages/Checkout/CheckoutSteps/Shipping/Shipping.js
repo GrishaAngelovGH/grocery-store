@@ -1,7 +1,7 @@
 import { Field } from 'react-final-form'
 
 const Shipping = () => (
-    <div className='row m-3'>
+    <div className='row m-1'>
         <div className='col-md-12'>
             <div className='row'>
                 <div className='col-md-12'>
@@ -11,7 +11,7 @@ const Shipping = () => (
                 </div>
             </div>
             <div className='row'>
-                <div className='col-md-12 col-lg-6'>
+                <div className='col-md-12 col-lg-5'>
                     <label>
                         <Field
                             name='shipping_method'

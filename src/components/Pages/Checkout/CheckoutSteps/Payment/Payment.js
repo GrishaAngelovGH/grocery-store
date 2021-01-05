@@ -35,7 +35,7 @@ class Payment extends Component {
                             </div>
                         </div>
                         <div className='row mb-2'>
-                            <div className='col-md-6 col-lg-7'>
+                            <div className='col-md-9'>
                                 <RequiredInputField
                                     name={'creditCardNumber'}
                                     label={'Credit Card Number'}
@@ -44,7 +44,7 @@ class Payment extends Component {
                             </div>
                         </div>
                         <div className='row mb-2'>
-                            <div className='col-md-6 col-lg-9'>
+                            <div className='col-md-9'>
                                 <RequiredInputField name={'expirationDate'} label={'Expiration Date (MMYYYY)'} />
                             </div>
                         </div>
@@ -66,7 +66,7 @@ class Payment extends Component {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-md-12 col-lg-4'>
+                        <div className='col-md-12 col-lg-3'>
                             <label>
 
                                 <Field

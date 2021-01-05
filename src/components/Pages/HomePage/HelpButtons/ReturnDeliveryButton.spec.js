@@ -8,7 +8,7 @@ describe('(Component) ReturnDeliveryButton', () => {
         const wrapper = shallow(<ReturnDeliveryButton />)
 
         expect(wrapper.equals(
-            <HelpButton icon={returnsDelivery} label={'Shop with confidence with our EXTENDED RETURNS POLICY'} />
+            <HelpButton icon={returnsDelivery} label={'Shop with confidence with our extended returns policy'} />
         )).to.equal(true)
     })
 })

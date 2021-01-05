@@ -8,7 +8,7 @@ describe('(Component) NextDayDeliveryButton', () => {
         const wrapper = shallow(<NextDayDeliveryButton />)
 
         expect(wrapper.equals(
-            <HelpButton icon={nextDayDeliver} label={'Order clothing & home by 8pm for NEXT-DAY DELIVERY (£4.99)'} />
+            <HelpButton icon={nextDayDeliver} label={'Order clothing & home by 8pm for next-day delivery (£4.99)'} />
         )).to.equal(true)
     })
 })

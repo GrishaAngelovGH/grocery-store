@@ -22,7 +22,7 @@ const HomePage = () => (
 
             <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
 
-            <div className='row no-gutters justify-content-around m-2'>
+            <div className='row no-gutters justify-content-around text-center m-2'>
                 <div className='col-md-3'>
                     <DeliveryButton />
                 </div>

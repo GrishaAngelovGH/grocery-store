@@ -7,8 +7,8 @@ describe('(Component) EmptyProductCategory', () => {
         const wrapper = shallow(<EmptyProductCategory />)
 
         expect(wrapper.equals(
-            <div className='row no-gutters justify-content-center m-5 m-lg-2'>
-                <div className='col-md-6 m-4 m-lg-0'>
+            <div className='row no-gutters justify-content-center vh-100'>
+                <div className='col-md-6'>
                     <div className='jumbotron text-center bg-white'>
                         <h2 className='display-4'>
                             There are no found items for this category.
