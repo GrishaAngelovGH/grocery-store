@@ -3,6 +3,7 @@ import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateCreditCardNumber } from 'components/Forms/validators'
+import { payment } from 'images'
 
 class Payment extends Component {
     fieldContent = ({ input }) => (
@@ -13,7 +14,7 @@ class Payment extends Component {
                 input.checked && (
                     <div>
                         <div className='row mb-2'>
-                            <div className='col-md-6 col-lg-7'>
+                            <div className='col-md-6 col-lg-9'>
                                 <label>
                                     <Field
                                         name='credit_card_type'
@@ -21,7 +22,7 @@ class Payment extends Component {
                                         type='radio'
                                         value='visa'
                                     />{' '}
-                                    <span className='m-1 font-weight-bold'>Visa</span>
+                                    <span className='m-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
                                 </label>
                                 <label>
                                     <Field
@@ -30,7 +31,7 @@ class Payment extends Component {
                                         type='radio'
                                         value='mastercard'
                                     />{' '}
-                                    <span className='font-weight-bold'>Mastercard</span>
+                                    <span className='font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
                                 </label>
                             </div>
                         </div>

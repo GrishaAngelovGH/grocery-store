@@ -29,6 +29,9 @@ import tripleLayerCake from './triple-layer-cake.png'
 import trueLoveCake from './true-love-cake.png'
 import vanillaCake from './vanilla-cake.png'
 
+import visa from './visa.svg'
+import mastercard from './mastercard.svg'
+
 const socialNetworkIcons = {
     facebookIcon,
     instagramIcon,
@@ -50,6 +53,11 @@ const cakeProductCategory = {
     vanillaCake
 }
 
+const payment = {
+    visa,
+    mastercard
+}
+
 export {
     ukFlag,
     groceryStoreBanner,
@@ -62,5 +70,6 @@ export {
     flowersBanner,
     promoBanner,
     socialNetworkIcons,
-    cakeProductCategory
+    cakeProductCategory,
+    payment
 }
