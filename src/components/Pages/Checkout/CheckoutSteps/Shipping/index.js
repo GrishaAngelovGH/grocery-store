@@ -1,3 +1,3 @@
-import Shipping from './Shipping'
+import ShippingContainer from './ShippingContainer'
 
-export default Shipping
+export default ShippingContainer

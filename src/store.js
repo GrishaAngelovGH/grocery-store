@@ -4,6 +4,7 @@ import axiosMiddleware from 'redux-axios-middleware'
 
 import items from './reducers/items'
 import shoppingCart from './reducers/shoppingCart'
+import checkout from './reducers/checkout'
 
 const client = axios.create({
     baseURL: 'http://localhost:8080',
@@ -13,7 +14,8 @@ const client = axios.create({
 const store = createStore(
     combineReducers({
         items,
-        shoppingCart
+        shoppingCart,
+        checkout
     }),
     applyMiddleware(
         axiosMiddleware(client)

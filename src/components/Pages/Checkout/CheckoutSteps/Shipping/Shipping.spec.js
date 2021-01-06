@@ -1,11 +1,21 @@
-import { Field } from 'react-final-form'
+import { Field, FormSpy } from 'react-final-form'
 
 import Shipping from './Shipping'
 
 describe('(Component) Shipping', () => {
-    it('should render component', () => {
-        const wrapper = shallow(<Shipping />)
+    let wrapper, changeShippingMethod
 
+    beforeEach(() => {
+        changeShippingMethod = sinon.spy()
+
+        wrapper = shallow(
+            <Shipping
+                changeShippingMethod={changeShippingMethod}
+            />
+        )
+    })
+
+    it('should render component', () => {
         expect(wrapper.equals(
             <div className='row m-1' >
                 <div className='col-md-12'>
@@ -64,7 +74,20 @@ describe('(Component) Shipping', () => {
                         </div>
                     </div>
                 </div>
+                <FormSpy
+                    subscription={{ values: true }}
+                    onChange={wrapper.instance().handleShippingMethodChange}
+                />
             </div>
         )).to.equal(true)
+    })
+
+    it('should handle shipping method change', () => {
+        const formSpy = wrapper.find(FormSpy)
+
+        formSpy.simulate('change', { values: { shipping_method: 'usps_pmi' } })
+
+        changeShippingMethod.should.have.been.calledOnce
+        changeShippingMethod.should.have.been.calledWith('USPS Priority Mail International', 44.85)
     })
 })

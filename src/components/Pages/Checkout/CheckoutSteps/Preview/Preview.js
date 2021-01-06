@@ -1,10 +1,14 @@
-const Preview = ({ items }) => {
+import PropTypes from 'prop-types'
+
+const Preview = ({ items, shippingMethod, shippingMethodPrice }) => {
     let total = 0
     const currency = items[0].currency
 
     items.forEach(v => {
         total += v.price * v.qty
     })
+
+    total += shippingMethodPrice
 
     return (
         <div className='row'>
@@ -17,7 +21,11 @@ const Preview = ({ items }) => {
                     ))
                 }
                 <div className='mt-2 font-weight-bold'>
-                    TOTAL: {currency}{total}
+                    {shippingMethod}: {currency}{shippingMethodPrice.toFixed(2)}
+                </div>
+
+                <div className='mt-2 font-weight-bold'>
+                    TOTAL: {currency}{total.toFixed(2)}
                 </div>
 
                 <button type='submit' className='btn btn-primary'>
@@ -26,6 +34,12 @@ const Preview = ({ items }) => {
             </div>
         </div>
     )
+}
+
+Preview.propTypes = {
+    items: PropTypes.array.isRequired,
+    shippingMethod: PropTypes.string.isRequired,
+    shippingMethodPrice: PropTypes.number.isRequired
 }
 
 export default Preview
