@@ -1,4 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
+
 import axios from 'axios'
 import axiosMiddleware from 'redux-axios-middleware'
 
@@ -11,15 +14,22 @@ const client = axios.create({
     responseType: 'json'
 })
 
+const persistConfig = {
+    key: 'root',
+    storage
+}
+
 const store = createStore(
-    combineReducers({
+    persistReducer(persistConfig, combineReducers({
         items,
         shoppingCart,
         checkout
-    }),
+    })),
     applyMiddleware(
         axiosMiddleware(client)
     )
 )
 
-export default store
+const persistor = persistStore(store)
+
+export { store, persistor }
