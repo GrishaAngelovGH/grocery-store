@@ -25,7 +25,7 @@ class ShoppingBagItem extends Component {
         const { image, description, currency, price, qty } = this.props
 
         return (
-            <div className='row m-3 p-3 border shadow-sm'>
+            <div className='row m-3 p-3 border shadow-sm jumbotron'>
                 <div className='col-md-4'>
                     <img src={cakeProductCategory[image]} width={160} height={160} />
                 </div>
