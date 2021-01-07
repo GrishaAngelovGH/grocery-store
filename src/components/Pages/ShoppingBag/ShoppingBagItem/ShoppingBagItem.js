@@ -76,7 +76,7 @@ class ShoppingBagItem extends Component {
 }
 
 ShoppingBagItem.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.any.isRequired,
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     currency: PropTypes.string.isRequired,

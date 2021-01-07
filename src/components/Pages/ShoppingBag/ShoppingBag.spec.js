@@ -85,11 +85,13 @@ describe('(Component) ShoppingBag', () => {
 
     it('should render empty bag', () => {
         const removeItemFromShoppingCart = sinon.spy()
+        const changeItemQtyFromShoppingCart = sinon.spy()
 
         const wrapper = shallow(
             <ShoppingBag
                 items={[]}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
+                changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
             />
         )
 
