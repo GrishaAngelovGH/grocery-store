@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import ShoppingBagItem from './ShoppingBagItem'
 
-const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
+const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShoppingCart }) => {
     const currency = items.length > 0 && items[0].currency
     let totalSum = 0
 
@@ -35,6 +35,7 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
                                             price={v.price}
                                             qty={v.qty}
                                             removeItemFromShoppingCart={removeItemFromShoppingCart}
+                                            changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                                         />
                                     ))
                                 }
@@ -74,7 +75,8 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
 
 ShoppingBag.propTypes = {
     items: PropTypes.array.isRequired,
-    removeItemFromShoppingCart: PropTypes.func.isRequired
+    removeItemFromShoppingCart: PropTypes.func.isRequired,
+    changeItemQtyFromShoppingCart: PropTypes.func.isRequired
 }
 
 export default ShoppingBag

@@ -1,6 +1,7 @@
 import {
     addItemToShoppingCart,
-    removeItemFromShoppingCart
+    removeItemFromShoppingCart,
+    changeItemQtyFromShoppingCart
 } from './shoppingCart'
 
 describe('(Action) shoppingCart', () => {
@@ -25,6 +26,16 @@ describe('(Action) shoppingCart', () => {
         expect(action).to.eql({
             type: 'REMOVE_ITEM_FROM_SHOPPING_CART',
             id: 'id-1'
+        })
+    })
+
+    it('should create action changeItemQtyFromShoppingCart', () => {
+        const action = changeItemQtyFromShoppingCart({ id: 'id-1', increment: true })
+
+        expect(action).to.eql({
+            type: 'CHANGE_ITEM_QTY_FROM_SHOPPING_CART',
+            id: 'id-1',
+            increment: true
         })
     })
 })

@@ -25,11 +25,13 @@ describe('(Component) ShoppingBag', () => {
         ]
 
         const removeItemFromShoppingCart = sinon.spy()
+        const changeItemQtyFromShoppingCart = sinon.spy()
 
         const wrapper = shallow(
             <ShoppingBag
                 items={items}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
+                changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
             />
         )
 
@@ -52,6 +54,7 @@ describe('(Component) ShoppingBag', () => {
                                 price={items[0].price}
                                 qty={items[0].qty}
                                 removeItemFromShoppingCart={removeItemFromShoppingCart}
+                                changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                             />
                             <ShoppingBagItem
                                 id={items[1].id}
@@ -61,6 +64,7 @@ describe('(Component) ShoppingBag', () => {
                                 price={items[1].price}
                                 qty={items[1].qty}
                                 removeItemFromShoppingCart={removeItemFromShoppingCart}
+                                changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                             />
                         </div>
                         <div className='col-lg-3 m-4 text-center'>

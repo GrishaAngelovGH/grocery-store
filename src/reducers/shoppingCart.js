@@ -37,10 +37,35 @@ const removeItemFromShoppingCartHandler = (state, { id }) => {
     }
 }
 
+const changeItemQtyFromShoppingCartHandler = (state, { id, increment }) => ({
+    ...state,
+    cartItems: [...state.cartItems].map(v => {
+        if (v.id === id) {
+            let qty = v.qty
+
+            if (increment) {
+                qty = qty + 1
+            }
+
+            if (!increment && qty > 1) {
+                qty = qty - 1
+            }
+
+            return {
+                ...v,
+                qty
+            }
+        }
+
+        return v
+    })
+})
+
 export default (state = initialState, action) => {
     const handlers = {
         'ADD_ITEM_TO_SHOPPING_CART': addItemToShoppingCartHandler,
-        'REMOVE_ITEM_FROM_SHOPPING_CART': removeItemFromShoppingCartHandler
+        'REMOVE_ITEM_FROM_SHOPPING_CART': removeItemFromShoppingCartHandler,
+        'CHANGE_ITEM_QTY_FROM_SHOPPING_CART': changeItemQtyFromShoppingCartHandler
     }
 
     const handler = handlers[action.type]

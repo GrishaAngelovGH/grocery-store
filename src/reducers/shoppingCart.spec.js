@@ -46,6 +46,84 @@ describe('(Reducer) shoppingCart', () => {
         expect(newState).to.eql({ cartItems: [{ id: 1, qty: 1 }, { id: 3, qty: 1 }] })
     })
 
+    it('should increment item qty from shoppingCart', () => {
+        const state = {
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 1 }
+            ]
+        }
+
+        const action = {
+            type: 'CHANGE_ITEM_QTY_FROM_SHOPPING_CART',
+            id: 2,
+            increment: true
+        }
+
+        const newState = shoppingCart(state, action)
+
+        expect(newState).to.eql({
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 2 },
+                { id: 3, qty: 1 }
+            ]
+        })
+    })
+
+    it('should decrement item qty from shoppingCart', () => {
+        const state = {
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 5 }
+            ]
+        }
+
+        const action = {
+            type: 'CHANGE_ITEM_QTY_FROM_SHOPPING_CART',
+            id: 3,
+            increment: false
+        }
+
+        const newState = shoppingCart(state, action)
+
+        expect(newState).to.eql({
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 4 }
+            ]
+        })
+    })
+
+    it('should not decrement item with qty 1 from shoppingCart', () => {
+        const state = {
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 5 }
+            ]
+        }
+
+        const action = {
+            type: 'CHANGE_ITEM_QTY_FROM_SHOPPING_CART',
+            id: 2,
+            increment: false
+        }
+
+        const newState = shoppingCart(state, action)
+
+        expect(newState).to.eql({
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 5 }
+            ]
+        })
+    })
+
     it('should return old state when action type is mismatched', () => {
         const state = { cartItems: ['item1'] }
 

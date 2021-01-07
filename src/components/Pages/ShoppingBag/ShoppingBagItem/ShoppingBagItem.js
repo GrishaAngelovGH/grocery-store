@@ -1,11 +1,24 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import { cakeProductCategory } from 'images'
+import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 class ShoppingBagItem extends Component {
     handleRemoveItem = () => {
         const { id, removeItemFromShoppingCart } = this.props
 
         removeItemFromShoppingCart(id)
+    }
+
+    handleIncrementQty = () => {
+        const { id, changeItemQtyFromShoppingCart } = this.props
+        changeItemQtyFromShoppingCart({ id: id, increment: true })
+    }
+
+    handleDecrementQty = () => {
+        const { id, changeItemQtyFromShoppingCart } = this.props
+        changeItemQtyFromShoppingCart({ id: id, increment: false })
     }
 
     render() {
@@ -24,11 +37,25 @@ class ShoppingBagItem extends Component {
                         <div className='col-md-8'>
                             <div>Price: {`${currency}${price}`}</div>
 
-                            <div>Qty: {qty}</div>
+                            <div className='d-flex align-items-center'>
+                                <div>Qty:</div>
+                                <div className='btn-group' role='group'>
+                                    <button type='button' className='btn btn-sm btn-primary' onClick={this.handleDecrementQty}>
+                                        <ChevronLeft />
+                                    </button>
+
+                                    <button type='button' className='btn btn-sm btn-primary'>
+                                        {qty}
+                                    </button>
+
+                                    <button type='button' className='btn btn-sm btn-primary' onClick={this.handleIncrementQty}>
+                                        <ChevronRight />
+                                    </button>
+                                </div>
+                            </div>
 
                             <div>Subtotal: {currency}{qty * price}</div>
                         </div>
-
                     </div>
 
                     <div className='row mt-2'>
@@ -46,6 +73,16 @@ class ShoppingBagItem extends Component {
             </div>
         )
     }
+}
+
+ShoppingBagItem.propTypes = {
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    qty: PropTypes.number.isRequired,
+    changeItemQtyFromShoppingCart: PropTypes.func.isRequired
 }
 
 export default ShoppingBagItem
