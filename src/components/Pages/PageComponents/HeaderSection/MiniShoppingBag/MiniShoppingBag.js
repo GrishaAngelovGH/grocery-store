@@ -26,6 +26,12 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
             trigger={['hover']}
             overlay={
                 <div>
+                    <div className='d-flex justify-content-center'>
+                        <div className='font-weight-bold text-dark mr-1'>Bag:</div>
+                        <div className='font-weight-bold text-secondary'>
+                            {`(${itemsCount} item${itemsCount > 1 ? 's' : ''})`}
+                        </div>
+                    </div>
                     <ShoppingBagItems
                         items={items}
                         removeItemFromShoppingCart={removeItemFromShoppingCart}
