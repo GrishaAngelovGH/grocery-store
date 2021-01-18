@@ -7,7 +7,7 @@ describe('(Component) Layout', () => {
         const footer = <span>footer</span>
 
         const wrapper = shallow(
-            <Layout header={header} body={body} footer={footer} />
+            <Layout header={header} body={body} footer={footer} language={'en'} />
         )
 
         expect(wrapper.equals(
