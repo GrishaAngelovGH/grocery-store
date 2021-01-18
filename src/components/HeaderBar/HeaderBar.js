@@ -1,7 +1,7 @@
-import { ukFlag } from 'images'
 import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 import MessageCarousel from './MessageCarousel'
+import LanguageSelect from './LanguageSelect'
 import './HeaderBar.scss'
 
 const HeaderBar = () => {
@@ -26,7 +26,7 @@ const HeaderBar = () => {
                     <div className='col-lg-2 d-flex justify-content-around align-items-center'>
                         <span className='font-weight-bold small' role='button'>Help</span>
                         <span className='font-weight-bold small' role='button'>Find a store</span>
-                        <img src={ukFlag} width={50} height={25} />
+                        <LanguageSelect />
                     </div>
                 </div>
             </div>
