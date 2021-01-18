@@ -1,7 +1,7 @@
 import HelpButton from './HelpButton'
 import { nextDayDeliver } from 'images'
 
-import NextDayDeliveryButton from './NextDayDeliveryButton'
+import { NextDayDeliveryButton } from './NextDayDeliveryButton'
 
 describe('(Component) NextDayDeliveryButton', () => {
     it('should render component', () => {

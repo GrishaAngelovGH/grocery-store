@@ -1,6 +1,6 @@
 import { shoppingBanner } from 'images'
 
-import FreeShoppingBanner from './FreeShoppingBanner'
+import { FreeShoppingBanner } from './FreeShoppingBanner'
 
 describe('(Component) FreeShoppingBanner', () => {
     it('should render component', () => {
@@ -12,7 +12,7 @@ describe('(Component) FreeShoppingBanner', () => {
                     <div className='free-shopping-banner-label'>
                         <h2>12 DAYS OF GIVEAWAYS</h2>
                         <h3>FREE SHOPPING FOR 50 SPARKS CUSTOMERS EVERY DAY</h3>
-                        <h3>Find out more </h3>
+                        <h3>Find out more</h3>
                     </div>
                     <img src={shoppingBanner} className='w-100 shopping-banner' />
                 </div>

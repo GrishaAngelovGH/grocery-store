@@ -1,7 +1,7 @@
 import HelpButton from './HelpButton'
 import { returnsDelivery } from 'images'
 
-import ReturnDeliveryButton from './ReturnDeliveryButton'
+import { ReturnDeliveryButton } from './ReturnDeliveryButton'
 
 describe('(Component) ReturnDeliveryButton', () => {
     it('should render component', () => {

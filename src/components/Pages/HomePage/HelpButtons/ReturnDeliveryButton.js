@@ -1,8 +1,16 @@
 import HelpButton from './HelpButton'
 import { returnsDelivery } from 'images'
 
-const ReturnDeliveryButton = () => (
-    <HelpButton icon={returnsDelivery} label={'Shop with confidence with our extended returns policy'} />
+import translate from 'translate'
+
+export const ReturnDeliveryButton = ({ strings }) => (
+    <HelpButton icon={returnsDelivery} label={strings.label} />
 )
 
-export default ReturnDeliveryButton
+ReturnDeliveryButton.defaultProps = {
+    strings: {
+        label: 'Shop with confidence with our extended returns policy'
+    }
+}
+
+export default translate('Pages.HomePage.HelpButtons.ReturnDeliveryButton')(ReturnDeliveryButton)
