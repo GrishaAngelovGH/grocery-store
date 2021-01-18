@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
 import './axios-mock-adapter'
-import 'react-notifications/dist/react-notifications.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import { store, persistor } from './store'
 

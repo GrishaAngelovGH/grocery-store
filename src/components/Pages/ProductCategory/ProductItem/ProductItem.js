@@ -2,7 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import ReactStars from 'react-stars'
-import { NotificationManager } from 'react-notifications'
+import { toast } from 'react-toastify'
 
 import { cakeProductCategory } from 'images'
 class ProductItem extends Component {
@@ -20,7 +20,7 @@ class ProductItem extends Component {
             qty: 1
         })
 
-        NotificationManager.success('Item Added To Shopping Cart', '', 1000)
+        toast('Item Added To Shopping Cart', { autoClose: 2000, hideProgressBar: true, type: 'success' })
     }
 
     render() {

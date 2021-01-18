@@ -2,7 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import Sidebar from 'react-sidebar'
-import { NotificationContainer } from 'react-notifications'
+import { ToastContainer } from 'react-toastify'
 
 import Logo from './Logo'
 import Search from './Search'
@@ -28,7 +28,7 @@ class HeaderSection extends Component {
 
         return (
             <div>
-                <NotificationContainer />
+                <ToastContainer />
 
                 {/* Desktop */}
                 <div className='d-none d-lg-flex row no-gutters justify-content-around align-items-center'>
