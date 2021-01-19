@@ -26,7 +26,7 @@ class ShoppingBagItem extends Component {
 
         return (
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <img src={cakeProductCategory[image]} width={160} height={160} />
                 </div>
 

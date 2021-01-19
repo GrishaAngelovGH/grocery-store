@@ -26,7 +26,7 @@ describe('(Component) ShoppingBagItem', () => {
     it('should render component', () => {
         expect(wrapper.equals(
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
-                <div className='col-md-4'>
+                <div className='col-md-6'>
                     <img src={cakeProductCategory['vanillaCake']} width={160} height={160} />
                 </div>
 
