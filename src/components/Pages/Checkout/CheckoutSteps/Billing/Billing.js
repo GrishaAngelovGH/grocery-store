@@ -1,7 +1,7 @@
 import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
-import { validateNumber, validateEmail } from 'components/Forms/validators'
+import { validateNumber, validateEmail, validatePhone } from 'components/Forms/validators'
 
 const Billing = () => (
     <div className='row m-3'>
@@ -38,7 +38,11 @@ const Billing = () => (
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
-                    <RequiredInputField name={'phoneNumber'} label={'Phone'} />
+                    <RequiredInputField
+                        name={'phoneNumber'}
+                        label={'Phone'}
+                        validators={[validatePhone]}
+                    />
                 </div>
             </div>
 

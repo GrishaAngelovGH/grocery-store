@@ -21,3 +21,8 @@ export const validateCreditCardNumber = (creditCardNumber, allValues) => {
 
     return cardTypes[type].test(creditCardNumber) ? undefined : 'Invalid format'
 }
+
+export const validatePhone = (phone) => {
+    const re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+    return re.test(phone) ? undefined : 'Invalid format'
+}
