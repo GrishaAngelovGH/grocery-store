@@ -43,6 +43,7 @@ const Billing = () => (
                         label={'Phone'}
                         validators={[validatePhone]}
                     />
+                    <span className='text-secondary'>ex: 123-456-7890</span>
                 </div>
             </div>
 

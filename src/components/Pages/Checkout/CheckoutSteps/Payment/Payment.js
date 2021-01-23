@@ -23,6 +23,7 @@ class Payment extends Component {
                                         value='visa'
                                     />{' '}
                                     <span className='m-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
+                                    <div className='text-secondary'>ex: 4111111111111</div>
                                 </label>
                                 <label>
                                     <Field
@@ -32,6 +33,7 @@ class Payment extends Component {
                                         value='mastercard'
                                     />{' '}
                                     <span className='font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
+                                    <div className='text-secondary'>ex: 5397283356685992</div>
                                 </label>
                             </div>
                         </div>
