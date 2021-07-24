@@ -36,7 +36,8 @@
     "test": "mocha 'src/**/*.spec.js' --watch --require @babel/register --require ignore-styles --require mocha-helpers.js",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.js'",
-    "lint:fix": "eslint --fix --ext .js,.jsx ."
+    "lint:fix": "eslint --fix --ext .js,.jsx .",
+    "cypress": "./node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +64,7 @@
     "@babel/register": "^7.10.5",
     "babel-plugin-webpack-alias": "^2.1.2",
     "chai": "^4.2.0",
+    "cypress": "^8.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "^7.18.0",
