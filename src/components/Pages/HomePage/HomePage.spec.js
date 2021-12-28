@@ -1,9 +1,5 @@
-import {
-    groceryStoreBanner
-} from 'images'
-
 import HeaderSection from '../PageComponents/HeaderSection'
-
+import GroceryStoreBanner from './GroceryStoreBanner'
 import FreeShoppingBanner from './FreeShoppingBanner'
 import PromoProducts from './PromoProducts'
 import PromoDeals from './PromoDeals'
@@ -28,7 +24,7 @@ describe('(Component) HomePage', () => {
 
                     <HelpLinks />
 
-                    <img src={groceryStoreBanner} className='img-fluid w-100 mt-2' />
+                    <GroceryStoreBanner />
 
                     <div className='row no-gutters justify-content-around text-center m-2'>
                         <div className='col-md-3'>
