@@ -1,7 +1,7 @@
 import menuLinksFormatter from './menuLinksFormatter'
 
 describe('(Formatter) Menu Links Formatter', () => {
-    it('should menu links', () => {
+    it('should format menu links', () => {
         const menu = {
             en: [
                 {

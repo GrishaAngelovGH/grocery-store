@@ -2,6 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Form } from 'react-final-form'
+import Swal from 'sweetalert2'
 
 import Steps from 'rc-steps'
 import 'rc-steps/assets/index.css'
@@ -19,7 +20,13 @@ export class CheckoutSteps extends Component {
     }
 
     handleFormSubmit = values => {
-        alert(`${this.props.strings.successMessage}: ${JSON.stringify(values)}`)
+        Swal.fire({
+            width: 800,
+            icon: 'success',
+            text: JSON.stringify(values, null, 2),
+            allowOutsideClick: false,
+            title: this.props.strings.successMessage
+        })
     }
 
     formContent = ({ handleSubmit, valid }) => {
