@@ -1,7 +1,12 @@
+import PropTypes from 'prop-types'
 import { Component } from 'react'
-import { cakeProductCategory } from 'images'
 
-class ShoppingBagItem extends Component {
+import { cakeProductCategory } from 'images'
+import currencyFormatter from 'components/formatters/currencyFormatter'
+
+import translate from 'translate'
+
+export class ShoppingBagItem extends Component {
     handleRemoveItem = () => {
         const { id, removeItemFromShoppingCart } = this.props
 
@@ -9,7 +14,7 @@ class ShoppingBagItem extends Component {
     }
 
     render() {
-        const { image, description, currency, price, qty } = this.props
+        const { strings, lang, image, description, currency, price, qty } = this.props
 
         return (
             <div className='d-flex p-3'>
@@ -17,12 +22,12 @@ class ShoppingBagItem extends Component {
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>{description}</div>
-                    <div>{`${currency}${price}`}</div>
+                    <div>{currencyFormatter(lang, currency, price)}</div>
 
                     <div className='d-flex flex-column font-weight-bold mt-3'>
-                        <div>Qty: {qty}</div>
+                        <div>{strings.qty}: {qty}</div>
                         <button onClick={this.handleRemoveItem} type='button' className='btn btn-outline-primary btn-sm'>
-                            Remove
+                            {strings.removeBtn}
                         </button>
                     </div>
                 </div>
@@ -31,4 +36,21 @@ class ShoppingBagItem extends Component {
     }
 }
 
-export default ShoppingBagItem
+ShoppingBagItem.propTypes = {
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    currency: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    qty: PropTypes.number.isRequired,
+    strings: PropTypes.object.isRequired
+}
+
+ShoppingBagItem.defaultProps = {
+    strings: {
+        qty: 'Qty',
+        removeBtn: 'Remove'
+    }
+}
+
+export default translate('Pages.PageComponents.HeaderSection.MiniShoppingBag.ShoppingBagItems.ShoppingBagItem')(ShoppingBagItem)

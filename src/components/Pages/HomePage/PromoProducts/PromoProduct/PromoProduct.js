@@ -14,7 +14,7 @@ const PromoProduct = ({ image, imageLabel, description, linkTitle }) => (
 )
 
 PromoProduct.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     imageLabel: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     linkTitle: PropTypes.string.isRequired

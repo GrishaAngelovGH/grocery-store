@@ -1,5 +1,5 @@
 import { cakeProductCategory } from 'images'
-import ShoppingBagItem from './ShoppingBagItem'
+import { ShoppingBagItem } from './ShoppingBagItem'
 
 describe('(Component) ShoppingBagItem', () => {
     let wrapper, removeItemFromShoppingCart
@@ -9,7 +9,8 @@ describe('(Component) ShoppingBagItem', () => {
 
         wrapper = shallow(
             <ShoppingBagItem
-                id={'id-1'}
+                id={1}
+                lang={'en'}
                 image={'vanillaCake'}
                 description={'description-1'}
                 currency={'£'}
@@ -46,6 +47,6 @@ describe('(Component) ShoppingBagItem', () => {
         button.simulate('click')
 
         removeItemFromShoppingCart.should.have.been.calledOnce
-        removeItemFromShoppingCart.should.have.been.calledWith('id-1')
+        removeItemFromShoppingCart.should.have.been.calledWith(1)
     })
 })

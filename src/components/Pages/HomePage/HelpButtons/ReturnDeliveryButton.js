@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import HelpButton from './HelpButton'
 import { returnsDelivery } from 'images'
 
@@ -6,6 +7,10 @@ import translate from 'translate'
 export const ReturnDeliveryButton = ({ strings }) => (
     <HelpButton icon={returnsDelivery} label={strings.label} />
 )
+
+ReturnDeliveryButton.propTypes = {
+    strings: PropTypes.object.isRequired
+}
 
 ReturnDeliveryButton.defaultProps = {
     strings: {

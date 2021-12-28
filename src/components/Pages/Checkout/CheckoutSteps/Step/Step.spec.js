@@ -1,4 +1,4 @@
-import Step from './Step'
+import { Step } from './Step'
 
 describe('(Component) Step', () => {
     it('should render component', () => {

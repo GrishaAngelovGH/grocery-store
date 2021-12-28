@@ -5,11 +5,15 @@ import ReactStars from 'react-stars'
 import { toast } from 'react-toastify'
 
 import { cakeProductCategory } from 'images'
-class ProductItem extends Component {
+import currencyFormatter from 'components/formatters/currencyFormatter'
+
+import translate from 'translate'
+
+export class ProductItem extends Component {
     handleAddToCartClick = () => {
         const { addItemToShoppingCart } = this.props
 
-        const { id, image, description, currency, price } = this.props
+        const { strings, id, image, description, currency, price } = this.props
 
         addItemToShoppingCart({
             id,
@@ -20,22 +24,22 @@ class ProductItem extends Component {
             qty: 1
         })
 
-        toast('Item Added To Shopping Cart', { autoClose: 2000, hideProgressBar: true, type: 'success' })
+        toast(strings.message, { autoClose: 2000, hideProgressBar: true, type: 'success' })
     }
 
     render() {
-        const { image, imageLabel, description, currency, price, rating } = this.props
+        const { strings, image, imageLabel, description, currency, price, rating, lang } = this.props
 
         return (
             <div className='m-3'>
                 <div className='d-flex align-items-end'>
-                    <span className='promo-img-label'>{imageLabel}</span>
+                    <span className='promo-img-label'>{imageLabel[lang]}</span>
                     <img src={cakeProductCategory[image]} width={250} height={300} />
                 </div>
 
-                <div>{description}</div>
+                <div>{description[lang]}</div>
 
-                <div>{`${currency}${price}`}</div>
+                <div>{currencyFormatter(lang, currency[lang], price)}</div>
 
                 <ReactStars
                     count={5}
@@ -50,7 +54,7 @@ class ProductItem extends Component {
                     onClick={this.handleAddToCartClick}
                     className='btn btn-success btn-block'
                 >
-                    Add To Bag
+                    {strings.addToBagBtn}
                 </button>
             </div>
         )
@@ -58,12 +62,21 @@ class ProductItem extends Component {
 }
 
 ProductItem.propTypes = {
+    strings: PropTypes.object.isRequired,
     image: PropTypes.string.isRequired,
-    imageLabel: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    currency: PropTypes.string.isRequired,
+    lang: PropTypes.string.isRequired,
+    imageLabel: PropTypes.object.isRequired,
+    description: PropTypes.object.isRequired,
+    currency: PropTypes.object.isRequired,
     price: PropTypes.number.isRequired,
     rating: PropTypes.number.isRequired
 }
 
-export default ProductItem
+ProductItem.defaultProps = {
+    strings: {
+        message: 'Item added to shopping bag',
+        addToBagBtn: 'Add To Bag'
+    }
+}
+
+export default translate('Pages.ProductCategory.ProductItem')(ProductItem)

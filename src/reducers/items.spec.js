@@ -16,19 +16,20 @@ describe('(Reducer) Items', () => {
 
     it('should search for item based on given criteria', () => {
         const state = [
-            { name: 'item1' },
-            { name: 'ITEM2' },
-            { name: 'some' }
+            { name: { en: 'item1' } },
+            { name: { en: 'ITEM2' } },
+            { name: { en: 'some' } }
         ]
 
         const action = {
             type: 'SEARCH_ITEM',
-            criteria: 'item'
+            criteria: 'item',
+            lang: 'en'
         }
 
         const newState = items(state, action)
 
-        expect(newState).to.eql([{ name: 'item1' }, { name: 'ITEM2' }])
+        expect(newState).to.eql([{ name: { en: 'item1' } }, { name: { en: 'ITEM2' } }])
     })
 
     it('should return old state when action type is mismatched', () => {

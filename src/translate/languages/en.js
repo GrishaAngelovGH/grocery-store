@@ -1,4 +1,178 @@
 export default {
+    'HeaderBar': {
+        messages: [
+            'Beat the queues - Sparks Book & Shop',
+            'Get 50% discount',
+            'View latest products'
+        ],
+        help: 'Help',
+        findStore: 'Find a store'
+    },
+    'Pages.Checkout': {
+        billing: 'Billing',
+        shipping: 'Shipping',
+        payment: 'Payment',
+        preview: 'Preview'
+    },
+    'Pages.Checkout.CheckoutSteps.Billing': {
+        billing: 'Billing',
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email',
+        phone: 'Phone',
+        example: 'ex',
+        billingAddress: 'Address',
+        postCode: 'Post Code',
+        country: 'Country',
+        bg: 'Bulgaria',
+        uk: 'United Kingdom',
+        de: 'Germany'
+    },
+    'Pages.Checkout.CheckoutSteps.Shipping': {
+        shipping: 'Shipping',
+        currency: '£',
+        usps_fcpi: {
+            label: 'USPS First Class Package International',
+            delivery: '7 to 21 business days'
+        },
+        usps_pmi: {
+            label: 'USPS Priority Mail International',
+            delivery: '6 to 10 business days'
+        },
+        usps_pmei: {
+            label: 'USPS Priority Mail Express International',
+            delivery: '3 to 5 business days'
+        },
+        dhl_ew: {
+            label: 'DHL Express Worldwide',
+            delivery: '2 to 3 business days'
+        }
+    },
+    'Pages.Checkout.CheckoutSteps.Payment': {
+        creditCard: 'Credit Card',
+        example: 'ex',
+        creditCardNumber: 'Credit Card Number',
+        expirationDate: 'Expiration Date (MMYYYY)'
+    },
+    'Pages.Checkout.CheckoutSteps.Preview': {
+        total: 'Total',
+        placeOrder: 'Place Order'
+    },
+    'Pages.Checkout.CheckoutSteps': {
+        successMessage: 'Your order is successfullly placed'
+    },
+    'Pages.Checkout.CheckoutSteps.Step': {
+        prev: 'Prev',
+        next: 'Next'
+    },
+    'Pages.HomePage.HelpLinks': {
+        homeDelivery: 'Free home delivery when you spend over £50',
+        order: 'Order by 8pm for next-day delivery for £4.99',
+        shop: 'Shop with confidence with our extended returns policy'
+    },
+    'Pages.HomePage.PromoDeals': {
+        label: 'deals of the week',
+        deals: [
+            {
+                category: 'offers',
+                description: 'see all offers',
+                linkTitle: 'Shop now'
+            },
+            {
+                category: 'women',
+                description: '30% off selected womenswear',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'lingerie',
+                description: '30% off selected nightwear',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'men',
+                description: '2 for £60 on lambswool jumpers',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'women',
+                description: '30% of boots',
+                linkTitle: 'Shop the offer'
+            }
+        ]
+    },
+    'Pages.HomePage.PromoProducts': {
+        label: 'G&S Food',
+        products: images => {
+            const items = [
+                {
+                    imageLabel: 'Special offers',
+                    description: 'Save up to 1/3 on selected wines',
+                    linkTitle: 'Shop wine by the case'
+                },
+                {
+                    imageLabel: 'Limited offers',
+                    description: 'Save up to 20% on selected wines',
+                    linkTitle: 'Shop wine by the case'
+                },
+                {
+                    imageLabel: 'Free delivery',
+                    description: 'Save £5 on selected bouquets',
+                    linkTitle: 'Shop now'
+                }
+            ]
+
+            return items.map((v, i) => ({ image: images[i], ...v }))
+        }
+    },
+    'Pages.PageComponents.HeaderSection.Search': {
+        placeholder: 'Search'
+    },
+    'Pages.PageComponents.HeaderSection.Menu': {
+        availableItems: 'Only the following items are available',
+        links: 'Food > Celebration Cakes > All cakes'
+    },
+    'Pages.PageComponents.HeaderSection.MiniShoppingBag': {
+        bag: 'Bag',
+        viewBag: 'View Bag',
+        checkoutBtn: 'Checkout',
+        itemLabel: {
+            value: 'item',
+            plural: 's'
+        }
+    },
+    'Pages.PageComponents.HeaderSection.MiniShoppingBag.ShoppingBagItems.ShoppingBagItem': {
+        qty: 'Qty',
+        removeBtn: 'Remove'
+    },
+    'Pages.PageComponents.HeaderSection.SidebarMenu': {
+        availableItems: 'Only the following items are available',
+        links: 'Food > Celebration Cakes > All cakes',
+        allCategories: 'All Categories'
+    },
+    'Pages.ProductCategory.EmptyProductCategory': {
+        label: 'No items were found for this category',
+        availableItems: 'Only available items are in Food > Celebration Cakes > All Cakes',
+        continueBtn: 'Continue'
+    },
+    'Pages.ProductCategory.ProductItem': {
+        message: 'Item added to shopping bag',
+        addToBagBtn: 'Add To Bag'
+    },
+    'Pages.ShoppingBag.ShoppingBagItem': {
+        price: 'Price',
+        qty: 'Qty',
+        subtotal: 'Subtotal',
+        removeBtn: 'Remove'
+    },
+    'Pages.ShoppingBag': {
+        shoppingBag: 'Shopping bag',
+        summary: 'Summary',
+        total: 'Total',
+        checkoutBtn: 'Checkout',
+        emptyBag: 'Empty Bag',
+        fillingBag: 'Your bag needs filling',
+        continueBtn: 'Continue Shopping'
+    },
     'Pages.HomePage.HelpButtons.DeliveryButton': {
         label: 'Free home delivery when you spend over £50'
     },

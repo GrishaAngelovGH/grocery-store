@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import EmptyProductCategory from './EmptyProductCategory'
+import { EmptyProductCategory } from './EmptyProductCategory'
 
 describe('(Component) EmptyProductCategory', () => {
     it('should render component', () => {
@@ -11,7 +11,7 @@ describe('(Component) EmptyProductCategory', () => {
                 <div className='col-md-6'>
                     <div className='jumbotron text-center bg-white'>
                         <h2 className='display-4'>
-                            There are no found items for this category.
+                            No items were found for this category
                         </h2>
 
                         <p className='lead'>

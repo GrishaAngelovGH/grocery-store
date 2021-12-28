@@ -8,8 +8,10 @@ import { ShoppingBag as ShoppingBagIcon } from 'components/Icons'
 import ShoppingBagItems from './ShoppingBagItems'
 
 import './MiniShoppingBag.scss'
+import pluralsFormatter from 'components/formatters/pluralsFormatter'
+import translate from 'translate'
 
-const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
+export const MiniShoppingBag = ({ strings, lang, items, removeItemFromShoppingCart }) => {
     let itemsCount = 0
 
     items.forEach(v => {
@@ -27,23 +29,25 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
             overlay={
                 <div>
                     <div className='d-flex justify-content-center'>
-                        <div className='font-weight-bold text-dark mr-1'>Bag:</div>
+                        <div className='font-weight-bold text-dark mr-1'>{`${strings.bag}:`}</div>
                         <div className='font-weight-bold text-secondary'>
-                            {`(${itemsCount} item${itemsCount > 1 ? 's' : ''})`}
+                            {`(${pluralsFormatter(itemsCount, strings.itemLabel)})`}
                         </div>
                     </div>
+
                     <ShoppingBagItems
                         items={items}
+                        lang={lang}
                         removeItemFromShoppingCart={removeItemFromShoppingCart}
                     />
 
                     <div className='d-flex justify-content-around border-top p-2'>
                         <Link to='/shopping-bag'>
-                            <button type='button' className='btn btn-outline-primary'>View Bag</button>
+                            <button type='button' className='btn btn-outline-primary'>{strings.viewBag}</button>
                         </Link>
 
                         <Link to='/checkout'>
-                            <button type='button' className='btn btn-outline-success'>Checkout</button>
+                            <button type='button' className='btn btn-outline-success'>{strings.checkoutBtn}</button>
                         </Link>
                     </div>
                 </div>
@@ -56,8 +60,22 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart }) => {
     )
 }
 
-ShoppingBag.propTypes = {
-    items: PropTypes.array.isRequired
+MiniShoppingBag.propTypes = {
+    items: PropTypes.array.isRequired,
+    strings: PropTypes.object.isRequired,
+    lang: PropTypes.string.isRequired
 }
 
-export default ShoppingBag
+MiniShoppingBag.defaultProps = {
+    strings: {
+        bag: 'Bag',
+        viewBag: 'View Bag',
+        checkoutBtn: 'Checkout',
+        itemLabel: {
+            value: 'item',
+            plural: 's'
+        }
+    }
+}
+
+export default translate('Pages.PageComponents.HeaderSection.MiniShoppingBag')(MiniShoppingBag)

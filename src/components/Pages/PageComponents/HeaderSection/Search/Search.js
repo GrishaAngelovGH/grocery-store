@@ -2,11 +2,12 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Search as SearchIcon } from 'components/Icons'
+import translate from 'translate'
 
-class Search extends Component {
+export class Search extends Component {
     handleInputChange = ({ target }) => {
         if (target.value.length > 0) {
-            this.props.searchItemByCriteria(target.value)
+            this.props.searchItemByCriteria(target.value, this.props.lang)
             return
         }
 
@@ -14,7 +15,7 @@ class Search extends Component {
     }
 
     render() {
-        const { disabled } = this.props
+        const { disabled, strings } = this.props
 
         return (
             <div className='input-group'>
@@ -22,7 +23,7 @@ class Search extends Component {
                     disabled={disabled}
                     type='text'
                     className='form-control'
-                    placeholder='Search'
+                    placeholder={strings.placeholder}
                     onChange={this.handleInputChange}
                 />
                 <div className='input-group-append'>
@@ -36,10 +37,17 @@ class Search extends Component {
 }
 
 Search.propTypes = {
+    strings: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
     selectedCategory: PropTypes.string,
     searchItemByCriteria: PropTypes.func.isRequired,
     fetchAllItemsByCategory: PropTypes.func.isRequired
 }
 
-export default Search
+Search.defaultProps = {
+    strings: {
+        placeholder: 'Search'
+    }
+}
+
+export default translate('Pages.PageComponents.HeaderSection.Search')(Search)

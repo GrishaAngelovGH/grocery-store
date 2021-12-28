@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import ShoppingBagItem from './ShoppingBagItem'
-import ShoppingBag from './ShoppingBag'
+import { ShoppingBag } from './ShoppingBag'
 
 describe('(Component) ShoppingBag', () => {
     it('should render component', () => {
@@ -9,16 +9,16 @@ describe('(Component) ShoppingBag', () => {
             {
                 id: 1,
                 image: 'triple-layer-cake',
-                description: 'description-1',
-                currency: '£',
+                description: { en: 'description-1' },
+                currency: { en: '£' },
                 price: 30.00,
                 qty: 1
             },
             {
                 id: 2,
                 image: 'vanilla-cake',
-                description: 'description-2',
-                currency: '£',
+                description: { en: 'description-2' },
+                currency: { en: '£' },
                 price: 35.00,
                 qty: 2
             }
@@ -29,6 +29,7 @@ describe('(Component) ShoppingBag', () => {
 
         const wrapper = shallow(
             <ShoppingBag
+                lang={'en'}
                 items={items}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
@@ -49,20 +50,22 @@ describe('(Component) ShoppingBag', () => {
                             <ShoppingBagItem
                                 id={items[0].id}
                                 image={items[0].image}
-                                description={items[0].description}
-                                currency={items[0].currency}
+                                description={items[0].description['en']}
+                                currency={items[0].currency['en']}
                                 price={items[0].price}
                                 qty={items[0].qty}
+                                lang={'en'}
                                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                             />
                             <ShoppingBagItem
                                 id={items[1].id}
                                 image={items[1].image}
-                                description={items[1].description}
-                                currency={items[1].currency}
+                                description={items[1].description['en']}
+                                currency={items[1].currency['en']}
                                 price={items[1].price}
                                 qty={items[1].qty}
+                                lang={'en'}
                                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                             />
@@ -89,6 +92,7 @@ describe('(Component) ShoppingBag', () => {
 
         const wrapper = shallow(
             <ShoppingBag
+                lang={'en'}
                 items={[]}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}

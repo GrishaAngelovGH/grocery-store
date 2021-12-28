@@ -5,7 +5,8 @@ import { removeItemFromShoppingCart } from 'actions/shoppingCart'
 import MiniShoppingBag from './MiniShoppingBag'
 
 const mapStateToProps = state => ({
-    items: state.shoppingCart.cartItems
+    items: state.shoppingCart.cartItems,
+    lang: state.language
 })
 
 const mapDispatchToProps = ({

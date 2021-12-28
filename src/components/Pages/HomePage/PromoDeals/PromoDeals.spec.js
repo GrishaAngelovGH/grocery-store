@@ -1,22 +1,37 @@
 import PromoDeal from './PromoDeal'
-import PromoDeals from './PromoDeals'
+import { PromoDeals } from './PromoDeals'
 
 describe('(Component) PromoDeals', () => {
     it('should render component', () => {
         const promoDeals = [
             {
-                category: 'category1',
-                description: 'description1',
-                linkTitle: 'linkTitle1'
+                category: 'offers',
+                description: 'see all offers',
+                linkTitle: 'Shop now'
             },
             {
-                category: 'category2',
-                description: 'description2',
-                linkTitle: 'linkTitle2'
+                category: 'women',
+                description: '30% off selected womenswear',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'lingerie',
+                description: '30% off selected nightwear',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'men',
+                description: '2 for £60 on lambswool jumpers',
+                linkTitle: 'Shop the offer'
+            },
+            {
+                category: 'women',
+                description: '30% of boots',
+                linkTitle: 'Shop the offer'
             }
         ]
 
-        const wrapper = shallow(<PromoDeals promoDeals={promoDeals} />)
+        const wrapper = shallow(<PromoDeals />)
 
         expect(wrapper.equals(
             <div>
@@ -28,6 +43,15 @@ describe('(Component) PromoDeals', () => {
                         </div>
                         <div className='col-lg-2 mr-lg-4'>
                             <PromoDeal deal={promoDeals[1]} />
+                        </div>
+                        <div className='col-lg-2 mr-lg-4'>
+                            <PromoDeal deal={promoDeals[2]} />
+                        </div>
+                        <div className='col-lg-2 mr-lg-4'>
+                            <PromoDeal deal={promoDeals[3]} />
+                        </div>
+                        <div className='col-lg-2 mr-lg-4'>
+                            <PromoDeal deal={promoDeals[4]} />
                         </div>
                     </div>
                 </div>

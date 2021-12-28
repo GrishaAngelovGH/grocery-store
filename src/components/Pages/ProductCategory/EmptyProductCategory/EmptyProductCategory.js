@@ -1,20 +1,23 @@
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const EmptyProductCategory = () => (
+import translate from 'translate'
+
+export const EmptyProductCategory = ({ strings }) => (
     <div className='row no-gutters justify-content-center vh-100'>
         <div className='col-md-6'>
             <div className='jumbotron text-center bg-white'>
                 <h2 className='display-4'>
-                    There are no found items for this category.
+                    {strings.label}
                 </h2>
 
                 <p className='lead'>
-                    {'Only available items are in Food > Celebration Cakes > All Cakes'}
+                    {strings.availableItems}
                 </p>
 
                 <Link to='/' className='text-decoration-none'>
                     <button type='button' className='btn btn-outline-success btn-block'>
-                        Continue
+                        {strings.continueBtn}
                     </button>
                 </Link>
             </div>
@@ -22,4 +25,16 @@ const EmptyProductCategory = () => (
     </div>
 )
 
-export default EmptyProductCategory
+EmptyProductCategory.propTypes = {
+    strings: PropTypes.object.isRequired
+}
+
+EmptyProductCategory.defaultProps = {
+    strings: {
+        label: 'No items were found for this category',
+        availableItems: 'Only available items are in Food > Celebration Cakes > All Cakes',
+        continueBtn: 'Continue'
+    }
+}
+
+export default translate('Pages.ProductCategory.EmptyProductCategory')(EmptyProductCategory)

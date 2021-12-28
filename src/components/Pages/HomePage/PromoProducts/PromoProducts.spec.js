@@ -1,24 +1,36 @@
 import PromoProduct from './PromoProduct'
-import PromoProducts from './PromoProducts'
+import { PromoProducts } from './PromoProducts'
+
+import {
+    winesBanner,
+    specialWineBanner,
+    flowersBanner
+} from 'images'
 
 describe('(Component) PromoProducts', () => {
     it('should render component', () => {
         const products = [
             {
-                image: 'image1',
+                image: winesBanner,
                 imageLabel: 'Special offers',
                 description: 'Save up to 1/3 on selected wines',
                 linkTitle: 'Shop wine by the case'
             },
             {
-                image: 'image2',
+                image: specialWineBanner,
                 imageLabel: 'Limited offers',
                 description: 'Save up to 20% on selected wines',
                 linkTitle: 'Shop wine by the case'
+            },
+            {
+                image: flowersBanner,
+                imageLabel: 'Free delivery',
+                description: 'Save £5 on selected bouquets',
+                linkTitle: 'Shop now'
             }
         ]
 
-        const wrapper = shallow(<PromoProducts products={products} />)
+        const wrapper = shallow(<PromoProducts />)
 
         expect(wrapper.equals(
             <div className='row no-gutters'>
@@ -40,6 +52,13 @@ describe('(Component) PromoProducts', () => {
                             imageLabel={products[1].imageLabel}
                             description={products[1].description}
                             linkTitle={products[1].linkTitle}
+                        />
+
+                        <PromoProduct
+                            image={products[2].image}
+                            imageLabel={products[2].imageLabel}
+                            description={products[2].description}
+                            linkTitle={products[2].linkTitle}
                         />
                     </div>
                 </div>

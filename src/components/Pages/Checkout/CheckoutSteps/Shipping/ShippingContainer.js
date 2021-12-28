@@ -3,7 +3,9 @@ import Shipping from './Shipping'
 
 import { changeShippingMethod } from 'actions/checkout'
 
-const mapStateToProps = () => ({})
+const mapStateToProps = state => ({
+    lang: state.language
+})
 
 const mapDispatchToProps = ({
     changeShippingMethod

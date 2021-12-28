@@ -5,8 +5,8 @@ import {
 import HeaderSection from '../PageComponents/HeaderSection'
 
 import FreeShoppingBanner from './FreeShoppingBanner'
-import PromoProducts, { promoProductItems } from './PromoProducts'
-import PromoDeals, { promoDealItems } from './PromoDeals'
+import PromoProducts from './PromoProducts'
+import PromoDeals from './PromoDeals'
 import HelpLinks from './HelpLinks'
 
 import {
@@ -44,9 +44,9 @@ describe('(Component) HomePage', () => {
 
                     <FreeShoppingBanner />
 
-                    <PromoProducts products={promoProductItems} />
+                    <PromoProducts />
 
-                    <PromoDeals promoDeals={promoDealItems} />
+                    <PromoDeals />
                 </div>
             </div>
         )).to.equal(true)

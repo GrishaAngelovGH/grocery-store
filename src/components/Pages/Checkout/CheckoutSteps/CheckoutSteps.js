@@ -7,8 +7,9 @@ import Steps from 'rc-steps'
 import 'rc-steps/assets/index.css'
 
 import Step from './Step'
+import translate from 'translate'
 
-class CheckoutSteps extends Component {
+export class CheckoutSteps extends Component {
     state = {
         currentStep: 0
     }
@@ -18,7 +19,7 @@ class CheckoutSteps extends Component {
     }
 
     handleFormSubmit = values => {
-        alert(`Your order is successfullly placed: ${JSON.stringify(values)}`)
+        alert(`${this.props.strings.successMessage}: ${JSON.stringify(values)}`)
     }
 
     formContent = ({ handleSubmit, valid }) => {
@@ -61,7 +62,8 @@ class CheckoutSteps extends Component {
                     initialValues={{
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
-                        credit_card_type: 'visa'
+                        credit_card_type: 'visa',
+                        country: 'bg'
                     }}
                     render={this.formContent}
                 />
@@ -71,7 +73,14 @@ class CheckoutSteps extends Component {
 }
 
 CheckoutSteps.propTypes = {
+    strings: PropTypes.object.isRequired,
     steps: PropTypes.array.isRequired
 }
 
-export default CheckoutSteps
+CheckoutSteps.defaultProps = {
+    strings: {
+        successMessage: 'Your order is successfullly placed'
+    }
+}
+
+export default translate('Pages.Checkout.CheckoutSteps')(CheckoutSteps)

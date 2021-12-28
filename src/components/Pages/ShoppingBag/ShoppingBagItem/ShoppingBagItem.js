@@ -4,7 +4,10 @@ import PropTypes from 'prop-types'
 import { cakeProductCategory } from 'images'
 import { ChevronLeft, ChevronRight } from 'components/Icons'
 
-class ShoppingBagItem extends Component {
+import currencyFormatter from 'components/formatters/currencyFormatter'
+import translate from 'translate'
+
+export class ShoppingBagItem extends Component {
     handleRemoveItem = () => {
         const { id, removeItemFromShoppingCart } = this.props
 
@@ -22,7 +25,7 @@ class ShoppingBagItem extends Component {
     }
 
     render() {
-        const { image, description, currency, price, qty } = this.props
+        const { strings, image, description, currency, price, qty, lang } = this.props
 
         return (
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
@@ -35,10 +38,10 @@ class ShoppingBagItem extends Component {
 
                     <div className='row mt-4'>
                         <div className='col-md-8'>
-                            <div>Price: {`${currency}${price}`}</div>
+                            <div>{strings.price}: {currencyFormatter(lang, currency, price)}</div>
 
                             <div className='d-flex align-items-center'>
-                                <div>Qty:</div>
+                                <div>{strings.qty}:</div>
                                 <div className='btn-group' role='group'>
                                     <button type='button' className='btn btn-sm btn-primary' onClick={this.handleDecrementQty}>
                                         <ChevronLeft />
@@ -54,7 +57,7 @@ class ShoppingBagItem extends Component {
                                 </div>
                             </div>
 
-                            <div>Subtotal: {currency}{qty * price}</div>
+                            <div>{strings.subtotal}: {currencyFormatter(lang, currency, qty * price)}</div>
                         </div>
                     </div>
 
@@ -65,7 +68,7 @@ class ShoppingBagItem extends Component {
                                 className='btn btn-outline-primary btn-sm btn-block'
                                 onClick={this.handleRemoveItem}
                             >
-                                Remove
+                                {strings.removeBtn}
                             </button>
                         </div>
                     </div>
@@ -76,13 +79,23 @@ class ShoppingBagItem extends Component {
 }
 
 ShoppingBagItem.propTypes = {
-    id: PropTypes.any.isRequired,
+    id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     currency: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     qty: PropTypes.number.isRequired,
+    strings: PropTypes.object.isRequired,
     changeItemQtyFromShoppingCart: PropTypes.func.isRequired
 }
 
-export default ShoppingBagItem
+ShoppingBagItem.defaultProps = {
+    strings: {
+        price: 'Price',
+        qty: 'Qty',
+        subtotal: 'Subtotal',
+        removeBtn: 'Remove'
+    }
+}
+
+export default translate('Pages.ShoppingBag.ShoppingBagItem')(ShoppingBagItem)

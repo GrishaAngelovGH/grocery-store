@@ -1,5 +1,5 @@
 import CheckoutSteps, { Billing, Shipping, Payment, Preview } from './CheckoutSteps'
-import Checkout from './Checkout'
+import { Checkout } from './Checkout'
 
 describe('(Component) Checkout', () => {
     it('should render component', () => {

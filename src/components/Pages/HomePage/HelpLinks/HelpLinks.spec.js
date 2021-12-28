@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import HelpLinks from './HelpLinks'
+import { HelpLinks } from './HelpLinks'
 
 describe('(Component) HelpLinks', () => {
     it('should render component', () => {

@@ -1,5 +1,5 @@
 import { Search as SearchIcon } from 'components/Icons'
-import Search from './Search'
+import { Search } from './Search'
 
 describe('(Component) Search', () => {
     it('should render component', () => {

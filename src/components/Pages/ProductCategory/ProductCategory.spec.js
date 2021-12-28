@@ -49,6 +49,7 @@ describe('(Component) ProductCategory', () => {
                                 currency={items[0].currency}
                                 price={items[0].price}
                                 rating={items[0].rating}
+                                lang={'en'}
                                 addItemToShoppingCart={addItemToShoppingCart}
                             />
                         </div>

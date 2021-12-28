@@ -1,18 +1,21 @@
 import { Component } from 'react'
+import PropTypes from 'prop-types'
 import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateCreditCardNumber } from 'components/Forms/validators'
 import { payment } from 'images'
 
-class Payment extends Component {
+import translate from 'translate'
+
+export class Payment extends Component {
     fieldContent = ({ input }) => (
         <div>
             <input {...input} />
-            <span className='m-1 font-weight-bold'>Credit Card</span>
+            <span className='m-1 font-weight-bold'>{this.props.strings.creditCard}</span>
             {
                 input.checked && (
-                    <div>
+                    <div className='m-3'>
                         <div className='row mb-2'>
                             <div className='col-md-6 col-lg-9'>
                                 <label>
@@ -23,7 +26,7 @@ class Payment extends Component {
                                         value='visa'
                                     />{' '}
                                     <span className='m-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
-                                    <div className='text-secondary'>ex: 4111111111111</div>
+                                    <div className='text-secondary'>{`${this.props.strings.example}: 4111111111111`}</div>
                                 </label>
                                 <label>
                                     <Field
@@ -33,7 +36,7 @@ class Payment extends Component {
                                         value='mastercard'
                                     />{' '}
                                     <span className='font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
-                                    <div className='text-secondary'>ex: 5397283356685992</div>
+                                    <div className='text-secondary'>{`${this.props.strings.example}: 5397283356685992`}</div>
                                 </label>
                             </div>
                         </div>
@@ -41,14 +44,14 @@ class Payment extends Component {
                             <div className='col-md-9'>
                                 <RequiredInputField
                                     name={'creditCardNumber'}
-                                    label={'Credit Card Number'}
+                                    label={this.props.strings.creditCardNumber}
                                     validators={[validateCreditCardNumber]}
                                 />
                             </div>
                         </div>
                         <div className='row mb-2'>
                             <div className='col-md-9'>
-                                <RequiredInputField name={'expirationDate'} label={'Expiration Date (MMYYYY)'} />
+                                <RequiredInputField name={'expirationDate'} label={this.props.strings.expirationDate} />
                             </div>
                         </div>
                     </div>
@@ -100,4 +103,17 @@ class Payment extends Component {
     }
 }
 
-export default Payment
+Payment.propTypes = {
+    strings: PropTypes.object.isRequired
+}
+
+Payment.defaultProps = {
+    strings: {
+        creditCard: 'Credit Card',
+        example: 'ex',
+        creditCardNumber: 'Credit Card Number',
+        expirationDate: 'Expiration Date (MMYYYY)'
+    }
+}
+
+export default translate('Pages.Checkout.CheckoutSteps.Payment')(Payment)

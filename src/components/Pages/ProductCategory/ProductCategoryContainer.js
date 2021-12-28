@@ -5,7 +5,8 @@ import { fetchAllItemsByCategory } from 'actions/items'
 import { addItemToShoppingCart } from 'actions/shoppingCart'
 
 const mapStateToProps = (state) => ({
-    items: state.items
+    items: state.items,
+    lang: state.language
 })
 
 const mapDispatchToProps = ({

@@ -1,6 +1,6 @@
 import { Field, FormSpy } from 'react-final-form'
 
-import Shipping from './Shipping'
+import { Shipping } from './Shipping'
 
 describe('(Component) Shipping', () => {
     let wrapper, changeShippingMethod
@@ -10,6 +10,7 @@ describe('(Component) Shipping', () => {
 
         wrapper = shallow(
             <Shipping
+                lang={'en'}
                 changeShippingMethod={changeShippingMethod}
             />
         )
@@ -27,7 +28,7 @@ describe('(Component) Shipping', () => {
                         </div>
                     </div>
                     <div className='row'>
-                        <div className='col-md-12 col-lg-5'>
+                        <div className='col-md-12 col-lg-7'>
                             <label>
                                 <Field
                                     name='shipping_method'
@@ -35,7 +36,7 @@ describe('(Component) Shipping', () => {
                                     type='radio'
                                     value='usps_fcpi'
                                 />{' '}
-                                <span className='font-weight-bold'>USPS First Class Package International - £13.30</span>
+                                <span className='font-weight-bold'>USPS First Class Package International - £13.35</span>
                                 <div className='small text-secondary ml-3'>7 to 21 business days</div>
                             </label>
 

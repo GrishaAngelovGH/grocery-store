@@ -9,7 +9,7 @@ import Menu, { menuCategories } from './Menu'
 
 import { User } from 'components/Icons'
 
-import HeaderSection from './HeaderSection'
+import { HeaderSection } from './HeaderSection'
 
 describe('(Component) HeaderSection', () => {
     it('should render component', () => {
@@ -46,7 +46,7 @@ describe('(Component) HeaderSection', () => {
                 {/* Mobile and Tablet */}
                 <div className='d-lg-none d-md-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-1 col-md-1'>
-                        <Menu mobile onSidebarOpen={wrapper.instance().handleSidebarOpen} categories={menuCategories} />
+                        <Menu lang={'en'} mobile onSidebarOpen={wrapper.instance().handleSidebarOpen} categories={menuCategories} />
                     </div>
 
                     <div className='col-1 col-md-1'>
@@ -68,7 +68,7 @@ describe('(Component) HeaderSection', () => {
                 </div>
 
                 <div className='d-none d-lg-block'>
-                    <Menu categories={menuCategories} />
+                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
             </div>
         )).to.equal(true)
@@ -111,7 +111,7 @@ describe('(Component) HeaderSection', () => {
                 {/* Mobile and Tablet */}
                 <div className='d-lg-none d-md-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-1 col-md-1'>
-                        <Menu mobile onSidebarOpen={wrapper.instance().handleSidebarOpen} categories={menuCategories} />
+                        <Menu lang={'en'} mobile onSidebarOpen={wrapper.instance().handleSidebarOpen} categories={menuCategories} />
                     </div>
 
                     <div className='col-1 col-md-1'>
@@ -133,13 +133,14 @@ describe('(Component) HeaderSection', () => {
                 </div>
 
                 <div className='d-none d-lg-block'>
-                    <Menu categories={menuCategories} />
+                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
 
                 <Sidebar
                     rootClassName='position-fixed sidebar-container'
                     sidebar={
                         <SidebarMenu
+                            lang={'en'}
                             categories={menuCategories}
                             onSidebarOpen={wrapper.instance().handleSidebarOpen}
                         />

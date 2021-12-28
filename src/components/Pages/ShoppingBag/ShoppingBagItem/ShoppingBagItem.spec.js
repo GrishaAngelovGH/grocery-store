@@ -1,5 +1,5 @@
 import { cakeProductCategory } from 'images'
-import ShoppingBagItem from './ShoppingBagItem'
+import { ShoppingBagItem } from './ShoppingBagItem'
 import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 describe('(Component) ShoppingBagItem', () => {
@@ -11,12 +11,13 @@ describe('(Component) ShoppingBagItem', () => {
 
         wrapper = shallow(
             <ShoppingBagItem
-                id={'id-1'}
+                id={5}
                 image={'vanillaCake'}
                 description={'description-1'}
                 currency={'£'}
                 price={30.00}
                 qty={2}
+                lang={'en'}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
             />
@@ -88,7 +89,7 @@ describe('(Component) ShoppingBagItem', () => {
         button.simulate('click')
 
         removeItemFromShoppingCart.should.have.been.calledOnce
-        removeItemFromShoppingCart.should.have.been.calledWith('id-1')
+        removeItemFromShoppingCart.should.have.been.calledWith(5)
     })
 
     it('should handle decrement item qty', () => {
@@ -97,7 +98,7 @@ describe('(Component) ShoppingBagItem', () => {
         button.simulate('click')
 
         changeItemQtyFromShoppingCart.should.have.been.calledOnce
-        changeItemQtyFromShoppingCart.should.have.been.calledWith({ id: 'id-1', increment: false })
+        changeItemQtyFromShoppingCart.should.have.been.calledWith({ id: 5, increment: false })
     })
 
     it('should handle increment item qty', () => {
@@ -106,6 +107,6 @@ describe('(Component) ShoppingBagItem', () => {
         button.simulate('click')
 
         changeItemQtyFromShoppingCart.should.have.been.calledOnce
-        changeItemQtyFromShoppingCart.should.have.been.calledWith({ id: 'id-1', increment: true })
+        changeItemQtyFromShoppingCart.should.have.been.calledWith({ id: 5, increment: true })
     })
 })

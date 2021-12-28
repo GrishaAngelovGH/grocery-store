@@ -5,20 +5,21 @@ import PropTypes from 'prop-types'
 import FeatureMenu from './FeatureMenu'
 
 import './Menu.scss'
+import translate from 'translate'
 
-class Menu extends Component {
+export class Menu extends Component {
     state = { subCategories: [], featureMenu: { items: [] } }
 
     handleMouseEnter = ({ target }) => {
         const title = target.id
-        const categories = this.props.categories.find(v => v.title === title)
+        const categories = this.props.categories[this.props.lang].find(v => v.title === title)
         const subCategories = categories.subCategories
         const featureMenu = categories.featureMenu
         this.setState({ subCategories, featureMenu })
     }
 
     render() {
-        const { mobile, categories, onSidebarOpen } = this.props
+        const { lang, strings, mobile, categories, onSidebarOpen } = this.props
         const { subCategories, featureMenu } = this.state
 
         return (
@@ -35,7 +36,7 @@ class Menu extends Component {
                                 <div className='collapse navbar-collapse justify-content-center' id='navbarNav'>
                                     <ul className='navbar-nav'>
                                         {
-                                            categories.map(v => (
+                                            categories[lang].map(v => (
                                                 <li key={v.title} className='nav-item' onMouseEnter={this.handleMouseEnter}>
                                                     <a id={v.title} className='nav-link' href='#'>{v.title}</a>
                                                 </li>
@@ -52,8 +53,8 @@ class Menu extends Component {
                             <div className='row no-gutters justify-content-center subcategories'>
                                 <div className='col-md-11 d-flex border bg-white'>
                                     <div className='d-flex flex-column justify-content-around small text-uppercase font-weight-bold text-center alert alert-primary m-2' role='alert'>
-                                        <div>Only the following items are available</div>
-                                        <div>{'Food > Celebration Cakes > All cakes'}</div>
+                                        <div>{strings.availableItems}</div>
+                                        <div>{strings.links}</div>
                                     </div>
 
                                     {
@@ -63,15 +64,11 @@ class Menu extends Component {
                                                     {v.title}
                                                 </div>
                                                 {
-                                                    v.categories.map(value => {
-                                                        const categoryLink = `/category/${value.toLowerCase().split(' ').join('-')}`
-
-                                                        return (
-                                                            <Link key={value} className='small d-block' to={categoryLink}>
-                                                                {value}
-                                                            </Link>
-                                                        )
-                                                    })
+                                                    v.categories.map(({ value, link }) => (
+                                                        <Link key={link} className='small d-block' to={link}>
+                                                            {value}
+                                                        </Link>
+                                                    ))
                                                 }
                                             </div>
                                         ))
@@ -88,9 +85,17 @@ class Menu extends Component {
 }
 
 Menu.propTypes = {
+    strings: PropTypes.object.isRequired,
     mobile: PropTypes.bool,
     onSidebarOpen: PropTypes.func,
-    categories: PropTypes.array.isRequired
+    categories: PropTypes.object.isRequired
 }
 
-export default Menu
+Menu.defaultProps = {
+    strings: {
+        availableItems: 'Only the following items are available',
+        links: 'Food > Celebration Cakes > All cakes'
+    }
+}
+
+export default translate('Pages.PageComponents.HeaderSection.Menu')(Menu)

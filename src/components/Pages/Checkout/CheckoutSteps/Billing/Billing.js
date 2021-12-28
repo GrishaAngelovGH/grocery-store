@@ -1,28 +1,31 @@
+import PropTypes from 'prop-types'
 import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateNumber, validateEmail, validatePhone } from 'components/Forms/validators'
 
-const Billing = () => (
+import translate from 'translate'
+
+export const Billing = ({ strings }) => (
     <div className='row m-3'>
         <div className='col-md-12'>
             <div className='row'>
                 <div className='col-md-12'>
                     <h1>
-                        Billing
+                        {strings.billing}
                     </h1>
                 </div>
             </div>
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
-                    <RequiredInputField name={'firstName'} label={'First Name'} />
+                    <RequiredInputField name={'firstName'} label={strings.firstName} />
                 </div>
             </div>
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
-                    <RequiredInputField name={'lastName'} label={'Last Name'} />
+                    <RequiredInputField name={'lastName'} label={strings.lastName} />
                 </div>
             </div>
 
@@ -30,7 +33,7 @@ const Billing = () => (
                 <div className='col-md-6 col-lg-3'>
                     <RequiredInputField
                         name={'email'}
-                        label={'Email'}
+                        label={strings.email}
                         validators={[validateEmail]}
                     />
                 </div>
@@ -40,16 +43,16 @@ const Billing = () => (
                 <div className='col-md-6 col-lg-3'>
                     <RequiredInputField
                         name={'phoneNumber'}
-                        label={'Phone'}
+                        label={strings.phone}
                         validators={[validatePhone]}
                     />
-                    <span className='text-secondary'>ex: 123-456-7890</span>
+                    <span className='text-secondary'>{strings.example}: 123-456-7890</span>
                 </div>
             </div>
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
-                    <RequiredInputField name={'billingAddress'} label={'Billing Addr'} />
+                    <RequiredInputField name={'billingAddress'} label={strings.billingAddress} />
                 </div>
             </div>
 
@@ -57,7 +60,7 @@ const Billing = () => (
                 <div className='col-md-6 col-lg-3'>
                     <RequiredInputField
                         name={'postCode'}
-                        label={'Post Code'}
+                        label={strings.postCode}
                         validators={[validateNumber]}
                     />
                 </div>
@@ -65,11 +68,11 @@ const Billing = () => (
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
-                    <label>Country</label>
-                    <Field name='favoriteColor' component='select' className='w-100'>
-                        <option value='bg'>Bulgaria</option>
-                        <option value='uk'>United Kingdom</option>
-                        <option value='de'>Germany</option>
+                    <label>{strings.country}</label>
+                    <Field name='country' component='select' className='w-100'>
+                        <option value='bg'>{strings.bg}</option>
+                        <option value='uk'>{strings.uk}</option>
+                        <option value='de'>{strings.de}</option>
                     </Field>
                 </div>
             </div>
@@ -77,4 +80,25 @@ const Billing = () => (
     </div>
 )
 
-export default Billing
+Billing.propTypes = {
+    strings: PropTypes.object.isRequired
+}
+
+Billing.defaultProps = {
+    strings: {
+        billing: 'Billing',
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Email',
+        phone: 'Phone',
+        example: 'ex',
+        billingAddress: 'Billing Address',
+        postCode: 'Post Code',
+        country: 'Country',
+        bg: 'Bulgaria',
+        uk: 'United Kingdom',
+        de: 'Germany'
+    }
+}
+
+export default translate('Pages.Checkout.CheckoutSteps.Billing')(Billing)

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import ProductItem from './ProductItem'
 import EmptyProductCategory from './EmptyProductCategory'
 import HeaderSection from '../PageComponents/HeaderSection'
+
 class ProductCategory extends Component {
     componentDidMount() {
         const { match, fetchAllItemsByCategory } = this.props
@@ -14,7 +15,7 @@ class ProductCategory extends Component {
     }
 
     render() {
-        const { match, items, addItemToShoppingCart } = this.props
+        const { match, items, lang, addItemToShoppingCart } = this.props
 
         if (!items.length) {
             return (
@@ -29,8 +30,8 @@ class ProductCategory extends Component {
 
                     <div className='row no-gutters'>
                         {
-                            items.map((v, i) => (
-                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={i}>
+                            items.map(v => (
+                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
                                     <ProductItem
                                         id={v.id}
                                         image={v.image}
@@ -39,12 +40,12 @@ class ProductCategory extends Component {
                                         currency={v.currency}
                                         price={v.price}
                                         rating={v.rating}
+                                        lang={lang}
                                         addItemToShoppingCart={addItemToShoppingCart}
                                     />
                                 </div>
                             ))
                         }
-
                     </div>
                 </div>
             </div>
@@ -53,8 +54,13 @@ class ProductCategory extends Component {
 }
 
 ProductCategory.propTypes = {
+    lang: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
     fetchAllItemsByCategory: PropTypes.func.isRequired
+}
+
+ProductCategory.defaultProps = {
+    lang: 'en'
 }
 
 export default ProductCategory

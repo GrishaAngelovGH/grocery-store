@@ -4,7 +4,7 @@ import Tooltip from 'rc-tooltip'
 import { ShoppingBag as ShoppingBagIcon } from 'components/Icons'
 
 import ShoppingBagItems from './ShoppingBagItems'
-import MiniShoppingBag from './MiniShoppingBag'
+import { MiniShoppingBag } from './MiniShoppingBag'
 
 describe('(Component) MiniShoppingBag', () => {
     it('should render component with provided items', () => {
@@ -14,6 +14,7 @@ describe('(Component) MiniShoppingBag', () => {
         const wrapper = shallow(
             <MiniShoppingBag
                 items={items}
+                lang={'en'}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
         )
@@ -32,6 +33,7 @@ describe('(Component) MiniShoppingBag', () => {
                         </div>
                         <ShoppingBagItems
                             items={items}
+                            lang={'en'}
                             removeItemFromShoppingCart={removeItemFromShoppingCart}
                         />
                         <div className='d-flex justify-content-around border-top p-2'>
@@ -60,6 +62,7 @@ describe('(Component) MiniShoppingBag', () => {
         const wrapper = shallow(
             <MiniShoppingBag
                 items={items}
+                lang={'en'}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
         )
@@ -78,6 +81,7 @@ describe('(Component) MiniShoppingBag', () => {
                         </div>
                         <ShoppingBagItems
                             items={items}
+                            lang={'en'}
                             removeItemFromShoppingCart={removeItemFromShoppingCart}
                         />
                         <div className='d-flex justify-content-around border-top p-2'>
@@ -105,6 +109,7 @@ describe('(Component) MiniShoppingBag', () => {
         const wrapper = shallow(
             <MiniShoppingBag
                 items={[]}
+                lang={'en'}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
             />
         )

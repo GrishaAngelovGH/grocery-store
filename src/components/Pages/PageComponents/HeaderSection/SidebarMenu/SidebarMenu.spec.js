@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Delete, ChevronLeft } from 'components/Icons'
 
 import Logo from '../Logo'
-import SidebarMenu from './SidebarMenu'
+import { SidebarMenu } from './SidebarMenu'
 
 describe('(Component) SidebarMenu', () => {
     let wrapper, onSidebarOpen
@@ -20,38 +20,41 @@ describe('(Component) SidebarMenu', () => {
         buttonLabel: 'buttonLabel'
     }
 
-    const menuCategories = [
-        {
-            title: 'Category1',
-            featureMenu: featureMenu,
-            subCategories: [
-                {
-                    title: 'Title1',
-                    categories: [
-                        'Category1-1'
-                    ]
-                }
-            ]
-        },
-        {
-            title: 'Category2',
-            featureMenu: featureMenu,
-            subCategories: [
-                {
-                    title: 'Title2',
-                    categories: [
-                        'Some Category'
-                    ]
-                }
-            ]
-        }
-    ]
+    const menuCategories = {
+        en: [
+            {
+                title: 'Category1',
+                featureMenu: featureMenu,
+                subCategories: [
+                    {
+                        title: 'Title1',
+                        categories: [
+                            { value: 'Category1-1', link: '/category/category1-1' }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Category2',
+                featureMenu: featureMenu,
+                subCategories: [
+                    {
+                        title: 'Title2',
+                        categories: [
+                            { value: 'Some Category', link: '/category/some-category' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 
     beforeEach(() => {
         onSidebarOpen = sinon.spy()
 
         wrapper = shallow(
             <SidebarMenu
+                lang={'en'}
                 categories={menuCategories}
                 onSidebarOpen={onSidebarOpen}
             />

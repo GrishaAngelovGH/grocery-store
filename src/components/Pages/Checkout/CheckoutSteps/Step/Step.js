@@ -1,7 +1,8 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
+import translate from 'translate'
 
-class Step extends Component {
+export class Step extends Component {
     handlePrevStepChange = () => {
         const { position, onChange } = this.props
 
@@ -15,7 +16,7 @@ class Step extends Component {
     }
 
     render() {
-        const { children, disabled, showPrevButton, showNextButton } = this.props
+        const { strings, children, disabled, showPrevButton, showNextButton } = this.props
 
         return (
             <div className='row no-gutters justify-content-center m-3'>
@@ -32,7 +33,7 @@ class Step extends Component {
                                     onClick={this.handlePrevStepChange}
                                     disabled={disabled}
                                 >
-                                    Prev
+                                    {strings.prev}
                                 </button>
                             )
                         }
@@ -44,7 +45,7 @@ class Step extends Component {
                                     onClick={this.handleNextStepChange}
                                     disabled={disabled}
                                 >
-                                    Next
+                                    {strings.next}
                                 </button>
                             )
                         }
@@ -56,6 +57,7 @@ class Step extends Component {
 }
 
 Step.propTypes = {
+    strings: PropTypes.object.isRequired,
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
     showPrevButton: PropTypes.bool.isRequired,
@@ -64,4 +66,11 @@ Step.propTypes = {
     children: PropTypes.element.isRequired
 }
 
-export default Step
+Step.defaultProps = {
+    strings: {
+        prev: 'Prev',
+        next: 'Next'
+    }
+}
+
+export default translate('Pages.Checkout.CheckoutSteps.Step')(Step)

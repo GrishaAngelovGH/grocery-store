@@ -3,7 +3,7 @@ import { Field } from 'react-final-form'
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateNumber, validateEmail, validatePhone } from 'components/Forms/validators'
 
-import Billing from './Billing'
+import { Billing } from './Billing'
 
 describe('(Component) Billing', () => {
     it('should render component', () => {
@@ -55,7 +55,7 @@ describe('(Component) Billing', () => {
 
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
-                            <RequiredInputField name={'billingAddress'} label={'Billing Addr'} />
+                            <RequiredInputField name={'billingAddress'} label={'Billing Address'} />
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@ describe('(Component) Billing', () => {
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
                             <label>Country</label>
-                            <Field name='favoriteColor' component='select' className='w-100'>
+                            <Field name='country' component='select' className='w-100'>
                                 <option value='bg'>Bulgaria</option>
                                 <option value='uk'>United Kingdom</option>
                                 <option value='de'>Germany</option>

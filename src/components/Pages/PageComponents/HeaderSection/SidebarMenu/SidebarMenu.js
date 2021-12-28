@@ -5,11 +5,13 @@ import PropTypes from 'prop-types'
 import Logo from '../Logo'
 import { Delete, ChevronLeft } from 'components/Icons'
 
-class SidebarMenu extends Component {
+import translate from 'translate'
+
+export class SidebarMenu extends Component {
     state = { category: '', subCategories: [] }
 
     handleMenuClick = ({ target }) => {
-        const subCategories = this.props.categories.find(v => v.title === target.id).subCategories
+        const subCategories = this.props.categories[this.props.lang].find(v => v.title === target.id).subCategories
         this.setState({ subCategories, category: target.id })
     }
 
@@ -18,7 +20,7 @@ class SidebarMenu extends Component {
     }
 
     render() {
-        const { categories, onSidebarOpen } = this.props
+        const { lang, strings, categories, onSidebarOpen } = this.props
         const { category, subCategories } = this.state
 
         return (
@@ -29,12 +31,12 @@ class SidebarMenu extends Component {
                 </div>
 
                 <div className='small text-uppercase font-weight-bold text-center alert alert-primary' role='alert'>
-                    <div>Only the following items are available</div>
-                    <div>{'Food > Celebration Cakes > All cakes'}</div>
+                    <div>{strings.availableItems}</div>
+                    <div>{strings.links}</div>
                 </div>
 
                 {
-                    subCategories.length === 0 && categories.map(v => (
+                    subCategories.length === 0 && categories[lang].map(v => (
                         <div
                             key={v.title}
                             id={v.title}
@@ -53,7 +55,7 @@ class SidebarMenu extends Component {
                                 className='font-weight-bold m-2 d-flex align-items-center'
                             >
                                 <ChevronLeft />
-                                <div className='pt-1'>All Categories</div>
+                                <div className='pt-1'>{strings.allCategories}</div>
                             </div>
                             <div className='bg-dark text-center text-white p-2'>
                                 {category}
@@ -68,13 +70,11 @@ class SidebarMenu extends Component {
                                 {v.title}
                             </div>
                             {
-                                v.categories.map(value => {
-                                    const categoryLink = `/category/${value.toLowerCase().split(' ').join('-')}`
-
+                                v.categories.map(({ value, link }) => {
                                     return (
                                         <Link
-                                            key={value}
-                                            to={categoryLink}
+                                            key={link}
+                                            to={link}
                                             className='border-bottom text-secondary m-2 d-block'
                                         >
                                             {value}
@@ -91,8 +91,17 @@ class SidebarMenu extends Component {
 }
 
 SidebarMenu.propTypes = {
-    categories: PropTypes.array.isRequired,
+    strings: PropTypes.object.isRequired,
+    categories: PropTypes.object.isRequired,
     onSidebarOpen: PropTypes.func.isRequired
 }
 
-export default SidebarMenu
+SidebarMenu.defaultProps = {
+    strings: {
+        availableItems: 'Only the following items are available',
+        links: 'Food > Celebration Cakes > All cakes',
+        allCategories: 'All Categories'
+    }
+}
+
+export default translate('Pages.PageComponents.HeaderSection.SidebarMenu')(SidebarMenu)

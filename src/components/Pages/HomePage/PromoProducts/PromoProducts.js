@@ -1,17 +1,24 @@
 import PropTypes from 'prop-types'
 
-import PromoProduct from './PromoProduct'
+import {
+    winesBanner,
+    specialWineBanner,
+    flowersBanner
+} from 'images'
 
-const PromoProducts = ({ products }) => (
+import PromoProduct from './PromoProduct'
+import translate from 'translate'
+
+export const PromoProducts = ({ strings }) => (
     <div className='row no-gutters'>
         <div className='col-md-12'>
             <div className='row no-gutters justify-content-center'>
-                <h2>G&S Food</h2>
+                <h2>{strings.label}</h2>
             </div>
 
             <div className='row no-gutters justify-content-around'>
                 {
-                    products.map(v => (
+                    strings.products([winesBanner, specialWineBanner, flowersBanner]).map(v => (
                         <PromoProduct
                             key={v.description}
                             image={v.image}
@@ -27,7 +34,34 @@ const PromoProducts = ({ products }) => (
 )
 
 PromoProducts.propTypes = {
-    products: PropTypes.array.isRequired
+    strings: PropTypes.object.isRequired
 }
 
-export default PromoProducts
+PromoProducts.defaultProps = {
+    strings: {
+        label: 'G&S Food',
+        products: images => {
+            const items = [
+                {
+                    imageLabel: 'Special offers',
+                    description: 'Save up to 1/3 on selected wines',
+                    linkTitle: 'Shop wine by the case'
+                },
+                {
+                    imageLabel: 'Limited offers',
+                    description: 'Save up to 20% on selected wines',
+                    linkTitle: 'Shop wine by the case'
+                },
+                {
+                    imageLabel: 'Free delivery',
+                    description: 'Save £5 on selected bouquets',
+                    linkTitle: 'Shop now'
+                }
+            ]
+
+            return items.map((v, i) => ({ image: images[i], ...v }))
+        }
+    }
+}
+
+export default translate('Pages.HomePage.PromoProducts')(PromoProducts)

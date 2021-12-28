@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import ShoppingBagItem from './ShoppingBagItem'
+import currencyFormatter from 'components/formatters/currencyFormatter'
+import translate from 'translate'
 
-const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShoppingCart }) => {
-    const currency = items.length > 0 && items[0].currency
+export const ShoppingBag = ({ strings, items, lang, removeItemFromShoppingCart, changeItemQtyFromShoppingCart }) => {
+    const currency = items.length > 0 && items[0].currency[lang]
     let totalSum = 0
 
     items.forEach(v => {
@@ -16,7 +18,7 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShopp
             <div className='col-md-12'>
                 <div className='row no-gutters'>
                     <div className='col-md-12 text-center bg-secondary text-white mb-3 display-4'>
-                        Shopping bag
+                        {strings.shoppingBag}
                     </div>
                 </div>
 
@@ -30,10 +32,11 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShopp
                                             key={v.id}
                                             id={v.id}
                                             image={v.image}
-                                            description={v.description}
-                                            currency={v.currency}
+                                            description={v.description[lang]}
+                                            currency={v.currency[lang]}
                                             price={v.price}
                                             qty={v.qty}
+                                            lang={lang}
                                             removeItemFromShoppingCart={removeItemFromShoppingCart}
                                             changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                                         />
@@ -41,11 +44,11 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShopp
                                 }
                             </div>
                             <div className='col-lg-3 m-4 text-center'>
-                                <h4>Summary</h4>
-                                <h4>Total: {currency}{totalSum}</h4>
+                                <h4>{strings.summary}</h4>
+                                <h4>{strings.total}: {currencyFormatter(lang, currency, totalSum)}</h4>
                                 <Link to='/checkout' className='text-decoration-none'>
                                     <button type='button' className='btn btn-outline-success btn-block'>
-                                        Checkout
+                                        {strings.checkoutBtn}
                                     </button>
                                 </Link>
                             </div>
@@ -57,11 +60,11 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShopp
                     !items.length && (
                         <div className='row no-gutters justify-content-center'>
                             <div className='col-8 col-lg-5 text-center'>
-                                <h3>Empty Bag</h3>
-                                <h4>Your bag needs filling</h4>
+                                <h3>{strings.emptyBag}</h3>
+                                <h4>{strings.fillingBag}</h4>
                                 <Link to='/' className='text-decoration-none'>
                                     <button type='button' className='btn btn-primary btn-block'>
-                                        Continue Shopping
+                                        {strings.continueBtn}
                                     </button>
                                 </Link>
                             </div>
@@ -74,9 +77,22 @@ const ShoppingBag = ({ items, removeItemFromShoppingCart, changeItemQtyFromShopp
 }
 
 ShoppingBag.propTypes = {
+    strings: PropTypes.object.isRequired,
     items: PropTypes.array.isRequired,
     removeItemFromShoppingCart: PropTypes.func.isRequired,
     changeItemQtyFromShoppingCart: PropTypes.func.isRequired
 }
 
-export default ShoppingBag
+ShoppingBag.defaultProps = {
+    strings: {
+        shoppingBag: 'Shopping bag',
+        summary: 'Summary',
+        total: 'Total',
+        checkoutBtn: 'Checkout',
+        emptyBag: 'Empty Bag',
+        fillingBag: 'Your bag needs filling',
+        continueBtn: 'Continue Shopping'
+    }
+}
+
+export default translate('Pages.ShoppingBag')(ShoppingBag)

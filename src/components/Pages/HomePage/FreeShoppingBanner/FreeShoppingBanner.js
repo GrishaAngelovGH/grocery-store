@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { shoppingBanner } from 'images'
 import './FreeShoppingBanner.scss'
 
@@ -15,6 +16,10 @@ export const FreeShoppingBanner = ({ strings }) => (
         </div>
     </div>
 )
+
+FreeShoppingBanner.propTypes = {
+    strings: PropTypes.object.isRequired
+}
 
 FreeShoppingBanner.defaultProps = {
     strings: {

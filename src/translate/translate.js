@@ -1,10 +1,13 @@
 import { connect } from 'react-redux'
 import languages from './languages'
 
-const TranslateWrapper = ({ language, path, src: Component }) => {
+const TranslateWrapper = props => {
+    const { language, path, src: Component, ...restProps } = props
+
     const strings = languages[language][path]
+
     return (
-        <Component strings={strings} />
+        <Component strings={strings} {...restProps} />
     )
 }
 
@@ -13,8 +16,8 @@ const Translate = connect(
     ({})
 )(TranslateWrapper)
 
-const translate = (path) =>
-    (Component) =>
-        () => <Translate src={Component} path={path} />
+const translate = path =>
+    Component =>
+        props => (<Translate src={Component} path={path} {...props} />)
 
 export default translate

@@ -1,24 +1,35 @@
 import { cakeProductCategory } from 'images'
 import ReactStars from 'react-stars'
 
-import ProductItem from './ProductItem'
+import { ProductItem } from './ProductItem'
 
 describe('(Component) ProductItem', () => {
     let wrapper, addItemToShoppingCart
+
+    const item = {
+        id: 1,
+        image: 'triple-layer-cake',
+        imageLabel: { en: 'label' },
+        description: { en: 'description' },
+        currency: { en: '£' },
+        price: 30.00,
+        rating: 4
+    }
 
     beforeEach(() => {
         addItemToShoppingCart = sinon.spy()
 
         wrapper = shallow(
             <ProductItem
-                id={1}
+                id={item.id}
                 addItemToShoppingCart={addItemToShoppingCart}
-                image={'triple-layer-cake'}
-                imageLabel={'label'}
-                description={'description'}
-                currency={'£'}
-                price={30.00}
-                rating={4}
+                image={item.image}
+                imageLabel={item.imageLabel}
+                description={item.description}
+                currency={item.currency}
+                price={item.price}
+                rating={item.rating}
+                lang={'en'}
             />
         )
     })
@@ -62,9 +73,9 @@ describe('(Component) ProductItem', () => {
         addItemToShoppingCart.should.have.been.calledOnce
         addItemToShoppingCart.should.have.been.calledWith({
             id: 1,
-            description: 'description',
+            description: { en: 'description' },
             image: 'triple-layer-cake',
-            currency: '£',
+            currency: { en: '£' },
             price: 30.00,
             qty: 1
         })

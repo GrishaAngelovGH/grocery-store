@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import FeatureMenu from './FeatureMenu'
-import Menu from './Menu'
+import { Menu } from './Menu'
 
 describe('(Component) Menu', () => {
     let wrapper
@@ -18,36 +18,38 @@ describe('(Component) Menu', () => {
         buttonLabel: 'ButtonLabel1'
     }
 
-    const categories = [
-        {
-            title: 'Title1',
-            featureMenu: featureMenu,
-            subCategories: [
-                {
-                    title: 'SubCategory1',
-                    categories: [
-                        'category11', 'category22'
-                    ]
-                }
-            ]
-        },
-        {
-            title: 'Title2',
-            featureMenu: featureMenu,
-            subCategories: [
-                {
-                    title: 'SubCategory11',
-                    categories: [
-                        'some category', 'category44'
-                    ]
-                }
-            ]
-        }
-    ]
+    const categories = {
+        en: [
+            {
+                title: 'Title1',
+                featureMenu: featureMenu,
+                subCategories: [
+                    {
+                        title: 'SubCategory1',
+                        categories: [
+                            { value: 'category11', link: '/category/category11' }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: 'Title2',
+                featureMenu: featureMenu,
+                subCategories: [
+                    {
+                        title: 'SubCategory2',
+                        categories: [
+                            { value: 'category22', link: '/category/category22' }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
 
     beforeEach(() => {
         wrapper = shallow(
-            <Menu categories={categories} />
+            <Menu lang={'en'} categories={categories} />
         )
     })
 
@@ -137,10 +139,9 @@ describe('(Component) Menu', () => {
                             </div>
                             <div className='subcategory m-2'>
                                 <div className='small font-weight-bold'>
-                                    SubCategory11
+                                    SubCategory2
                                 </div>
-                                <Link className='small d-block' to='/category/some-category'>some category</Link>
-                                <Link className='small d-block' to='/category/category44'>category44</Link>
+                                <Link className='small d-block' to='/category/category22'>category22</Link>
                             </div>
                             <FeatureMenu items={featureMenu.items} buttonLabel={featureMenu.buttonLabel} />
                         </div>

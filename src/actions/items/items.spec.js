@@ -17,10 +17,11 @@ describe('(Action) Items', () => {
     })
 
     it('should create action searchItemByCriteria', () => {
-        const action = searchItemByCriteria('criteria-1')
+        const action = searchItemByCriteria('criteria-1', 'en')
         expect(action).to.eql({
             type: 'SEARCH_ITEM',
-            criteria: 'criteria-1'
+            criteria: 'criteria-1',
+            lang: 'en'
         })
     })
 })

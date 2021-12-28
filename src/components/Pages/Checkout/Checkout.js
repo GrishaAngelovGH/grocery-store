@@ -1,11 +1,14 @@
+import PropTypes from 'prop-types'
 import CheckoutSteps, { Billing, Shipping, Payment, Preview } from './CheckoutSteps'
 
-const Checkout = () => {
+import translate from 'translate'
+
+export const Checkout = ({ strings }) => {
     const steps = [
-        { title: 'Billing', component: (<Billing />), showNextButton: true, showPrevButton: false },
-        { title: 'Shipping', component: (<Shipping />), showNextButton: true, showPrevButton: true },
-        { title: 'Payment', component: (<Payment />), showNextButton: true, showPrevButton: true },
-        { title: 'Preview', component: (<Preview />), showNextButton: false, showPrevButton: true }
+        { title: strings.billing, component: (<Billing />), showNextButton: true, showPrevButton: false },
+        { title: strings.shipping, component: (<Shipping />), showNextButton: true, showPrevButton: true },
+        { title: strings.payment, component: (<Payment />), showNextButton: true, showPrevButton: true },
+        { title: strings.preview, component: (<Preview />), showNextButton: false, showPrevButton: true }
     ]
 
     return (
@@ -13,4 +16,17 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+Checkout.propTypes = {
+    strings: PropTypes.object.isRequired
+}
+
+Checkout.defaultProps = {
+    strings: {
+        billing: 'Billing',
+        shipping: 'Shipping',
+        payment: 'Payment',
+        preview: 'Preview'
+    }
+}
+
+export default translate('Pages.Checkout')(Checkout)

@@ -2,7 +2,7 @@ import Steps from 'rc-steps'
 import { Form } from 'react-final-form'
 
 import Step from './Step'
-import CheckoutSteps from './CheckoutSteps'
+import { CheckoutSteps } from './CheckoutSteps'
 
 describe('(Component) CheckoutSteps', () => {
     let wrapper
@@ -29,7 +29,8 @@ describe('(Component) CheckoutSteps', () => {
                     initialValues={{
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
-                        credit_card_type: 'visa'
+                        credit_card_type: 'visa',
+                        country: 'bg'
                     }}
                     render={wrapper.instance().formContent}
                 />

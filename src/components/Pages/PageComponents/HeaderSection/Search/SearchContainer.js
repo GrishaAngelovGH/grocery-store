@@ -4,7 +4,9 @@ import { searchItemByCriteria, fetchAllItemsByCategory } from 'actions/items'
 
 import Search from './Search'
 
-const mapStateToProps = () => ({})
+const mapStateToProps = state => ({
+    lang: state.language
+})
 
 const mapDispatchToProps = ({
     searchItemByCriteria,

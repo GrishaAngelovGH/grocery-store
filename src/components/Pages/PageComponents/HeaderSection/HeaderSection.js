@@ -11,10 +11,9 @@ import Menu, { menuCategories } from './Menu'
 import MiniShoppingBag from './MiniShoppingBag'
 
 import { User } from 'components/Icons'
-
 import './HeaderSection.scss'
 
-class HeaderSection extends Component {
+export class HeaderSection extends Component {
     state = {
         sidebarOpen: false
     }
@@ -24,7 +23,7 @@ class HeaderSection extends Component {
     }
 
     render() {
-        const { disabledSearch, selectedCategory } = this.props
+        const { lang, disabledSearch, selectedCategory } = this.props
 
         return (
             <div>
@@ -52,7 +51,7 @@ class HeaderSection extends Component {
                 {/* Mobile and Tablet */}
                 <div className='d-lg-none d-md-flex row no-gutters justify-content-around align-items-center'>
                     <div className='col-1 col-md-1'>
-                        <Menu mobile onSidebarOpen={this.handleSidebarOpen} categories={menuCategories} />
+                        <Menu lang={lang} mobile onSidebarOpen={this.handleSidebarOpen} categories={menuCategories} />
                     </div>
 
                     <div className='col-1 col-md-1'>
@@ -74,7 +73,7 @@ class HeaderSection extends Component {
                 </div>
 
                 <div className='d-none d-lg-block'>
-                    <Menu categories={menuCategories} />
+                    <Menu lang={lang} categories={menuCategories} />
                 </div>
 
                 {
@@ -83,6 +82,7 @@ class HeaderSection extends Component {
                             rootClassName='position-fixed sidebar-container'
                             sidebar={
                                 <SidebarMenu
+                                    lang={lang}
                                     categories={menuCategories}
                                     onSidebarOpen={this.handleSidebarOpen}
                                 />
@@ -106,8 +106,13 @@ class HeaderSection extends Component {
 }
 
 HeaderSection.propTypes = {
+    lang: PropTypes.string.isRequired,
     disabledSearch: PropTypes.bool,
     selectedCategory: PropTypes.string
+}
+
+HeaderSection.defaultProps = {
+    lang: 'en'
 }
 
 export default HeaderSection

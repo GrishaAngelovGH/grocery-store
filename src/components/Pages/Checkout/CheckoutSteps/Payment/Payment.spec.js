@@ -4,7 +4,7 @@ import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateCreditCardNumber } from 'components/Forms/validators'
 import { payment } from 'images'
 
-import Payment from './Payment'
+import { Payment } from './Payment'
 
 describe('(Component) Payment', () => {
     it('should render component', () => {
@@ -80,7 +80,7 @@ describe('(Component) Payment', () => {
                 <input {...input} />
                 <span className='m-1 font-weight-bold'>Credit Card</span>
 
-                <div>
+                <div className='m-3'>
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-9'>
                             <label>

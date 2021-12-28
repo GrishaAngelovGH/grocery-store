@@ -7,7 +7,8 @@ import {
 } from 'actions/shoppingCart'
 
 const mapStateToProps = state => ({
-    items: state.shoppingCart.cartItems
+    items: state.shoppingCart.cartItems,
+    lang: state.language
 })
 
 const mapDispatchToProps = ({

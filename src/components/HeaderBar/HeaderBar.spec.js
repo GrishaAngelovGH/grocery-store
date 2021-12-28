@@ -1,10 +1,9 @@
-import { ukFlag } from 'images'
 import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 import MessageCarousel from './MessageCarousel'
 import LanguageSelect from './LanguageSelect'
 
-import HeaderBar from './HeaderBar'
+import { HeaderBar } from './HeaderBar'
 
 describe('(Component) HeaderBar', () => {
     it('should render component', () => {
