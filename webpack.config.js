@@ -43,11 +43,7 @@ module.exports = {
             },
             {
                 test: /\.(svg|png|jpe?g|gif|woff|eot|ttf)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
+                type: 'asset/resource'
             },
         ]
     },
@@ -56,7 +52,7 @@ module.exports = {
             template: path.resolve(__dirname, 'public/index.html'),
             filename: 'index.html'
         }),
-        new InterpolateHtmlPlugin({ // require "html-webpack-plugin": "4.0.0-alpha"
+        new InterpolateHtmlPlugin({
             'PUBLIC_URL': '/public'
         })
     ]

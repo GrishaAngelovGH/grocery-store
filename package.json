@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.4.0",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "axios-mock-adapter": "^1.19.0",
     "bootstrap": "^4.5.2",
     "final-form": "^4.20.1",
@@ -19,7 +19,7 @@
     "react-final-form": "^6.5.2",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.1",
+    "react-scripts": "^5.0.0",
     "react-sidebar": "^3.0.2",
     "react-stars": "^2.2.5",
     "react-swipe": "^6.0.4",
@@ -32,7 +32,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "dev": "webpack-dev-server --mode=development --config webpack.config --open",
+    "dev": "webpack serve --mode=development --config webpack.config --open",
     "build": "webpack --mode=production --config webpack.config",
     "test": "mocha 'src/**/*.spec.js' --watch --require @babel/register --require ignore-styles --require mocha-helpers.js",
     "eject": "react-scripts eject",
@@ -69,14 +69,14 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
     "eslint": "^7.18.0",
-    "html-webpack-plugin": "4.0.0-alpha",
+    "html-webpack-plugin": "^5.5.0",
     "ignore-styles": "^5.0.1",
-    "interpolate-html-plugin": "^3.0.0",
+    "interpolate-html-plugin": "^4.0.0",
     "jsdom": "^16.4.0",
-    "mocha": "^8.1.1",
+    "mocha": "^9.1.3",
     "sass-loader": "^9.0.3",
     "sinon": "^9.0.3",
     "sinon-chai": "^3.5.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^4.9.1"
   }
 }
