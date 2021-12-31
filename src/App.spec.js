@@ -1,16 +1,16 @@
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 
 import Layout from 'components/Layout'
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
+
 import {
   HomePage,
-  ProductCategory,
   ShoppingBag,
   Checkout
 } from 'components/Pages'
 
-import App from './App'
+import App, { Category } from './App'
 
 describe('(Component) App', () => {
   it('should render component', () => {
@@ -18,11 +18,11 @@ describe('(Component) App', () => {
 
     expect(wrapper.equals(
       <Router>
-        <Switch>
+        <Routes>
           <Route
             exact
             path='/'
-            children={
+            element={
               <Layout
                 header={<HeaderBar />}
                 body={<HomePage />}
@@ -31,19 +31,12 @@ describe('(Component) App', () => {
             }
           />
 
-          <Route path='/category/:id' children={
-            props => (
-              <Layout
-                header={<HeaderBar />}
-                body={<ProductCategory {...props} />}
-                footer={<Footer />}
-              />
-            )}
-          />
+          <Route path='/category/:id' element={<Category />} />
 
-          <Route path='/shopping-bag' children={<ShoppingBag />} />
-          <Route path='/checkout' children={<Checkout />} />
-        </Switch>
+          <Route path='/shopping-bag' element={<ShoppingBag />} />
+
+          <Route path='/checkout' element={<Checkout />} />
+        </Routes>
       </Router>
     )).to.equal(true)
   })

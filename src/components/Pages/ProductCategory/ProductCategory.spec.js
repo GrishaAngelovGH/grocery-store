@@ -26,7 +26,7 @@ describe('(Component) ProductCategory', () => {
         wrapper = shallow(
             <ProductCategory
                 items={items}
-                match={{ params: { id: 'category-1' } }}
+                categoryId={'category-1'}
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
                 addItemToShoppingCart={addItemToShoppingCart}
             />
@@ -63,7 +63,7 @@ describe('(Component) ProductCategory', () => {
         const wrapper = shallow(
             <ProductCategory
                 items={[]}
-                match={{ params: { id: 'category-1' } }}
+                categoryId={'category-1'}
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
                 addItemToShoppingCart={addItemToShoppingCart}
             />

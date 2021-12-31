@@ -7,15 +7,13 @@ import HeaderSection from '../PageComponents/HeaderSection'
 
 class ProductCategory extends Component {
     componentDidMount() {
-        const { match, fetchAllItemsByCategory } = this.props
+        const { categoryId, fetchAllItemsByCategory } = this.props
 
-        const id = match.params.id
-
-        fetchAllItemsByCategory(id)
+        fetchAllItemsByCategory(categoryId)
     }
 
     render() {
-        const { match, items, lang, addItemToShoppingCart } = this.props
+        const { categoryId, items, lang, addItemToShoppingCart } = this.props
 
         if (!items.length) {
             return (
@@ -26,7 +24,7 @@ class ProductCategory extends Component {
         return (
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection selectedCategory={match.params.id} />
+                    <HeaderSection selectedCategory={categoryId} />
 
                     <div className='row no-gutters'>
                         {

@@ -1,4 +1,4 @@
-import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, useParams } from 'react-router-dom'
 
 import HeaderBar from 'components/HeaderBar'
 import Footer from 'components/Footer'
@@ -10,14 +10,26 @@ import {
   Checkout
 } from 'components/Pages'
 
+export const Category = () => {
+  const { id: categoryId } = useParams()
+
+  return (
+    <Layout
+      header={<HeaderBar />}
+      body={<ProductCategory categoryId={categoryId} />}
+      footer={<Footer />}
+    />
+  )
+}
+
 function App() {
   return (
     <Router>
-      <Switch>
+      <Routes>
         <Route
           exact
           path='/'
-          children={
+          element={
             <Layout
               header={<HeaderBar />}
               body={<HomePage />}
@@ -26,19 +38,12 @@ function App() {
           }
         />
 
-        <Route path='/category/:id' children={
-          props => (
-            <Layout
-              header={<HeaderBar />}
-              body={<ProductCategory {...props} />}
-              footer={<Footer />}
-            />
-          )}
-        />
+        <Route path='/category/:id' element={<Category />} />
 
-        <Route path='/shopping-bag' children={<ShoppingBag />} />
-        <Route path='/checkout' children={<Checkout />} />
-      </Switch>
+        <Route path='/shopping-bag' element={<ShoppingBag />} />
+
+        <Route path='/checkout' element={<Checkout />} />
+      </Routes>
     </Router>
   )
 }
