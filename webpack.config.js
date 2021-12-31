@@ -1,5 +1,6 @@
 const path = require('path')
 
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
@@ -49,11 +50,28 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
+            favicon: path.resolve(__dirname, 'public/favicon.ico'),
             template: path.resolve(__dirname, 'public/index.html'),
             filename: 'index.html'
         }),
         new InterpolateHtmlPlugin({
-            'PUBLIC_URL': '/public'
+            'PUBLIC_URL': '.'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'public/manifest.json',
+                    to: '.'
+                },
+                {
+                    from: 'public/logo192.png',
+                    to: '.'
+                },
+                {
+                    from: 'public/logo512.png',
+                    to: '.'
+                }
+            ]
         })
     ]
 }
