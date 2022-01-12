@@ -65,6 +65,19 @@ export default {
         prev: 'Назад',
         next: 'Напред'
     },
+    'Pages.Comments': {
+        title: 'Коментари'
+    },
+    'Pages.Comments.Comment': {
+        reply: 'Отговор',
+        defaultAuthor: 'Ти'
+    },
+    'Pages.Comments.ReplyPanel': {
+        placeholder: 'Добави коментар...',
+        send: 'Изпрати',
+        replyTo: 'Отговор до',
+        defaultAuthor: 'Ти'
+    },
     'Pages.HomePage.HelpLinks': {
         homeDelivery: 'Безплатна доставка за поръчка над 50лв',
         order: 'Доставка на следващия ден при поръчка до 20:00ч',

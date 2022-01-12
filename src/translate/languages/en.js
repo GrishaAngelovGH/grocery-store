@@ -65,6 +65,19 @@ export default {
         prev: 'Prev',
         next: 'Next'
     },
+    'Pages.Comments': {
+        title: 'Comments'
+    },
+    'Pages.Comments.Comment': {
+        reply: 'Reply',
+        defaultAuthor: 'You'
+    },
+    'Pages.Comments.ReplyPanel': {
+        placeholder: 'Add a comment...',
+        send: 'Send',
+        replyTo: 'Reply to',
+        defaultAuthor: 'You'
+    },
     'Pages.HomePage.HelpLinks': {
         homeDelivery: 'Free home delivery when you spend over £50',
         order: 'Order by 8pm for next-day delivery for £4.99',

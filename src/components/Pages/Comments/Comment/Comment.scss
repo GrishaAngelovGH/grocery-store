@@ -1,0 +1,20 @@
+.comment-container {
+    overflow-x: auto;
+    min-width: fit-content;
+}
+
+@media (min-width: 700px) {
+    .comment-container {
+        width: 100%;
+    }
+
+    .comment-body {
+        min-width: 487px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .reply-btn {
+        align-items: center;
+    }
+}

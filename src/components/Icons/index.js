@@ -4,6 +4,9 @@ import Search from './Search'
 import User from './User'
 import ShoppingBag from './ShoppingBag'
 import Delete from './Delete'
+import ChatLeftDots from './ChatLeftDots'
+import Reply from './Reply'
+import ArrowLeftSquare from './ArrowLeftSquare'
 
 export {
     ChevronLeft,
@@ -11,5 +14,8 @@ export {
     Search,
     User,
     ShoppingBag,
-    Delete
+    Delete,
+    ChatLeftDots,
+    Reply,
+    ArrowLeftSquare
 }

@@ -32,6 +32,7 @@ class ProductCategory extends Component {
                                 <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
                                     <ProductItem
                                         id={v.id}
+                                        categoryId={categoryId}
                                         image={v.image}
                                         imageLabel={v.label}
                                         description={v.name}
@@ -52,8 +53,10 @@ class ProductCategory extends Component {
 }
 
 ProductCategory.propTypes = {
+    categoryId: PropTypes.string.isRequired,
     lang: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
+    addItemToShoppingCart: PropTypes.func.isRequired,
     fetchAllItemsByCategory: PropTypes.func.isRequired
 }
 

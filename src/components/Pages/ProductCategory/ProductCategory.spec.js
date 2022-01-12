@@ -43,6 +43,7 @@ describe('(Component) ProductCategory', () => {
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
                             <ProductItem
                                 id={items[0].id}
+                                categoryId={'category-1'}
                                 image={items[0].image}
                                 imageLabel={items[0].label}
                                 description={items[0].name}

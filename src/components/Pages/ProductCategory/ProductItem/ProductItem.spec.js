@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom'
+
 import { cakeProductCategory } from 'images'
+import { ChatLeftDots } from 'components/Icons'
 import ReactStars from 'react-stars'
 
 import { ProductItem } from './ProductItem'
@@ -22,6 +25,7 @@ describe('(Component) ProductItem', () => {
         wrapper = shallow(
             <ProductItem
                 id={item.id}
+                categoryId={'category-1'}
                 addItemToShoppingCart={addItemToShoppingCart}
                 image={item.image}
                 imageLabel={item.imageLabel}
@@ -42,9 +46,19 @@ describe('(Component) ProductItem', () => {
                     <img src={cakeProductCategory['triple-layer-cake']} width={250} height={300} />
                 </div>
 
-                <div>description</div>
+                <div className='row justify-content-start align-items-center product-container'>
+                    <div className='col-9 col-md-10'>
+                        <div className='product-description'>description</div>
 
-                <div>{`£${30.00}`}</div>
+                        <div>{`£${30.00}`}</div>
+                    </div>
+
+                    <div className='col-1 col-md-1 pl-0'>
+                        <Link to='/comments/category-1/1'>
+                            <ChatLeftDots />
+                        </Link>
+                    </div>
+                </div>
 
                 <ReactStars
                     count={5}

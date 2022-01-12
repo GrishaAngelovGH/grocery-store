@@ -1,153 +1,53 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import { items, comments } from './axios-mock-data'
 
 const mock = new MockAdapter(axios)
 
-mock.onGet('/category/all-cakes').reply(200, {
-    items: [
+mock.onGet('/category/all-cakes').reply(200, { items })
+
+// regex will match the following pattern /comments/all-cakes/1
+mock.onGet(/\/comments\/((?:\w+-)+\w+)\/\d+/).reply(config => {
+    const [_, categoryId, productId] = config.url.split('/')
+
+    return [
+        200,
         {
-            id: 1,
-            name: {
-                en: 'Cookies And Cream Cake',
-                bg: 'Торта с бисквитки и крем'
-            },
-            image: 'cookiesAndCreamCake',
-            label: {
-                en: 'Collect in 5 days',
-                bg: 'Доставка в рамките на 5 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 30.00,
-            rating: 4
-        },
-        {
-            id: 2,
-            name: {
-                en: 'Dribble Cake',
-                bg: 'Дрибъл торта'
-            },
-            image: 'dribbleCake',
-            label: {
-                en: 'Collect in 6 days',
-                bg: 'Доставка в рамките на 6 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 35.00,
-            rating: 5
-        },
-        {
-            id: 3,
-            name: {
-                en: 'Flower Festival Tulip Cake',
-                bg: 'Торта с лалета'
-            },
-            image: 'flowerFestivalTulipCake',
-            label: {
-                en: 'Collect in 5 days',
-                bg: 'Доставка в рамките на 5 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 40.00,
-            rating: 4
-        },
-        {
-            id: 4,
-            name: {
-                en: 'Milk Chocolate Layers Cake',
-                bg: 'Торта със слоеве от млечен шоколад'
-            },
-            image: 'milkChocolateLayersCake',
-            label: {
-                en: 'Collect in 6 days',
-                bg: 'Доставка в рамките на 6 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 30.00,
-            rating: 5
-        },
-        {
-            id: 5,
-            name: {
-                en: 'Rainbow Layers Cake',
-                bg: 'Торта със слоеве дъга'
-            },
-            image: 'rainbowLayersCake',
-            label: {
-                en: 'Collect in 5 days',
-                bg: 'Доставка в рамките на 5 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 45.00,
-            rating: 4
-        },
-        {
-            id: 6,
-            name: {
-                en: 'Triple Layer Cake',
-                bg: 'Торта с три слоя'
-            },
-            image: 'tripleLayerCake',
-            label: {
-                en: 'Collect in 6 days',
-                bg: 'Доставка в рамките на 6 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 35.00,
-            rating: 5
-        },
-        {
-            id: 7,
-            name: {
-                en: 'True Love Cake',
-                bg: 'Торта за влюбени'
-            },
-            image: 'trueLoveCake',
-            label: {
-                en: 'Collect in 5 days',
-                bg: 'Доставка в рамките на 5 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 30.00,
-            rating: 4
-        },
-        {
-            id: 8,
-            name: {
-                en: 'Vanilla Cake',
-                bg: 'Ванилова торта'
-            },
-            image: 'vanillaCake',
-            label: {
-                en: 'Collect in 6 days',
-                bg: 'Доставка в рамките на 6 дни'
-            },
-            currency: {
-                en: '£',
-                bg: 'лв'
-            },
-            price: 35.00,
-            rating: 5
+            productId,
+            categoryId,
+            comments: comments[categoryId][productId]
         }
     ]
 })
+
+mock.onPost('/comments').reply(config => {
+    const request = JSON.parse(config.data)
+    const { id, categoryId, productId, user, message } = request
+
+    const newComment = {
+        id: Date.now(),
+        user: user,
+        image: 'https://randomuser.me/api/portraits/men/18.jpg',
+        posted: new Date().toLocaleString(),
+        value: message,
+        votes: 0,
+        replies: []
+    }
+
+    const comment = findComment(comments[categoryId][productId], id)
+    comment.replies.push(newComment)
+
+    return [200, {}]
+})
+
+const findComment = (comments, id) => {
+    const target = comments.find(v => v.id === id)
+
+    if (target) {
+        return target
+    }
+
+    const foundComments = comments.map(v => findComment(v.replies, id)).filter(v => v.id)
+
+    return foundComments.length && foundComments[0]
+}

@@ -10,7 +10,7 @@ import {
   Checkout
 } from 'components/Pages'
 
-import App, { Category } from './App'
+import App, { Category, CommentsPage } from './App'
 
 describe('(Component) App', () => {
   it('should render component', () => {
@@ -32,6 +32,8 @@ describe('(Component) App', () => {
           />
 
           <Route path='/category/:id' element={<Category />} />
+
+          <Route path='/comments/:categoryId/:productId' element={<CommentsPage />} />
 
           <Route path='/shopping-bag' element={<ShoppingBag />} />
 

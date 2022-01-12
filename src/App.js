@@ -6,6 +6,7 @@ import Layout from 'components/Layout'
 import {
   HomePage,
   ProductCategory,
+  Comments,
   ShoppingBag,
   Checkout
 } from 'components/Pages'
@@ -19,6 +20,14 @@ export const Category = () => {
       body={<ProductCategory categoryId={categoryId} />}
       footer={<Footer />}
     />
+  )
+}
+
+export const CommentsPage = () => {
+  const { productId, categoryId } = useParams()
+
+  return (
+    <Comments productId={productId} categoryId={categoryId} />
   )
 }
 
@@ -39,6 +48,8 @@ function App() {
         />
 
         <Route path='/category/:id' element={<Category />} />
+
+        <Route path='/comments/:categoryId/:productId' element={<CommentsPage />} />
 
         <Route path='/shopping-bag' element={<ShoppingBag />} />
 
