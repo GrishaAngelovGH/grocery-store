@@ -6,7 +6,7 @@ describe('(Component) HelpButton', () => {
         const wrapper = shallow(<HelpButton icon={delivery} label={'label'} />)
 
         expect(wrapper.equals(
-            <button type='button' className='btn btn-secondary'>
+            <button type='button' className='btn btn-success help-button'>
                 <img src={delivery} width={100} height={100} />
                 <div>label</div>
             </button>
