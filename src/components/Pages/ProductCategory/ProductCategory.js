@@ -13,7 +13,7 @@ class ProductCategory extends Component {
     }
 
     render() {
-        const { categoryId, items, lang, addItemToShoppingCart } = this.props
+        const { categoryId, items, filteredItems, lang, addItemToShoppingCart } = this.props
 
         if (!items.length) {
             return (
@@ -28,7 +28,26 @@ class ProductCategory extends Component {
 
                     <div className='row no-gutters'>
                         {
-                            items.map(v => (
+                            !filteredItems.length && items.map(v => (
+                                <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
+                                    <ProductItem
+                                        id={v.id}
+                                        categoryId={categoryId}
+                                        image={v.image}
+                                        imageLabel={v.label}
+                                        description={v.name}
+                                        currency={v.currency}
+                                        price={v.price}
+                                        rating={v.rating}
+                                        lang={lang}
+                                        addItemToShoppingCart={addItemToShoppingCart}
+                                    />
+                                </div>
+                            ))
+                        }
+
+                        {
+                            filteredItems.length > 0 && filteredItems.map(v => (
                                 <div className='col-md-6 col-lg-3 d-flex justify-content-center' key={v.id}>
                                     <ProductItem
                                         id={v.id}
@@ -56,6 +75,7 @@ ProductCategory.propTypes = {
     categoryId: PropTypes.string.isRequired,
     lang: PropTypes.string.isRequired,
     items: PropTypes.array.isRequired,
+    filteredItems: PropTypes.array.isRequired,
     addItemToShoppingCart: PropTypes.func.isRequired,
     fetchAllItemsByCategory: PropTypes.func.isRequired
 }

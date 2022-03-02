@@ -1,9 +1,16 @@
-const initialState = []
+const initialState = { all: [], filtered: [] }
 
-const itemsHandler = (state, { payload: { data: { items } } }) => items
+const itemsHandler = (state, { payload: { data: { items } } }) => ({ all: items, filtered: [] })
 
 const searchItemHandler = (state, { criteria, lang }) => {
-    return [...state].filter(v => v.name[lang].toLowerCase().includes(criteria))
+    if (!criteria.length) {
+        return ({ ...state, filtered: [] })
+    }
+
+    return ({
+        ...state,
+        filtered: [...state.all].filter(v => v.name[lang].toLowerCase().includes(criteria))
+    })
 }
 
 export default (state = initialState, action) => {

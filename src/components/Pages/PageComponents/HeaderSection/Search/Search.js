@@ -6,12 +6,7 @@ import translate from 'translate'
 
 export class Search extends Component {
     handleInputChange = ({ target }) => {
-        if (target.value.length > 0) {
-            this.props.searchItemByCriteria(target.value, this.props.lang)
-            return
-        }
-
-        this.props.fetchAllItemsByCategory(this.props.selectedCategory)
+        this.props.searchItemByCriteria(target.value, this.props.lang)
     }
 
     render() {
@@ -40,8 +35,7 @@ Search.propTypes = {
     strings: PropTypes.object.isRequired,
     disabled: PropTypes.bool,
     selectedCategory: PropTypes.string,
-    searchItemByCriteria: PropTypes.func.isRequired,
-    fetchAllItemsByCategory: PropTypes.func.isRequired
+    searchItemByCriteria: PropTypes.func.isRequired
 }
 
 Search.defaultProps = {

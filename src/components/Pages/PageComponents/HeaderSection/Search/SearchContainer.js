@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { searchItemByCriteria, fetchAllItemsByCategory } from 'actions/items'
+import { searchItemByCriteria } from 'actions/items'
 
 import Search from './Search'
 
@@ -9,8 +9,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
-    searchItemByCriteria,
-    fetchAllItemsByCategory
+    searchItemByCriteria
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)
