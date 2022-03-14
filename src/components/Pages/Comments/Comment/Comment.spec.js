@@ -144,7 +144,7 @@ describe('(Component) Comment', () => {
         )).to.equal(true)
     })
 
-    it('should handle reply to comment', async () => {
+    it('should handle reply to comment', () => {
         const wrapper = shallow(
             <Comment
                 id={comment.id}
