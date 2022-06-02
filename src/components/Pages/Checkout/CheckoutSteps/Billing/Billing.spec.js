@@ -14,7 +14,7 @@ describe('(Component) Billing', () => {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1>
+                            <h1 className='text-center'>
                                 Billing
                             </h1>
                         </div>
@@ -72,7 +72,7 @@ describe('(Component) Billing', () => {
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
                             <label>Country</label>
-                            <Field name='country' component='select' className='w-100'>
+                            <Field name='country' component='select' className='form-control w-100'>
                                 <option value='bg'>Bulgaria</option>
                                 <option value='uk'>United Kingdom</option>
                                 <option value='de'>Germany</option>

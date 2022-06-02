@@ -14,7 +14,15 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
 
     return (
         <div className='row'>
-            <div className='col-md-5'>
+            <div className='col-md-12'>
+                <div className='row'>
+                    <div className='col-md-12'>
+                        <h1 className='text-center'>
+                            {strings.preview}
+                        </h1>
+                    </div>
+                </div>
+
                 {
                     items.map(v => (
                         <div key={v.id} className='font-weight-bold'>
@@ -49,6 +57,7 @@ Preview.propTypes = {
 
 Preview.defaultProps = {
     strings: {
+        preview: 'Preview',
         total: 'Total',
         placeOrder: 'Place Order'
     }

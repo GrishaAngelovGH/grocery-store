@@ -56,13 +56,15 @@ export class CheckoutSteps extends Component {
 
         return (
             <div className='m-5'>
-                <Steps current={currentStep}>
-                    {
-                        steps.map(v => (
-                            <Steps.Step key={v.title} title={v.title} />
-                        ))
-                    }
-                </Steps>
+                <div className='shadow p-2'>
+                    <Steps current={currentStep}>
+                        {
+                            steps.map(v => (
+                                <Steps.Step key={v.title} title={v.title} />
+                            ))
+                        }
+                    </Steps>
+                </div>
 
                 <Form
                     onSubmit={this.handleFormSubmit}

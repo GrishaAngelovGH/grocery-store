@@ -66,8 +66,8 @@ export class Payment extends Component {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1>
-                                Payment
+                            <h1 className='text-center'>
+                                {this.props.strings.payment}
                             </h1>
                         </div>
                     </div>
@@ -109,6 +109,7 @@ Payment.propTypes = {
 
 Payment.defaultProps = {
     strings: {
+        payment: 'Payment',
         creditCard: 'Credit Card',
         example: 'ex',
         creditCardNumber: 'Credit Card Number',

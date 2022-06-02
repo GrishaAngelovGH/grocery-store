@@ -49,12 +49,14 @@ export default {
         }
     },
     'Pages.Checkout.CheckoutSteps.Payment': {
+        payment: 'Payment',
         creditCard: 'Credit Card',
         example: 'ex',
         creditCardNumber: 'Credit Card Number',
         expirationDate: 'Expiration Date (MMYYYY)'
     },
     'Pages.Checkout.CheckoutSteps.Preview': {
+        preview: 'Preview',
         total: 'Total',
         placeOrder: 'Place Order'
     },

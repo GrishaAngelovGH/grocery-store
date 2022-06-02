@@ -49,12 +49,14 @@ export default {
         }
     },
     'Pages.Checkout.CheckoutSteps.Payment': {
+        payment: 'Метод на плащане',
         creditCard: 'Кредитна карта',
         example: 'пр',
         creditCardNumber: 'Номер на кредитна карта',
         expirationDate: 'Дата на валидност (ММГГГГ)'
     },
     'Pages.Checkout.CheckoutSteps.Preview': {
+        preview: 'Преглед',
         total: 'Общо',
         placeOrder: 'Направи поръчка'
     },

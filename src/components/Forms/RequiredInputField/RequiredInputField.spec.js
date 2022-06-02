@@ -40,7 +40,7 @@ describe('(Component) RequiredInputField', () => {
                     undefined
                 }
 
-                <input value='value-1' type='text' className='w-100' />
+                <input value='value-1' type='text' className='form-control w-100' />
             </div>
         )
     })
@@ -56,7 +56,7 @@ describe('(Component) RequiredInputField', () => {
 
                 <label className='m-1 p-1 alert-danger'>Required</label>
 
-                <input value='value-1' type='text' className='w-100' />
+                <input value='value-1' type='text' className='form-control w-100' />
             </div>
         )
     })

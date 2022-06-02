@@ -19,10 +19,12 @@ describe('(Component) CheckoutSteps', () => {
     it('should render component', () => {
         expect(wrapper.equals(
             <div className='m-5'>
-                <Steps current={0}>
-                    <Steps.Step title={'Title-1'} />
-                    <Steps.Step title={'Title-2'} />
-                </Steps>
+                <div className='shadow p-2'>
+                    <Steps current={0}>
+                        <Steps.Step title={'Title-1'} />
+                        <Steps.Step title={'Title-2'} />
+                    </Steps>
+                </div>
 
                 <Form
                     onSubmit={wrapper.instance().handleFormSubmit}

@@ -21,7 +21,7 @@ class RequiredInputField extends Component {
                     )
                 }
 
-                <input {...input} type='text' className='w-100' />
+                <input {...input} type='text' className='form-control w-100' />
             </div>
         )
     }

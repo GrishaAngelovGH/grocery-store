@@ -26,7 +26,7 @@ export class Shipping extends Component {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1>
+                            <h1 className='text-center'>
                                 {strings.shipping}
                             </h1>
                         </div>

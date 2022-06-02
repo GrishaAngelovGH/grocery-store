@@ -11,7 +11,7 @@ export const Billing = ({ strings }) => (
         <div className='col-md-12'>
             <div className='row'>
                 <div className='col-md-12'>
-                    <h1>
+                    <h1 className='text-center'>
                         {strings.billing}
                     </h1>
                 </div>
@@ -69,7 +69,7 @@ export const Billing = ({ strings }) => (
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>
                     <label>{strings.country}</label>
-                    <Field name='country' component='select' className='w-100'>
+                    <Field name='country' component='select' className='form-control w-100'>
                         <option value='bg'>{strings.bg}</option>
                         <option value='uk'>{strings.uk}</option>
                         <option value='de'>{strings.de}</option>
