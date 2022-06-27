@@ -2,6 +2,9 @@
 
 Front-end project implementing features of an E-commerce store. The user is able to preview various products by category, post comments for every product in given category, use shopping bag and perform multi-step checkout to complete order.
 
+Note: This project could be considered as a legacy codebase based on
+ReactJS 17 tested with enzyme library (integrated with enzyme-adapter-react-17).
+
 ## The front-end project is implementing the following features:
 
 * Home Page with various product related sections
@@ -23,7 +26,7 @@ Front-end project implementing features of an E-commerce store. The user is able
 
 * Initial structure is created with **create-react-app**
 * Integrated **babel/eslint-parser** with added various rules
-* Integrated **react 18**
+* Integrated **ReactJS 17**
 * Component prop validation with **prop-types**
 * Integrated **redux**
 * Enabled persistent redux store with **redux-persist**
