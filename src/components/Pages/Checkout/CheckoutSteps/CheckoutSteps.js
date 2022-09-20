@@ -2,6 +2,7 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Form } from 'react-final-form'
+import { Navigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 import Steps from 'rc-steps'
@@ -12,7 +13,8 @@ import translate from 'translate'
 
 export class CheckoutSteps extends Component {
     state = {
-        currentStep: 0
+        currentStep: 0,
+        shouldRedirect: false
     }
 
     handleStepChange = (step) => {
@@ -26,6 +28,8 @@ export class CheckoutSteps extends Component {
             text: JSON.stringify(values, null, 2),
             allowOutsideClick: false,
             title: this.props.strings.successMessage
+        }).then(() => {
+            this.setState({ shouldRedirect: true })
         })
     }
 
@@ -51,7 +55,7 @@ export class CheckoutSteps extends Component {
     }
 
     render() {
-        const { currentStep } = this.state
+        const { currentStep, shouldRedirect } = this.state
         const { steps } = this.props
 
         return (
@@ -76,6 +80,8 @@ export class CheckoutSteps extends Component {
                     }}
                     render={this.formContent}
                 />
+
+                {shouldRedirect && <Navigate replace to={'/'} />}
             </div>
         )
     }
