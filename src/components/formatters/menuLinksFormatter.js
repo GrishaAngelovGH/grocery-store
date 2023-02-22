@@ -40,12 +40,11 @@ const menuLinksFormatter = menuCategoriesInput => {
 
                     const bgValue = menuCategories.bg[i].subCategories[j].categories[k]
 
-                    const bgCategory = {}
-                    bgCategory.value = bgValue.value ? bgValue.value : bgValue
-                    bgCategory.link = link
-
                     // replace string value with object {value: '', link: ''}
-                    menuCategories.bg[i].subCategories[j].categories[k] = bgCategory
+                    menuCategories.bg[i].subCategories[j].categories[k] = {
+                        ['value']: bgValue,
+                        ['link']: link
+                    }
 
                     return {
                         value,
