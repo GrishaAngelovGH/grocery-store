@@ -1,12 +1,14 @@
 .footer-panel {
     background: #454545;
 
-    img {
-        height: 40px;
+    i {
+        color: #fff;
+        font-size: 25px;
+        vertical-align: middle;
         cursor: pointer;
 
         &:hover {
-            border: 1px solid #ffffff;
+            color: #e5e5e5;
         }
     }
 }
