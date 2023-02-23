@@ -1,5 +1,5 @@
-import bgFlag from './bulgarian-flag.svg'
-import ukFlag from './united-kingdom.svg'
+import bgFlag from './BG.svg'
+import gbFlag from './GB.svg'
 import groceryStoreBanner from './grocery-store-banner.jpg'
 import shoppingBanner from './shopping-banner.png'
 
@@ -51,7 +51,7 @@ const payment = {
 
 export {
     bgFlag,
-    ukFlag,
+    gbFlag,
     groceryStoreBanner,
     shoppingBanner,
     delivery,

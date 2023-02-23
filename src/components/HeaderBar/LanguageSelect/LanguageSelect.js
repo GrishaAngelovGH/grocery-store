@@ -1,7 +1,16 @@
 import { Component } from 'react'
-import { bgFlag, ukFlag } from 'images'
+import { bgFlag, gbFlag } from 'images'
 
 class LanguageSelect extends Component {
+    constructor(props) {
+        super(props)
+
+        this.flags = {
+            en: <img role='button' id='bg' src={gbFlag} width={50} height={25} onClick={this.handleLanguageSelect} />,
+            bg: <img role='button' id='en' src={bgFlag} width={50} height={25} onClick={this.handleLanguageSelect} />
+        }
+    }
+
     handleLanguageSelect = ({ target }) => {
         this.props.changeLanguage(target.id)
     }
@@ -9,12 +18,7 @@ class LanguageSelect extends Component {
     render() {
         const { language } = this.props
 
-        const flags = {
-            en: <img role='button' id='bg' src={ukFlag} width={50} height={25} onClick={this.handleLanguageSelect} />,
-            bg: <img role='button' id='en' src={bgFlag} width={50} height={25} onClick={this.handleLanguageSelect} />
-        }
-
-        return flags[language]
+        return this.flags[language]
     }
 }
 

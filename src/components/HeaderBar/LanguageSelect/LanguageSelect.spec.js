@@ -1,4 +1,4 @@
-import { ukFlag } from 'images'
+import { gbFlag } from 'images'
 import LanguageSelect from './LanguageSelect'
 
 describe('(Component) LanguageSelect', () => {
@@ -16,7 +16,7 @@ describe('(Component) LanguageSelect', () => {
             <img
                 role='button'
                 id='bg'
-                src={ukFlag}
+                src={gbFlag}
                 width={50}
                 height={25}
                 onClick={wrapper.instance().handleLanguageSelect}
