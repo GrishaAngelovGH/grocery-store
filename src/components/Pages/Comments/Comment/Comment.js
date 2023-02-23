@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Reply } from 'components/Icons'
 import './Comment.scss'
 
 import translate from 'translate'
@@ -40,7 +39,7 @@ export class Comment extends Component {
                         onClick={this.handleReply}
                     >
                         <div className='d-flex justify-content-center reply-btn'>
-                            <Reply />
+                            <i className='bi bi-reply-fill'></i>
                             <span>{strings.reply}</span>
                         </div>
                     </button>

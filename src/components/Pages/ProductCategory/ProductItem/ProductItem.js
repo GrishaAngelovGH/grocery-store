@@ -6,7 +6,6 @@ import ReactStars from 'react-stars'
 import { toast } from 'react-toastify'
 
 import { cakeProductCategory } from 'images'
-import { ChatLeftDots } from 'components/Icons'
 import currencyFormatter from 'components/formatters/currencyFormatter'
 
 import './ProductItem.scss'
@@ -54,7 +53,7 @@ export class ProductItem extends Component {
 
                     <div className='col-1 col-md-1 pl-0'>
                         <Link to={`/comments/${categoryId}/${id}`}>
-                            <ChatLeftDots />
+                            <i className='bi bi-chat-right-dots h2'></i>
                         </Link>
                     </div>
                 </div>

@@ -7,8 +7,6 @@ import SidebarMenu from './SidebarMenu'
 import MiniShoppingBag from './MiniShoppingBag'
 import Menu, { menuCategories } from './Menu'
 
-import { User } from 'components/Icons'
-
 import { HeaderSection } from './HeaderSection'
 
 describe('(Component) HeaderSection', () => {
@@ -33,9 +31,9 @@ describe('(Component) HeaderSection', () => {
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
@@ -53,9 +51,9 @@ describe('(Component) HeaderSection', () => {
                         <Logo />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />
@@ -98,9 +96,9 @@ describe('(Component) HeaderSection', () => {
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
@@ -118,9 +116,9 @@ describe('(Component) HeaderSection', () => {
                         <Logo />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />

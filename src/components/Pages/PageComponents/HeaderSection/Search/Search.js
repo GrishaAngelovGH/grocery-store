@@ -1,7 +1,6 @@
 import { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { Search as SearchIcon } from 'components/Icons'
 import translate from 'translate'
 
 export class Search extends Component {
@@ -23,7 +22,7 @@ export class Search extends Component {
                 />
                 <div className='input-group-append'>
                     <span className='input-group-text bg-white'>
-                        <SearchIcon />
+                        <i className='bi bi-search'></i>
                     </span>
                 </div>
             </div>

@@ -59,7 +59,7 @@ export class MiniShoppingBag extends Component {
                             </div>
                             <div className='col-md-1'>
                                 <span className='text-dark' role={'button'}>
-                                    <Delete width={20} height={20} onClick={this.handleCloseButtonClick} />
+                                    <Delete onClick={this.handleCloseButtonClick} />
                                 </span>
                             </div>
                         </div>

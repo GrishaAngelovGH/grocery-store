@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Logo from '../Logo'
-import { Delete, ChevronLeft } from 'components/Icons'
+import { Delete } from 'components/Icons'
 
 import translate from 'translate'
 
@@ -54,8 +54,8 @@ export class SidebarMenu extends Component {
                                 onClick={this.handleBackClick}
                                 className='font-weight-bold m-2 d-flex align-items-center'
                             >
-                                <ChevronLeft />
-                                <div className='pt-1'>{strings.allCategories}</div>
+                                <i className='bi bi-chevron-left'></i>
+                                <div className='mx-1'>{strings.allCategories}</div>
                             </div>
                             <div className='bg-dark text-center text-white p-2'>
                                 {category}

@@ -2,7 +2,6 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { cakeProductCategory } from 'images'
-import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 import currencyFormatter from 'components/formatters/currencyFormatter'
 import translate from 'translate'
@@ -44,7 +43,7 @@ export class ShoppingBagItem extends Component {
                                 <div>{strings.qty}:</div>
                                 <div className='btn-group' role='group'>
                                     <button type='button' className='btn btn-sm btn-primary' onClick={this.handleDecrementQty}>
-                                        <ChevronLeft />
+                                        <i className='bi bi-chevron-left'></i>
                                     </button>
 
                                     <button type='button' className='btn btn-sm btn-primary'>
@@ -52,7 +51,7 @@ export class ShoppingBagItem extends Component {
                                     </button>
 
                                     <button type='button' className='btn btn-sm btn-primary' onClick={this.handleIncrementQty}>
-                                        <ChevronRight />
+                                        <i className='bi bi-chevron-right'></i>
                                     </button>
                                 </div>
                             </div>

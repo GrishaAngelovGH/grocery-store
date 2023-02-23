@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { cakeProductCategory } from 'images'
-import { ChatLeftDots } from 'components/Icons'
+
 import ReactStars from 'react-stars'
 
 import { ProductItem } from './ProductItem'
@@ -55,7 +55,7 @@ describe('(Component) ProductItem', () => {
 
                     <div className='col-1 col-md-1 pl-0'>
                         <Link to='/comments/category-1/1'>
-                            <ChatLeftDots />
+                            <i className='bi bi-chat-right-dots h2'></i>
                         </Link>
                     </div>
                 </div>

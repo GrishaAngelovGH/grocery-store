@@ -1,4 +1,3 @@
-import { Search as SearchIcon } from 'components/Icons'
 import { Search } from './Search'
 
 describe('(Component) Search', () => {
@@ -24,7 +23,7 @@ describe('(Component) Search', () => {
                 />
                 <div className='input-group-append'>
                     <span className='input-group-text bg-white'>
-                        <SearchIcon />
+                        <i className='bi bi-search'></i>
                     </span>
                 </div>
             </div>

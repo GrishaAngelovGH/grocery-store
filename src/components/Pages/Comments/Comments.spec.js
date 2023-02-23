@@ -4,8 +4,6 @@ import { Comments } from './Comments'
 import Comment from './Comment'
 import ReplyPanel from './ReplyPanel'
 
-import { ArrowLeftSquare } from 'components/Icons'
-
 describe('(Component) Comments', () => {
     let wrapper, fetchCommentsById, createNewComment
 
@@ -76,7 +74,7 @@ describe('(Component) Comments', () => {
                             </div>
                             <div className='col-md-4'>
                                 <Link to='/category/all-cakes'>
-                                    <ArrowLeftSquare />
+                                    <i className='bi bi-arrow-left-square h1'></i>
                                 </Link>
                             </div>
                         </div>

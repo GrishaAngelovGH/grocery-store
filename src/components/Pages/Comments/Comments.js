@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import { ArrowLeftSquare } from 'components/Icons'
 import './Comments.scss'
 
 import Comment from './Comment'
@@ -59,7 +58,7 @@ export class Comments extends Component {
                             </div>
                             <div className='col-md-4'>
                                 <Link to={`/category/${categoryId}`}>
-                                    <ArrowLeftSquare />
+                                    <i className='bi bi-arrow-left-square h1'></i>
                                 </Link>
                             </div>
                         </div>

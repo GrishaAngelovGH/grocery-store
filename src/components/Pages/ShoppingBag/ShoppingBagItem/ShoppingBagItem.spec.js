@@ -1,6 +1,5 @@
 import { cakeProductCategory } from 'images'
 import { ShoppingBagItem } from './ShoppingBagItem'
-import { ChevronLeft, ChevronRight } from 'components/Icons'
 
 describe('(Component) ShoppingBagItem', () => {
     let wrapper, removeItemFromShoppingCart, changeItemQtyFromShoppingCart
@@ -46,7 +45,7 @@ describe('(Component) ShoppingBagItem', () => {
                                         className='btn btn-sm btn-primary'
                                         onClick={wrapper.instance().handleDecrementQty}
                                     >
-                                        <ChevronLeft />
+                                        <i className='bi bi-chevron-left'></i>
                                     </button>
 
                                     <button type='button' className='btn btn-sm btn-primary'>
@@ -56,8 +55,9 @@ describe('(Component) ShoppingBagItem', () => {
                                     <button
                                         type='button'
                                         className='btn btn-sm btn-primary'
-                                        onClick={wrapper.instance().handleIncrementQty}>
-                                        <ChevronRight />
+                                        onClick={wrapper.instance().handleIncrementQty}
+                                    >
+                                        <i className='bi bi-chevron-right'></i>
                                     </button>
                                 </div>
                             </div>

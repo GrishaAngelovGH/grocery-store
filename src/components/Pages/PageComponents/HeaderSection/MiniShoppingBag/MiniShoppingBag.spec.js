@@ -56,7 +56,7 @@ describe('(Component) MiniShoppingBag', () => {
                             </div>
                             <div className='col-md-1'>
                                 <span className='text-dark' role={'button'}>
-                                    <Delete width={20} height={20} onClick={wrapper.instance().handleCloseButtonClick} />
+                                    <Delete onClick={wrapper.instance().handleCloseButtonClick} />
                                 </span>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ describe('(Component) MiniShoppingBag', () => {
                             </div>
                             <div className='col-md-1'>
                                 <span className='text-dark' role={'button'}>
-                                    <Delete width={20} height={20} onClick={wrapper.instance().handleCloseButtonClick} />
+                                    <Delete onClick={wrapper.instance().handleCloseButtonClick} />
                                 </span>
                             </div>
                         </div>
@@ -180,7 +180,7 @@ describe('(Component) MiniShoppingBag', () => {
                             </div>
                             <div className='col-md-1'>
                                 <span className='text-dark' role={'button'}>
-                                    <Delete width={20} height={20} onClick={wrapper.instance().handleCloseButtonClick} />
+                                    <Delete onClick={wrapper.instance().handleCloseButtonClick} />
                                 </span>
                             </div>
                         </div>

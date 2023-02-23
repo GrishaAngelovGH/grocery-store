@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-import { Delete, ChevronLeft } from 'components/Icons'
+import { Delete } from 'components/Icons'
 
 import Logo from '../Logo'
 import { SidebarMenu } from './SidebarMenu'
@@ -122,8 +122,8 @@ describe('(Component) SidebarMenu', () => {
                         onClick={wrapper.instance().handleBackClick}
                         className='font-weight-bold m-2 d-flex align-items-center'
                     >
-                        <ChevronLeft />
-                        <div className='pt-1'>All Categories</div>
+                        <i className='bi bi-chevron-left'></i>
+                        <div className='mx-1'>All Categories</div>
                     </div>
                     <div className='bg-dark text-center text-white p-2'>
                         Category2
@@ -164,8 +164,8 @@ describe('(Component) SidebarMenu', () => {
                         onClick={wrapper.instance().handleBackClick}
                         className='font-weight-bold m-2 d-flex align-items-center'
                     >
-                        <ChevronLeft />
-                        <div className='pt-1'>All Categories</div>
+                        <i className='bi bi-chevron-left'></i>
+                        <div className='mx-1'>All Categories</div>
                     </div>
                     <div className='bg-dark text-center text-white p-2'>
                         Category1

@@ -1,5 +1,4 @@
 import { Comment } from './Comment'
-import { Reply } from 'components/Icons'
 
 describe('(Component) Comment', () => {
     let onReply
@@ -66,7 +65,7 @@ describe('(Component) Comment', () => {
                         onClick={wrapper.instance().handleReply}
                     >
                         <div className='d-flex justify-content-center reply-btn'>
-                            <Reply />
+                            <i className='bi bi-reply-fill'></i>
                             <span>Reply</span>
                         </div>
                     </button>
@@ -124,7 +123,7 @@ describe('(Component) Comment', () => {
                         onClick={wrapper.instance().handleReply}
                     >
                         <div className='d-flex justify-content-center reply-btn'>
-                            <Reply />
+                            <i className='bi bi-reply-fill'></i>
                             <span>Reply</span>
                         </div>
                     </button>

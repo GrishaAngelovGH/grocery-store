@@ -10,7 +10,6 @@ import SidebarMenu from './SidebarMenu'
 import Menu, { menuCategories } from './Menu'
 import MiniShoppingBag from './MiniShoppingBag'
 
-import { User } from 'components/Icons'
 import './HeaderSection.scss'
 
 export class HeaderSection extends Component {
@@ -38,9 +37,9 @@ export class HeaderSection extends Component {
                         <Search disabled={disabledSearch} selectedCategory={selectedCategory} />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
@@ -58,9 +57,9 @@ export class HeaderSection extends Component {
                         <Logo />
                     </div>
 
-                    <div className='row justify-content-around align-items-center'>
+                    <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <User />
+                            <i className='bi bi-person h2'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />
