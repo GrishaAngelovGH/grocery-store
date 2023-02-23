@@ -30,7 +30,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "dev": "webpack serve --mode=development --config webpack.config",
+    "dev": "webpack serve --mode=development --config webpack.config --host 127.0.0.1 --open",
     "build": "webpack --mode=production --config webpack.config",
     "test": "mocha 'src/**/*.spec.js' --watch --require @babel/register --require ignore-styles --require mocha-helpers.js",
     "eject": "react-scripts eject",
