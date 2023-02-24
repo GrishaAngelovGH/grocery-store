@@ -32,11 +32,7 @@ export class MiniShoppingBag extends Component {
     render() {
         const { strings, lang, items, removeItemFromShoppingCart } = this.props
 
-        let itemsCount = 0
-
-        items.forEach(v => {
-            itemsCount += v.qty
-        })
+        const itemsCount = items.reduce((a, b) => a + b.qty, 0)
 
         if (!items.length) {
             return <ShoppingBagIcon count={itemsCount} />

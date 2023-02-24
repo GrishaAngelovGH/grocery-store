@@ -40,18 +40,18 @@ export class ProductItem extends Component {
         return (
             <div className='m-5'>
                 <div className='d-flex align-items-end'>
-                    <span className='promo-img-label'>{imageLabel[lang]}</span>
-                    <img src={cakeProductCategory[image]} width={250} height={300} />
+                    <span className='promo-img-label rounded'>{imageLabel[lang]}</span>
+                    <img src={cakeProductCategory[image]} width={250} height={300} className='rounded' />
                 </div>
 
-                <div className='row justify-content-start align-items-center product-container'>
-                    <div className='col-9 col-md-10'>
-                        <div className='product-description'>{description[lang]}</div>
+                <div className='row align-items-center product-container'>
+                    <div className='col-10'>
+                        <div className='text-break'>{description[lang]}</div>
 
                         <div>{currencyFormatter(lang, currency[lang], price)}</div>
                     </div>
 
-                    <div className='col-1 col-md-1 pl-0'>
+                    <div className='col-2 pl-0'>
                         <Link to={`/comments/${categoryId}/${id}`}>
                             <i className='bi bi-chat-right-dots h2'></i>
                         </Link>

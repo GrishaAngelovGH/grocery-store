@@ -40,7 +40,7 @@ describe('(Component) ShoppingBag', () => {
             <div className='row no-gutters justify-content-center bg-light'>
                 <div className='col-md-12'>
                     <div className='row no-gutters'>
-                        <div className='col-md-12 text-center bg-secondary text-white mb-3 display-4'>
+                        <div className='col-md-12 text-center bg-primary text-white mb-3 display-4'>
                             Shopping bag
                         </div>
                     </div>
@@ -103,7 +103,7 @@ describe('(Component) ShoppingBag', () => {
             <div className='row no-gutters justify-content-center bg-light'>
                 <div className='col-md-12'>
                     <div className='row no-gutters'>
-                        <div className='col-md-12 text-center bg-secondary text-white mb-3 display-4'>
+                        <div className='col-md-12 text-center bg-primary text-white mb-3 display-4'>
                             Shopping bag
                         </div>
                     </div>

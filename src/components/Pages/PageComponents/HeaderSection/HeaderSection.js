@@ -33,18 +33,23 @@ export class HeaderSection extends Component {
                     <div className='col-md-1'>
                         <Logo />
                     </div>
+
                     <div className='col-md-3'>
                         <Search disabled={disabledSearch} selectedCategory={selectedCategory} />
                     </div>
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
                         </div>
                     </div>
+                </div>
+
+                <div className='d-none d-lg-block'>
+                    <Menu lang={lang} categories={menuCategories} />
                 </div>
 
                 {/* Mobile and Tablet */}
@@ -59,7 +64,7 @@ export class HeaderSection extends Component {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />
@@ -69,10 +74,6 @@ export class HeaderSection extends Component {
                     <div className='col-8 col-md-10'>
                         <Search disabled={disabledSearch} selectedCategory={selectedCategory} />
                     </div>
-                </div>
-
-                <div className='d-none d-lg-block'>
-                    <Menu lang={lang} categories={menuCategories} />
                 </div>
 
                 {

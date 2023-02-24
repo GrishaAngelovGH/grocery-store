@@ -27,7 +27,7 @@ describe('(Component) ShoppingBagItem', () => {
         expect(wrapper.equals(
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
                 <div className='col-md-6'>
-                    <img src={cakeProductCategory['vanillaCake']} width={160} height={160} />
+                    <img src={cakeProductCategory['vanillaCake']} width={160} height={160} className='rounded' />
                 </div>
 
                 <div className='col-md-6 font-weight-bold'>
@@ -39,7 +39,7 @@ describe('(Component) ShoppingBagItem', () => {
 
                             <div className='d-flex align-items-center'>
                                 <div>Qty:</div>
-                                <div className='btn-group' role='group'>
+                                <div className='btn-group mx-2' role='group'>
                                     <button
                                         type='button'
                                         className='btn btn-sm btn-primary'

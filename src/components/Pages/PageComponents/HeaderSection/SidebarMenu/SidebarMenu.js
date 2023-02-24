@@ -11,7 +11,8 @@ export class SidebarMenu extends Component {
     state = { category: '', subCategories: [] }
 
     handleMenuClick = ({ target }) => {
-        const subCategories = this.props.categories[this.props.lang].find(v => v.title === target.id).subCategories
+        const { categories, lang } = this.props
+        const { subCategories } = categories[lang].find(v => v.title === target.id)
         this.setState({ subCategories, category: target.id })
     }
 
@@ -36,7 +37,7 @@ export class SidebarMenu extends Component {
                 </div>
 
                 {
-                    subCategories.length === 0 && categories[lang].map(v => (
+                    !subCategories.length && categories[lang].map(v => (
                         <div
                             key={v.title}
                             id={v.title}
@@ -70,17 +71,15 @@ export class SidebarMenu extends Component {
                                 {v.title}
                             </div>
                             {
-                                v.categories.map(({ value, link }) => {
-                                    return (
-                                        <Link
-                                            key={link}
-                                            to={link}
-                                            className='border-bottom text-secondary m-2 d-block'
-                                        >
-                                            {value}
-                                        </Link>
-                                    )
-                                })
+                                v.categories.map(({ value, link }) => (
+                                    <Link
+                                        key={link}
+                                        to={link}
+                                        className='border-bottom text-secondary m-2 d-block'
+                                    >
+                                        {value}
+                                    </Link>
+                                ))
                             }
                         </div>
                     ))

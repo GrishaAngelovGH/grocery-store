@@ -22,7 +22,7 @@ export class Search extends Component {
                 />
                 <div className='input-group-append'>
                     <span className='input-group-text bg-white'>
-                        <i className='bi bi-search'></i>
+                        <i className='bi bi-search d-flex'></i>
                     </span>
                 </div>
             </div>

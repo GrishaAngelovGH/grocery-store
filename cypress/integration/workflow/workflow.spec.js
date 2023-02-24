@@ -1,5 +1,5 @@
 const addItemByIndex = index => {
-    cy.get('.col-md-6 > .m-3').eq(index).find('button').click()
+    cy.get('.col-md-6 > .m-5').eq(index).find('button').click()
 }
 
 const visitCakesCategory = () => {

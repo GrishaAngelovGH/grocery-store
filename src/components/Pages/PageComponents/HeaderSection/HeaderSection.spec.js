@@ -27,18 +27,23 @@ describe('(Component) HeaderSection', () => {
                     <div className='col-md-1'>
                         <Logo />
                     </div>
+
                     <div className='col-md-3'>
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
                         </div>
                     </div>
+                </div>
+
+                <div className='d-none d-lg-block'>
+                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
 
                 {/* Mobile and Tablet */}
@@ -53,7 +58,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />
@@ -63,10 +68,6 @@ describe('(Component) HeaderSection', () => {
                     <div className='col-8 col-md-10'>
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
-                </div>
-
-                <div className='d-none d-lg-block'>
-                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
             </div>
         )).to.equal(true)
@@ -79,7 +80,8 @@ describe('(Component) HeaderSection', () => {
                 selectedCategory={'selectedCategory'}
             />
         )
-        const menu = wrapper.find(Menu).first()
+
+        const menu = wrapper.find(Menu).at(1)
 
         menu.simulate('sidebarOpen')
 
@@ -92,18 +94,23 @@ describe('(Component) HeaderSection', () => {
                     <div className='col-md-1'>
                         <Logo />
                     </div>
+
                     <div className='col-md-3'>
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-md-1'>
                             <MiniShoppingBag />
                         </div>
                     </div>
+                </div>
+
+                <div className='d-none d-lg-block'>
+                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
 
                 {/* Mobile and Tablet */}
@@ -118,7 +125,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 col-md-1'>
-                            <i className='bi bi-person h2'></i>
+                            <i className='bi bi-person h2 align-text-top'></i>
                         </div>
                         <div className='col-1 col-md-1'>
                             <MiniShoppingBag />
@@ -128,10 +135,6 @@ describe('(Component) HeaderSection', () => {
                     <div className='col-8 col-md-10'>
                         <Search disabled={false} selectedCategory={'selectedCategory'} />
                     </div>
-                </div>
-
-                <div className='d-none d-lg-block'>
-                    <Menu lang={'en'} categories={menuCategories} />
                 </div>
 
                 <Sidebar

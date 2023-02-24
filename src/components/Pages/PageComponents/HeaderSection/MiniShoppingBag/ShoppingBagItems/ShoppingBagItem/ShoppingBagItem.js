@@ -18,7 +18,7 @@ export class ShoppingBagItem extends Component {
 
         return (
             <div className='d-flex p-3'>
-                <img src={cakeProductCategory[image]} width={120} height={120} />
+                <img src={cakeProductCategory[image]} width={120} height={120} className='rounded' />
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
                     <div>{description}</div>

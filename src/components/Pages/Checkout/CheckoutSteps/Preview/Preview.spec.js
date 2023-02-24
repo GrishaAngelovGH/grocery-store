@@ -42,11 +42,11 @@ describe('(Component) Preview', () => {
                     </div>
 
                     <div className='font-weight-bold'>
-                        <div>{items[0].description.en} {`(${items[0].currency.en}${30})`}</div>
+                        <div>{items[0].description.en}: {items[0].currency.en}30</div>
                     </div>
 
                     <div className='font-weight-bold'>
-                        <div>{items[1].description.en} {`(${items[1].currency.en}${70})`}</div>
+                        <div>{items[1].description.en}: {items[1].currency.en}70</div>
                     </div>
 
                     <div className='mt-2 font-weight-bold'>

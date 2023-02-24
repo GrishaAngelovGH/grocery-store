@@ -25,7 +25,6 @@ export class CheckoutSteps extends Component {
         Swal.fire({
             width: 800,
             icon: 'success',
-            text: JSON.stringify(values, null, 2),
             allowOutsideClick: false,
             title: this.props.strings.successMessage
         }).then(() => {

@@ -29,7 +29,7 @@ export class ShoppingBagItem extends Component {
         return (
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
                 <div className='col-md-6'>
-                    <img src={cakeProductCategory[image]} width={160} height={160} />
+                    <img src={cakeProductCategory[image]} width={160} height={160} className='rounded' />
                 </div>
 
                 <div className='col-md-6 font-weight-bold'>
@@ -41,7 +41,7 @@ export class ShoppingBagItem extends Component {
 
                             <div className='d-flex align-items-center'>
                                 <div>{strings.qty}:</div>
-                                <div className='btn-group' role='group'>
+                                <div className='btn-group mx-2' role='group'>
                                     <button type='button' className='btn btn-sm btn-primary' onClick={this.handleDecrementQty}>
                                         <i className='bi bi-chevron-left'></i>
                                     </button>

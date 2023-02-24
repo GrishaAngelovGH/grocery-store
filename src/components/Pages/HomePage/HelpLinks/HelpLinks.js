@@ -1,19 +1,21 @@
 import PropTypes from 'prop-types'
 import translate from 'translate'
 
-export const HelpLinks = ({ strings }) => (
-    <div className='row no-gutters justify-content-center border d-none d-md-flex mt-2'>
-        <div role='button' className='col-4 col-md-3 small'>
-            {strings.homeDelivery}
+export const HelpLinks = ({ strings: { homeDelivery, order, shop } }) => {
+    const descriptions = [homeDelivery, order, shop]
+
+    return (
+        <div className='row no-gutters justify-content-center text-center border d-none d-md-flex mt-2'>
+            {
+                descriptions.map((v => (
+                    <div key={v} role='button' className='col-4 small font-weight-bold'>
+                        {v}
+                    </div>
+                )))
+            }
         </div>
-        <div role='button' className='col-4 col-md-3 small'>
-            {strings.order}
-        </div>
-        <div role='button' className='col-4 col-md-3 small'>
-            {strings.shop}
-        </div>
-    </div>
-)
+    )
+}
 
 HelpLinks.propTypes = {
     strings: PropTypes.object.isRequired

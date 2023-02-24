@@ -56,8 +56,8 @@ export const items = [
     {
         id: 4,
         name: {
-            en: 'Milk Chocolate Layers Cake',
-            bg: 'Торта със слоеве от млечен шоколад'
+            en: 'Milk Chocolate Cake',
+            bg: 'Торта със млечен шоколад'
         },
         image: 'milkChocolateLayersCake',
         label: {

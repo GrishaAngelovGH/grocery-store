@@ -3,14 +3,8 @@ import currencyFormatter from 'components/formatters/currencyFormatter'
 import translate from 'translate'
 
 export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPrice }) => {
-    let total = 0
+    const total = items.reduce((a, b) => a + (b.price * b.qty), shippingMethodPrice)
     const currency = items[0].currency[lang]
-
-    items.forEach(v => {
-        total += v.price * v.qty
-    })
-
-    total += shippingMethodPrice
 
     return (
         <div className='row'>
@@ -26,7 +20,7 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
                 {
                     items.map(v => (
                         <div key={v.id} className='font-weight-bold'>
-                            <div>{v.description[lang]} {`(${currencyFormatter(lang, v.currency[lang], v.price * v.qty)})`}</div>
+                            <div>{v.description[lang]}: {currencyFormatter(lang, v.currency[lang], v.price * v.qty)}</div>
                         </div>
                     ))
                 }

@@ -7,7 +7,7 @@ import translate from 'translate'
 export const FreeShoppingBanner = ({ strings }) => (
     <div className='row no-gutters mb-2'>
         <div className='col-md-12 d-flex justify-content-center align-items-center'>
-            <div className='free-shopping-banner-label'>
+            <div className='free-shopping-banner-label p-1 rounded'>
                 <h2>{strings.title}</h2>
                 <h3>{strings.content}</h3>
                 <h3>{strings.linkText}</h3>

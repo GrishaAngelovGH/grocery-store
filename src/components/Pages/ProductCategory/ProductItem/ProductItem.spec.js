@@ -42,18 +42,18 @@ describe('(Component) ProductItem', () => {
         expect(wrapper.equals(
             <div className='m-5'>
                 <div className='d-flex align-items-end'>
-                    <span className='promo-img-label'>label</span>
-                    <img src={cakeProductCategory['triple-layer-cake']} width={250} height={300} />
+                    <span className='promo-img-label rounded'>label</span>
+                    <img src={cakeProductCategory['triple-layer-cake']} width={250} height={300} className='rounded' />
                 </div>
 
-                <div className='row justify-content-start align-items-center product-container'>
-                    <div className='col-9 col-md-10'>
-                        <div className='product-description'>description</div>
+                <div className='row align-items-center product-container'>
+                    <div className='col-10'>
+                        <div className='text-break'>description</div>
 
                         <div>{`£${30.00}`}</div>
                     </div>
 
-                    <div className='col-1 col-md-1 pl-0'>
+                    <div className='col-2 pl-0'>
                         <Link to='/comments/category-1/1'>
                             <i className='bi bi-chat-right-dots h2'></i>
                         </Link>

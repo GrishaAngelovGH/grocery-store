@@ -13,8 +13,7 @@ export class Menu extends Component {
     handleMouseEnter = ({ target }) => {
         const title = target.id
         const categories = this.props.categories[this.props.lang].find(v => v.title === title)
-        const subCategories = categories.subCategories
-        const featureMenu = categories.featureMenu
+        const { subCategories, featureMenu } = categories
         this.setState({ subCategories, featureMenu })
     }
 

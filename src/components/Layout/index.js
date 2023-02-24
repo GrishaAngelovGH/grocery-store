@@ -1,3 +1,3 @@
-import LayoutContainer from './LayoutContainer'
+import LayoutContainer from './Layout'
 
 export default LayoutContainer
