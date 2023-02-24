@@ -40,7 +40,7 @@ describe('(Component) ProductItem', () => {
 
     it('should render component', () => {
         expect(wrapper.equals(
-            <div className='m-3'>
+            <div className='m-5'>
                 <div className='d-flex align-items-end'>
                     <span className='promo-img-label'>label</span>
                     <img src={cakeProductCategory['triple-layer-cake']} width={250} height={300} />

@@ -38,7 +38,7 @@ export class ProductItem extends Component {
         } = this.props
 
         return (
-            <div className='m-3'>
+            <div className='m-5'>
                 <div className='d-flex align-items-end'>
                     <span className='promo-img-label'>{imageLabel[lang]}</span>
                     <img src={cakeProductCategory[image]} width={250} height={300} />
