@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import HelpButton from './HelpButton'
+import HelpButton from '../HelpButton'
 import { nextDayDeliver } from 'images'
 
 import translate from 'translate'

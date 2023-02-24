@@ -1,4 +1,4 @@
-import HelpButton from './HelpButton'
+import HelpButton from '../HelpButton'
 import { nextDayDeliver } from 'images'
 
 import { NextDayDeliveryButton } from './NextDayDeliveryButton'
