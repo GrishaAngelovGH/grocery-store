@@ -124,6 +124,24 @@ describe('(Reducer) shoppingCart', () => {
         })
     })
 
+    it('should clear all items from shopping cart', () => {
+        const state = {
+            cartItems: [
+                { id: 1, qty: 1 },
+                { id: 2, qty: 1 },
+                { id: 3, qty: 5 }
+            ]
+        }
+
+        const action = ({ type: 'CLEAR_ITEMS_FROM_SHOPPING_CART' })
+
+        const newState = shoppingCart(state, action)
+
+        expect(newState).to.eql({
+            cartItems: []
+        })
+    })
+
     it('should return old state when action type is mismatched', () => {
         const state = { cartItems: ['item1'] }
 

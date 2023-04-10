@@ -1,4 +1,4 @@
-import CheckoutSteps from './CheckoutSteps'
+import CheckoutSteps from './CheckoutStepsContainer'
 import Billing from './Billing'
 import Shipping from './Shipping'
 import Payment from './Payment'

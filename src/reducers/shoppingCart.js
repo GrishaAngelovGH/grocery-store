@@ -61,11 +61,17 @@ const changeItemQtyFromShoppingCartHandler = (state, { id, increment }) => ({
     })
 })
 
+const clearItemsFromShoppingCartHandler = (state) => ({
+    ...state,
+    cartItems: []
+})
+
 export default (state = initialState, action) => {
     const handlers = {
         'ADD_ITEM_TO_SHOPPING_CART': addItemToShoppingCartHandler,
         'REMOVE_ITEM_FROM_SHOPPING_CART': removeItemFromShoppingCartHandler,
-        'CHANGE_ITEM_QTY_FROM_SHOPPING_CART': changeItemQtyFromShoppingCartHandler
+        'CHANGE_ITEM_QTY_FROM_SHOPPING_CART': changeItemQtyFromShoppingCartHandler,
+        'CLEAR_ITEMS_FROM_SHOPPING_CART': clearItemsFromShoppingCartHandler
     }
 
     const handler = handlers[action.type]

@@ -13,3 +13,7 @@ export const changeItemQtyFromShoppingCart = ({ id, increment }) => ({
     id: id,
     increment: increment
 })
+
+export const clearItemsFromShoppingCart = () => ({
+    type: 'CLEAR_ITEMS_FROM_SHOPPING_CART'
+})

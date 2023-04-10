@@ -1,11 +1,13 @@
 import {
     addItemToShoppingCart,
     removeItemFromShoppingCart,
-    changeItemQtyFromShoppingCart
+    changeItemQtyFromShoppingCart,
+    clearItemsFromShoppingCart
 } from './shoppingCart'
 
 export {
     addItemToShoppingCart,
     removeItemFromShoppingCart,
-    changeItemQtyFromShoppingCart
+    changeItemQtyFromShoppingCart,
+    clearItemsFromShoppingCart
 }

@@ -1,11 +1,17 @@
-import Steps from 'rc-steps'
+import { Navigate } from 'react-router-dom'
 import { Form } from 'react-final-form'
+import Swal from 'sweetalert2'
+import Steps from 'rc-steps'
 
 import Step from './Step'
 import { CheckoutSteps } from './CheckoutSteps'
 
+import { createSandbox } from 'sinon'
+
+const sandbox = createSandbox()
+
 describe('(Component) CheckoutSteps', () => {
-    let wrapper
+    let wrapper, clearItemsFromShoppingCart
 
     const steps = [
         { title: 'Title-1', component: (<div>content-1</div>), showNextButton: true, showPrevButton: false },
@@ -13,7 +19,19 @@ describe('(Component) CheckoutSteps', () => {
     ]
 
     beforeEach(() => {
-        wrapper = shallow(<CheckoutSteps steps={steps} />)
+        clearItemsFromShoppingCart = sinon.spy()
+        sandbox.stub(Swal, 'fire').callsFake(() => Promise.resolve())
+
+        wrapper = shallow(
+            <CheckoutSteps
+                steps={steps}
+                clearItemsFromShoppingCart={clearItemsFromShoppingCart}
+            />
+        )
+    })
+
+    afterEach(() => {
+        sandbox.restore()
     })
 
     it('should render component', () => {
@@ -82,5 +100,17 @@ describe('(Component) CheckoutSteps', () => {
                 </Step>
             </form>
         )
+    })
+
+    it('should clear all cart items after checkout process', async () => {
+        wrapper.find(Form).simulate('submit')
+
+        await new Promise((resolve) => setTimeout(resolve, 5))
+
+        expect(wrapper.equals(
+            <Navigate replace to={'/'} />
+        )).to.equal(true)
+
+        clearItemsFromShoppingCart.should.have.been.calledOnce
     })
 })

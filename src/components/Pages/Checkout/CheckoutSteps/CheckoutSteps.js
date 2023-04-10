@@ -28,7 +28,9 @@ export class CheckoutSteps extends Component {
             allowOutsideClick: false,
             title: this.props.strings.successMessage
         }).then(() => {
-            this.setState({ shouldRedirect: true })
+            this.setState({ shouldRedirect: true }, () => {
+                this.props.clearItemsFromShoppingCart()
+            })
         })
     }
 
@@ -57,6 +59,10 @@ export class CheckoutSteps extends Component {
         const { currentStep, shouldRedirect } = this.state
         const { steps } = this.props
 
+        if (shouldRedirect) {
+            return <Navigate replace to={'/'} />
+        }
+
         return (
             <div className='m-5'>
                 <div className='shadow p-2'>
@@ -79,8 +85,6 @@ export class CheckoutSteps extends Component {
                     }}
                     render={this.formContent}
                 />
-
-                {shouldRedirect && <Navigate replace to={'/'} />}
             </div>
         )
     }
