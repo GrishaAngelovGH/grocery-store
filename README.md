@@ -24,23 +24,6 @@ ReactJS 17 tested with enzyme library (integrated with enzyme-adapter-react-17).
 
 ## The front-end project is using the following technologies:
 
-* Initial structure is created with **create-react-app**
-* Integrated **babel/eslint-parser** with added various rules
-* Integrated **ReactJS 17**
-* Component prop validation with **prop-types**
-* Integrated **redux**
-* Enabled persistent redux store with **redux-persist**
-* Integrated **react-router v6**
-* Integrated **webpack v5** - able to run webpack serve for development purposes and to produce build ready for deployment
-* Implemented custom component level **i18n (HOC based)**
-* Integrated **bootstrap 4.5**
-* Integrated **react-bootstrap**
-* Integrated **scss**
-* Integrated **axios / redux-axios-middleware / axios-mock-adapter**
-* Integrated **notifications with react-toastify**
-* Integrated **react-final-form**
-* Integrated **mocha**
-* Integrated **sinon**
-* Integrated **chai**
-* Integrated **enzyme**
-* Integrated **cypress.io** end to end testing framework
+<img src="https://img.shields.io/badge/create--react--app-%23563D7C.svg?style=flat&logo=create-react-app&color=white" height="30"> <img src="https://img.shields.io/badge/babel--eslint--parser-%23563D7C.svg?style=flat&logo=babel&color=white" height="30"> <img src="https://img.shields.io/badge/React.JS%20(17.x)-%23563D7C.svg?style=flat&logo=react&color=white" height="30"> <img src="https://img.shields.io/badge/prop--types-%23563D7C.svg?style=flat&logo=react&color=white" height="30"> <img src="https://img.shields.io/badge/redux-%23563D7C.svg?style=flat&logo=redux&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/redux--persist-%23563D7C.svg?style=flat&logo=redux&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/React_Router%20v6-CA4245?style=flat&logo=react-router&color=white&logoColor=red" height="30"> <img src="https://img.shields.io/badge/Webpack-%238DD6F9.svg?style=flat&logo=webpack&color=white&logoColor=blue" height="30"> <img src="https://img.shields.io/badge/custom%20i18n%20(HOC)-%238DD6F9.svg?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=flat&logo=bootstrap&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/react--bootstrap-blue.svg?style=flat&logo=react&color=white&logoColor=blue" height="30"> <img src="https://img.shields.io/badge/SASS-%231572B6.svg?style=flat&logo=sass&color=white&logoColor=darkpink" height="30"> <img src="https://img.shields.io/badge/Axios-%231572B6.svg?style=flat&logo=axios&color=white&logoColor=blue" height="30"> <img src="https://img.shields.io/badge/redux--axios--middleware-%23593d88.svg?style=flat&logo=redux&color=white&logoColor=purple" height="30"> <img src="https://img.shields.io/badge/axios--mock--adapter-%231572B6.svg?style=flat&logo=axios&color=white&logoColor=blue" height="30"> <img src="https://img.shields.io/badge/react--toastify-311C87?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/react--final--form-311C87?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/mocha-311C87?style=flat&logo=mocha&color=white" height="30">
+<img src="https://img.shields.io/badge/Sinon.JS-311C87?style=flat&logo=sinon&color=white" height="30">
+<img src="https://img.shields.io/badge/chai-311C87?style=flat&logo=chai&color=white&logoColor=red" height="30"> <img src="https://img.shields.io/badge/enzyme-311C87?style=flat&color=white" height="30"> <img src="https://img.shields.io/badge/Cypress.IO-311C87?style=flat&logo=cypress&color=white&logoColor=gray" height="30">
