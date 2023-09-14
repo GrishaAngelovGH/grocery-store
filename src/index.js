@@ -10,6 +10,7 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import './axios-mock-adapter'
 import 'react-toastify/dist/ReactToastify.css'
+import 'intro.js/introjs.css'
 
 import { store, persistor } from './store'
 

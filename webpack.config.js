@@ -46,6 +46,12 @@ module.exports = {
                 test: /\.(svg|png|jpe?g|gif|woff|eot|ttf)$/i,
                 type: 'asset/resource'
             },
+            {
+                test: /\.m?js$/,
+                resolve: {
+                    fullySpecified: false,
+                },
+            }
         ]
     },
     plugins: [

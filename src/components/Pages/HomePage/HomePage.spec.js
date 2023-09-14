@@ -1,10 +1,12 @@
-import HeaderSection from '../PageComponents/HeaderSection'
-import GroceryStoreBanner from './GroceryStoreBanner'
+import IntroSteps from 'components/IntroSteps'
+import HeaderSection from 'components/Pages/PageComponents/HeaderSection'
+
 import FreeShoppingBanner from './FreeShoppingBanner'
-import PromoProducts from './PromoProducts'
-import PromoDeals from './PromoDeals'
-import HelpLinks from './HelpLinks'
+import GroceryStoreBanner from './GroceryStoreBanner'
 import HelpButtons from './HelpButtons'
+import HelpLinks from './HelpLinks'
+import PromoDeals from './PromoDeals'
+import PromoProducts from './PromoProducts'
 
 import HomePage from './HomePage'
 
@@ -15,6 +17,8 @@ describe('(Component) HomePage', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-md-12'>
+                    <IntroSteps />
+
                     <HeaderSection disabledSearch />
 
                     <HelpLinks />
