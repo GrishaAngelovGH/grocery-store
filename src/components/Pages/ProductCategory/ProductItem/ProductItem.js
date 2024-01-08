@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import ReactStars from 'react-stars'
 import { toast } from 'react-toastify'
 
+import ProductDescription from './ProductDescription/ProductDescription'
+
 import { cakeProductCategory } from 'images'
 import currencyFormatter from 'components/formatters/currencyFormatter'
 
@@ -39,9 +41,10 @@ export class ProductItem extends Component {
 
         return (
             <div className='m-5'>
-                <div className='d-flex align-items-end'>
+                <div className='d-flex align-items-end position-relative'>
                     <span className='promo-img-label rounded'>{imageLabel[lang]}</span>
                     <img src={cakeProductCategory[image]} width={250} height={300} className='rounded' />
+                    <ProductDescription />
                 </div>
 
                 <div className='row align-items-center product-container'>

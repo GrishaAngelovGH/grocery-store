@@ -1,0 +1,17 @@
+.product-description {
+  opacity: 0;
+  top: 35%;
+  width: 100%;
+  transition: opacity 0.5s ease-out;
+}
+
+.product-description-icon {
+  top: 1%;
+  right: 1%;
+  font-size: 20px;
+}
+
+.product-description-icon:hover +
+.product-description {
+  opacity: 1;
+}
