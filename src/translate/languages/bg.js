@@ -173,6 +173,9 @@ export default {
         message: 'Продукта е добавен в кошницата',
         addToBagBtn: 'Добави в кошница'
     },
+    'Pages.ProductCategory.ProductItem.ClubcardPromoPrice': {
+        label: 'Цена с клубна карта'
+    },
     'Pages.ShoppingBag.ShoppingBagItem': {
         price: 'Цена',
         qty: 'Количество',

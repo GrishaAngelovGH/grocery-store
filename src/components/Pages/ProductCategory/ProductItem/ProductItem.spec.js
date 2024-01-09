@@ -5,7 +5,9 @@ import { cakeProductCategory } from 'images'
 import ReactStars from 'react-stars'
 
 import { ProductItem } from './ProductItem'
+
 import ProductDescription from './ProductDescription'
+import ClubcardPromoPrice from './ClubcardPromoPrice'
 
 describe('(Component) ProductItem', () => {
     let wrapper, addItemToShoppingCart
@@ -61,6 +63,13 @@ describe('(Component) ProductItem', () => {
                         </Link>
                     </div>
                 </div>
+
+                <ClubcardPromoPrice
+                    currency={{ en: '£' }}
+                    lang='en'
+                    price={30.00}
+                    discountPercent={5}
+                />
 
                 <ReactStars
                     count={5}

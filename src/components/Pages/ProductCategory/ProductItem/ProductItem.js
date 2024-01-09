@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 import ReactStars from 'react-stars'
 import { toast } from 'react-toastify'
 
-import ProductDescription from './ProductDescription/ProductDescription'
+import ProductDescription from './ProductDescription'
+import ClubcardPromoPrice from './ClubcardPromoPrice'
 
 import { cakeProductCategory } from 'images'
 import currencyFormatter from 'components/formatters/currencyFormatter'
@@ -60,6 +61,13 @@ export class ProductItem extends Component {
                         </Link>
                     </div>
                 </div>
+
+                <ClubcardPromoPrice
+                    currency={currency}
+                    lang={lang}
+                    price={price}
+                    discountPercent={5}
+                />
 
                 <ReactStars
                     count={5}

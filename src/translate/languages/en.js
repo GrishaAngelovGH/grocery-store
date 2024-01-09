@@ -173,6 +173,9 @@ export default {
         message: 'Item added to shopping bag',
         addToBagBtn: 'Add To Bag'
     },
+    'Pages.ProductCategory.ProductItem.ClubcardPromoPrice': {
+        label: 'Clubcard price'
+    },
     'Pages.ShoppingBag.ShoppingBagItem': {
         price: 'Price',
         qty: 'Qty',
