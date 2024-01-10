@@ -176,6 +176,14 @@ export default {
     'Pages.ProductCategory.ProductItem.ClubcardPromoPrice': {
         label: 'Clubcard price'
     },
+    'Pages.ProductCategory.ProductItem.ProductDescription': {
+        dimensions: 'Dimensions',
+        h: 'h',
+        w: 'w',
+        weight: 'Weight',
+        g: 'g',
+        mm: 'mm'
+    },
     'Pages.ShoppingBag.ShoppingBagItem': {
         price: 'Price',
         qty: 'Qty',

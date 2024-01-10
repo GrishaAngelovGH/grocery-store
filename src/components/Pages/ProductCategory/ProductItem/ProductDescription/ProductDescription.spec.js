@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import ListGroup from 'react-bootstrap/ListGroup'
 
-import ProductDescription from './ProductDescription'
+import { ProductDescription } from './ProductDescription'
 
 describe('(Component) ProductDescription', () => {
   it('should render component', () => {
@@ -13,7 +13,7 @@ describe('(Component) ProductDescription', () => {
         <div className='product-description position-absolute'>
           <ListGroup className='text-center'>
             <ListGroup.Item className='bg-secondary text-white'>Dimensions</ListGroup.Item>
-            <ListGroup.Item>h-104mm x w-193mm</ListGroup.Item>
+            <ListGroup.Item>h-104 mm x w-193 mm</ListGroup.Item>
             <ListGroup.Item className='bg-secondary text-white'>Weight</ListGroup.Item>
             <ListGroup.Item>2220 g</ListGroup.Item>
           </ListGroup>

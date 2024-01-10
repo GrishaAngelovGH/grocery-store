@@ -176,6 +176,14 @@ export default {
     'Pages.ProductCategory.ProductItem.ClubcardPromoPrice': {
         label: 'Цена с клубна карта'
     },
+    'Pages.ProductCategory.ProductItem.ProductDescription': {
+        dimensions: 'Размери',
+        h: 'в',
+        w: 'ш',
+        weight: 'Тегло',
+        g: 'г',
+        mm: 'мм'
+    },
     'Pages.ShoppingBag.ShoppingBagItem': {
         price: 'Цена',
         qty: 'Количество',
