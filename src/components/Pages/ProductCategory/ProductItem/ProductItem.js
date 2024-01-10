@@ -5,6 +5,8 @@ import PropTypes from 'prop-types'
 import ReactStars from 'react-stars'
 import { toast } from 'react-toastify'
 
+import Button from 'react-bootstrap/Button'
+
 import ProductDescription from './ProductDescription'
 import ClubcardPromoPrice from './ClubcardPromoPrice'
 
@@ -77,13 +79,13 @@ export class ProductItem extends Component {
                     color2={'#ffd700'}
                 />
 
-                <button
-                    type='button'
+                <Button
+                    variant='success'
                     onClick={this.handleAddToCartClick}
-                    className='btn btn-success btn-block'
+                    className='btn-block'
                 >
                     {strings.addToBagBtn}
-                </button>
+                </Button>
             </div>
         )
     }

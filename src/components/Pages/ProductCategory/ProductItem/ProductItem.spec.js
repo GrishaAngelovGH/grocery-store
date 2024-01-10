@@ -4,6 +4,8 @@ import { cakeProductCategory } from 'images'
 
 import ReactStars from 'react-stars'
 
+import Button from 'react-bootstrap/Button'
+
 import { ProductItem } from './ProductItem'
 
 import ProductDescription from './ProductDescription'
@@ -79,19 +81,19 @@ describe('(Component) ProductItem', () => {
                     color2={'#ffd700'}
                 />
 
-                <button
-                    type='button'
+                <Button
+                    variant='success'
                     onClick={wrapper.instance().handleAddToCartClick}
-                    className='btn btn-success btn-block'
+                    className='btn-block'
                 >
                     Add To Bag
-                </button>
+                </Button>
             </div>
         )).to.equal(true)
     })
 
     it('should handle add to cart click', () => {
-        const button = wrapper.find('button')
+        const button = wrapper.find('Button')
 
         button.simulate('click')
 
