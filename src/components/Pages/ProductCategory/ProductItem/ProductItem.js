@@ -43,7 +43,7 @@ export class ProductItem extends Component {
         } = this.props
 
         return (
-            <div className='m-5'>
+            <div className='m-5 border bg-light rounded shadow p-1'>
                 <div className='d-flex align-items-end position-relative'>
                     <span className='promo-img-label rounded'>{imageLabel[lang]}</span>
                     <img src={cakeProductCategory[image]} width={250} height={300} className='rounded' />
