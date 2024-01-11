@@ -77,6 +77,7 @@ export class ProductItem extends Component {
                     value={rating}
                     size={24}
                     color2={'#ffd700'}
+                    className='d-flex justify-content-center'
                 />
 
                 <Button

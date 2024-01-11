@@ -79,6 +79,7 @@ describe('(Component) ProductItem', () => {
                     value={4}
                     size={24}
                     color2={'#ffd700'}
+                    className='d-flex justify-content-center'
                 />
 
                 <Button
