@@ -10,7 +10,7 @@ export const ClubcardPromoPrice = ({ currency, lang, price, discountPercent, str
   return (
     <div className='row'>
       <div className='col-12'>
-        <p className='p-2 alert alert-warning text-center border border-warning'>
+        <p className='p-2 m-0 alert alert-warning text-center border border-warning'>
           {strings.label}: {currencyFormatter(lang, currency[lang], price - amount)}
         </p>
       </div>
