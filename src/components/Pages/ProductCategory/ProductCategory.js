@@ -5,6 +5,8 @@ import ProductItem from './ProductItem'
 import EmptyProductCategory from './EmptyProductCategory'
 import HeaderSection from '../PageComponents/HeaderSection'
 
+import menuCategories from 'components/Pages/PageComponents/HeaderSection/Menu/menuCategories'
+
 class ProductCategory extends Component {
     componentDidMount() {
         const { categoryId, fetchAllItemsByCategory } = this.props
@@ -21,13 +23,17 @@ class ProductCategory extends Component {
             )
         }
 
+        const subCategories = menuCategories[lang].map(v => v.subCategories).flat()
+        const categories = subCategories.map(v => v.categories).flat()
+        const category = categories.find(v => v.link.includes(categoryId)).value
+
         return (
             <div className='row no-gutters'>
                 <div className='col-md-12'>
                     <HeaderSection selectedCategory={categoryId} />
 
                     <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
-                        {categoryId.replaceAll('-', ' ')}
+                        {category}
                     </h1>
 
                     <div className='row no-gutters'>

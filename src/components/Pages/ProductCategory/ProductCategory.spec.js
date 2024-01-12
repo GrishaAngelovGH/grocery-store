@@ -27,7 +27,8 @@ describe('(Component) ProductCategory', () => {
             <ProductCategory
                 items={items}
                 filteredItems={[]}
-                categoryId={'category-1'}
+                lang="en"
+                categoryId={'all-cakes'}
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
                 addItemToShoppingCart={addItemToShoppingCart}
             />
@@ -38,17 +39,17 @@ describe('(Component) ProductCategory', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection selectedCategory={'category-1'} />
+                    <HeaderSection selectedCategory={'all-cakes'} />
 
                     <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
-                        category 1
+                        All Cakes
                     </h1>
 
                     <div className='row no-gutters'>
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
                             <ProductItem
                                 id={items[0].id}
-                                categoryId={'category-1'}
+                                categoryId={'all-cakes'}
                                 image={items[0].image}
                                 imageLabel={items[0].label}
                                 description={items[0].name}
@@ -82,7 +83,8 @@ describe('(Component) ProductCategory', () => {
             <ProductCategory
                 items={items}
                 filteredItems={filteredItems}
-                categoryId={'category-1'}
+                categoryId={'all-cakes'}
+                lang="en"
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
                 addItemToShoppingCart={addItemToShoppingCart}
             />
@@ -91,17 +93,17 @@ describe('(Component) ProductCategory', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-md-12'>
-                    <HeaderSection selectedCategory={'category-1'} />
+                    <HeaderSection selectedCategory={'all-cakes'} />
 
                     <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
-                        category 1
+                        All Cakes
                     </h1>
 
                     <div className='row no-gutters'>
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
                             <ProductItem
                                 id={filteredItems[0].id}
-                                categoryId={'category-1'}
+                                categoryId={'all-cakes'}
                                 image={filteredItems[0].image}
                                 imageLabel={filteredItems[0].label}
                                 description={filteredItems[0].name}
@@ -123,7 +125,8 @@ describe('(Component) ProductCategory', () => {
             <ProductCategory
                 items={[]}
                 filteredItems={[]}
-                categoryId={'category-1'}
+                lang="en"
+                categoryId={'all-cakes'}
                 fetchAllItemsByCategory={fetchAllItemsByCategory}
                 addItemToShoppingCart={addItemToShoppingCart}
             />
@@ -136,6 +139,6 @@ describe('(Component) ProductCategory', () => {
 
     it('should fetch all items by category on mount', () => {
         fetchAllItemsByCategory.should.been.calledOnce
-        fetchAllItemsByCategory.should.been.calledWith('category-1')
+        fetchAllItemsByCategory.should.been.calledWith('all-cakes')
     })
 })
