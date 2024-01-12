@@ -26,6 +26,10 @@ class ProductCategory extends Component {
                 <div className='col-md-12'>
                     <HeaderSection selectedCategory={categoryId} />
 
+                    <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
+                        {categoryId.replaceAll('-', ' ')}
+                    </h1>
+
                     <div className='row no-gutters'>
                         {
                             !filteredItems.length && items.map(v => (

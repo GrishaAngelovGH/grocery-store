@@ -40,6 +40,10 @@ describe('(Component) ProductCategory', () => {
                 <div className='col-md-12'>
                     <HeaderSection selectedCategory={'category-1'} />
 
+                    <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
+                        category 1
+                    </h1>
+
                     <div className='row no-gutters'>
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
                             <ProductItem
@@ -88,6 +92,10 @@ describe('(Component) ProductCategory', () => {
             <div className='row no-gutters'>
                 <div className='col-md-12'>
                     <HeaderSection selectedCategory={'category-1'} />
+
+                    <h1 className='text-secondary text-center text-capitalize border bg-light p-1 mt-3'>
+                        category 1
+                    </h1>
 
                     <div className='row no-gutters'>
                         <div className='col-md-6 col-lg-3 d-flex justify-content-center'>
