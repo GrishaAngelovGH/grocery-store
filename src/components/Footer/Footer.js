@@ -7,7 +7,7 @@ const Footer = () => (
             <i className='bi bi-facebook mx-1'></i>
             <i className='bi bi-instagram mx-1'></i>
             <i className='bi bi-pinterest mx-1'></i>
-            <i className='bi bi-twitter mx-1'></i>
+            <i className='bi bi-twitter-x mx-1'></i>
             <i className='bi bi-youtube mx-1'></i>
         </div>
         <div className='col-6 col-md-3 col-lg-3 p-3'>
