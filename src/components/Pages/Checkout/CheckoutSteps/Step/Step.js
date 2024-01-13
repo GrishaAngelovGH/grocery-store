@@ -20,7 +20,7 @@ export class Step extends Component {
 
         return (
             <div className='row no-gutters justify-content-center m-3'>
-                <div className='col-md-10 border rounded p-2 shadow'>
+                <div className='col-md-10 border rounded p-2 shadow bg-white'>
                     {
                         children
                     }

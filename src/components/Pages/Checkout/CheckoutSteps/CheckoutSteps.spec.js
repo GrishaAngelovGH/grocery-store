@@ -36,8 +36,8 @@ describe('(Component) CheckoutSteps', () => {
 
     it('should render component', () => {
         expect(wrapper.equals(
-            <div className='m-5'>
-                <div className='shadow p-2'>
+            <div className='checkout-steps p-3'>
+                <div className='p-2 border rounded shadow'>
                     <Steps current={0}>
                         <Steps.Step title={'Title-1'} />
                         <Steps.Step title={'Title-2'} />

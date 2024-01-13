@@ -11,6 +11,8 @@ import 'rc-steps/assets/index.css'
 import Step from './Step'
 import translate from 'translate'
 
+import './CheckoutSteps.scss'
+
 export class CheckoutSteps extends Component {
     state = {
         currentStep: 0,
@@ -64,8 +66,8 @@ export class CheckoutSteps extends Component {
         }
 
         return (
-            <div className='m-5'>
-                <div className='shadow p-2'>
+            <div className='checkout-steps p-3'>
+                <div className='p-2 border rounded shadow'>
                     <Steps current={currentStep}>
                         {
                             steps.map(v => (
