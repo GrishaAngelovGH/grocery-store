@@ -4,6 +4,9 @@ import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateCreditCardNumber } from 'components/Forms/validators'
+
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import { payment } from 'images'
 
 import translate from 'translate'
@@ -66,9 +69,9 @@ export class Payment extends Component {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 {this.props.strings.payment}
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
                     <div className='row'>

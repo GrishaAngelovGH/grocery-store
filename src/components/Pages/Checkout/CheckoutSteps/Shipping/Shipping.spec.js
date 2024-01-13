@@ -1,5 +1,7 @@
 import { Field, FormSpy } from 'react-final-form'
 
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import { Shipping } from './Shipping'
 
 describe('(Component) Shipping', () => {
@@ -22,9 +24,9 @@ describe('(Component) Shipping', () => {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 Shipping
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
                     <div className='row'>

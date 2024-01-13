@@ -2,6 +2,8 @@ import { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Field, FormSpy } from 'react-final-form'
 
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import currencyFormatter from 'components/formatters/currencyFormatter'
 import translate from 'translate'
 
@@ -26,9 +28,9 @@ export class Shipping extends Component {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 {strings.shipping}
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
                     <div className='row'>

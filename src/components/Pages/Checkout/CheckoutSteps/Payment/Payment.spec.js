@@ -2,6 +2,9 @@ import { Field } from 'react-final-form'
 
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateCreditCardNumber } from 'components/Forms/validators'
+
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import { payment } from 'images'
 
 import { Payment } from './Payment'
@@ -15,9 +18,9 @@ describe('(Component) Payment', () => {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 Payment
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
                     <div className='row'>

@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types'
 import currencyFormatter from 'components/formatters/currencyFormatter'
+
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import translate from 'translate'
 
 export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPrice }) => {
@@ -11,9 +14,9 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
             <div className='col-md-12'>
                 <div className='row'>
                     <div className='col-md-12'>
-                        <h1 className='text-center'>
+                        <StepTitle>
                             {strings.preview}
-                        </h1>
+                        </StepTitle>
                     </div>
                 </div>
 

@@ -4,6 +4,8 @@ import { Field } from 'react-final-form'
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateNumber, validateEmail, validatePhone } from 'components/Forms/validators'
 
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import translate from 'translate'
 
 export const Billing = ({ strings }) => (
@@ -11,9 +13,9 @@ export const Billing = ({ strings }) => (
         <div className='col-md-12'>
             <div className='row'>
                 <div className='col-md-12'>
-                    <h1 className='text-center'>
+                    <StepTitle>
                         {strings.billing}
-                    </h1>
+                    </StepTitle>
                 </div>
             </div>
 

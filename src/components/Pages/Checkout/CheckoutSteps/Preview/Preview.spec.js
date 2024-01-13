@@ -1,4 +1,5 @@
 import { Preview } from './Preview'
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
 describe('(Component) Preview', () => {
     it('should render component', () => {
@@ -35,9 +36,9 @@ describe('(Component) Preview', () => {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 Preview
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
 

@@ -3,6 +3,8 @@ import { Field } from 'react-final-form'
 import RequiredInputField from 'components/Forms/RequiredInputField'
 import { validateNumber, validateEmail, validatePhone } from 'components/Forms/validators'
 
+import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
+
 import { Billing } from './Billing'
 
 describe('(Component) Billing', () => {
@@ -14,9 +16,9 @@ describe('(Component) Billing', () => {
                 <div className='col-md-12'>
                     <div className='row'>
                         <div className='col-md-12'>
-                            <h1 className='text-center'>
+                            <StepTitle>
                                 Billing
-                            </h1>
+                            </StepTitle>
                         </div>
                     </div>
 
