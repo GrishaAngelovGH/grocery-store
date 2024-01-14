@@ -18,7 +18,7 @@ describe('(Component) Step', () => {
 
         expect(wrapper.equals(
             <div className='row no-gutters justify-content-center m-3'>
-                <div className='col-md-10 border rounded p-2 shadow bg-white'>
+                <div className='col-md-7 col-lg-5 border rounded p-2 shadow bg-white'>
                     <div>content</div>
                     <div className='d-flex justify-content-end'>
                         <button
@@ -60,7 +60,7 @@ describe('(Component) Step', () => {
 
         expect(wrapper.equals(
             <div className='row no-gutters justify-content-center m-3'>
-                <div className='col-md-10 border rounded p-2 shadow bg-white'>
+                <div className='col-md-7 col-lg-5 border rounded p-2 shadow bg-white'>
                     <div>content</div>
                     <div className='d-flex justify-content-end'></div>
                 </div>

@@ -19,8 +19,8 @@ export class Payment extends Component {
             {
                 input.checked && (
                     <div className='m-3'>
-                        <div className='row mb-2'>
-                            <div className='col-md-6 col-lg-9'>
+                        <div className='row justify-content-center mb-2'>
+                            <div className='col-5'>
                                 <label>
                                     <Field
                                         name='credit_card_type'
@@ -29,8 +29,10 @@ export class Payment extends Component {
                                         value='visa'
                                     />{' '}
                                     <span className='m-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
-                                    <div className='text-secondary'>{`${this.props.strings.example}: 4111111111111`}</div>
+                                    <div className='text-secondary small'>{`${this.props.strings.example}: 4111111111111`}</div>
                                 </label>
+                            </div>
+                            <div className='col-5'>
                                 <label>
                                     <Field
                                         name='credit_card_type'
@@ -39,12 +41,12 @@ export class Payment extends Component {
                                         value='mastercard'
                                     />{' '}
                                     <span className='font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
-                                    <div className='text-secondary'>{`${this.props.strings.example}: 5397283356685992`}</div>
+                                    <div className='text-secondary small'>{`${this.props.strings.example}: 5397283356685992`}</div>
                                 </label>
                             </div>
                         </div>
                         <div className='row mb-2'>
-                            <div className='col-md-9'>
+                            <div className='col-12'>
                                 <RequiredInputField
                                     name={'creditCardNumber'}
                                     label={this.props.strings.creditCardNumber}
@@ -53,7 +55,7 @@ export class Payment extends Component {
                             </div>
                         </div>
                         <div className='row mb-2'>
-                            <div className='col-md-9'>
+                            <div className='col-12'>
                                 <RequiredInputField name={'expirationDate'} label={this.props.strings.expirationDate} />
                             </div>
                         </div>
@@ -71,29 +73,31 @@ export class Payment extends Component {
                         {this.props.strings.payment}
                     </StepTitle>
                     <div className='row'>
-                        <div className='col-md-12 col-lg-3'>
-                            <label>
+                        <div className='col-12'>
+                            <div className='d-flex flex-column'>
+                                <label>
 
-                                <Field
-                                    name='payment_method'
-                                    type='radio'
-                                    value='credit_card'
-                                >
-                                    {
-                                        this.fieldContent
-                                    }
-                                </Field>
-                            </label>
+                                    <Field
+                                        name='payment_method'
+                                        type='radio'
+                                        value='credit_card'
+                                    >
+                                        {
+                                            this.fieldContent
+                                        }
+                                    </Field>
+                                </label>
 
-                            <label>
-                                <Field
-                                    name='payment_method'
-                                    component='input'
-                                    type='radio'
-                                    value='pay_pal'
-                                />{' '}
-                                <span className='font-weight-bold'>Pay Pal</span>
-                            </label>
+                                <label>
+                                    <Field
+                                        name='payment_method'
+                                        component='input'
+                                        type='radio'
+                                        value='pay_pal'
+                                    />{' '}
+                                    <span className='font-weight-bold'>Pay Pal</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>

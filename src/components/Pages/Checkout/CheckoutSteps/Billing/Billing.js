@@ -16,19 +16,19 @@ export const Billing = ({ strings }) => (
             </StepTitle>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField name={'firstName'} label={strings.firstName} />
                 </div>
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField name={'lastName'} label={strings.lastName} />
                 </div>
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField
                         name={'email'}
                         label={strings.email}
@@ -38,7 +38,7 @@ export const Billing = ({ strings }) => (
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField
                         name={'phoneNumber'}
                         label={strings.phone}
@@ -49,13 +49,13 @@ export const Billing = ({ strings }) => (
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField name={'billingAddress'} label={strings.billingAddress} />
                 </div>
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <RequiredInputField
                         name={'postCode'}
                         label={strings.postCode}
@@ -65,7 +65,7 @@ export const Billing = ({ strings }) => (
             </div>
 
             <div className='row mb-2'>
-                <div className='col-md-6 col-lg-3'>
+                <div className='col-12'>
                     <label>{strings.country}</label>
                     <Field name='country' component='select' className='form-control w-100'>
                         <option value='bg'>{strings.bg}</option>

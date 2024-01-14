@@ -30,7 +30,7 @@ export class Shipping extends Component {
                         {strings.shipping}
                     </StepTitle>
                     <div className='row'>
-                        <div className='col-md-12 col-lg-7'>
+                        <div className='col-12'>
                             <label>
                                 <Field
                                     name='shipping_method'

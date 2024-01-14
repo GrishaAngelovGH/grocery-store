@@ -26,7 +26,7 @@ describe('(Component) Shipping', () => {
                         Shipping
                     </StepTitle>
                     <div className='row'>
-                        <div className='col-md-12 col-lg-7'>
+                        <div className='col-12'>
                             <label>
                                 <Field
                                     name='shipping_method'

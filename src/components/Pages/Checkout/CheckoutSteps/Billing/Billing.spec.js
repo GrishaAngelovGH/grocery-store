@@ -19,19 +19,19 @@ describe('(Component) Billing', () => {
                     </StepTitle>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField name={'firstName'} label={'First Name'} />
                         </div>
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField name={'lastName'} label={'Last Name'} />
                         </div>
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField
                                 name={'email'}
                                 label={'Email'}
@@ -41,7 +41,7 @@ describe('(Component) Billing', () => {
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField
                                 name={'phoneNumber'}
                                 label={'Phone'}
@@ -52,13 +52,13 @@ describe('(Component) Billing', () => {
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField name={'billingAddress'} label={'Billing Address'} />
                         </div>
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <RequiredInputField
                                 name={'postCode'}
                                 label={'Post Code'}
@@ -68,7 +68,7 @@ describe('(Component) Billing', () => {
                     </div>
 
                     <div className='row mb-2'>
-                        <div className='col-md-6 col-lg-3'>
+                        <div className='col-12'>
                             <label>Country</label>
                             <Field name='country' component='select' className='form-control w-100'>
                                 <option value='bg'>Bulgaria</option>
