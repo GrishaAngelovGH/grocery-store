@@ -67,13 +67,9 @@ export class Payment extends Component {
         return (
             <div className='row m-3'>
                 <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <StepTitle>
-                                {this.props.strings.payment}
-                            </StepTitle>
-                        </div>
-                    </div>
+                    <StepTitle>
+                        {this.props.strings.payment}
+                    </StepTitle>
                     <div className='row'>
                         <div className='col-md-12 col-lg-3'>
                             <label>

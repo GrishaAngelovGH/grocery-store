@@ -26,13 +26,9 @@ export class Shipping extends Component {
         return (
             <div className='row m-1'>
                 <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <StepTitle>
-                                {strings.shipping}
-                            </StepTitle>
-                        </div>
-                    </div>
+                    <StepTitle>
+                        {strings.shipping}
+                    </StepTitle>
                     <div className='row'>
                         <div className='col-md-12 col-lg-7'>
                             <label>

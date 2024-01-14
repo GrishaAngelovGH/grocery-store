@@ -11,13 +11,9 @@ import translate from 'translate'
 export const Billing = ({ strings }) => (
     <div className='row m-3'>
         <div className='col-md-12'>
-            <div className='row'>
-                <div className='col-md-12'>
-                    <StepTitle>
-                        {strings.billing}
-                    </StepTitle>
-                </div>
-            </div>
+            <StepTitle>
+                {strings.billing}
+            </StepTitle>
 
             <div className='row mb-2'>
                 <div className='col-md-6 col-lg-3'>

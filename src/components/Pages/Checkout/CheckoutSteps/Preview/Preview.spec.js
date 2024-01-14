@@ -34,13 +34,9 @@ describe('(Component) Preview', () => {
         expect(wrapper.equals(
             <div className='row'>
                 <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <StepTitle>
-                                Preview
-                            </StepTitle>
-                        </div>
-                    </div>
+                    <StepTitle>
+                        Preview
+                    </StepTitle>
 
                     <div className='font-weight-bold'>
                         <div>{items[0].description.en}: {items[0].currency.en}30</div>

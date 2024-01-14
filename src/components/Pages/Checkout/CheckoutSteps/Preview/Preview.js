@@ -12,13 +12,9 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
     return (
         <div className='row'>
             <div className='col-md-12'>
-                <div className='row'>
-                    <div className='col-md-12'>
-                        <StepTitle>
-                            {strings.preview}
-                        </StepTitle>
-                    </div>
-                </div>
+                <StepTitle>
+                    {strings.preview}
+                </StepTitle>
 
                 {
                     items.map(v => (

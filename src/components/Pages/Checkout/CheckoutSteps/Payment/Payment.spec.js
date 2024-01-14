@@ -16,13 +16,9 @@ describe('(Component) Payment', () => {
         expect(wrapper.equals(
             <div className='row m-3'>
                 <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <StepTitle>
-                                Payment
-                            </StepTitle>
-                        </div>
-                    </div>
+                    <StepTitle>
+                        Payment
+                    </StepTitle>
                     <div className='row'>
                         <div className='col-md-12 col-lg-3'>
                             <label>

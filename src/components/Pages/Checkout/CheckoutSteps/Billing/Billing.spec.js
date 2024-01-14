@@ -14,13 +14,9 @@ describe('(Component) Billing', () => {
         expect(wrapper.equals(
             <div className='row m-3'>
                 <div className='col-md-12'>
-                    <div className='row'>
-                        <div className='col-md-12'>
-                            <StepTitle>
-                                Billing
-                            </StepTitle>
-                        </div>
-                    </div>
+                    <StepTitle>
+                        Billing
+                    </StepTitle>
 
                     <div className='row mb-2'>
                         <div className='col-md-6 col-lg-3'>
