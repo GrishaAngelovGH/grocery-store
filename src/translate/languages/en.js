@@ -61,7 +61,7 @@ export default {
         placeOrder: 'Place Order'
     },
     'Pages.Checkout.CheckoutSteps': {
-        successMessage: 'Your order is successfullly placed'
+        successMessage: 'Your order has been successfully placed'
     },
     'Pages.Checkout.CheckoutSteps.Step': {
         prev: 'Prev',

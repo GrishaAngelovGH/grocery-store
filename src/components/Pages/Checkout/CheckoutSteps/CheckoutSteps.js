@@ -36,13 +36,14 @@ export class CheckoutSteps extends Component {
         })
     }
 
-    formContent = ({ handleSubmit, valid }) => {
+    formContent = ({ handleSubmit, valid, values }) => {
         const { currentStep } = this.state
         const { steps } = this.props
 
         return (
             <form onSubmit={handleSubmit}>
                 <Step
+                    values={values}
                     position={currentStep}
                     onChange={this.handleStepChange}
                     showNextButton={steps[currentStep].showNextButton}
@@ -99,7 +100,7 @@ CheckoutSteps.propTypes = {
 
 CheckoutSteps.defaultProps = {
     strings: {
-        successMessage: 'Your order is successfullly placed'
+        successMessage: 'Your order has been successfully placed'
     }
 }
 

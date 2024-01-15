@@ -18,6 +18,8 @@ describe('(Component) CheckoutSteps', () => {
         { title: 'Title-2', component: (<div>content-2</div>), showNextButton: false, showPrevButton: true }
     ]
 
+    const values = { shipping_method: 'usps_fcpi' }
+
     beforeEach(() => {
         clearItemsFromShoppingCart = sinon.spy()
         sandbox.stub(Swal, 'fire').callsFake(() => Promise.resolve())
@@ -62,10 +64,11 @@ describe('(Component) CheckoutSteps', () => {
         const handleSubmit = sinon.spy()
 
         expect(
-            wrapper.instance().formContent({ handleSubmit })
+            wrapper.instance().formContent({ handleSubmit, values })
         ).to.eql(
             <form onSubmit={handleSubmit}>
                 <Step
+                    values={values}
                     position={0}
                     onChange={wrapper.instance().handleStepChange}
                     showNextButton={true}
@@ -86,10 +89,11 @@ describe('(Component) CheckoutSteps', () => {
         formContent.props.children.props.onChange(1)
 
         expect(
-            wrapper.instance().formContent({ handleSubmit })
+            wrapper.instance().formContent({ handleSubmit, values })
         ).to.eql(
             <form onSubmit={handleSubmit}>
                 <Step
+                    values={values}
                     position={1}
                     onChange={wrapper.instance().handleStepChange}
                     showNextButton={false}

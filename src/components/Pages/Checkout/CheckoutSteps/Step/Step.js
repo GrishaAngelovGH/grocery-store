@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import translate from 'translate'
 
@@ -16,13 +16,13 @@ export class Step extends Component {
     }
 
     render() {
-        const { strings, children, disabled, showPrevButton, showNextButton } = this.props
+        const { strings, children, values, disabled, showPrevButton, showNextButton } = this.props
 
         return (
             <div className='row no-gutters justify-content-center m-3'>
                 <div className='col-md-7 col-lg-5 border rounded p-2 shadow bg-white'>
                     {
-                        children
+                        React.cloneElement(children, { values })
                     }
                     <div className='d-flex justify-content-end'>
                         {

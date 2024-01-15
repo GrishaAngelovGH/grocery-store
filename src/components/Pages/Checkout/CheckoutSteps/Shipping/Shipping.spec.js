@@ -1,4 +1,4 @@
-import { Field, FormSpy } from 'react-final-form'
+import { Field } from 'react-final-form'
 
 import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
@@ -14,6 +14,7 @@ describe('(Component) Shipping', () => {
             <Shipping
                 lang={'en'}
                 changeShippingMethod={changeShippingMethod}
+                values={{ shipping_method: 'usps_fcpi' }}
             />
         )
     })
@@ -33,8 +34,9 @@ describe('(Component) Shipping', () => {
                                     component='input'
                                     type='radio'
                                     value='usps_fcpi'
-                                />{' '}
-                                <span className='font-weight-bold'>USPS First Class Package International - £13.35</span>
+                                    onClick={wrapper.instance().handleShippingMethodChange}
+                                />
+                                <span className='ml-1 font-weight-bold'>USPS First Class Package International - £13.35</span>
                                 <div className='small text-secondary ml-3'>7 to 21 business days</div>
                             </label>
 
@@ -44,8 +46,9 @@ describe('(Component) Shipping', () => {
                                     component='input'
                                     type='radio'
                                     value='usps_pmi'
-                                />{' '}
-                                <span className='font-weight-bold'>USPS Priority Mail International - £44.85</span>
+                                    onClick={wrapper.instance().handleShippingMethodChange}
+                                />
+                                <span className='ml-1 font-weight-bold'>USPS Priority Mail International - £44.85</span>
                                 <div className='small text-secondary ml-3'>6 to 10 business days</div>
                             </label>
 
@@ -55,8 +58,9 @@ describe('(Component) Shipping', () => {
                                     component='input'
                                     type='radio'
                                     value='usps_pmei'
-                                />{' '}
-                                <span className='font-weight-bold'>USPS Priority Mail Express International - £58.99</span>
+                                    onClick={wrapper.instance().handleShippingMethodChange}
+                                />
+                                <span className='ml-1 font-weight-bold'>USPS Priority Mail Express International - £58.99</span>
                                 <div className='small text-secondary ml-3'>3 to 5 business days</div>
                             </label>
 
@@ -66,27 +70,23 @@ describe('(Component) Shipping', () => {
                                     component='input'
                                     type='radio'
                                     value='dhl_ew'
-                                />{' '}
-                                <span className='font-weight-bold'>DHL Express Worldwide - £83.73</span>
+                                    onClick={wrapper.instance().handleShippingMethodChange}
+                                />
+                                <span className='ml-1 font-weight-bold'>DHL Express Worldwide - £83.73</span>
                                 <div className='small text-secondary ml-3'>2 to 3 business days</div>
                             </label>
                         </div>
                     </div>
                 </div>
-                <FormSpy
-                    subscription={{ values: true }}
-                    onChange={wrapper.instance().handleShippingMethodChange}
-                />
             </div>
         )).to.equal(true)
     })
 
     it('should handle shipping method change', () => {
-        const formSpy = wrapper.find(FormSpy)
+        const field = wrapper.find(Field).at(2)
 
-        formSpy.simulate('change', { values: { shipping_method: 'usps_pmi' } })
+        field.simulate('click', { target: { value: 'usps_pmi' } })
 
-        changeShippingMethod.should.have.been.calledOnce
         changeShippingMethod.should.have.been.calledWith('USPS Priority Mail International', 44.85)
     })
 })
