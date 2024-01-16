@@ -1,4 +1,6 @@
 import { Preview } from './Preview'
+
+import Table from './Table'
 import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
 describe('(Component) Preview', () => {
@@ -38,23 +40,27 @@ describe('(Component) Preview', () => {
                         Preview
                     </StepTitle>
 
-                    <div className='font-weight-bold'>
-                        <div>{items[0].description.en}: {items[0].currency.en}30</div>
-                    </div>
+                    <Table
+                        columns={['Item', 'Qty', 'Price', 'Subtotal']}
+                        data={[
+                            ['Cookies And Cream Cake', 1, '£30', '£30'],
+                            ['Dribble Cake', 2, '£35', '£70']
+                        ]}
+                    />
 
-                    <div className='font-weight-bold'>
-                        <div>{items[1].description.en}: {items[1].currency.en}70</div>
-                    </div>
+                    <Table
+                        columns={['Shipping Method', 'Price']}
+                        data={[[
+                            'ShippingMethod-1',
+                            '£5.00'
+                        ]]}
+                    />
 
-                    <div className='mt-2 font-weight-bold'>
-                        ShippingMethod-1: £5.00
-                    </div>
-
-                    <div className='mt-2 font-weight-bold'>
+                    <h3 className='font-weight-bold text-center'>
                         Total: £105.00
-                    </div>
+                    </h3>
 
-                    <button type='submit' className='btn btn-primary'>
+                    <button type='submit' className='btn btn-light btn-block border border-secondary shadow mb-3'>
                         Place Order
                     </button>
                 </div>

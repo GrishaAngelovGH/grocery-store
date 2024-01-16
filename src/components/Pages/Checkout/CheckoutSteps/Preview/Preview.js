@@ -3,6 +3,8 @@ import currencyFormatter from 'components/formatters/currencyFormatter'
 
 import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
+import Table from './Table'
+
 import translate from 'translate'
 
 export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPrice }) => {
@@ -16,23 +18,39 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
                     {strings.preview}
                 </StepTitle>
 
-                {
-                    items.map(v => (
-                        <div key={v.id} className='font-weight-bold'>
-                            <div>{v.description[lang]}: {currencyFormatter(lang, v.currency[lang], v.price * v.qty)}</div>
-                        </div>
-                    ))
-                }
+                <Table
+                    columns={[
+                        strings.tableColumns.item,
+                        strings.tableColumns.qty,
+                        strings.tableColumns.price,
+                        strings.tableColumns.subtotal,
+                    ]}
+                    data={
+                        items.map(v => [
+                            v.description[lang],
+                            v.qty,
+                            currencyFormatter(lang, currency, v.price),
+                            currencyFormatter(lang, v.currency[lang], v.price * v.qty)
+                        ])
+                    }
+                />
 
-                <div className='mt-2 font-weight-bold'>
-                    {shippingMethod}: {currencyFormatter(lang, currency, shippingMethodPrice.toFixed(2))}
-                </div>
+                <Table
+                    columns={[
+                        strings.tableColumns.shippingMethod,
+                        strings.tableColumns.price,
+                    ]}
+                    data={[[
+                        shippingMethod,
+                        currencyFormatter(lang, currency, shippingMethodPrice.toFixed(2))
+                    ]]}
+                />
 
-                <div className='mt-2 font-weight-bold'>
+                <h3 className='font-weight-bold text-center'>
                     {strings.total}: {currencyFormatter(lang, currency, total.toFixed(2))}
-                </div>
+                </h3>
 
-                <button type='submit' className='btn btn-primary'>
+                <button type='submit' className='btn btn-light btn-block border border-secondary shadow mb-3'>
                     {strings.placeOrder}
                 </button>
             </div>
@@ -52,7 +70,14 @@ Preview.defaultProps = {
     strings: {
         preview: 'Preview',
         total: 'Total',
-        placeOrder: 'Place Order'
+        placeOrder: 'Place Order',
+        tableColumns: {
+            item: 'Item',
+            qty: 'Qty',
+            price: 'Price',
+            subtotal: 'Subtotal',
+            shippingMethod: 'Shipping Method'
+        }
     }
 }
 

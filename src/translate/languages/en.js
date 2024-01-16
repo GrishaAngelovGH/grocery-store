@@ -58,7 +58,14 @@ export default {
     'Pages.Checkout.CheckoutSteps.Preview': {
         preview: 'Preview',
         total: 'Total',
-        placeOrder: 'Place Order'
+        placeOrder: 'Place Order',
+        tableColumns: {
+            item: 'Item',
+            qty: 'Qty',
+            price: 'Price',
+            subtotal: 'Subtotal',
+            shippingMethod: 'Shipping Method'
+        }
     },
     'Pages.Checkout.CheckoutSteps': {
         successMessage: 'Your order has been successfully placed'

@@ -58,7 +58,14 @@ export default {
     'Pages.Checkout.CheckoutSteps.Preview': {
         preview: 'Преглед',
         total: 'Общо',
-        placeOrder: 'Направи поръчка'
+        placeOrder: 'Направи поръчка',
+        tableColumns: {
+            item: 'Продукт',
+            qty: 'Брой',
+            price: 'Цена',
+            subtotal: 'Междинна Сума',
+            shippingMethod: 'Метод на доставка'
+        }
     },
     'Pages.Checkout.CheckoutSteps': {
         successMessage: 'Вашата поръчка е направена успешно'
