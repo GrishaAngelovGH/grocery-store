@@ -6,6 +6,10 @@ export const items = [
             bg: 'Торта с бисквитки и крем'
         },
         image: 'cookiesAndCreamCake',
+        description: {
+            en: 'A four layer cake with layers of chocolate and chocolate chip sponge, filled with cookie crumb buttercream and covered in cookie flavour buttercream.',
+            bg: 'Четирислойна торта със слоеве шоколад и шоколадов пандишпан, напълнена с маслен крем от бисквитени трохи и покрита с маслен крем с вкус на бисквитки.'
+        },
         label: {
             en: 'Collect in 5 days',
             bg: 'Доставка в рамките на 5 дни'
@@ -24,6 +28,10 @@ export const items = [
             bg: 'Дрибъл торта'
         },
         image: 'dribbleCake',
+        description: {
+            en: 'Four layers of chocolate and caramel sponges filled with rich chocolate buttercream and smooth caramel sauce, covered in toffee buttercream and finished with a mixture of chocolate, caramel and toffee buttercream and dark chocolate discs.',
+            bg: 'Четири пласта от шоколадови и карамелени пандишпани, пълни с богат шоколадов крем и гладък карамелен сос, покрити с тофи крем и завършени със смес от шоколад, карамел и тофи крем и дискове черен шоколад.'
+        },
         label: {
             en: 'Collect in 6 days',
             bg: 'Доставка в рамките на 6 дни'
@@ -42,6 +50,10 @@ export const items = [
             bg: 'Торта с лалета'
         },
         image: 'flowerFestivalTulipCake',
+        description: {
+            en: 'Four delicious layers of sponge, filled and covered with vanilla buttercream, decorated with beautiful hand piped buttercream flowers and leaves.',
+            bg: 'Четири вкусни пласта пандишпан, пълни и покрити с ванилов маслен крем, украсени с красиви ръчно нарязани цветя и листа от маслен крем.'
+        },
         label: {
             en: 'Collect in 5 days',
             bg: 'Доставка в рамките на 5 дни'
@@ -60,6 +72,10 @@ export const items = [
             bg: 'Торта със млечен шоколад'
         },
         image: 'milkChocolateLayersCake',
+        description: {
+            en: 'Six layers of chocolate sponge and sponge filled, covered and decorated with chocolate buttercream, and sides coated with milk, dark and white chocolate strands.',
+            bg: 'Шест слоя шоколадов пандишпан и пандишпан с пълнеж, покрити и украсени с шоколадов маслен крем, а страните са покрити с нишки от млечен, черен и бял шоколад.'
+        },
         label: {
             en: 'Collect in 6 days',
             bg: 'Доставка в рамките на 6 дни'
@@ -78,6 +94,10 @@ export const items = [
             bg: 'Торта със слоеве дъга'
         },
         image: 'rainbowLayersCake',
+        description: {
+            en: 'Six layers of sponge cake with natural colourings, filled, covered and decorated with vanilla buttercream, and sides coated with crunchy coloured sugar pieces.',
+            bg: 'Шест слоя пандишпан с натурални оцветители, с пълнеж, покритие и декорация с ванилов маслен крем, а отстрани покрити с хрупкави цветни парченца захар.'
+        },
         label: {
             en: 'Collect in 5 days',
             bg: 'Доставка в рамките на 5 дни'
@@ -96,6 +116,10 @@ export const items = [
             bg: 'Торта с три слоя'
         },
         image: 'tripleLayerCake',
+        description: {
+            en: 'Triple Chocolate Layer Cake combines dark, malted milk & white chocolate cakes. Covered in a luscious marshmallow buttercream frosting.',
+            bg: 'Тройната шоколадова торта съчетава слоеве с черен, малцово мляко и бял шоколад. Покрита с глазура от маслен маршмелоу крем.'
+        },
         label: {
             en: 'Collect in 6 days',
             bg: 'Доставка в рамките на 6 дни'
@@ -114,6 +138,10 @@ export const items = [
             bg: 'Торта за влюбени'
         },
         image: 'trueLoveCake',
+        description: {
+            en: 'Four layer sponge cake, carefully hand finished with pink vanilla buttercream and raspberry jam it is hand decorated and topped with white chocolate hearts.',
+            bg: 'Четирислойна пандишпанова торта, внимателно ръчно завършена с розов ванилов маслен крем и сладко от малини, ръчно декорирана и гарнирана със сърца от бял шоколад.'
+        },
         label: {
             en: 'Collect in 5 days',
             bg: 'Доставка в рамките на 5 дни'
@@ -132,6 +160,10 @@ export const items = [
             bg: 'Ванилова торта'
         },
         image: 'vanillaCake',
+        description: {
+            en: 'Light and fluffy sponge, filled with vanilla buttercream.',
+            bg: 'Лек и пухкав пандишпан, с пълнеж от ванилов маслен крем.'
+        },
         label: {
             en: 'Collect in 6 days',
             bg: 'Доставка в рамките на 6 дни'

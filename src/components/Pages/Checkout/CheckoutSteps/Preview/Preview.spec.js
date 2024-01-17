@@ -9,7 +9,7 @@ describe('(Component) Preview', () => {
             {
                 'id': 1,
                 'image': 'cookiesAndCreamCake',
-                'description': { en: 'Cookies And Cream Cake' },
+                'name': { en: 'Cookies And Cream Cake' },
                 'currency': { en: '£' },
                 'price': 30,
                 'qty': 1
@@ -17,7 +17,7 @@ describe('(Component) Preview', () => {
             {
                 'id': 2,
                 'image': 'dribbleCake',
-                'description': { en: 'Dribble Cake' },
+                'name': { en: 'Dribble Cake' },
                 'currency': { en: '£' },
                 'price': 35,
                 'qty': 2

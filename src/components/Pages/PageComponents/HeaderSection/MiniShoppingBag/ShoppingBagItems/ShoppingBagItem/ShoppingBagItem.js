@@ -14,14 +14,14 @@ export class ShoppingBagItem extends Component {
     }
 
     render() {
-        const { strings, lang, image, description, currency, price, qty } = this.props
+        const { strings, lang, image, name, currency, price, qty } = this.props
 
         return (
             <div className='d-flex p-3'>
                 <img src={cakeProductCategory[image]} width={120} height={120} className='rounded' />
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
-                    <div>{description}</div>
+                    <div>{name}</div>
                     <div>{currencyFormatter(lang, currency, price)}</div>
 
                     <div className='d-flex flex-column font-weight-bold mt-3'>
@@ -39,7 +39,7 @@ export class ShoppingBagItem extends Component {
 ShoppingBagItem.propTypes = {
     id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
     currency: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     qty: PropTypes.number.isRequired,

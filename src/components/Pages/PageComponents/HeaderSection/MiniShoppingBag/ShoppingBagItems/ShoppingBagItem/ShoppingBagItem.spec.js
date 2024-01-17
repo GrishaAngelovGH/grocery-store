@@ -12,7 +12,7 @@ describe('(Component) ShoppingBagItem', () => {
                 id={1}
                 lang={'en'}
                 image={'vanillaCake'}
-                description={'description-1'}
+                name='Vanilla Cake'
                 currency={'£'}
                 price={10}
                 qty={1}
@@ -27,7 +27,7 @@ describe('(Component) ShoppingBagItem', () => {
                 <img src={cakeProductCategory['vanillaCake']} width={120} height={120} className='rounded' />
 
                 <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
-                    <div>description-1</div>
+                    <div>Vanilla Cake</div>
                     <div>£10</div>
 
                     <div className='d-flex flex-column font-weight-bold mt-3'>

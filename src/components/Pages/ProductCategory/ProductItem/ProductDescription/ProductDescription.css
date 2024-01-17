@@ -1,4 +1,5 @@
 .product-description {
+  display: none;
   opacity: 0;
   top: 35%;
   width: 100%;
@@ -11,7 +12,8 @@
   font-size: 20px;
 }
 
-.product-description-icon:hover +
+.product-description-icon:hover + 
 .product-description {
+  display: block;
   opacity: 1;
 }

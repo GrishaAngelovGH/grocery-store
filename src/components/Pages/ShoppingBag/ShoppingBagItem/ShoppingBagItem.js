@@ -24,7 +24,7 @@ export class ShoppingBagItem extends Component {
     }
 
     render() {
-        const { strings, image, description, currency, price, qty, lang } = this.props
+        const { strings, image, name, currency, price, qty, lang } = this.props
 
         return (
             <div className='row m-3 p-3 border shadow-sm jumbotron'>
@@ -33,7 +33,7 @@ export class ShoppingBagItem extends Component {
                 </div>
 
                 <div className='col-md-6 font-weight-bold'>
-                    <div className='row no-gutters'>{description}</div>
+                    <div className='row no-gutters'>{name[lang]}</div>
 
                     <div className='row mt-4'>
                         <div className='col-md-8'>
@@ -80,7 +80,7 @@ export class ShoppingBagItem extends Component {
 ShoppingBagItem.propTypes = {
     id: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    name: PropTypes.object.isRequired,
     currency: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     qty: PropTypes.number.isRequired,

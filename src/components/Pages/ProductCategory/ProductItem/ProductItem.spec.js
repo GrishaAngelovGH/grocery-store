@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button'
 
 import { ProductItem } from './ProductItem'
 
+import ProductModal from 'components/Pages/ProductCategory/ProductModal'
 import ProductDescription from './ProductDescription'
 import ClubcardPromoPrice from './ClubcardPromoPrice'
 
@@ -16,8 +17,9 @@ describe('(Component) ProductItem', () => {
 
     const item = {
         id: 1,
-        image: 'triple-layer-cake',
+        image: 'tripleLayerCake',
         imageLabel: { en: 'label' },
+        name: { en: 'Triple Layer Cake' },
         description: { en: 'description' },
         currency: { en: '£' },
         price: 30.00,
@@ -34,6 +36,7 @@ describe('(Component) ProductItem', () => {
                 addItemToShoppingCart={addItemToShoppingCart}
                 image={item.image}
                 imageLabel={item.imageLabel}
+                name={item.name}
                 description={item.description}
                 currency={item.currency}
                 price={item.price}
@@ -48,13 +51,21 @@ describe('(Component) ProductItem', () => {
             <div className='m-5 border bg-light rounded shadow p-1'>
                 <div className='d-flex align-items-end position-relative'>
                     <span className='promo-img-label rounded'>label</span>
-                    <img src={cakeProductCategory['triple-layer-cake']} width={250} height={300} className='rounded' />
+                    <img
+                        role='button'
+                        src={cakeProductCategory['tripleLayerCake']}
+                        width={250}
+                        height={300}
+                        className='rounded'
+                        data-toggle='modal'
+                        data-target='#product-modal-triple-layer-cake'
+                    />
                     <ProductDescription />
                 </div>
 
                 <div className='row align-items-center product-container'>
                     <div className='col-10'>
-                        <div className='text-break'>description</div>
+                        <div className='text-break'>Triple Layer Cake</div>
 
                         <div>{`£${30.00}`}</div>
                     </div>
@@ -89,6 +100,12 @@ describe('(Component) ProductItem', () => {
                 >
                     Add To Bag
                 </Button>
+
+                <ProductModal
+                    image={cakeProductCategory['tripleLayerCake']}
+                    name='Triple Layer Cake'
+                    description='description'
+                />
             </div>
         )).to.equal(true)
     })
@@ -101,8 +118,8 @@ describe('(Component) ProductItem', () => {
         addItemToShoppingCart.should.have.been.calledOnce
         addItemToShoppingCart.should.have.been.calledWith({
             id: 1,
-            description: { en: 'description' },
-            image: 'triple-layer-cake',
+            image: 'tripleLayerCake',
+            name: { en: 'Triple Layer Cake' },
             currency: { en: '£' },
             price: 30.00,
             qty: 1

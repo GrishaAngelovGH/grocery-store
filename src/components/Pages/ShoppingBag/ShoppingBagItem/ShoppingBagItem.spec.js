@@ -12,7 +12,7 @@ describe('(Component) ShoppingBagItem', () => {
             <ShoppingBagItem
                 id={5}
                 image={'vanillaCake'}
-                description={'description-1'}
+                name={{ en: 'Vanilla Cake' }}
                 currency={'£'}
                 price={30.00}
                 qty={2}
@@ -31,7 +31,7 @@ describe('(Component) ShoppingBagItem', () => {
                 </div>
 
                 <div className='col-md-6 font-weight-bold'>
-                    <div className='row no-gutters'>description-1</div>
+                    <div className='row no-gutters'>Vanilla Cake</div>
 
                     <div className='row mt-4'>
                         <div className='col-md-8'>

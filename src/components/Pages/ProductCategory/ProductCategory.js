@@ -45,7 +45,8 @@ class ProductCategory extends Component {
                                         categoryId={categoryId}
                                         image={v.image}
                                         imageLabel={v.label}
-                                        description={v.name}
+                                        name={v.name}
+                                        description={v.description}
                                         currency={v.currency}
                                         price={v.price}
                                         rating={v.rating}
@@ -64,7 +65,8 @@ class ProductCategory extends Component {
                                         categoryId={categoryId}
                                         image={v.image}
                                         imageLabel={v.label}
-                                        description={v.name}
+                                        name={v.name}
+                                        description={v.description}
                                         currency={v.currency}
                                         price={v.price}
                                         rating={v.rating}

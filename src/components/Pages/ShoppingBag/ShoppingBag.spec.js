@@ -8,16 +8,16 @@ describe('(Component) ShoppingBag', () => {
         const items = [
             {
                 id: 1,
-                image: 'triple-layer-cake',
-                description: { en: 'description-1' },
+                image: 'tripleLayerCake',
+                name: { en: 'Triple Layer Cake' },
                 currency: { en: '£' },
                 price: 30.00,
                 qty: 1
             },
             {
                 id: 2,
-                image: 'vanilla-cake',
-                description: { en: 'description-2' },
+                image: 'vanillaCake',
+                name: { en: 'Vanilla Cake' },
                 currency: { en: '£' },
                 price: 35.00,
                 qty: 2
@@ -50,7 +50,7 @@ describe('(Component) ShoppingBag', () => {
                             <ShoppingBagItem
                                 id={items[0].id}
                                 image={items[0].image}
-                                description={items[0].description['en']}
+                                name={items[0].name}
                                 currency={items[0].currency['en']}
                                 price={items[0].price}
                                 qty={items[0].qty}
@@ -61,7 +61,7 @@ describe('(Component) ShoppingBag', () => {
                             <ShoppingBagItem
                                 id={items[1].id}
                                 image={items[1].image}
-                                description={items[1].description['en']}
+                                name={items[1].name}
                                 currency={items[1].currency['en']}
                                 price={items[1].price}
                                 qty={items[1].qty}

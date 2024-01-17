@@ -7,7 +7,7 @@ describe('(Component) ShoppingBagItems', () => {
             {
                 id: 1,
                 image: 'cookiesAndCreamCake',
-                description: { en: 'description-1' },
+                name: { en: 'Cookies And Cream Cake' },
                 price: 5,
                 currency: { en: '£' },
                 qty: 1
@@ -15,7 +15,7 @@ describe('(Component) ShoppingBagItems', () => {
             {
                 id: 2,
                 image: 'dribbleCake',
-                description: { en: 'description-2' },
+                name: { en: 'Dribble Cake' },
                 price: 10,
                 currency: { en: '£' },
                 qty: 2
@@ -37,8 +37,8 @@ describe('(Component) ShoppingBagItems', () => {
                 <ShoppingBagItem
                     id={items[0].id}
                     image={items[0].image}
-                    description={items[0].description['en']}
-                    currency={items[0].currency['en']}
+                    name={items[0].name.en}
+                    currency={items[0].currency.en}
                     price={items[0].price}
                     qty={items[0].qty}
                     lang={'en'}
@@ -47,8 +47,8 @@ describe('(Component) ShoppingBagItems', () => {
                 <ShoppingBagItem
                     id={items[1].id}
                     image={items[1].image}
-                    description={items[1].description['en']}
-                    currency={items[1].currency['en']}
+                    name={items[1].name.en}
+                    currency={items[1].currency.en}
                     price={items[1].price}
                     qty={items[1].qty}
                     lang={'en'}

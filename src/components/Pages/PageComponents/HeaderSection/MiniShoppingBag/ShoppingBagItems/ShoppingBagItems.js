@@ -9,7 +9,7 @@ const ShoppingBagItems = ({ items, lang, removeItemFromShoppingCart }) => (
                     key={v.id}
                     id={v.id}
                     image={v.image}
-                    description={v.description[lang]}
+                    name={v.name[lang]}
                     currency={v.currency[lang]}
                     price={v.price}
                     qty={v.qty}

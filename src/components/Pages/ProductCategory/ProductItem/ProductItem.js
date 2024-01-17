@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 
 import Button from 'react-bootstrap/Button'
 
+import ProductModal from 'components/Pages/ProductCategory/ProductModal'
 import ProductDescription from './ProductDescription'
 import ClubcardPromoPrice from './ClubcardPromoPrice'
 
@@ -21,12 +22,12 @@ export class ProductItem extends Component {
     handleAddToCartClick = () => {
         const { addItemToShoppingCart } = this.props
 
-        const { strings, id, image, description, currency, price } = this.props
+        const { strings, id, image, name, currency, price } = this.props
 
         addItemToShoppingCart({
             id,
             image,
-            description,
+            name,
             currency,
             price,
             qty: 1
@@ -38,7 +39,7 @@ export class ProductItem extends Component {
     render() {
         const {
             strings, id, categoryId, image,
-            imageLabel, description, currency,
+            imageLabel, name, description, currency,
             price, rating, lang
         } = this.props
 
@@ -46,13 +47,21 @@ export class ProductItem extends Component {
             <div className='m-5 border bg-light rounded shadow p-1'>
                 <div className='d-flex align-items-end position-relative'>
                     <span className='promo-img-label rounded'>{imageLabel[lang]}</span>
-                    <img src={cakeProductCategory[image]} width={250} height={300} className='rounded' />
+                    <img
+                        role='button'
+                        src={cakeProductCategory[image]}
+                        width={250}
+                        height={300}
+                        className='rounded'
+                        data-toggle='modal'
+                        data-target={`#product-modal-${name[lang].toLowerCase().replaceAll(' ', '-')}`}
+                    />
                     <ProductDescription />
                 </div>
 
                 <div className='row align-items-center product-container'>
                     <div className='col-10'>
-                        <div className='text-break'>{description[lang]}</div>
+                        <div className='text-break'>{name[lang]}</div>
 
                         <div>{currencyFormatter(lang, currency[lang], price)}</div>
                     </div>
@@ -87,6 +96,12 @@ export class ProductItem extends Component {
                 >
                     {strings.addToBagBtn}
                 </Button>
+
+                <ProductModal
+                    image={cakeProductCategory[image]}
+                    name={name[lang]}
+                    description={description[lang]}
+                />
             </div>
         )
     }
@@ -99,6 +114,7 @@ ProductItem.propTypes = {
     image: PropTypes.string.isRequired,
     lang: PropTypes.string.isRequired,
     imageLabel: PropTypes.object.isRequired,
+    name: PropTypes.object.isRequired,
     description: PropTypes.object.isRequired,
     currency: PropTypes.object.isRequired,
     price: PropTypes.number.isRequired,

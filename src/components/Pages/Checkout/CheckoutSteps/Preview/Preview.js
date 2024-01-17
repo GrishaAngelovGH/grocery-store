@@ -27,7 +27,7 @@ export const Preview = ({ strings, lang, items, shippingMethod, shippingMethodPr
                     ]}
                     data={
                         items.map(v => [
-                            v.description[lang],
+                            v.name[lang],
                             v.qty,
                             currencyFormatter(lang, currency, v.price),
                             currencyFormatter(lang, v.currency[lang], v.price * v.qty)
