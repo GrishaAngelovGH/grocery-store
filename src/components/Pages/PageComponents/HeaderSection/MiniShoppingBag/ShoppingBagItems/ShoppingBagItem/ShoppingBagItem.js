@@ -17,18 +17,16 @@ export class ShoppingBagItem extends Component {
         const { strings, lang, image, name, currency, price, qty } = this.props
 
         return (
-            <div className='d-flex p-3'>
-                <img src={cakeProductCategory[image]} width={120} height={120} className='rounded' />
-
-                <div className='d-flex flex-column justify-content-around ml-3 font-weight-bold w-100'>
-                    <div>{name}</div>
-                    <div>{currencyFormatter(lang, currency, price)}</div>
-
-                    <div className='d-flex flex-column font-weight-bold mt-3'>
-                        <div>{strings.qty}: {qty}</div>
-                        <button onClick={this.handleRemoveItem} type='button' className='btn btn-outline-primary btn-sm'>
-                            {strings.removeBtn}
-                        </button>
+            <div className='row no-gutters p-3 border-top bg-light justify-content-around'>
+                <div className='col-5'>
+                    <img src={cakeProductCategory[image]} width={120} height={120} className='rounded' />
+                </div>
+                <div className='col-5'>
+                    <div className='d-flex flex-column align-items-center'>
+                        <div className='font-weight-bold'>{name}</div>
+                        <div className='bg-info text-white rounded w-100'>{currencyFormatter(lang, currency, price)}</div>
+                        <div className='bg-info text-white rounded w-100 mt-1'>{strings.qty}: {qty}</div>
+                        <button onClick={this.handleRemoveItem} className='btn btn-danger bi bi-trash mt-1 p-1 rounded-circle d-flex'></button>
                     </div>
                 </div>
             </div>
@@ -48,8 +46,7 @@ ShoppingBagItem.propTypes = {
 
 ShoppingBagItem.defaultProps = {
     strings: {
-        qty: 'Qty',
-        removeBtn: 'Remove'
+        qty: 'Qty'
     }
 }
 

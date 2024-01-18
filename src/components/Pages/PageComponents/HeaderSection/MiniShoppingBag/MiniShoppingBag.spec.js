@@ -51,7 +51,7 @@ describe('(Component) MiniShoppingBag', () => {
                             <div className='col-md-10'>
                                 <span className='font-weight-bold text-dark mr-1'>Bag:</span>
                                 <span className='font-weight-bold text-secondary'>
-                                    (3 items)
+                                    3 items
                                 </span>
                             </div>
                             <div className='col-md-1'>
@@ -69,11 +69,11 @@ describe('(Component) MiniShoppingBag', () => {
 
                         <div className='d-flex justify-content-around border-top p-2'>
                             <Link to='/shopping-bag'>
-                                <button type='button' className='btn btn-outline-primary'>View Bag</button>
+                                <button type='button' className='btn btn-primary'>View Bag</button>
                             </Link>
 
                             <Link to='/checkout'>
-                                <button type='button' className='btn btn-outline-success'>Checkout</button>
+                                <button type='button' className='btn btn-success'>Checkout</button>
                             </Link>
                         </div>
                     </Tooltip>
@@ -112,7 +112,7 @@ describe('(Component) MiniShoppingBag', () => {
                             <div className='col-md-10'>
                                 <span className='font-weight-bold text-dark mr-1'>Bag:</span>
                                 <span className='font-weight-bold text-secondary'>
-                                    (1 item)
+                                    1 item
                                 </span>
                             </div>
                             <div className='col-md-1'>
@@ -130,11 +130,11 @@ describe('(Component) MiniShoppingBag', () => {
 
                         <div className='d-flex justify-content-around border-top p-2'>
                             <Link to='/shopping-bag'>
-                                <button type='button' className='btn btn-outline-primary'>View Bag</button>
+                                <button type='button' className='btn btn-primary'>View Bag</button>
                             </Link>
 
                             <Link to='/checkout'>
-                                <button type='button' className='btn btn-outline-success'>Checkout</button>
+                                <button type='button' className='btn btn-success'>Checkout</button>
                             </Link>
                         </div>
                     </Tooltip>
@@ -175,7 +175,7 @@ describe('(Component) MiniShoppingBag', () => {
                             <div className='col-md-10'>
                                 <span className='font-weight-bold text-dark mr-1'>Bag:</span>
                                 <span className='font-weight-bold text-secondary'>
-                                    (3 items)
+                                    3 items
                                 </span>
                             </div>
                             <div className='col-md-1'>
@@ -193,11 +193,11 @@ describe('(Component) MiniShoppingBag', () => {
 
                         <div className='d-flex justify-content-around border-top p-2'>
                             <Link to='/shopping-bag'>
-                                <button type='button' className='btn btn-outline-primary'>View Bag</button>
+                                <button type='button' className='btn btn-primary'>View Bag</button>
                             </Link>
 
                             <Link to='/checkout'>
-                                <button type='button' className='btn btn-outline-success'>Checkout</button>
+                                <button type='button' className='btn btn-success'>Checkout</button>
                             </Link>
                         </div>
                     </Tooltip>

@@ -163,8 +163,7 @@ export default {
         }
     },
     'Pages.PageComponents.HeaderSection.MiniShoppingBag.ShoppingBagItems.ShoppingBagItem': {
-        qty: 'Количество',
-        removeBtn: 'Премахни'
+        qty: 'Количество'
     },
     'Pages.PageComponents.HeaderSection.SidebarMenu': {
         availableItems: 'Налични са само следните продукти',

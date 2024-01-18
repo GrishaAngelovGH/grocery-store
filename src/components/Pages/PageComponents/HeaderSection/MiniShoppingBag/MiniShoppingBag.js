@@ -50,7 +50,7 @@ export class MiniShoppingBag extends Component {
                             <div className='col-md-10'>
                                 <span className='font-weight-bold text-dark mr-1'>{`${strings.bag}:`}</span>
                                 <span className='font-weight-bold text-secondary'>
-                                    {`(${pluralsFormatter(itemsCount, strings.itemLabel)})`}
+                                    {pluralsFormatter(itemsCount, strings.itemLabel)}
                                 </span>
                             </div>
                             <div className='col-md-1'>
@@ -68,11 +68,11 @@ export class MiniShoppingBag extends Component {
 
                         <div className='d-flex justify-content-around border-top p-2'>
                             <Link to='/shopping-bag'>
-                                <button type='button' className='btn btn-outline-primary'>{strings.viewBag}</button>
+                                <button type='button' className='btn btn-primary'>{strings.viewBag}</button>
                             </Link>
 
                             <Link to='/checkout'>
-                                <button type='button' className='btn btn-outline-success'>{strings.checkoutBtn}</button>
+                                <button type='button' className='btn btn-success'>{strings.checkoutBtn}</button>
                             </Link>
                         </div>
                     </Tooltip>

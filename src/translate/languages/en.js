@@ -163,8 +163,7 @@ export default {
         }
     },
     'Pages.PageComponents.HeaderSection.MiniShoppingBag.ShoppingBagItems.ShoppingBagItem': {
-        qty: 'Qty',
-        removeBtn: 'Remove'
+        qty: 'Qty'
     },
     'Pages.PageComponents.HeaderSection.SidebarMenu': {
         availableItems: 'Only the following items are available',
