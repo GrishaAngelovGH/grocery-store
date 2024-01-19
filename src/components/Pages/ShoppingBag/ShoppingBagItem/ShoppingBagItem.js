@@ -27,13 +27,13 @@ export class ShoppingBagItem extends Component {
         const { strings, image, name, currency, price, qty, lang } = this.props
 
         return (
-            <div className='row m-3 p-3 border shadow-sm jumbotron'>
-                <div className='col-md-6'>
+            <div className='row m-3 mt-5 p-3 border shadow-sm jumbotron justify-content-center'>
+                <div className='col-md-6 text-center mb-3'>
                     <img src={cakeProductCategory[image]} width={160} height={160} className='rounded' />
                 </div>
 
                 <div className='col-md-6 font-weight-bold'>
-                    <div className='row no-gutters'>{name[lang]}</div>
+                    <div className='text-secondary text-center'>{name[lang]}</div>
 
                     <div className='row mt-4'>
                         <div className='col-md-8'>

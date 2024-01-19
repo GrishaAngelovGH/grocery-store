@@ -37,15 +37,15 @@ describe('(Component) ShoppingBag', () => {
         )
 
         expect(wrapper.equals(
-            <div className='row no-gutters justify-content-center bg-light'>
+            <div className='row no-gutters justify-content-center shopping-bag'>
                 <div className='col-md-12'>
                     <div className='row no-gutters'>
-                        <div className='col-md-12 text-center bg-primary text-white mb-3 display-4'>
+                        <div className='col-md-12 text-center display-4 shopping-bag-title text-secondary shadow position-fixed'>
                             Shopping bag
                         </div>
                     </div>
 
-                    <div className='row no-gutters justify-content-around'>
+                    <div className='row no-gutters justify-content-around mt-5'>
                         <div className='col-lg-5 m-2'>
                             <ShoppingBagItem
                                 id={items[0].id}
@@ -70,14 +70,21 @@ describe('(Component) ShoppingBag', () => {
                                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
                             />
                         </div>
-                        <div className='col-lg-3 m-4 text-center'>
-                            <h4>Summary</h4>
-                            <h4>Total: {'£'}{100}</h4>
-                            <Link to='/checkout' className='text-decoration-none'>
-                                <button type='button' className='btn btn-outline-success btn-block'>
-                                    Checkout
-                                </button>
-                            </Link>
+                        <div className='col-6 col-lg-3 m-5 m-lg-0 text-center'>
+                            <div className='mt-5'>
+                                <h4>Summary</h4>
+                                <h4>Total: {'£'}{100}</h4>
+                                <Link to='/checkout' className='text-decoration-none'>
+                                    <button type='button' className='btn btn-outline-success btn-block'>
+                                        Checkout
+                                    </button>
+                                </Link>
+                                <Link to='/' className='text-decoration-none'>
+                                    <button type='button' className='btn btn-outline-primary btn-block mt-3'>
+                                        Continue Shopping
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -100,10 +107,10 @@ describe('(Component) ShoppingBag', () => {
         )
 
         expect(wrapper.equals(
-            <div className='row no-gutters justify-content-center bg-light'>
+            <div className='row no-gutters justify-content-center shopping-bag'>
                 <div className='col-md-12'>
                     <div className='row no-gutters'>
-                        <div className='col-md-12 text-center bg-primary text-white mb-3 display-4'>
+                        <div className='col-md-12 text-center display-4 shopping-bag-title text-secondary shadow position-fixed'>
                             Shopping bag
                         </div>
                     </div>
