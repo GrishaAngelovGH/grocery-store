@@ -68,10 +68,11 @@ export const ShoppingBag = ({ strings, items, lang, removeItemFromShoppingCart, 
 
                 {
                     !items.length && (
-                        <div className='row no-gutters justify-content-center'>
-                            <div className='col-8 col-lg-5 text-center'>
-                                <h3>{strings.emptyBag}</h3>
-                                <h4>{strings.fillingBag}</h4>
+                        <div className='row no-gutters justify-content-center align-items-center vh-100'>
+                            <div className='col-10 col-lg-5 text-center text-secondary border p-3 rounded bg-light shadow'>
+                                <div className='display-1 bi bi-bag-fill text-success'></div>
+                                <div className='display-4'>{strings.emptyBag}</div>
+                                <div className='display-4'>{strings.fillingBag}</div>
                                 <Link to='/' className='text-decoration-none'>
                                     <button type='button' className='btn btn-primary btn-block'>
                                         {strings.continueBtn}

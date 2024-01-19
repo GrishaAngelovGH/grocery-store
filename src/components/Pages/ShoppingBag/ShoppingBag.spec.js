@@ -115,10 +115,11 @@ describe('(Component) ShoppingBag', () => {
                         </div>
                     </div>
 
-                    <div className='row no-gutters justify-content-center'>
-                        <div className='col-8 col-lg-5 text-center'>
-                            <h3>Empty Bag</h3>
-                            <h4>Your bag needs filling</h4>
+                    <div className='row no-gutters justify-content-center align-items-center vh-100'>
+                        <div className='col-10 col-lg-5 text-center text-secondary border p-3 rounded bg-light shadow'>
+                            <div className='display-1 bi bi-bag-fill text-success'></div>
+                            <div className='display-4'>Empty Bag</div>
+                            <div className='display-4'>Your bag needs filling</div>
                             <Link to='/' className='text-decoration-none'>
                                 <button type='button' className='btn btn-primary btn-block'>
                                     Continue Shopping
