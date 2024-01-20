@@ -18,6 +18,25 @@ describe('(Component) CheckoutSteps', () => {
         { title: 'Title-2', component: (<div>content-2</div>), showNextButton: false, showPrevButton: true }
     ]
 
+    const items = [
+        {
+            'id': 1,
+            'image': 'cookiesAndCreamCake',
+            'name': { en: 'Cookies And Cream Cake' },
+            'currency': { en: '£' },
+            'price': 30,
+            'qty': 1
+        },
+        {
+            'id': 2,
+            'image': 'dribbleCake',
+            'name': { en: 'Dribble Cake' },
+            'currency': { en: '£' },
+            'price': 35,
+            'qty': 2
+        }
+    ]
+
     const values = { shipping_method: 'usps_fcpi' }
 
     beforeEach(() => {
@@ -27,6 +46,7 @@ describe('(Component) CheckoutSteps', () => {
         wrapper = shallow(
             <CheckoutSteps
                 steps={steps}
+                items={items}
                 clearItemsFromShoppingCart={clearItemsFromShoppingCart}
             />
         )
@@ -52,7 +72,8 @@ describe('(Component) CheckoutSteps', () => {
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
                         credit_card_type: 'visa',
-                        country: 'bg'
+                        country: 'bg',
+                        items
                     }}
                     render={wrapper.instance().formContent}
                 />

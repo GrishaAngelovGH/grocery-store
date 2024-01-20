@@ -3,7 +3,10 @@ import CheckoutSteps from './CheckoutSteps'
 
 import { clearItemsFromShoppingCart } from 'actions/shoppingCart'
 
-const mapStateToProps = () => ({})
+
+const mapStateToProps = state => ({
+  items: state.shoppingCart.cartItems
+})
 
 const mapDispatchToProps = ({
   clearItemsFromShoppingCart

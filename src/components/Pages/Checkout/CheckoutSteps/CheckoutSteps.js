@@ -60,7 +60,7 @@ export class CheckoutSteps extends Component {
 
     render() {
         const { currentStep, shouldRedirect } = this.state
-        const { steps } = this.props
+        const { steps, items } = this.props
 
         if (shouldRedirect) {
             return <Navigate replace to={'/'} />
@@ -84,7 +84,8 @@ export class CheckoutSteps extends Component {
                         shipping_method: 'usps_fcpi',
                         payment_method: 'credit_card',
                         credit_card_type: 'visa',
-                        country: 'bg'
+                        country: 'bg',
+                        items
                     }}
                     render={this.formContent}
                 />
@@ -95,7 +96,8 @@ export class CheckoutSteps extends Component {
 
 CheckoutSteps.propTypes = {
     strings: PropTypes.object.isRequired,
-    steps: PropTypes.array.isRequired
+    steps: PropTypes.array.isRequired,
+    items: PropTypes.array.isRequired
 }
 
 CheckoutSteps.defaultProps = {
