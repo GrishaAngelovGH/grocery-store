@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import CheckoutSteps from './CheckoutSteps'
 
+import { saveOrder } from 'actions/orders'
 import { clearItemsFromShoppingCart } from 'actions/shoppingCart'
 
 
@@ -9,6 +10,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = ({
+  saveOrder,
   clearItemsFromShoppingCart
 })
 

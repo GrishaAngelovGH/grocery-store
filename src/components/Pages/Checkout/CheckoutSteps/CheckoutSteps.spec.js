@@ -11,7 +11,7 @@ import { createSandbox } from 'sinon'
 const sandbox = createSandbox()
 
 describe('(Component) CheckoutSteps', () => {
-    let wrapper, clearItemsFromShoppingCart
+    let wrapper, saveOrder, clearItemsFromShoppingCart
 
     const steps = [
         { title: 'Title-1', component: (<div>content-1</div>), showNextButton: true, showPrevButton: false },
@@ -40,13 +40,16 @@ describe('(Component) CheckoutSteps', () => {
     const values = { shipping_method: 'usps_fcpi' }
 
     beforeEach(() => {
+        saveOrder = sinon.spy()
         clearItemsFromShoppingCart = sinon.spy()
         sandbox.stub(Swal, 'fire').callsFake(() => Promise.resolve())
+        sandbox.stub(Math, 'random').callsFake(() => '0.123')
 
         wrapper = shallow(
             <CheckoutSteps
                 steps={steps}
                 items={items}
+                saveOrder={saveOrder}
                 clearItemsFromShoppingCart={clearItemsFromShoppingCart}
             />
         )
@@ -125,6 +128,13 @@ describe('(Component) CheckoutSteps', () => {
                 </Step>
             </form>
         )
+    })
+
+    it('should save order on submit', async () => {
+        wrapper.find(Form).simulate('submit')
+
+        saveOrder.should.have.been.calledOnce
+        saveOrder.should.have.been.calledWith({ id: '123' })
     })
 
     it('should clear all cart items after checkout process', async () => {

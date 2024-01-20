@@ -24,14 +24,23 @@ export class CheckoutSteps extends Component {
     }
 
     handleFormSubmit = values => {
+        const { strings, saveOrder, clearItemsFromShoppingCart } = this.props
+
+        const newOrder = {
+            id: Math.random().toString().slice(2),
+            ...values
+        }
+
+        saveOrder(newOrder)
+
         Swal.fire({
             width: 800,
             icon: 'success',
             allowOutsideClick: false,
-            title: this.props.strings.successMessage
+            title: strings.successMessage
         }).then(() => {
             this.setState({ shouldRedirect: true }, () => {
-                this.props.clearItemsFromShoppingCart()
+                clearItemsFromShoppingCart()
             })
         })
     }
