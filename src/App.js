@@ -8,7 +8,8 @@ import {
   ProductCategory,
   Comments,
   ShoppingBag,
-  Checkout
+  Checkout,
+  OrderHistory
 } from 'components/Pages'
 
 export const Category = () => {
@@ -54,6 +55,8 @@ function App() {
         <Route path='/shopping-bag' element={<ShoppingBag />} />
 
         <Route path='/checkout' element={<Checkout />} />
+
+        <Route path='/order-history' element={<OrderHistory />} />
       </Routes>
     </Router>
   )

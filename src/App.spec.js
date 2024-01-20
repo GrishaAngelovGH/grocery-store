@@ -7,7 +7,8 @@ import Footer from 'components/Footer'
 import {
   HomePage,
   ShoppingBag,
-  Checkout
+  Checkout,
+  OrderHistory
 } from 'components/Pages'
 
 import App, { Category, CommentsPage } from './App'
@@ -38,6 +39,8 @@ describe('(Component) App', () => {
           <Route path='/shopping-bag' element={<ShoppingBag />} />
 
           <Route path='/checkout' element={<Checkout />} />
+
+          <Route path='/order-history' element={<OrderHistory />} />
         </Routes>
       </Router>
     )).to.equal(true)

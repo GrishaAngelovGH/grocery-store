@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import Sidebar from 'react-sidebar'
 import { ToastContainer } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 import Logo from './Logo'
 import Search from './Search'
@@ -39,10 +40,12 @@ export class HeaderSection extends Component {
                     </div>
 
                     <div className='row justify-content-center align-items-center'>
-                        <div className='col-md-1'>
-                            <i className='bi bi-person h2 align-text-top'></i>
+                        <div className='col-1 mr-1'>
+                            <Link to='/order-history' className='text-dark'>
+                                <i className='bi bi-card-checklist h2 align-text-top'></i>
+                            </Link>
                         </div>
-                        <div className='col-md-1'>
+                        <div className='col-1'>
                             <MiniShoppingBag />
                         </div>
                     </div>
@@ -54,19 +57,21 @@ export class HeaderSection extends Component {
 
                 {/* Mobile and Tablet */}
                 <div className='d-lg-none d-md-flex row no-gutters justify-content-around align-items-center'>
-                    <div className='col-1 col-md-1'>
+                    <div className='col-1'>
                         <Menu lang={lang} mobile onSidebarOpen={this.handleSidebarOpen} categories={menuCategories} />
                     </div>
 
-                    <div className='col-1 col-md-1'>
+                    <div className='col-1'>
                         <Logo />
                     </div>
 
                     <div className='row justify-content-center align-items-center'>
-                        <div className='col-1 col-md-1'>
-                            <i className='bi bi-person h2 align-text-top'></i>
+                        <div className='col-1 mr-1'>
+                            <Link to='/order-history' className='text-dark'>
+                                <i className='bi bi-card-checklist h2 align-text-top'></i>
+                            </Link>
                         </div>
-                        <div className='col-1 col-md-1'>
+                        <div className='col-1'>
                             <MiniShoppingBag />
                         </div>
                     </div>
