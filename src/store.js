@@ -10,6 +10,7 @@ import shoppingCart from './reducers/shoppingCart'
 import checkout from './reducers/checkout'
 import language from './reducers/language'
 import comments from './reducers/comments'
+import orders from './reducers/orders'
 
 const client = axios.create({
     baseURL: 'http://localhost:8080',
@@ -27,7 +28,8 @@ const store = createStore(
         shoppingCart,
         checkout,
         language,
-        comments
+        comments,
+        orders
     })),
     applyMiddleware(
         axiosMiddleware(client)
