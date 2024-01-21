@@ -40,8 +40,8 @@ describe('(Component) Payment', () => {
                                         component='input'
                                         type='radio'
                                         value='pay_pal'
-                                    />{' '}
-                                    <span className='font-weight-bold'>Pay Pal</span>
+                                    />
+                                    <span className='ml-1 font-weight-bold'>Pay Pal</span>
                                 </label>
                             </div>
                         </div>
@@ -90,8 +90,8 @@ describe('(Component) Payment', () => {
                                     component='input'
                                     type='radio'
                                     value='visa'
-                                />{' '}
-                                <span className='m-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
+                                />
+                                <span className='ml-1 font-weight-bold'>Visa <img src={payment.visa} /></span>
                                 <div className='text-secondary small'>ex: 4111111111111</div>
                             </label>
                         </div>
@@ -102,8 +102,8 @@ describe('(Component) Payment', () => {
                                     component='input'
                                     type='radio'
                                     value='mastercard'
-                                />{' '}
-                                <span className='font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
+                                />
+                                <span className='ml-1 font-weight-bold'>Mastercard <img src={payment.mastercard} /></span>
                                 <div className='text-secondary small'>ex: 5397283356685992</div>
                             </label>
                         </div>

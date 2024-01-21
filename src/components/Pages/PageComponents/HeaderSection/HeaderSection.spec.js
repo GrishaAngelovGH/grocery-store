@@ -15,6 +15,7 @@ describe('(Component) HeaderSection', () => {
         const wrapper = shallow(
             <HeaderSection
                 disabledSearch={false}
+                disabledOrderHistory={false}
                 selectedCategory={'selectedCategory'}
             />
         )
@@ -35,7 +36,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className='pe-auto text-dark'>
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>
@@ -61,7 +62,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className='pe-auto text-dark'>
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>
@@ -78,10 +79,79 @@ describe('(Component) HeaderSection', () => {
         )).to.equal(true)
     })
 
+    it('should render component with disabled search and order history link', () => {
+        const wrapper = shallow(
+            <HeaderSection
+                disabledSearch={true}
+                disabledOrderHistory={true}
+                selectedCategory={'selectedCategory'}
+            />
+        )
+
+        expect(wrapper.equals(
+            <div>
+                <ToastContainer />
+
+                {/* Desktop */}
+                <div className='d-none d-lg-flex row no-gutters justify-content-around align-items-center'>
+                    <div className='col-md-1'>
+                        <Logo />
+                    </div>
+
+                    <div className='col-md-3'>
+                        <Search disabled={true} selectedCategory={'selectedCategory'} />
+                    </div>
+
+                    <div className='row justify-content-center align-items-center'>
+                        <div className='col-1 mr-1'>
+                            <Link to='/order-history' className='pe-none text-secondary'>
+                                <i className='bi bi-card-checklist h2 align-text-top'></i>
+                            </Link>
+                        </div>
+                        <div className='col-1'>
+                            <MiniShoppingBag />
+                        </div>
+                    </div>
+                </div>
+
+                <div className='d-none d-lg-block'>
+                    <Menu lang={'en'} categories={menuCategories} />
+                </div>
+
+                {/* Mobile and Tablet */}
+                <div className='d-lg-none d-md-flex row no-gutters justify-content-around align-items-center'>
+                    <div className='col-1'>
+                        <Menu lang={'en'} mobile onSidebarOpen={wrapper.instance().handleSidebarOpen} categories={menuCategories} />
+                    </div>
+
+                    <div className='col-1'>
+                        <Logo />
+                    </div>
+
+                    <div className='row justify-content-center align-items-center'>
+                        <div className='col-1 mr-1'>
+                            <Link to='/order-history' className='pe-none text-secondary'>
+                                <i className='bi bi-card-checklist h2 align-text-top'></i>
+                            </Link>
+                        </div>
+                        <div className='col-1'>
+                            <MiniShoppingBag />
+                        </div>
+                    </div>
+
+                    <div className='col-8 col-md-10'>
+                        <Search disabled={true} selectedCategory={'selectedCategory'} />
+                    </div>
+                </div>
+            </div>
+        )).to.equal(true)
+    })
+
     it('should open Sidebar', () => {
         const wrapper = shallow(
             <HeaderSection
                 disabledSearch={false}
+                disabledOrderHistory={false}
                 selectedCategory={'selectedCategory'}
             />
         )
@@ -106,7 +176,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className='pe-auto text-dark'>
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>
@@ -132,7 +202,7 @@ describe('(Component) HeaderSection', () => {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className='pe-auto text-dark'>
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>

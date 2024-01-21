@@ -23,7 +23,7 @@ export class HeaderSection extends Component {
     }
 
     render() {
-        const { lang, disabledSearch, selectedCategory } = this.props
+        const { lang, disabledSearch, disabledOrderHistory, selectedCategory } = this.props
 
         return (
             <div>
@@ -41,7 +41,7 @@ export class HeaderSection extends Component {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className={`${disabledOrderHistory ? 'pe-none text-secondary' : 'pe-auto text-dark'}`} >
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>
@@ -67,7 +67,7 @@ export class HeaderSection extends Component {
 
                     <div className='row justify-content-center align-items-center'>
                         <div className='col-1 mr-1'>
-                            <Link to='/order-history' className='text-dark'>
+                            <Link to='/order-history' className={`${disabledOrderHistory ? 'pe-none text-secondary' : 'pe-auto text-dark'}`}>
                                 <i className='bi bi-card-checklist h2 align-text-top'></i>
                             </Link>
                         </div>
@@ -113,6 +113,7 @@ export class HeaderSection extends Component {
 HeaderSection.propTypes = {
     lang: PropTypes.string.isRequired,
     disabledSearch: PropTypes.bool,
+    disabledOrderHistory: PropTypes.bool,
     selectedCategory: PropTypes.string
 }
 
