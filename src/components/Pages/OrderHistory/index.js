@@ -1,3 +1,3 @@
-import OrderHistory from './OrderHistory'
+import OrderHistory from './OrderHistoryContainer'
 
 export default OrderHistory
