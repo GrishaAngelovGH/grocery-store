@@ -130,15 +130,15 @@ describe('(Component) CheckoutSteps', () => {
         )
     })
 
-    it('should save order on submit', async () => {
-        wrapper.find(Form).simulate('submit')
+    it('should save order on submit', () => {
+        wrapper.find(Form).simulate('submit', { payment_method: 'credit_card', creditCardNumber: '4111111113456' })
 
         saveOrder.should.have.been.calledOnce
-        saveOrder.should.have.been.calledWith({ id: '123' })
+        saveOrder.should.have.been.calledWith({ id: '123', payment_method: 'credit_card', creditCardNumber: '*********3456' })
     })
 
     it('should clear all cart items after checkout process', async () => {
-        wrapper.find(Form).simulate('submit')
+        wrapper.find(Form).simulate('submit', { creditCardNumber: '' })
 
         await new Promise((resolve) => setTimeout(resolve, 5))
 

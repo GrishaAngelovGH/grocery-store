@@ -26,9 +26,12 @@ export class CheckoutSteps extends Component {
     handleFormSubmit = values => {
         const { strings, saveOrder, clearItemsFromShoppingCart } = this.props
 
+        const { creditCardNumber, ...rest } = values
+
         const newOrder = {
             id: Math.random().toString().slice(2),
-            ...values
+            ...rest,
+            creditCardNumber: creditCardNumber.slice(-4).padStart(creditCardNumber.length, '*')
         }
 
         saveOrder(newOrder)
