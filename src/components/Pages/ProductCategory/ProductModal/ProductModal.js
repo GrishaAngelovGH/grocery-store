@@ -15,7 +15,7 @@ const ProductModal = ({ image, name, description }) => (
                         height={300}
                         className='rounded'
                     />
-                    <p className="mt-2 font-weight-bold">{description}</p>
+                    <p className='mt-2 font-weight-bold'>{description}</p>
                 </div>
             </div>
         </div>
