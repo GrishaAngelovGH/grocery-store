@@ -3,7 +3,7 @@ import currencyFormatter from 'components/formatters/currencyFormatter'
 
 import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
-import Table from './Table'
+import Table from 'components/Table'
 
 import translate from 'translate'
 

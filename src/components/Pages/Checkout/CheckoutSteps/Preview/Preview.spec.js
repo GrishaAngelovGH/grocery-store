@@ -1,6 +1,6 @@
 import { Preview } from './Preview'
 
-import Table from './Table'
+import Table from 'components/Table'
 import StepTitle from 'components/Pages/Checkout/CheckoutSteps/StepTitle'
 
 describe('(Component) Preview', () => {
