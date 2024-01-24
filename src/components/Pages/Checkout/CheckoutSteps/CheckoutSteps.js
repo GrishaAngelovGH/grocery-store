@@ -31,7 +31,8 @@ export class CheckoutSteps extends Component {
         const newOrder = {
             id: Math.random().toString().slice(2),
             ...rest,
-            creditCardNumber: creditCardNumber.slice(-4).padStart(creditCardNumber.length, '*')
+            creditCardNumber: creditCardNumber ? creditCardNumber.slice(-4).padStart(creditCardNumber.length, '*') : '',
+            date: new Date()
         }
 
         saveOrder(newOrder)

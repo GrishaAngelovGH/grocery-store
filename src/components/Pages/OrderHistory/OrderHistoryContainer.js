@@ -2,7 +2,11 @@ import { connect } from 'react-redux'
 
 import OrderHistory from './OrderHistory'
 
-const mapStateToProps = ({ orders }) => ({ orders: Object.values(orders) })
+const mapStateToProps = state => ({
+    orders: state.orders,
+    lang: state.language,
+    checkout: state.checkout
+})
 
 const mapDispatchToProps = ({})
 

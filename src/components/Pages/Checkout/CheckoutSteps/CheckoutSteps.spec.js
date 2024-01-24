@@ -43,7 +43,8 @@ describe('(Component) CheckoutSteps', () => {
         saveOrder = sinon.spy()
         clearItemsFromShoppingCart = sinon.spy()
         sandbox.stub(Swal, 'fire').callsFake(() => Promise.resolve())
-        sandbox.stub(Math, 'random').callsFake(() => '0.123')
+        sandbox.stub(Math, 'random').callsFake(() => 0.123)
+        sandbox.stub(global, 'Date').returns(new Date('2024-01-24T09:12:32'));
 
         wrapper = shallow(
             <CheckoutSteps
@@ -134,7 +135,7 @@ describe('(Component) CheckoutSteps', () => {
         wrapper.find(Form).simulate('submit', { payment_method: 'credit_card', creditCardNumber: '4111111113456' })
 
         saveOrder.should.have.been.calledOnce
-        saveOrder.should.have.been.calledWith({ id: '123', payment_method: 'credit_card', creditCardNumber: '*********3456' })
+        saveOrder.should.have.been.calledWith({ id: '123', payment_method: 'credit_card', creditCardNumber: '*********3456', date: new Date('2024-01-24T09:12:32') })
     })
 
     it('should clear all cart items after checkout process', async () => {

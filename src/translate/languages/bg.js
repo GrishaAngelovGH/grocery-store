@@ -146,6 +146,23 @@ export default {
             return items.map((v, i) => ({ image: images[i], ...v }))
         }
     },
+    'Pages.OrderHistory': {
+        orderHistory: 'История на поръчките',
+        orderId: 'Идентификационен номер',
+        date: 'Дата',
+        paymentMethod: 'Метод на плащане',
+        creditCard: 'Кредитна карта',
+        payPal: 'PayPal',
+        creditCardNumber: 'Номер на кредитна карта',
+        tableColumns: {
+            item: 'Продукт',
+            qty: 'Брой',
+            price: 'Цена',
+            subtotal: 'Междинна Сума',
+            shippingMethod: 'Метод на доставка'
+        },
+        total: 'Обща сума'
+    },
     'Pages.PageComponents.HeaderSection.Search': {
         placeholder: 'Търси'
     },

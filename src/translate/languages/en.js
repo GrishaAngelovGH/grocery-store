@@ -146,6 +146,23 @@ export default {
             return items.map((v, i) => ({ image: images[i], ...v }))
         }
     },
+    'Pages.OrderHistory': {
+        orderHistory: 'Order History',
+        orderId: 'OrderId',
+        date: 'Date',
+        paymentMethod: 'Payment Method',
+        creditCard: 'Credit Card',
+        payPal: 'PayPal',
+        creditCardNumber: 'Credit Card Number',
+        tableColumns: {
+            item: 'Item',
+            qty: 'Qty',
+            price: 'Price',
+            subtotal: 'Subtotal',
+            shippingMethod: 'Shipping Method'
+        },
+        total: 'Total'
+    },
     'Pages.PageComponents.HeaderSection.Search': {
         placeholder: 'Search'
     },
