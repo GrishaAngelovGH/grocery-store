@@ -135,7 +135,13 @@ describe('(Component) CheckoutSteps', () => {
         wrapper.find(Form).simulate('submit', { payment_method: 'credit_card', creditCardNumber: '4111111113456' })
 
         saveOrder.should.have.been.calledOnce
-        saveOrder.should.have.been.calledWith({ id: '123', payment_method: 'credit_card', creditCardNumber: '*********3456', date: new Date('2024-01-24T09:12:32') })
+        saveOrder.should.have.been.calledWith({
+            id: '123',
+            payment_method: 'credit_card',
+            creditCardNumber: '*********3456',
+            date: new Date('2024-01-24T09:12:32'),
+            status: 'pending'
+        })
     })
 
     it('should clear all cart items after checkout process', async () => {

@@ -32,7 +32,8 @@ export class CheckoutSteps extends Component {
             id: Math.random().toString().slice(2),
             ...rest,
             creditCardNumber: creditCardNumber ? creditCardNumber.slice(-4).padStart(creditCardNumber.length, '*') : '',
-            date: new Date()
+            date: new Date(),
+            status: 'pending'
         }
 
         saveOrder(newOrder)

@@ -154,6 +154,9 @@ export default {
         creditCard: 'Credit Card',
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
+        status: {
+            pending: 'Pending Order'
+        },
         tableColumns: {
             item: 'Item',
             qty: 'Qty',

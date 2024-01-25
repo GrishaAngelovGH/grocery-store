@@ -17,7 +17,8 @@ export class OrderHistory extends Component {
         this.state = { id: '' }
     }
 
-    handleClick = ({ target: { innerText: id } }) => {
+    handleClick = ({ target: { innerText } }) => {
+        const id = innerText.split(' ')[0]
         this.setState({ id })
     }
 
@@ -45,21 +46,21 @@ export class OrderHistory extends Component {
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
                             {
                                 Object.values(orders).map(v => (
-                                    <p
+                                    <div
                                         key={v.id}
                                         role='button'
                                         className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                                         onClick={this.handleClick}
                                     >
-                                        {v.id}
-                                    </p>
+                                        {v.id} {v.status === 'pending' ? strings.status.pending : ''}
+                                    </div>
                                 ))
                             }
                         </div>
                         <div className='col col-md-9 col-lg-10'>
                             {
                                 order && (
-                                    <div className='mt-2 mb-5'>
+                                    <div className='m-2 mb-5'>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.orderId}: {order.id}</p>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.date}: {new Date(order.date).toLocaleString(lang === 'en' ? 'uk' : 'bg')}</p>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.tableColumns.shippingMethod}: {checkout.shippingMethod} {currencyFormatter(lang, currency, checkout.shippingMethodPrice.toFixed(2))}</p>
@@ -103,7 +104,6 @@ export class OrderHistory extends Component {
     }
 }
 
-
 OrderHistory.propTypes = {
     strings: PropTypes.object.isRequired,
     orders: PropTypes.object.isRequired,
@@ -120,6 +120,9 @@ OrderHistory.defaultProps = {
         creditCard: 'Credit Card',
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
+        status: {
+            pending: 'Pending Order'
+        },
         tableColumns: {
             item: 'Item',
             qty: 'Qty',

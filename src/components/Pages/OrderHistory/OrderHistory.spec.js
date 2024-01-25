@@ -5,21 +5,24 @@ import { OrderHistory } from './OrderHistory'
 import Table from 'components/Table'
 
 describe('(Component) OrderHistory', () => {
-    it('should render component', () => {
-        const orders = [
-            {
-                id: '14203452887394308',
-                shipping_method: 'usps_fcpi',
-                payment_method: 'credit_card',
-                items: [
-                    { id: 1, image: 'cookiesAndCreamCake', name: { en: 'Cookies And Cream Cake', bg: 'Торта с бисквитки и крем' }, currency: { en: '£', bg: 'лв' }, price: 30, qty: 2 }
-                ],
-                creditCardNumber: '*********3456',
-                date: new Date('2024-01-24T09:12:32')
-            }
-        ]
+    let wrapper
 
-        const wrapper = shallow(
+    const orders = {
+        '14203452887394308': {
+            id: '14203452887394308',
+            shipping_method: 'usps_fcpi',
+            payment_method: 'credit_card',
+            items: [
+                { id: 1, image: 'cookiesAndCreamCake', name: { en: 'Cookies And Cream Cake', bg: 'Торта с бисквитки и крем' }, currency: { en: '£', bg: 'лв' }, price: 30, qty: 2 }
+            ],
+            creditCardNumber: '*********3456',
+            date: new Date('2024-01-24T09:12:32'),
+            status: 'pending'
+        }
+    }
+
+    beforeEach(() => {
+        wrapper = shallow(
             <OrderHistory
                 orders={orders}
                 lang='en'
@@ -29,7 +32,9 @@ describe('(Component) OrderHistory', () => {
                 }}
             />
         )
+    })
 
+    it('should render component', () => {
         expect(wrapper.equals(
             <div className='row no-gutters'>
                 <div className='col-12'>
@@ -44,13 +49,13 @@ describe('(Component) OrderHistory', () => {
 
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
-                            <p
+                            <div
                                 role='button'
                                 className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                                 onClick={wrapper.instance().handleClick}
                             >
-                                14203452887394308
-                            </p>
+                                14203452887394308 Pending Order
+                            </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
                         </div>
@@ -61,30 +66,6 @@ describe('(Component) OrderHistory', () => {
     })
 
     it('should render selected order', () => {
-        const orders = {
-            '14203452887394308': {
-                id: '14203452887394308',
-                shipping_method: 'usps_fcpi',
-                payment_method: 'credit_card',
-                items: [
-                    { id: 1, image: 'cookiesAndCreamCake', name: { en: 'Cookies And Cream Cake', bg: 'Торта с бисквитки и крем' }, currency: { en: '£', bg: 'лв' }, price: 30, qty: 2 }
-                ],
-                creditCardNumber: '*********3456',
-                date: new Date('2024-01-24T09:12:32')
-            }
-        }
-
-        const wrapper = shallow(
-            <OrderHistory
-                orders={orders}
-                lang='en'
-                checkout={{
-                    shippingMethod: 'USPS First Class Package International',
-                    shippingMethodPrice: 13.35
-                }}
-            />
-        )
-
         wrapper.setState({ id: '14203452887394308' })
 
         expect(wrapper.equals(
@@ -101,16 +82,16 @@ describe('(Component) OrderHistory', () => {
 
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
-                            <p
+                            <div
                                 role='button'
                                 className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                                 onClick={wrapper.instance().handleClick}
                             >
-                                14203452887394308
-                            </p>
+                                14203452887394308 Pending Order
+                            </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
-                            <div className='mt-2 mb-5'>
+                            <div className='m-2 mb-5'>
                                 <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>OrderId: 14203452887394308</p>
                                 <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Date: {new Date('2024-01-24T09:12:32').toLocaleString('uk')}</p>
                                 <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Shipping Method: USPS First Class Package International £13.35</p>

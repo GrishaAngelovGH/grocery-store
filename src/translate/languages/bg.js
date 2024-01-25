@@ -154,6 +154,9 @@ export default {
         creditCard: 'Кредитна карта',
         payPal: 'PayPal',
         creditCardNumber: 'Номер на кредитна карта',
+        status: {
+            pending: 'Чакаща Поръчка'
+        },
         tableColumns: {
             item: 'Продукт',
             qty: 'Брой',
