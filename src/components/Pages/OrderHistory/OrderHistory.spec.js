@@ -50,11 +50,10 @@ describe('(Component) OrderHistory', () => {
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
                             <div
-                                role='button'
                                 className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                                onClick={wrapper.instance().handleClick}
                             >
-                                14203452887394308 Pending Order
+                                <div>14203452887394308 Pending Order</div>
+                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
@@ -83,11 +82,10 @@ describe('(Component) OrderHistory', () => {
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
                             <div
-                                role='button'
                                 className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                                onClick={wrapper.instance().handleClick}
                             >
-                                14203452887394308 Pending Order
+                                <div>14203452887394308 Pending Order</div>
+                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>

@@ -17,8 +17,8 @@ export class OrderHistory extends Component {
         this.state = { id: '' }
     }
 
-    handleClick = ({ target: { innerText } }) => {
-        const id = innerText.split(' ')[0]
+    handleClick = ({ target: { parentNode } }) => {
+        const id = parentNode.firstChild.innerText.split(' ')[0]
         this.setState({ id })
     }
 
@@ -48,11 +48,10 @@ export class OrderHistory extends Component {
                                 Object.values(orders).map(v => (
                                     <div
                                         key={v.id}
-                                        role='button'
                                         className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                                        onClick={this.handleClick}
                                     >
-                                        {v.id} {v.status === 'pending' ? strings.status.pending : ''}
+                                        <div>{v.id} {v.status === 'pending' ? strings.status.pending : ''}</div>
+                                        <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
                                     </div>
                                 ))
                             }
