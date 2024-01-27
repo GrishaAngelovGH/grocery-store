@@ -43,7 +43,7 @@ describe('(Component) Step', () => {
         )).to.equal(true)
     })
 
-    it('should render component without buttons', () => {
+    it('should render component without prev button', () => {
         const onChange = sinon.spy()
 
         const wrapper = shallow(
@@ -51,6 +51,45 @@ describe('(Component) Step', () => {
                 position={0}
                 onChange={onChange}
                 showPrevButton={false}
+                showNextButton={true}
+                disabled={false}
+            >
+                <div>content</div>
+            </Step>
+        )
+
+        expect(wrapper.equals(
+            <div className='row no-gutters justify-content-center m-3'>
+                <div className='col-md-7 col-lg-5 border rounded p-2 shadow bg-white'>
+                    <div>content</div>
+                    <div className='d-flex justify-content-end'>
+                        <button
+                            className='btn btn-light bi bi-arrow-left border mr-2 w-25'
+                            onClick={wrapper.instance().handleGoToPreviousPage}
+                        >
+                        </button>
+                        <button
+                            type='button'
+                            className='btn btn-primary w-25 mr-2'
+                            onClick={wrapper.instance().handleNextStepChange}
+                            disabled={false}
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+        )).to.equal(true)
+    })
+
+    it('should render component without next button', () => {
+        const onChange = sinon.spy()
+
+        const wrapper = shallow(
+            <Step
+                position={0}
+                onChange={onChange}
+                showPrevButton={true}
                 showNextButton={false}
                 disabled={false}
             >
@@ -62,7 +101,21 @@ describe('(Component) Step', () => {
             <div className='row no-gutters justify-content-center m-3'>
                 <div className='col-md-7 col-lg-5 border rounded p-2 shadow bg-white'>
                     <div>content</div>
-                    <div className='d-flex justify-content-end'></div>
+                    <div className='d-flex justify-content-end'>
+                        <button
+                            className='btn btn-light bi bi-arrow-left border mr-2 w-25'
+                            onClick={wrapper.instance().handleGoToPreviousPage}
+                        >
+                        </button>
+                        <button
+                            type='button'
+                            className='btn btn-primary w-25 mr-2'
+                            onClick={wrapper.instance().handlePrevStepChange}
+                            disabled={false}
+                        >
+                            Prev
+                        </button>
+                    </div>
                 </div>
             </div>
         )).to.equal(true)
@@ -83,7 +136,7 @@ describe('(Component) Step', () => {
             </Step>
         )
 
-        const button = wrapper.find('button')
+        const button = wrapper.find('button').at(1)
 
         button.simulate('click')
 
@@ -106,7 +159,7 @@ describe('(Component) Step', () => {
             </Step>
         )
 
-        const button = wrapper.find('button')
+        const button = wrapper.find('button').at(1)
 
         button.simulate('click')
 

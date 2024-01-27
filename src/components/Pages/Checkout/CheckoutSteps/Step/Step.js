@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+import { Link } from 'react-router-dom'
+
 import translate from 'translate'
 
 export class Step extends Component {
+    handleGoToPreviousPage = e => {
+        e.preventDefault()
+        window.history.go(-1)
+    }
+
     handlePrevStepChange = () => {
         const { position, onChange } = this.props
 
@@ -25,6 +33,15 @@ export class Step extends Component {
                         React.cloneElement(children, { values })
                     }
                     <div className='d-flex justify-content-end'>
+                        {
+                            (!showPrevButton || !showNextButton) && (
+                                <button
+                                    className='btn btn-light bi bi-arrow-left border mr-2 w-25'
+                                    onClick={this.handleGoToPreviousPage}
+                                >
+                                </button>
+                            )
+                        }
                         {
                             showPrevButton && (
                                 <button
