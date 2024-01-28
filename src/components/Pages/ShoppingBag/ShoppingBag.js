@@ -8,7 +8,12 @@ import './ShoppingBag.scss'
 
 import translate from 'translate'
 
-export const ShoppingBag = ({ strings, items, lang, removeItemFromShoppingCart, changeItemQtyFromShoppingCart }) => {
+export const ShoppingBag = ({
+    strings, items, lang,
+    removeItemFromShoppingCart,
+    changeItemQtyFromShoppingCart,
+    clearItemsFromShoppingCart
+}) => {
     const currency = items.length > 0 && items[0].currency[lang]
     let totalSum = 0
 
@@ -60,6 +65,7 @@ export const ShoppingBag = ({ strings, items, lang, removeItemFromShoppingCart, 
                                             {strings.continueBtn}
                                         </button>
                                     </Link>
+                                    <button type='button' className='btn btn-outline-danger btn-block mt-3 bi bi-trash' onClick={clearItemsFromShoppingCart}></button>
                                 </div>
                             </div>
                         </div>

@@ -3,7 +3,8 @@ import ShoppingBag from './ShoppingBag'
 
 import {
     removeItemFromShoppingCart,
-    changeItemQtyFromShoppingCart
+    changeItemQtyFromShoppingCart,
+    clearItemsFromShoppingCart
 } from 'actions/shoppingCart'
 
 const mapStateToProps = state => ({
@@ -13,7 +14,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = ({
     removeItemFromShoppingCart,
-    changeItemQtyFromShoppingCart
+    changeItemQtyFromShoppingCart,
+    clearItemsFromShoppingCart
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingBag)

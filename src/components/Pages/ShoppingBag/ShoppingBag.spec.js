@@ -26,6 +26,7 @@ describe('(Component) ShoppingBag', () => {
 
         const removeItemFromShoppingCart = sinon.spy()
         const changeItemQtyFromShoppingCart = sinon.spy()
+        const clearItemsFromShoppingCart = sinon.spy()
 
         const wrapper = shallow(
             <ShoppingBag
@@ -33,6 +34,7 @@ describe('(Component) ShoppingBag', () => {
                 items={items}
                 removeItemFromShoppingCart={removeItemFromShoppingCart}
                 changeItemQtyFromShoppingCart={changeItemQtyFromShoppingCart}
+                clearItemsFromShoppingCart={clearItemsFromShoppingCart}
             />
         )
 
@@ -84,6 +86,7 @@ describe('(Component) ShoppingBag', () => {
                                         Continue Shopping
                                     </button>
                                 </Link>
+                                <button type='button' className='btn btn-outline-danger btn-block mt-3 bi bi-trash' onClick={clearItemsFromShoppingCart}></button>
                             </div>
                         </div>
                     </div>
