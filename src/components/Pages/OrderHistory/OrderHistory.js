@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { Link } from 'react-router-dom'
@@ -7,6 +7,7 @@ import Table from 'components/Table'
 
 import './OrderHistory.scss'
 
+import generatePDF from 'react-to-pdf'
 import currencyFormatter from 'components/formatters/currencyFormatter'
 
 import translate from 'translate'
@@ -15,11 +16,16 @@ export class OrderHistory extends Component {
     constructor(props) {
         super(props)
         this.state = { id: '' }
+        this.ref = React.createRef()
     }
 
     handleClick = ({ target: { parentNode } }) => {
         const id = parentNode.firstChild.innerText.split(' ')[0]
         this.setState({ id })
+    }
+
+    handleGeneratePDF = () => {
+        generatePDF(this.ref, { filename: `order-${this.state.id}.pdf` })
     }
 
     render() {
@@ -42,7 +48,7 @@ export class OrderHistory extends Component {
                         </div>
                     </div>
 
-                    <div className='row no-gutters order-history overflow-auto'>
+                    <div ref={this.ref} className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
                             {
                                 Object.values(orders).map(v => (
@@ -52,6 +58,7 @@ export class OrderHistory extends Component {
                                     >
                                         <div>{v.id} {v.status === 'pending' ? strings.status.pending : ''}</div>
                                         <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
+                                        <button disabled={this.state.id !== v.id} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={this.handleGeneratePDF}></button>
                                     </div>
                                 ))
                             }

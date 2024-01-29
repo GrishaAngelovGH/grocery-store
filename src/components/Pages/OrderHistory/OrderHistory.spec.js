@@ -54,6 +54,7 @@ describe('(Component) OrderHistory', () => {
                             >
                                 <div>14203452887394308 Pending Order</div>
                                 <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
@@ -86,6 +87,7 @@ describe('(Component) OrderHistory', () => {
                             >
                                 <div>14203452887394308 Pending Order</div>
                                 <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                <button disabled={false} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
