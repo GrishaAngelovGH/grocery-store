@@ -155,7 +155,8 @@ export default {
         payPal: 'PayPal',
         creditCardNumber: 'Номер на кредитна карта',
         status: {
-            pending: 'Чакаща Поръчка'
+            pending: 'Чакаща Поръчка',
+            cancelled: 'Отказана Поръчка'
         },
         tableColumns: {
             item: 'Продукт',

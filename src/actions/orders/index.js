@@ -1,5 +1,6 @@
-import { saveOrder } from './orders'
+import { saveOrder, cancelOrder } from './orders'
 
 export {
-    saveOrder
+    saveOrder,
+    cancelOrder
 }

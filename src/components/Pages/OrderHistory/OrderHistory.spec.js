@@ -5,7 +5,7 @@ import { OrderHistory } from './OrderHistory'
 import Table from 'components/Table'
 
 describe('(Component) OrderHistory', () => {
-    let wrapper
+    let wrapper, cancelOrder
 
     const orders = {
         '14203452887394308': {
@@ -18,10 +18,23 @@ describe('(Component) OrderHistory', () => {
             creditCardNumber: '*********3456',
             date: new Date('2024-01-24T09:12:32'),
             status: 'pending'
+        },
+        '24203452887394308': {
+            id: '24203452887394308',
+            shipping_method: 'usps_fcpi',
+            payment_method: 'credit_card',
+            items: [
+                { id: 1, image: 'cookiesAndCreamCake', name: { en: 'Cookies And Cream Cake', bg: 'Торта с бисквитки и крем' }, currency: { en: '£', bg: 'лв' }, price: 30, qty: 2 }
+            ],
+            creditCardNumber: '*********3456',
+            date: new Date('2024-01-24T09:15:32'),
+            status: 'cancelled'
         }
     }
 
     beforeEach(() => {
+        cancelOrder = sinon.spy()
+
         wrapper = shallow(
             <OrderHistory
                 orders={orders}
@@ -30,6 +43,7 @@ describe('(Component) OrderHistory', () => {
                     shippingMethod: 'USPS First Class Package International',
                     shippingMethodPrice: 13.35
                 }}
+                cancelOrder={cancelOrder}
             />
         )
     })
@@ -53,6 +67,18 @@ describe('(Component) OrderHistory', () => {
                                 className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                             >
                                 <div>14203452887394308 Pending Order</div>
+                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                <button
+                                    className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                    onClick={wrapper.find('button').at(2).prop('onClick')}
+                                >
+                                </button>
+                            </div>
+                            <div
+                                className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
+                            >
+                                <div>24203452887394308 Cancelled Order</div>
                                 <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
                                 <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
                             </div>
@@ -88,6 +114,18 @@ describe('(Component) OrderHistory', () => {
                                 <div>14203452887394308 Pending Order</div>
                                 <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
                                 <button disabled={false} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                <button
+                                    className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                    onClick={wrapper.find('button').at(2).prop('onClick')}
+                                >
+                                </button>
+                            </div>
+                            <div
+                                className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
+                            >
+                                <div>24203452887394308 Cancelled Order</div>
+                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
@@ -126,5 +164,12 @@ describe('(Component) OrderHistory', () => {
                 </div>
             </div >
         )).to.equal(true)
+    })
+
+    it('should cancel order', () => {
+        wrapper.find('button').at(2).prop('onClick')()
+
+        cancelOrder.should.have.been.calledOnce
+        cancelOrder.should.have.been.calledWith('14203452887394308')
     })
 })

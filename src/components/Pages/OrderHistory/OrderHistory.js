@@ -51,16 +51,36 @@ export class OrderHistory extends Component {
                     <div ref={this.ref} className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
                             {
-                                Object.values(orders).map(v => (
-                                    <div
-                                        key={v.id}
-                                        className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                                    >
-                                        <div>{v.id} {v.status === 'pending' ? strings.status.pending : ''}</div>
-                                        <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
-                                        <button disabled={this.state.id !== v.id} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={this.handleGeneratePDF}></button>
-                                    </div>
-                                ))
+                                Object.values(orders).map(v => {
+                                    const cancelOrder = () => {
+                                        this.props.cancelOrder(v.id)
+                                    }
+
+                                    const statusClass = v.status === 'pending' ? 'bg-info' : 'bg-warning'
+                                    const isPending = v.status === 'pending'
+                                    const status = isPending ? strings.status.pending : strings.status.cancelled
+                                    const disabledButton = this.state.id !== v.id
+
+                                    return (
+                                        <div
+                                            key={v.id}
+                                            className={`m-2 p-1 ${statusClass} text-white text-center rounded font-weight-bold`}
+                                        >
+                                            <div>{v.id} {status}</div>
+                                            <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
+                                            <button disabled={disabledButton} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={this.handleGeneratePDF}></button>
+                                            {
+                                                isPending && (
+                                                    <button
+                                                        className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                                        onClick={cancelOrder}
+                                                    >
+                                                    </button>
+                                                )
+                                            }
+                                        </div>
+                                    )
+                                })
                             }
                         </div>
                         <div className='col col-md-9 col-lg-10'>
@@ -127,7 +147,8 @@ OrderHistory.defaultProps = {
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
         status: {
-            pending: 'Pending Order'
+            pending: 'Pending Order',
+            cancelled: 'Cancelled Order',
         },
         tableColumns: {
             item: 'Item',

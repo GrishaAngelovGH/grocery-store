@@ -155,7 +155,8 @@ export default {
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
         status: {
-            pending: 'Pending Order'
+            pending: 'Pending Order',
+            cancelled: 'Cancelled Order'
         },
         tableColumns: {
             item: 'Item',

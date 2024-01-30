@@ -5,9 +5,16 @@ const saveOrderHandler = (state, { order }) => ({
     [order.id]: order
 })
 
+const cancelOrderHandler = (state, { orderId }) => {
+    const newState = { ...state }
+    newState[orderId].status = 'cancelled'
+    return newState
+}
+
 export default (state = initialValue, action) => {
     const handlers = {
-        'SAVE_ORDER': saveOrderHandler
+        'SAVE_ORDER': saveOrderHandler,
+        'CANCEL_ORDER': cancelOrderHandler
     }
 
     const handler = handlers[action.type]
