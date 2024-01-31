@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom'
 
 import Table from 'components/Table'
 
+import Form from 'react-bootstrap/Form'
+
 import './OrderHistory.scss'
 
 import generatePDF from 'react-to-pdf'
 import currencyFormatter from 'components/formatters/currencyFormatter'
-
 import translate from 'translate'
 
 export class OrderHistory extends Component {
     constructor(props) {
         super(props)
-        this.state = { id: '' }
+        this.state = { id: '', value: '' }
         this.ref = React.createRef()
     }
 
@@ -26,6 +27,10 @@ export class OrderHistory extends Component {
 
     handleGeneratePDF = () => {
         generatePDF(this.ref, { filename: `order-${this.state.id}.pdf` })
+    }
+
+    handleSelect = ({ target }) => {
+        this.setState({ value: target.value })
     }
 
     render() {
@@ -50,38 +55,48 @@ export class OrderHistory extends Component {
 
                     <div ref={this.ref} className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
-                            {
-                                Object.values(orders).map(v => {
-                                    const cancelOrder = () => {
-                                        this.props.cancelOrder(v.id)
-                                    }
+                            <div className='d-flex flex-column align-items-center'>
+                                <Form.Select value={this.state.value} className='m-2 p-1 border rounded' onChange={this.handleSelect}>
+                                    <option value=''>{strings.status.all}</option>
+                                    <option value='pending'>{strings.status.pending}</option>
+                                    <option value='cancelled'>{strings.status.cancelled}</option>
+                                </Form.Select>
 
-                                    const statusClass = v.status === 'pending' ? 'bg-info' : 'bg-warning'
-                                    const isPending = v.status === 'pending'
-                                    const status = isPending ? strings.status.pending : strings.status.cancelled
-                                    const disabledButton = this.state.id !== v.id
-
-                                    return (
-                                        <div
-                                            key={v.id}
-                                            className={`m-2 p-1 ${statusClass} text-white text-center rounded font-weight-bold`}
-                                        >
-                                            <div>{v.id} {status}</div>
-                                            <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
-                                            <button disabled={disabledButton} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={this.handleGeneratePDF}></button>
-                                            {
-                                                isPending && (
-                                                    <button
-                                                        className='btn btn-light w-25 bi bi-x mr-2 p-0'
-                                                        onClick={cancelOrder}
-                                                    >
-                                                    </button>
-                                                )
+                                {
+                                    Object.values(orders)
+                                        .filter(v => v.status === this.state.value || !this.state.value)
+                                        .map(v => {
+                                            const cancelOrder = () => {
+                                                this.props.cancelOrder(v.id)
                                             }
-                                        </div>
-                                    )
-                                })
-                            }
+
+                                            const statusClass = v.status === 'pending' ? 'bg-info' : 'bg-warning'
+                                            const isPending = v.status === 'pending'
+                                            const status = isPending ? strings.status.pending : strings.status.cancelled
+                                            const disabledButton = this.state.id !== v.id
+
+                                            return (
+                                                <div
+                                                    key={v.id}
+                                                    className={`m-2 p-1 ${statusClass} text-white text-center rounded font-weight-bold`}
+                                                >
+                                                    <div>{v.id} {status}</div>
+                                                    <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={this.handleClick}></button>
+                                                    <button disabled={disabledButton} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={this.handleGeneratePDF}></button>
+                                                    {
+                                                        isPending && (
+                                                            <button
+                                                                className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                                                onClick={cancelOrder}
+                                                            >
+                                                            </button>
+                                                        )
+                                                    }
+                                                </div>
+                                            )
+                                        })
+                                }
+                            </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
                             {
@@ -147,6 +162,7 @@ OrderHistory.defaultProps = {
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
         status: {
+            all: 'All',
             pending: 'Pending Order',
             cancelled: 'Cancelled Order',
         },

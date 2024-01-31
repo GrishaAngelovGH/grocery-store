@@ -4,6 +4,8 @@ import { OrderHistory } from './OrderHistory'
 
 import Table from 'components/Table'
 
+import Form from 'react-bootstrap/Form'
+
 describe('(Component) OrderHistory', () => {
     let wrapper, cancelOrder
 
@@ -63,24 +65,31 @@ describe('(Component) OrderHistory', () => {
 
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
-                            <div
-                                className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                            >
-                                <div>14203452887394308 Pending Order</div>
-                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
-                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
-                                <button
-                                    className='btn btn-light w-25 bi bi-x mr-2 p-0'
-                                    onClick={wrapper.find('button').at(2).prop('onClick')}
+                            <div className='d-flex flex-column align-items-center'>
+                                <Form.Select value='' className='m-2 p-1 border rounded' onChange={wrapper.instance().handleSelect}>
+                                    <option value=''>All</option>
+                                    <option value='pending'>Pending Order</option>
+                                    <option value='cancelled'>Cancelled Order</option>
+                                </Form.Select>
+                                <div
+                                    className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                                 >
-                                </button>
-                            </div>
-                            <div
-                                className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
-                            >
-                                <div>24203452887394308 Cancelled Order</div>
-                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
-                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                    <div>14203452887394308 Pending Order</div>
+                                    <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                    <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                    <button
+                                        className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                        onClick={wrapper.find('button').at(2).prop('onClick')}
+                                    >
+                                    </button>
+                                </div>
+                                <div
+                                    className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
+                                >
+                                    <div>24203452887394308 Cancelled Order</div>
+                                    <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                    <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                </div>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>
@@ -92,7 +101,7 @@ describe('(Component) OrderHistory', () => {
     })
 
     it('should render selected order', () => {
-        wrapper.setState({ id: '14203452887394308' })
+        wrapper.setState({ id: '14203452887394308', value: '' })
 
         expect(wrapper.equals(
             <div className='row no-gutters'>
@@ -108,24 +117,31 @@ describe('(Component) OrderHistory', () => {
 
                     <div className='row no-gutters order-history overflow-auto'>
                         <div className='col col-md-3 col-lg-2 border-right border-info'>
-                            <div
-                                className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
-                            >
-                                <div>14203452887394308 Pending Order</div>
-                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
-                                <button disabled={false} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
-                                <button
-                                    className='btn btn-light w-25 bi bi-x mr-2 p-0'
-                                    onClick={wrapper.find('button').at(2).prop('onClick')}
+                            <div className='d-flex flex-column align-items-center'>
+                                <Form.Select value='' className='m-2 p-1 border rounded' onChange={wrapper.instance().handleSelect}>
+                                    <option value=''>All</option>
+                                    <option value='pending'>Pending Order</option>
+                                    <option value='cancelled'>Cancelled Order</option>
+                                </Form.Select>
+                                <div
+                                    className='m-2 p-1 bg-info text-white text-center rounded font-weight-bold'
                                 >
-                                </button>
-                            </div>
-                            <div
-                                className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
-                            >
-                                <div>24203452887394308 Cancelled Order</div>
-                                <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
-                                <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                    <div>14203452887394308 Pending Order</div>
+                                    <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                    <button disabled={false} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                    <button
+                                        className='btn btn-light w-25 bi bi-x mr-2 p-0'
+                                        onClick={wrapper.find('button').at(2).prop('onClick')}
+                                    >
+                                    </button>
+                                </div>
+                                <div
+                                    className='m-2 p-1 bg-warning text-white text-center rounded font-weight-bold'
+                                >
+                                    <div>24203452887394308 Cancelled Order</div>
+                                    <button className='btn btn-light w-25 bi bi-card-text mr-2 p-0' onClick={wrapper.instance().handleClick}></button>
+                                    <button disabled={true} className='btn btn-light w-25 bi bi-filetype-pdf mr-2 p-0' onClick={wrapper.instance().handleGeneratePDF}></button>
+                                </div>
                             </div>
                         </div>
                         <div className='col col-md-9 col-lg-10'>

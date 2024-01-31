@@ -155,6 +155,7 @@ export default {
         payPal: 'PayPal',
         creditCardNumber: 'Credit Card Number',
         status: {
+            all: 'All',
             pending: 'Pending Order',
             cancelled: 'Cancelled Order'
         },
