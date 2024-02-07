@@ -41,10 +41,6 @@ describe('(Component) OrderHistory', () => {
             <OrderHistory
                 orders={orders}
                 lang='en'
-                checkout={{
-                    shippingMethod: 'USPS First Class Package International',
-                    shippingMethodPrice: 13.35
-                }}
                 cancelOrder={cancelOrder}
             />
         )

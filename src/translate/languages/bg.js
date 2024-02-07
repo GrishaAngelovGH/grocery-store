@@ -166,7 +166,13 @@ export default {
             subtotal: 'Междинна Сума',
             shippingMethod: 'Метод на доставка'
         },
-        total: 'Обща сума'
+        total: 'Обща сума',
+        shippingMethods: {
+            usps_fcpi: 'USPS Международен пакет от първа класа',
+            usps_pmi: 'USPS Международна приоритетна поща',
+            usps_pmei: 'USPS Международна експресна приоритетна поща',
+            dhl_ew: 'DHL Експрес'
+        }
     },
     'Pages.PageComponents.HeaderSection.Search': {
         placeholder: 'Търси'

@@ -6,8 +6,7 @@ import { cancelOrder } from 'actions/orders'
 
 const mapStateToProps = state => ({
     orders: state.orders,
-    lang: state.language,
-    checkout: state.checkout
+    lang: state.language
 })
 
 const mapDispatchToProps = ({

@@ -166,7 +166,13 @@ export default {
             subtotal: 'Subtotal',
             shippingMethod: 'Shipping Method'
         },
-        total: 'Total'
+        total: 'Total',
+        shippingMethods: {
+            usps_fcpi: 'USPS First Class Package International',
+            usps_pmi: 'USPS Priority Mail International',
+            usps_pmei: 'USPS Priority Mail Express International',
+            dhl_ew: 'DHL Express Worldwide'
+        }
     },
     'Pages.PageComponents.HeaderSection.Search': {
         placeholder: 'Search'

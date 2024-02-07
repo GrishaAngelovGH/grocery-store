@@ -34,11 +34,19 @@ export class OrderHistory extends Component {
     }
 
     render() {
-        const { strings, orders, lang, checkout } = this.props
+        const { strings, orders, lang } = this.props
+
+        const shippingMethods = {
+            'usps_fcpi': { shippingMethod: this.props.strings.shippingMethods.usps_fcpi, shippingMethodPrice: 13.35 },
+            'usps_pmi': { shippingMethod: this.props.strings.shippingMethods.usps_pmi, shippingMethodPrice: 44.85 },
+            'usps_pmei': { shippingMethod: this.props.strings.shippingMethods.usps_pmei, shippingMethodPrice: 58.99 },
+            'dhl_ew': { shippingMethod: this.props.strings.shippingMethods.dhl_ew, shippingMethodPrice: 83.73 }
+        }
 
         const order = orders[this.state.id]
+        const { shippingMethod, shippingMethodPrice } = order?.shipping_method ? shippingMethods[order.shipping_method] : { shippingMethod: '', shippingMethodPrice: 0 }
 
-        const total = order?.items.reduce((a, b) => a + (b.price * b.qty), checkout.shippingMethodPrice)
+        const total = order?.items.reduce((a, b) => a + (b.price * b.qty), shippingMethodPrice)
         const currency = order?.items[0].currency[lang]
 
         return (
@@ -104,7 +112,7 @@ export class OrderHistory extends Component {
                                     <div className='m-2 mb-5'>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.orderId}: {order.id}</p>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.date}: {new Date(order.date).toLocaleString(lang === 'en' ? 'uk' : 'bg')}</p>
-                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.tableColumns.shippingMethod}: {checkout.shippingMethod} {currencyFormatter(lang, currency, checkout.shippingMethodPrice.toFixed(2))}</p>
+                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.tableColumns.shippingMethod}: {shippingMethod} {currencyFormatter(lang, currency, shippingMethodPrice.toFixed(2))}</p>
                                         <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.paymentMethod}: {order['payment_method'] === 'credit_card' ? strings.creditCard : strings.payPal}</p>
                                         {order.creditCardNumber && <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.creditCardNumber}: {order.creditCardNumber}</p>}
 
@@ -148,8 +156,7 @@ export class OrderHistory extends Component {
 OrderHistory.propTypes = {
     strings: PropTypes.object.isRequired,
     orders: PropTypes.object.isRequired,
-    lang: PropTypes.string.isRequired,
-    checkout: PropTypes.object.isRequired
+    lang: PropTypes.string.isRequired
 }
 
 OrderHistory.defaultProps = {
@@ -173,7 +180,13 @@ OrderHistory.defaultProps = {
             subtotal: 'Subtotal',
             shippingMethod: 'Shipping Method'
         },
-        total: 'Total'
+        total: 'Total',
+        shippingMethods: {
+            usps_fcpi: 'USPS First Class Package International',
+            usps_pmi: 'USPS Priority Mail International',
+            usps_pmei: 'USPS Priority Mail Express International',
+            dhl_ew: 'DHL Express Worldwide'
+        }
     }
 }
 
