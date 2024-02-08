@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import Table from 'components/Table'
 
 import Form from 'react-bootstrap/Form'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 import './OrderHistory.scss'
 
@@ -110,11 +111,14 @@ export class OrderHistory extends Component {
                             {
                                 order && (
                                     <div className='m-2 mb-5'>
-                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.orderId}: {order.id}</p>
-                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.date}: {new Date(order.date).toLocaleString(lang === 'en' ? 'uk' : 'bg')}</p>
-                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.tableColumns.shippingMethod}: {shippingMethod} {currencyFormatter(lang, currency, shippingMethodPrice.toFixed(2))}</p>
-                                        <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.paymentMethod}: {order['payment_method'] === 'credit_card' ? strings.creditCard : strings.payPal}</p>
-                                        {order.creditCardNumber && <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>{strings.creditCardNumber}: {order.creditCardNumber}</p>}
+                                        <ListGroup className='font-weight-bold text-center'>
+                                            <ListGroup.Item className='list-group-item-info'>{strings.orderId}: {order.id}</ListGroup.Item>
+                                            <ListGroup.Item className='list-group-item-info'>{strings.date}: {new Date(order.date).toLocaleString(lang === 'en' ? 'uk' : 'bg')}</ListGroup.Item>
+                                            <ListGroup.Item className='list-group-item-info'>{strings.tableColumns.shippingMethod}: {shippingMethod} {currencyFormatter(lang, currency, shippingMethodPrice.toFixed(2))}</ListGroup.Item>
+                                            <ListGroup.Item className='list-group-item-info'>{strings.paymentMethod}: {order['payment_method'] === 'credit_card' ? strings.creditCard : strings.payPal}</ListGroup.Item>
+                                            {order.creditCardNumber && <ListGroup.Item className='list-group-item-info'>{strings.creditCardNumber}: {order.creditCardNumber}</ListGroup.Item>}
+                                        </ListGroup>
+
 
                                         <div className='mt-2'>
                                             <Table

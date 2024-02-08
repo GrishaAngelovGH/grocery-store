@@ -5,6 +5,7 @@ import { OrderHistory } from './OrderHistory'
 import Table from 'components/Table'
 
 import Form from 'react-bootstrap/Form'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 describe('(Component) OrderHistory', () => {
     let wrapper, cancelOrder
@@ -142,11 +143,13 @@ describe('(Component) OrderHistory', () => {
                         </div>
                         <div className='col col-md-9 col-lg-10'>
                             <div className='m-2 mb-5'>
-                                <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>OrderId: 14203452887394308</p>
-                                <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Date: {new Date('2024-01-24T09:12:32').toLocaleString('uk')}</p>
-                                <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Shipping Method: USPS First Class Package International £13.35</p>
-                                <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Payment Method: Credit Card</p>
-                                <p className='m-0 p-1 alert alert-info font-weight-bold text-center'>Credit Card Number: *********3456</p>
+                                <ListGroup className='font-weight-bold text-center'>
+                                    <ListGroup.Item className='list-group-item-info'>OrderId: 14203452887394308</ListGroup.Item>
+                                    <ListGroup.Item className='list-group-item-info'>Date: {new Date('2024-01-24T09:12:32').toLocaleString('uk')}</ListGroup.Item>
+                                    <ListGroup.Item className='list-group-item-info'>Shipping Method: USPS First Class Package International £13.35</ListGroup.Item>
+                                    <ListGroup.Item className='list-group-item-info'>Payment Method: Credit Card</ListGroup.Item>
+                                    <ListGroup.Item className='list-group-item-info'>Credit Card Number: *********3456</ListGroup.Item>
+                                </ListGroup>
 
                                 <div className='mt-2'>
                                     <Table
