@@ -60,7 +60,7 @@ export class ProductItem extends Component {
                 </div>
 
                 <div className='row align-items-center product-container'>
-                    <div className='col-10'>
+                    <div className='col-10 text-center font-weight-bold'>
                         <div className='text-break'>{name[lang]}</div>
 
                         <div>{currencyFormatter(lang, currency[lang], price)}</div>

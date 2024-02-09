@@ -64,7 +64,7 @@ describe('(Component) ProductItem', () => {
                 </div>
 
                 <div className='row align-items-center product-container'>
-                    <div className='col-10'>
+                    <div className='col-10 text-center font-weight-bold'>
                         <div className='text-break'>Triple Layer Cake</div>
 
                         <div>{`£${30.00}`}</div>
