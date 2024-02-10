@@ -17,7 +17,7 @@ export class ShoppingBagItem extends Component {
         const { strings, lang, image, name, currency, price, qty } = this.props
 
         return (
-            <div className='row no-gutters p-3 border-top bg-light justify-content-around'>
+            <div className='row no-gutters p-2 border-top bg-light justify-content-around'>
                 <div className='col-5'>
                     <img src={cakeProductCategory[image]} width={120} height={120} className='rounded' />
                 </div>

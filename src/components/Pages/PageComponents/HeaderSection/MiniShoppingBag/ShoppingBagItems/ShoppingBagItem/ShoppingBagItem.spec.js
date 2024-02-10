@@ -23,7 +23,7 @@ describe('(Component) ShoppingBagItem', () => {
 
     it('should render component', () => {
         expect(wrapper.equals(
-            <div className='row no-gutters p-3 border-top bg-light justify-content-around'>
+            <div className='row no-gutters p-2 border-top bg-light justify-content-around'>
                 <div className='col-5'>
                     <img src={cakeProductCategory['vanillaCake']} width={120} height={120} className='rounded' />
 
